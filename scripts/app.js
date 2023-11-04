@@ -54,6 +54,21 @@ Navigation.prototype.scrollToPage = function() {
     window.scrollTo(0, this.scrollPos);
 }
 
+//getters
+
+Navigation.prototype.getScrolledPage = function() {
+    return this.scrollPos;
+}
+
+Navigation.prototype.getPageName = function() {
+    return this.name;
+}
+
+Navigation.prototype.getPageId = function() {
+    return this.id;
+}
+
+
 $(document).ready(function() {
     let pageIdx = 0;
     let currPageHeight = document.body.scrollHeight / pages.length;
@@ -79,7 +94,7 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#000`,        
+        'backgroundColor':`#000`,
     }).append("<div id='pg1Div' class = 'pgContainer'></div>");
     $('#pg1Div').append(`<ul id = 'pg1List'>
         <li id = 'pg1Item1'>This page is currently under construction, If you are interested in my work then please visit my example projects:<br>Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br><p>**Please note that the Trivia project is also under construction, I wrote this before learning how to use JavaScript Promises and so will be conducting some major refactors on that project in particular.</li>
@@ -93,27 +108,36 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#fff`
     }).append("<div id='pg2Div' class = 'pgContainer'></div>");
-    $('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`)
+    $('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
     $('#pg3').css({
         'position':`absolute`,
         'top':`${pgHeight * 2}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#000`
-    }).append("<div id='pg3Div' class = 'pgContainer'><h1>PAGE 3</h1></div>")
+    }).append("<div id='pg3Div' class = 'pgContainer'><h1>PAGE 3</h1></div>");
     $('#pg4').css({
         'position':`absolute`,
         'top':`${pgHeight * 3}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#fff`
-    }).append("<div id='pg4Div' class = 'pgContainer'><h1>PAGE 4</h1></div>")
+    }).append("<div id='pg4Div' class = 'pgContainer'><ul id = 'projGrid'></ul></div>");
+    let projects = ['orders', 'tictactoe', 'trivia'];
+    for(let i in projects) {
+        $('#projGrid').append(`<li id = '${projects[i]}_proj' class = 'projTiles'><div'><a href='Pages/${projects[i]}/index.html'>${projects[i]}</a></div></li>`).css({
+            'gridTemplateColumns': '1fr 1fr 1fr'
+        });
+    }
+    $('.projTiles').on('click', function(){
+        console.log($(this).attr('id'))
+    })
     $('#pg5').css({
         'position':`absolute`,
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#000`
-    }).append("<div id='pg5Div' class = 'pgContainer'><h1>PAGE 5</h1></div>")
+    }).append("<div id='pg5Div' class = 'pgContainer'><h1>PAGE 5</h1></div>");
 });
 

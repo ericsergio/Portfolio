@@ -67,3 +67,15 @@ body{
     width:50%;
     margin-left:30%;
 }
+
+#projGrid{
+    display:grid;
+    list-style-type: none;
+    margin-top:25vh;
+}
+
+.projTiles{
+    height:20vh;
+    width:20vw;
+    border:solid red 2px;
+}
