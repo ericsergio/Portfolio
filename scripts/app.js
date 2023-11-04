@@ -5,11 +5,11 @@ class Orientation {
     }
 }
 
-
 class Navigation {
-    constructor(id, name) {
+    constructor(id, name, scrollPos) {
         this.id = id;
         this.name = name;
+        this.scrollPos = scrollPos;
     }
 }
 
@@ -50,15 +50,27 @@ const doLandscapeNav = () => {
     $('#mainMenu').css('gridTemplateColumns', '.7fr .7fr .7fr .7fr .7fr 2fr')
 }
 
-//
+Navigation.prototype.scrollToPage = function() {
+    window.scrollTo(0, this.scrollPos);
+}
 
 $(document).ready(function() {
     let pageIdx = 0;
+    let currPageHeight = document.body.scrollHeight / pages.length;
+    console.log(document.body.scrollHeight);
     for(let current in pages) {
-        Navigation.navItem = new Navigation(pageIdx, pages[current]);
-        $('#mainMenu').append(`<li>${pages[current]}</li>`);
+        Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
+        $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
         pageIdx += 1;
     }
+    $('#mainMenu li').each(function(){
+        $(this).on('click', function(){           
+            //this is where the navigation occurs using the prototype function scrollToPage
+            //using the ids the click runs the prototype on the clicked nav item and scrolls  
+            //to the approptiate spot
+            Navigation[[$(this).attr('id')]].scrollToPage();
+        })
+    })
     let pgHeight = window.innerHeight;
     let pgWidth = window.innerWidth;
     $('body').css('height', `${pgHeight * pages.length}px`)
