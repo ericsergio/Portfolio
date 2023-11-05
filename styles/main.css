@@ -39,6 +39,7 @@ body{
     margin:10% 5%;
     height:80%;
     width:90%;
+    background-color:#32575e;
     border:solid 1px rgb(103, 114, 102);
 }
 
@@ -52,20 +53,21 @@ body{
     max-height:350px;
     max-width:287.5px;
     margin:4% 0% 0% 2%;
-    border:solid teal 3px;
+    border:solid rgb(75, 128, 0) 3px;
 }
 
 #pg1Item1{
     height:60%;
     width:75%;
     margin-top:12%;
+    background-color:rgb(22, 22, 20);
     border:solid 1px #c7f60c;
 }
 
-#resumeImg{
-    height:90%;
-    width:50%;
-    margin-left:30%;
+#resumeImg{    
+    height:80%;
+    width:30%;
+    margin:8vh 0vw 8vh 30vw;
 }
 
 #projGrid{
