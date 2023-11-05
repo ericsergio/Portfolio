@@ -2,6 +2,13 @@ a {
 	cursor:pointer;
 }
 
+#back{
+	position:absolute;
+	left:85%;
+	color:#fff;
+	z-index:5;
+}
+
 #displayIndicator {
 	color:rgb(0,0,0);
 }
