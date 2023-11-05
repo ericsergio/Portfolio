@@ -36,11 +36,11 @@ body{
 }
 .pgContainer{
     color:rgb(103, 114, 102);
-    margin:10% 5%;
-    height:80%;
-    width:90%;
+    margin:10% 10% 10% 10%;
+    height:70vh;
+    width:75%;
     background-color:#32575e;
-    border:solid 1px rgb(103, 114, 102);
+    /*border:ridge 20px rgb(103, 114, 102);*/
 }
 
 #pg1List{
@@ -50,18 +50,25 @@ body{
 }
 
 #pImage{
-    max-height:350px;
-    max-width:287.5px;
-    margin:4% 0% 0% 2%;
-    border:solid rgb(75, 128, 0) 3px;
+    max-height:200px;
+    max-width:137.5px;
+    margin:-10% 0% 0% 70%;
+    border:ridge rgba(80, 227, 227, 0.248) 25px;
+    border-radius: 50%;
+    border-left-color:rgb(44, 177, 200);
 }
 
 #pg1Item1{
-    height:60%;
-    width:75%;
-    margin-top:12%;
+    height:83%;
+    width:100%;
+    margin:2% 0% 0% -10%;
+    padding:10%;
+    color:#fff;
+   /*border:ridge 51px #173d47;
     background-color:rgb(22, 22, 20);
-    border:solid 1px #c7f60c;
+    border-radius: 470px;
+    border-right-color:rgb(44, 177, 200);
+    border-left-color:rgb(44, 177, 200);*/
 }
 
 #resumeImg{    
@@ -79,5 +86,6 @@ body{
 .projTiles{
     height:20vh;
     width:20vw;
+    background-color:rgb(219, 219, 77);
     border:solid red 2px;
 }

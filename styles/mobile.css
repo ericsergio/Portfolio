@@ -50,6 +50,18 @@
         width:90%;
         border:solid 1px rgb(103, 114, 102);
     }
+    #pg1List{
+        display:grid;
+        list-style-type: none;
+        grid-template-columns:.7fr .35fr;
+    }
+    
+    #pImage{
+        max-height:300px;
+        max-width:237.5px;
+        margin:4% 0% 0% 2%;
+        border:solid rgb(75, 128, 0) 30px;
+    }
 }
 
 

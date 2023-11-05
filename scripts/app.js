@@ -97,7 +97,10 @@ $(document).ready(function() {
         'backgroundColor':`#000`,
     }).append("<div id='pg1Div' class = 'pgContainer'></div>");
     $('#pg1Div').append(`<ul id = 'pg1List'>
-        <li id = 'pg1Item1'>This page is currently under construction, If you are interested in my work then please visit my example projects:<br>Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br><p>**Please note that the Trivia project is also under construction, I wrote this before learning how to use JavaScript Promises and so will be conducting some major refactors on that project in particular.</li>
+        <li id = 'pg1Item1'>This page is currently under construction, If you are interested in my work then please visit my example projects:<br>
+        Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
+        Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br>
+        
         <li id='pg1Item2'>
             <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
         </li>`)
