@@ -6,7 +6,7 @@ body{
 .fixedNav {
     position:fixed;
     height:12%;
-    background-color:rgb(103, 114, 102);
+    background-color:#394961;
     color:#fff;
     width:100%;
     z-index: 2;
@@ -39,8 +39,9 @@ body{
     margin:10% 10% 10% 10%;
     height:70vh;
     width:75%;
-    background-color:#32575e;
-    /*border:ridge 20px rgb(103, 114, 102);*/
+    background-color:#98BFFA;
+    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/
+    border:solid 20px #394961;
 }
 
 #pg1List{
@@ -63,7 +64,7 @@ body{
     width:100%;
     margin:2% 0% 0% -10%;
     padding:10%;
-    color:#fff;
+    color:#142033;
    /*border:ridge 51px #173d47;
     background-color:rgb(22, 22, 20);
     border-radius: 470px;

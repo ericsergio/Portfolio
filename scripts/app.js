@@ -94,13 +94,12 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#000`,
+        'backgroundColor':`#142033`,
     }).append("<div id='pg1Div' class = 'pgContainer'></div>");
     $('#pg1Div').append(`<ul id = 'pg1List'>
-        <li id = 'pg1Item1'>This page is currently under construction, If you are interested in my work then please visit my example projects:<br>
+        <li id = 'pg1Item1'>Hello<br>
         Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
         Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br>
-        
         <li id='pg1Item2'>
             <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
         </li>`)
