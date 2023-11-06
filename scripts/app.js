@@ -99,7 +99,7 @@ $(document).ready(function() {
     /****************************************************************************   About Page Content **********/
     $('#pg1Div').append(`<ul id = 'pg1List'>
         <li id = 'pg1Item1'><p id = "greeting" class = "aboutContent">My name is Eric Sergio and am based out of the Greater Seattle Area.
-        As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. <br> Wherever I land, 
+        As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. </p><p id = "greeting2"> Wherever I land, 
         I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of ground to make up to fulfill my goals.
         I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based around C#, and my strongest tech skills
         include JavaScript, Bash, MySQL, jQuery, PHP, GCP and Azure. I can adapt and learn new languages as needed. What you can count on from

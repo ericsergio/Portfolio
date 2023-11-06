@@ -54,7 +54,7 @@
     #pg1List{
         display:grid;
         list-style-type: none;
-        grid-template-columns:.5fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
     
 
@@ -68,8 +68,8 @@
         border-left-color:rgb(44, 177, 200);
         float:left;
     }
-    #pg1Item1{        
-        /*width:70%*/
+    #greeting2{        
+        width:150%;
     }
 }
 
