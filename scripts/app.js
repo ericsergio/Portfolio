@@ -96,8 +96,14 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#142033`,
     }).append("<div id='pg1Div' class = 'pgContainer'></div>");
+    /****************************************************************************   About Page Content **********/
     $('#pg1Div').append(`<ul id = 'pg1List'>
-        <li id = 'pg1Item1'>Hello<br>
+        <li id = 'pg1Item1'><p id = "greeting" class = "aboutContent">My name is Eric Sergio and am based out of the Greater Seattle Area.
+        As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. <br> Wherever I land, 
+        I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of ground to make up to fulfill my goals.
+        I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based around C#, and my strongest tech skills
+        include JavaScript, Bash, MySQL, jQuery, PHP, GCP and Azure. I can adapt and learn new languages as needed. What you can count on from
+        me is that I will work tirelessly  <br> 
         Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
         Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br>
         <li id='pg1Item2'>

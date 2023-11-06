@@ -49,6 +49,7 @@
         height:80%;
         width:90%;
         border:solid 1px rgb(103, 114, 102);
+        border-radius:0% 65% 0% 0%;
     }
     #pg1List{
         display:grid;
@@ -56,13 +57,16 @@
         grid-template-columns:.7fr .35fr;
     }
     
+
     #pImage{
         max-height:300px;
         max-width:237.5px;
         margin:4% 0% 0% 2%;
+        margin:-20% 0% 0% 70%;
         border:ridge rgba(80, 227, 227, 0.248) 25px;
         border-radius: 50%;
         border-left-color:rgb(44, 177, 200);
+        z-index:7;
     }
 }
 

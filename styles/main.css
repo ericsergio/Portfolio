@@ -40,8 +40,7 @@ body{
     height:70vh;
     width:75%;
     background-color:#98BFFA;
-    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/
-    border:solid 20px #394961;
+    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
 }
 
 #pg1List{
@@ -53,10 +52,10 @@ body{
 #pImage{
     max-height:200px;
     max-width:137.5px;
-    margin:-10% 0% 0% 70%;
-    border:ridge rgba(80, 227, 227, 0.248) 25px;
-    border-radius: 50%;
-    border-left-color:rgb(44, 177, 200);
+    margin:-5% 0% 0% 70%;
+    /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
+    border-radius: 30%;
+    /*border-left-color:rgb(44, 177, 200);*/
 }
 
 #pg1Item1{
