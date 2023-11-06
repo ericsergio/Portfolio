@@ -102,8 +102,8 @@ $(document).ready(function() {
         As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. </p><p id = "greeting2"> Wherever I land, 
         I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of ground to make up to fulfill my goals.
         I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based around C#, and my strongest tech skills
-        include JavaScript, Bash, MySQL, jQuery, PHP, GCP and Azure. I can adapt and learn new languages as needed. What you can count on from
-        me is that I will work tirelessly  <br> 
+        include JavaScript, Bash, MySQL, jQuery, PHP, GCP and Azure. I can adapt and learn new languages as needed. While my site is under construction, I am providing
+        links to a few of my projects here to easily access my work.</p> 
         Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
         Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>Trivia:<a href="Pages/trivia/index.html">Trivia</a><br>
         <li id='pg1Item2'>
