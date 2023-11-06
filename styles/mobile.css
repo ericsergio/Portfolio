@@ -5,7 +5,7 @@
     }
     .fixedNav {
         position:fixed;
-        height:12%;
+        height:10%;
         background-color:rgb(103, 114, 102);
         color:#fff;
         width:100%;
@@ -60,7 +60,9 @@
         max-height:300px;
         max-width:237.5px;
         margin:4% 0% 0% 2%;
-        border:solid rgb(75, 128, 0) 30px;
+        border:ridge rgba(80, 227, 227, 0.248) 25px;
+        border-radius: 50%;
+        border-left-color:rgb(44, 177, 200);
     }
 }
 

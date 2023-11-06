@@ -1,8 +1,7 @@
 //check
 class Orientation {
-    constructor(id, toggle) {    
+    constructor(id) {    
         this.id = id;
-        this.toggle = toggle || 0;
     }
 }
 
@@ -39,17 +38,12 @@ $(window).on("resize load", function(event){
 });
 
 const doPortraitNav = () => {
-    Orientation.ScreenOrientation.toggle = 1;
     $('#navBtn').show();
     $('#mainMenu').css('gridTemplateColumns', '1fr');
+    $('#navBtn').on('click', function(){
+        $('#mainMenu').toggle(100) 
+    })
 }
-
-$(document).ready(function(){
-    $('#navBtn').on("click", function(){
-        $('#mainMenu').toggle(100);
-    });
-});
-
 
 const doLandscapeNav = () => {
     $('#navBtn').hide();
