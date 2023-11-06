@@ -54,19 +54,22 @@
     #pg1List{
         display:grid;
         list-style-type: none;
-        grid-template-columns:.7fr .35fr;
+        grid-template-columns:.5fr 1fr;
     }
     
 
     #pImage{
-        max-height:300px;
-        max-width:237.5px;
-        margin:4% 0% 0% 2%;
-        margin:-20% 0% 0% 70%;
+        max-height:150px;
+        max-width:117.5px;
+        margin:4% 0% 0% 0%;
+        margin:-10% 0% 0% 0%;
         border:ridge rgba(80, 227, 227, 0.248) 25px;
         border-radius: 50%;
         border-left-color:rgb(44, 177, 200);
-        z-index:7;
+        float:left;
+    }
+    #pg1Item1{        
+        /*width:70%*/
     }
 }
 
