@@ -222,8 +222,8 @@ $(document).ready(function(){
                 break;
             case 'SkillsItem':
                 $('#resumeContent').empty();
-                let skills = ['JavaScript', 'jQuery', 'Bash', 'Unit Testing', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
-                'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Git' ];
+                let skills = ['JavaScript', 'jQuery', 'Bash', 'Git', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
+                'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Unit Testing' ];
                 $('#resumeContent').append(`<ul id="skillsGrid"></ul>`);
                 for(let i in skills) {
                     $('#skillsGrid').append(`<li>${skills[i]}</li>`)
