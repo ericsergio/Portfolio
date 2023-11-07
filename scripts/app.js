@@ -222,11 +222,23 @@ $(document).ready(function(){
                 break;
             case 'SkillsItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(``);
+                let skills = ['JavaScript', 'jQuery', 'Bash', 'Unit Testing', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
+                'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Git' ];
+                $('#resumeContent').append(`<ul id="skillsGrid"></ul>`);
+                for(let i in skills) {
+                    $('#skillsGrid').append(`<li>${skills[i]}</li>`)
+                };
+                $('#skillsGrid').css({
+                    'display':'grid',
+                    'list-style-type':'none',
+                    'gridTemplateColumns': '1fr 1fr 1fr 1fr',
+                    'gridColumnGap': '3%'
+                })
                 break;
             case 'AwardsItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(``);
+                $('#resumeContent').append(`<ul><li>Phi Theta Kappa</li><li>Magna Cum Laude</li><li>LinkedIn Skills Badge:Bash</li>
+                <li>LinkedIn Skills Badge:JavaScript</li><li>LinkedIn Skills Badge:Excel</li></ul>`);
                 break;
             case 'VolunteeringItem':
                 $('#resumeContent').empty();
