@@ -6,7 +6,7 @@ body{
 .fixedNav {
     position:fixed;
     height:12%;
-    background-color:#394961;
+    background-color:#1B7F79;
     color:#fff;
     width:100%;
     z-index: 2;
@@ -39,7 +39,7 @@ body{
     margin:10% 10% 10% 10%;
     height:70vh;
     width:75%;
-    background-color:#98BFFA;
+    background-color:#FF4858;
     /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
 }
 
@@ -64,7 +64,7 @@ body{
     margin:2% 0% 0% -10%;
     padding:10%;
     font-family: Georgia, serif;
-    color:#142033;
+    color:#ffffff;
    /*border:ridge 51px #173d47;
     background-color:rgb(22, 22, 20);
     border-radius: 470px;

@@ -106,7 +106,7 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#142033`,
+        'backgroundColor':`#747F7F`,
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
     
@@ -250,7 +250,7 @@ $(document).ready(function(){
         }
     })
     //examples page content
-    $('#pg3Div').append(`<div id='sqlProcOrders'><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></div>`).css('overflow-y','auto');
+    $('#pg3Div').append(`<div id='sqlProcOrders'><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></div>`);
     //projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
