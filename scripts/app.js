@@ -242,19 +242,15 @@ $(document).ready(function(){
                 break;
             case 'VolunteeringItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(``);
+                $('#resumeContent').append(`<h4>U6 Coed Soccer Coach - Mukilteo Cougars</h4><h4>Coursera Data Analytics Certificate Offered by Google (In Progress)</h4>`);
                 break;
             default:
                 console.log('default');
                 break;
         }
     })
-        
-    
-    
-
     //examples page content
-
+    $('#pg3Div').append(`<div id='sqlProcOrders'><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></div>`).css('overflow-y','auto');
     //projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
