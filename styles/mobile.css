@@ -49,6 +49,10 @@
         height:80%;
         width:90%;
         border:solid 1px rgb(103, 114, 102);
+        border-radius:0% 0% 0% 0%;
+    }
+
+    #pg1Div{
         border-radius:0% 65% 0% 0%;
     }
     #pg1List{
@@ -71,8 +75,14 @@
     #greeting2{        
         width:150%;
     }
-    #tempLinks{        
-        width:150%;
+
+    #pg2ListGrid{
+        grid-template-columns:.75fr;
+    }
+    .viewResume{
+        height:85vh;
+        width:60vw;
+        margin:0% 10% 20% 10%;
     }
 }
 

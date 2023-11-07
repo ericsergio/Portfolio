@@ -73,8 +73,8 @@ body{
 }
 
 #resumeImg{    
-    height:80%;
-    width:30%;
+    height:60%;
+    width:35%;
     margin:8vh 0vw 8vh 30vw;
 }
 
@@ -89,4 +89,20 @@ body{
     width:20vw;
     background-color:rgb(219, 219, 77);
     border:solid red 2px;
+}
+
+#pg2ListGrid{
+    display: grid;
+    grid-template-columns:.75fr .75fr;
+    width:60%;
+    list-style-type: none;
+}
+
+#pg2ListGrid li{
+    font: Helvetica;
+    font-size: 1.6em;
+}
+#resumeContent{
+    height:40%;
+    width:70%;
 }
