@@ -280,10 +280,12 @@ $(document).ready(function(){
             
         </li>`);
     }
-    $('#pg4Div').append(`<p id = 'tempDisclaimer'>These are temporary images and styling, my site is under construction and I am working on the functionality first 
-    and then will fix the general design. Also, the trivia application only works on a desktop right now and needs to be fixed.</p>`);
+    $('.pgContainer').append(`<p id = 'tempDisclaimer'>Some content is only temporary, Site is under construction, working on functionality first. 
+    Note: I am intentionally avoiding using wordpress/joomla templates and helper libraries (exception of jquery). Site is built from scratch</p>`);
     //
     //design page content
+
+
 });
 
 
