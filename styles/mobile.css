@@ -5,10 +5,10 @@
         top:72%;
         left:73%;
         z-index:7;
-        height:24vh;
+        height:22vh;
         width:25vw;
         border:solid black 2px;
-        font-size:.4em;
+        font-size:.5em;
         background-color: yellow;    
     }
     .fixedNav {
