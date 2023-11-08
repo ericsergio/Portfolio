@@ -6,7 +6,7 @@ body{
 .fixedNav {
     position:fixed;
     height:12%;
-    background-color:#1B7F79;
+    background-color:#878787;
     color:#fff;
     width:100%;
     z-index: 2;
@@ -35,11 +35,11 @@ body{
     left:25vw;
 }
 .pgContainer{
-    color:rgb(103, 114, 102);
+    color:#202022;
     margin:10% 10% 10% 10%;
     height:70vh;
     width:75%;
-    background-color:#FF4858;
+    background-color:#CACACA;
     /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
 }
 
@@ -64,7 +64,7 @@ body{
     margin:2% 0% 0% -10%;
     padding:10%;
     font-family: Georgia, serif;
-    color:#ffffff;
+    color:#202022;
    /*border:ridge 51px #173d47;
     background-color:rgb(22, 22, 20);
     border-radius: 470px;
@@ -72,11 +72,7 @@ body{
     border-left-color:rgb(44, 177, 200);*/
 }
 
-#resumeImg{    
-    height:60%;
-    width:35%;
-    margin:8vh 0vw 8vh 30vw;
-}
+
 
 #projGrid{
     display:grid;
@@ -91,21 +87,8 @@ body{
     border:solid red 2px;
 }
 
-#pg2ListGrid{
-    display: grid;
-    grid-template-columns:.75fr .75fr;
-    width:60%;
-    list-style-type: none;
-}
 
-#pg2ListGrid li{
-    font: Helvetica;
-    font-size: 1.6em;
-}
-#resumeContent{
-    height:40%;
-    width:70%;
-}
+
 
 #ordersProcImage {
     height:20%;
@@ -118,3 +101,121 @@ body{
     width:25%;
     overflow-y:auto;
 }
+
+#ordersProcImage {
+    position: absolute;
+    border: 2px solid black;
+    background-color: #fff;
+    width:20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: none;
+}
+
+/*-------------------------------------------------------------------Resume page styling*/
+
+/*This is the clickable section headers on the resume page that expand*/
+#pg2ListGrid{
+    position:absolute;
+    top:20%;
+    display: grid;    
+    grid-template-columns:1fr 1fr 1fr;
+    width:80%;
+    list-style-type: none;    
+}
+
+#pg2ListGrid li{
+    font: Helvetica;
+    font-size: 1.6em;
+    margin-bottom:5%;
+}
+
+#resumeImg{    
+    height:60%;
+    width:35%;
+    margin:8vh 0vw 8vh 30vw;
+}
+
+#resumeContent{
+    height:40%;
+    width:70%;
+}
+
+.resumeSections {
+    position:absolute;
+    top:50%;
+    left:20%;
+    width:40%;
+}
+
+#summaryDiv {
+
+}
+
+/*------*/
+
+#educationDiv {
+
+}
+
+#educationList1 {
+    
+}
+
+#educationList2 {
+
+}
+
+/*------*/
+
+#experienceDiv {
+
+}
+
+#experienceList1 {
+    position:absolute;
+    list-style-type:none;
+    top:0%;
+    right:32%;
+    width:35vw;
+    margin-bottom:8%;
+}
+
+#experienceList2 {
+    position:absolute;
+    list-style-type:none;
+    top:0%;
+    left:60%;
+    width:35vw;
+    margin-bottom:8%;
+}
+
+/*------*/
+
+#skillsDiv {
+
+}
+
+#skillsGrid {
+    display:grid;    
+    list-style-type:none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap:13%;
+}
+
+/*------*/
+
+#awardsDiv {
+
+}
+
+/*------*/
+
+#volunteeringDiv {
+
+}
+/*-------------------------------------------------------------------End Resume page styling*/
+/*-------------------------------------------------------------------Projects page styling*/
+#projGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/*-------------------------------------------------------------------End Projects page styling*/

@@ -6,7 +6,6 @@
     .fixedNav {
         position:fixed;
         height:10%;
-        background-color:#1B7F79;
         color:#fff;
         width:100%;
         z-index: 2;
@@ -84,6 +83,90 @@
         width:60vw;
         margin:0% 10% 20% 10%;
     }
+    /*-------------------------------------------------------------------Resume page styling*/
+
+/*This is the clickable section headers on the resume page that expand*/
+#pg2ListGrid{
+    display: grid;
+    grid-template-columns:1fr 1fr;    
+    width:80%;
+    list-style-type: none;
+    margin-left:2%;
+}
+
+#pg2ListGrid li{
+    font: Helvetica;
+    font-size: 1.6em;
+}
+
+#resumeImg{    
+    height:60%;
+    width:35%;
+    margin:8vh 0vw 8vh 30vw;
+}
+
+#resumeContent{
+    height:40%;
+    width:70%;
+}
+
+.resumeSections {
+    position:absolute;
+    top:50%;
+    left:10%;
+    width:80%;
+}
+
+#summaryContent {
+
+}
+
+/*------*/
+
+#educationDiv {
+
+}
+
+#educationList1 {
+    
+}
+
+#educationList2 {
+
+}
+
+/*------*/
+
+#experienceDiv {
+
+}
+
+/*------*/
+
+#skillsDiv {
+
+}
+
+#skillsGrid {
+    display:grid;    
+    list-style-type:none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:13%;
+}
+
+/*------*/
+
+#awardsDiv {
+
+}
+
+/*------*/
+
+#volunteeringDiv {
+
+}
+/*-------------------------------------------------------------------End Resume page styling*/
+
 }
 
 

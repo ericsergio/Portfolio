@@ -95,7 +95,10 @@ $(document).ready(function() {
             //using the ids the click runs the prototype on the clicked nav item and scrolls  
             //to the appropriate spot
             Navigation[[$(this).attr('id')]].scrollToPage();
-            $('#mainMenu').hide(100);
+            if(Orientation.ScreenOrientation.id < 1) {
+                $('#mainMenu').hide(100);
+            }
+            
         })
     })
     let pgHeight = window.innerHeight;    
@@ -106,7 +109,7 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#747F7F`,
+        'backgroundColor':`#00747C`,
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
     
@@ -134,7 +137,7 @@ $(document).ready(function() {
         'top':`${pgHeight * 2}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#000`
+        'backgroundColor':`#00747C`
     }).append(`
     <div id='pg3Div' class = 'pgContainer'>
         <h1>PAGE 3</h1>
@@ -162,7 +165,7 @@ $(document).ready(function() {
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#000`
+        'backgroundColor':`#00747C`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'>
         <h1>PAGE 5</h1>
@@ -206,43 +209,49 @@ $(document).ready(function(){
         switch($(this).attr('id')) {
             case 'SummaryItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<p id = "summaryContent">Prior bartender, bar manager, and recent software development BAS graduate, 
+                $('#resumeContent').append(`<div id = 'summaryDiv' class = 'resumeSections'><p>Prior bartender, bar manager, and recent software development BAS graduate, 
                 I am hoping to find a position where I can leverage my strong customer service background with the technical skills that I have 
-                gained through my recent BAS degree that is accompanied with many years of prior informal learning I pursued for fun.</p>`);
+                gained through my recent BAS degree that is accompanied with many years of prior informal learning I pursued for fun.</p></div>`);
                 break;
             case 'EducationItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<h4>Degree: Software Development BAS</h4><p>GPA:3.9</p><p>April 2021 - June 2023</p>
-                <h4>Web Application And Cloud Development ATA</h4><p>GPA:3.8</p><p>April 2018 - April 2021</p>`);
+                $('#resumeContent').append(`<div id = 'educationDiv' class = 'resumeSections'><ul id = 'educationList1'>Degree: Software Development BAS</ul><li>GPA:3.9</li><li>April 2021 - June 2023</li></ul>
+                <ul id = 'educationList2'>Web Application And Cloud Development ATA</ul><li>GPA:3.8</li><li>April 2018 - April 2021</li></ul></div>`);
                 break;
             case 'ExperienceItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<h4>Position: Software Engineer, Intern</h4><p>January 2023 - June 2023</p><p>Scrum master for a 4-person
-                developer team working on building a Unity game that helps people learn the Native American language, Ojibwe. </p>`);
+                $('#resumeContent').append(`<div id = 'experienceDiv' class = 'resumeSections'>
+                <ul id = 'experienceList1'>
+                    <li>Position: Software Engineer, Intern</li>
+                    <li>January 2023 - June 2023</li>
+                    <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe. </li>
+                </ul>
+                <ul id = 'experienceList2'>
+                    <li>Lead Bartender/Temporary Software Engineer Intern </li>
+                    <li>August 2005 - Present</li>
+                    <li>Became the lead bartender in 2018. In 2019, as the internship required to graduate with my associates degree, I proposed building a full stack
+                    web application to digitize the ordering process of all liquor, beer, and wine which was previously done using pen and paper. This</a href = 'pages/orders/index.html'> app </a>
+                    can be viewed via the projects page. </li>
+                </ul>`);
                 break;
             case 'SkillsItem':
                 $('#resumeContent').empty();
                 let skills = ['JavaScript', 'jQuery', 'Bash', 'Git', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
                 'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Unit Testing' ];
-                $('#resumeContent').append(`<ul id="skillsGrid"></ul>`);
+                $('#resumeContent').append(`<div id = 'skillsDiv' class = 'resumeSections'> <ul id="skillsGrid"></ul></div>`);
                 for(let i in skills) {
                     $('#skillsGrid').append(`<li>${skills[i]}</li>`)
                 };
-                $('#skillsGrid').css({
-                    'display':'grid',
-                    'list-style-type':'none',
-                    'gridTemplateColumns': '1fr 1fr 1fr 1fr',
-                    'gridColumnGap': '3%'
-                })
                 break;
             case 'AwardsItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<ul><li>Phi Theta Kappa</li><li>Magna Cum Laude</li><li>LinkedIn Skills Badge:Bash</li>
-                <li>LinkedIn Skills Badge:JavaScript</li><li>LinkedIn Skills Badge:Excel</li></ul>`);
+                $('#resumeContent').append(`<div id = 'awardsDiv' class = 'resumeSections'><ul><li>Phi Theta Kappa</li><li>Magna Cum Laude</li><li>LinkedIn Skills Badge:Bash</li>
+                <li>LinkedIn Skills Badge:JavaScript</li><li>LinkedIn Skills Badge:Excel</li></ul></div>`);
                 break;
             case 'VolunteeringItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<h4>U6 Coed Soccer Coach - Mukilteo Cougars</h4><h4>Coursera Data Analytics Certificate Offered by Google (In Progress)</h4>`);
+                $('#resumeContent').append(`<div id = 'volunteeringDiv' class = 'resumeSections'><h4>U6 Coed Soccer Coach - Mukilteo Cougars</h4>
+                <h4>Coursera Data Analytics Certificate Offered by Google (In Progress)</h4></div>`);
                 break;
             default:
                 console.log('default');
@@ -250,7 +259,11 @@ $(document).ready(function(){
         }
     })
     //examples page content
-    $('#pg3Div').append(`<div id='sqlProcOrders'><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></div>`);
+    $('#pg3Div').append(`<ul id='codeExampleList'><li><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></li></ul>`);
+    //---------------------------------------------//---------------------------------------------
+
+    
+    //---------------------------------------------//---------------------------------------------
     //projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
@@ -260,9 +273,7 @@ $(document).ready(function(){
             <div>
                 <a href='Pages/${projects[i]}/index.html'>${projects[i]}</a>
             </div>
-        </li>`).css({
-            'gridTemplateColumns': '1fr 1fr 1fr'
-        });
+        </li>`);
     }
     $('.projTiles').on('click', function(){
         console.log($(this).attr('id'))
@@ -270,4 +281,62 @@ $(document).ready(function(){
     //design page content
 });
 
+
+
+const exampleLandscapeZoom = () => {
+    $('#sqlProcOrders-magnifyingGlass').on('mouseenter', function() {
+        console.log($(this));
+    });
+
+/*    const magnifyingGlass = $('#ordersProcImage')[0];
+
+    magnifyingGlass.addEventListener('mouseover', (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        console.log("mousemove event fired");
+
+        const magnifyingGlassWidth = magnifyingGlass.offsetWidth;
+        const magnifyingGlassHeight = magnifyingGlass.offsetHeight;
+
+        // Position the magnifying glass at the mouse coordinates
+        magnifyingGlass.style.left = `${mouseX - magnifyingGlassWidth / 2}px`;
+        magnifyingGlass.style.top = `${mouseY - magnifyingGlassHeight / 2}px`;
+    });
+magnifyingGlass.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+  
+    const elementUnderMagnifyingGlass = document.elementFromPoint(event.clientX, event.clientY);
+  
+    if (elementUnderMagnifyingGlass) {
+      zoomIn(elementUnderMagnifyingGlass, event.clientX, event.clientY);
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+  const zoomedElements = document.querySelectorAll('[style^="transform: scale("]');
+
+
+  for (const element of zoomedElements) {
+    element.style.transform = '';
+  }
+});*/
+}
+
+
+function zoomIn(element, mouseX, mouseY) {
+    const elementWidth = element.offsetWidth;
+    const elementHeight = element.offsetHeight;
+  
+    const zoomFactorHeight = 3;
+    const zoomFactorWidth = 2;
+    const zoomedWidth = elementWidth * zoomFactorWidth;
+    const zoomedHeight = elementHeight * zoomFactorHeight;
+    console.log(`zoomedHeight: ${zoomedHeight} \n zoomedWidth:${zoomedWidth}`);
+  
+    const zoomedLeft = mouseX - zoomedWidth / 2;
+    const zoomedTop = mouseY - zoomedHeight / 2;
+  
+    console.log(`zoomedLeft: ${zoomedLeft} \n zoomed:${zoomedTop}`);
+    element.style.transform = `scale(${zoomFactorHeight}) translate(${zoomedLeft}px, ${zoomedTop}px)`;
+  }
 
