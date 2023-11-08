@@ -77,18 +77,32 @@ body{
 #projGrid{
     display:grid;
     list-style-type: none;
-    margin-top:25vh;
+    margin-top:15vh;
 }
 
-.projTiles{
+.projTiles{    
     height:20vh;
     width:20vw;
     background-color:rgb(219, 219, 77);
     border:solid red 2px;
+    margin-top:25vh;
 }
 
+#ordersImg {
+    position:relative;
+    height:20vh;
+    width:20vw;
+    
+}
+#ordersLink {
+    position:relative;
+    height:20vh;
+    width:20vw;
+}
 
-
+#tempDisclaimer {
+    font-size:.5em;
+}
 
 #ordersProcImage {
     height:20%;
@@ -110,6 +124,8 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: none;
 }
+
+
 
 /*-------------------------------------------------------------------Resume page styling*/
 

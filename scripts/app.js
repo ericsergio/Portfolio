@@ -272,14 +272,17 @@ $(document).ready(function(){
     for(let i in projects) {
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
-            <div>
-                <a href='Pages/${projects[i]}/index.html'>${projects[i]}</a>
-            </div>
+            
+            <a id = 'ordersLink' href='Pages/${projects[i]}/index.html'>
+                <img id="ordersImg" alt="ordersTile" src='assets/${projects[i]}Img.png' />
+                    </a>
+                </img>
+            
         </li>`);
     }
-    $('.projTiles').on('click', function(){
-        console.log($(this).attr('id'))
-    });
+    $('#pg4Div').append(`<p id = 'tempDisclaimer'>These are temporary images and styling, my site is under construction and I am working on the functionality first 
+    and then will fix the general design. Also, the trivia application only works on a desktop right now and needs to be fixed.</p>`);
+    //
     //design page content
 });
 
