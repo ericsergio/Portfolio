@@ -48,13 +48,7 @@ const doPortraitNav = () => {
     let tempCheckTop = 25;
     let tempCheckLeft = 25;
     $('#navBtn').on('click', function(){
-        $('#mainMenu').toggle(100);
-        $('#pg1').append(`<div id = 'tempCheck'></div>`).css({
-            'top':`${tempCheckTop}px`,
-            'left':`${tempCheckLeft}px`
-        });
-        tempCheckLeft += 25;
-        tempCheckTop += 25;
+        $('#mainMenu').toggle(100);        
     });
 }
 
