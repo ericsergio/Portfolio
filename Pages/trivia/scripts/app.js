@@ -241,7 +241,7 @@ function startGame() {
 		$('#vs').fadeOut(1000);
 		var countStart = 3;
 		var timer = setInterval(function() {
-			if(countStart === 0) {
+			if(countStart === 1) {
 				countStart = null;
 				//$('#selectedFirst').remove();
 				CurrentGame.gameInit.stage = 3;
