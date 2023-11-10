@@ -127,7 +127,7 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#fff`
     }).append(`
-    <div id='pg2Div' class = 'pgContainer'>
+    <div id='pg2Div' class = 'pgContainerE'>
         
     </div>`
     );
@@ -155,7 +155,7 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#fff`
     }).append(`
-    <div id='pg4Div' class = 'pgContainer'>
+    <div id='pg4Div' class = 'pgContainerE'>
         
     </div>`
     );
@@ -261,20 +261,28 @@ $(document).ready(function(){
         }
     })
     //examples page content
-    $('#pg3Div').append(`<ul id='codeExampleList'><li><img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/></li></ul>`);
-    //---------------------------------------------//---------------------------------------------
+    $('#pg3Div').append(`
+    <ul id='codeExampleList'>
+        <li>
+            <img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
+        </li>
+    </ul>
+    <div class = 'zoomedImg'></div>`
+    );
 
+
+    //---------------------------------------------//---------------------------------------------
     
     //---------------------------------------------//---------------------------------------------
     //projects page content
-    let projects = ['orders', 'tictactoe', 'trivia'];
+    let projects = ['orders', 'tictactoe', 'trivia', 'extra'];
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     for(let i in projects) {
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
             
-            <a id = 'ordersLink' href='Pages/${projects[i]}/index.html'>
-                <img id="ordersImg" alt="ordersTile" src='assets/${projects[i]}Img.png' />
+            <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>
+                <img id="${projects[i]}Img" class = "projTile" alt="ordersTile" src='assets/${projects[i]}Img.png' />
                     </a>
                 </img>
             
