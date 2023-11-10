@@ -18,6 +18,7 @@ const pages = ['about', 'resume', 'examples', 'projects', 'design'];
 
 
 
+
 const getOrientation = () => {
     return window.innerHeight / window.innerWidth > 1 ? 0 : 1
 };
@@ -38,6 +39,7 @@ $(window).on("resize load", function(event){
         $('#mainMenu').show(100);
         doLandscapeNav();
     }
+    
 });
 
 
@@ -58,10 +60,27 @@ const doLandscapeNav = () => {
 }
 
 Navigation.prototype.scrollToPage = function() {
+    const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
     window.scrollTo(0, this.scrollPos);
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
+    if(this.id === null) {
+        this.id = 0;
+    }    
+    $(`#${pgs[this.id]}`).css({
+        'position':`fixed`,
+        'top':'1px',
+        'z-index':6
+    }).siblings().not((`#${pgs[this.id]}`)).each(function() {
+    //$(`#${pgs}`).siblings().not((`#${pgs[this.id]}`)).each(function() {
+        $(this).css({
+            'position':`absolute`,
+            'z-index':2
+        });
+        //console.log(this)
+        //console.log($('.bodyContent').children())
+    });
 }
 
 //getters
@@ -99,10 +118,10 @@ $(document).ready(function() {
             Navigation[[$(this).attr('id')]].scrollToPage();
             if(Orientation.ScreenOrientation.id < 1) {
                 $('#mainMenu').hide(100);
-            }
+            };
             
-        })
-    })
+        });
+    });
     let pgHeight = window.innerHeight;    
     $('body').css('height', `${pgHeight * pages.length}px`)
 /****************************************************************************   About Page  **********/
@@ -179,6 +198,7 @@ $(document).ready(function() {
 
 //This function is where to add dynamic content to the pages
 $(document).ready(function(){
+    
     //about page content
     $('#pg1Div').append(`
     <ul id = 'pg1List'>
@@ -290,10 +310,7 @@ $(document).ready(function(){
     }
     $('.pgContainer').append(`<p id = 'tempDisclaimer'>Some content is only temporary, Site is under construction, working on functionality first. 
     Note: I am intentionally avoiding using wordpress/joomla templates and helper libraries (exception of jquery). Site is built from scratch</p>`);
-    //
     //design page content
-
-
 });
 
 
@@ -336,6 +353,7 @@ magnifyingGlass.addEventListener('mousedown', (event) => {
   }
 });*/
 }
+
 
 
 function zoomIn(element, mouseX, mouseY) {

@@ -57,6 +57,17 @@
         width:90%;
         border:solid 1px rgb(103, 114, 102);
         border-radius:0% 0% 0% 0%;
+        box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .pgContainerE{
+        color:#202022;
+        margin:12% 10% 10% 10%;
+        height:70vh;
+        width:75%;
+        background-color:#CACACA;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5);
+        /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
     }
 
     #pg1Div{
