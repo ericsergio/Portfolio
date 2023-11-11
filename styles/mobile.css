@@ -51,7 +51,7 @@
     }
     .pgContainer{
         color:rgb(103, 114, 102);
-        margin:20% 5%;
+        margin:25% 5% 0% 8%;
         height:80vh;
         width:90%;
         border:solid 1px rgb(103, 114, 102);
@@ -61,7 +61,7 @@
 
     .pgContainerE{
         color:#202022;
-        margin:12% 10% 10% 10%;
+        margin:25% 5% 0% 8%;
         height:70vh;
         width:75%;
         background-color:#CACACA;
@@ -94,9 +94,7 @@
         width:150%;
     }
 
-    #pg2ListGrid{
-        grid-template-columns:.75fr;
-    }
+
     /*xxxxxxxxxxx--------------------------------------------------------End about page styling*/
 
     /*-------------------------------------------------------------------Resume page styling*/
@@ -108,11 +106,26 @@
     }
 
 
-    /*This is the clickable section headers on the resume page that expand*/
+
     #pg2ListGrid{
+        position:relative;
+        top:7.5vh;
+        display: grid;    
+        grid-template-columns:1fr 1fr;
+        width:80%;
+        list-style-type: none;    
+    }
+    
+    #pg2ListGrid li{
+        font: Helvetica;
+        font-size: 1.6em;
+        margin-bottom:5%;
+    }
+    /*This is the clickable section headers on the resume page that expand*/
+    /*#pg2ListGrid{
         display: grid;
         grid-template-columns:1fr 1fr;    
-        width:80%;
+        width:80vw;
         list-style-type: none;
         margin-left:2%;
     }
@@ -120,7 +133,7 @@
     #pg2ListGrid li{
         font: Helvetica;
         font-size: 1.6em;
-    }
+    }*/
 
     #resumeImg{    
         height:60%;
@@ -129,15 +142,15 @@
     }
 
     #resumeContent{
-        height:40%;
-        width:70%;
+        height:40vh;
+        width:70vw;
     }
 
     .resumeSections {
         position:absolute;
-        top:50%;
-        left:10%;
-        width:80%;
+        top:50vh;
+        left:10vw;
+        width:80vw;
     }
 
 
@@ -164,6 +177,18 @@
 
     #experienceDiv {
 
+    }
+
+    #experienceList1 {
+        position: absolute;
+        top:-8vh;
+        left:-8vw;
+    }
+
+    #experienceList2 {
+        position: absolute;
+        top:-8vh;
+        left:28vw;
     }
 
     /*------*/
