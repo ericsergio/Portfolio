@@ -54,7 +54,7 @@ const doPortraitNav = () => {
     let tempCheckTop = 25;
     let tempCheckLeft = 25;
     $('#navBtn').on('click', function(){
-        $('#mainMenu').toggle(100);        
+        $('#mainMenu').toggle(300);        
     });
 }
 
@@ -223,10 +223,7 @@ $(document).ready(function(){
                 around C#, some of my strongest tech skills include JavaScript, Bash, SQL, jQuery, PHP, C#, GCP and Azure. I can adapt and learn new languages 
                 as needed. My site is under construction, please visit the projects section to view some of the projects I have built. 
             </p> 
-        <div id = "tempLinks">
-            Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
-            Tic Tac Toe:<a href="Pages/TicTacToe/index.html"> Tic Tac Toe</a><br>
-            Trivia:<a href="Pages/trivia/index.html">Trivia</a><br></div>
+
         <li id='pg1Item2'>
             <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
         </li>
@@ -236,9 +233,12 @@ $(document).ready(function(){
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Volunteering'];
     $('#pg2Div').append(`<ul id = 'pg2ListGrid'></ul><div id = "resumeContent"></div>`);
     for(let i in sections) {
-        $('#pg2ListGrid').append(`<li id = '${sections[i]}Item' class = 'resumeListItems'>${sections[i]}</li>`);        
+        $('#pg2ListGrid').append(`<li id = '${sections[i]}Item' class = 'resumeListItems'>${sections[i]}</li>`)
     }
-    $('.resumeListItems').append('<div class = "dropArrow"></div>');
+    for(let i in sections) {
+        $(`#${sections[i]}Item`).append(`<div id = '${sections[i]}Drop' class = "dropArrow"></div>`);
+    }
+    //$('.resumeListItems').append('<div class = "dropArrow"></div>');
     //$('#pg2ListGrid').after('<div id = "resumeContent"></div>');
     $('#pg2ListGrid li').on('click', function() {
         switch($(this).attr('id')) {
@@ -262,7 +262,7 @@ $(document).ready(function(){
                     <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe. </li>
                 </ul>
                 <ul id = 'experienceList2'>
-                    <li>Lead Bartender/Temporary Software Engineer Intern </li>
+                    <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
                     <li>August 2005 - Present</li>
                     <li>Became the lead bartender in 2018. In 2019, as the internship required to graduate with my associates degree, I proposed building a full stack
                     web application to digitize the ordering process of all liquor, beer, and wine which was previously done using pen and paper. This</a href = 'pages/orders/index.html'> app </a>
@@ -294,11 +294,32 @@ $(document).ready(function(){
         }
     })
     //examples page content
+    //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
+    //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>
     $('#pg3Div').append(`
+    <h5>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills using various languages. Unless
+    I make a note saying otherwise, everything included here is code that I originally wrote, I will point it out if there is code included that was from a colleague/team member.
+    These are only snippets, click on the heading to display each snippet.</h5>
     <ul id='codeExampleList'>
         <li>
-            <img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
+            Example SQL Procedure code snip
         </li>
+        <li>
+            PHP PDO Database Connectivity Code snip            
+        </li>
+        <li>
+            JavaScript classes, prototypes, 
+        </li>
+        <li>
+            Mongo DB REST API development
+        </li>
+        <li>
+            C# Unity User Interface development
+        </li>
+        <li>
+            Bash shell programming snippets
+        </li>
+
     </ul>
     <div class = 'zoomedImg'></div>`
     );
