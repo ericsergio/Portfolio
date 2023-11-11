@@ -85,6 +85,14 @@ Navigation.prototype.scrollToPage = function() {
         //console.log(this)
         //console.log($('.bodyContent').children())
     });
+    if(isLandscapeMode() === false) {
+        $(`#${pgs[this.id]}`).css({
+            'height':`${document.body.clientHeight + 100}px`
+            
+        }).siblings().not((`#${pgs[this.id]}`)).each(function() {
+        
+        });
+    }
 }
 
 //getters
