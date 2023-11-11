@@ -181,14 +181,14 @@
 
     #experienceList1 {
         position: absolute;
-        top:-8vh;
+        top:4vh;
         left:-8vw;
         width:75vw;
     }
 
     #experienceList2 {
         position: absolute;
-        top:10vh;
+        top:18vh;
         left:-8vw;
         width:75vw;
     }

@@ -236,8 +236,9 @@ $(document).ready(function(){
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Volunteering'];
     $('#pg2Div').append(`<ul id = 'pg2ListGrid'></ul><div id = "resumeContent"></div>`);
     for(let i in sections) {
-        $('#pg2ListGrid').append(`<li id = '${sections[i]}Item'>${sections[i]}</li>`);        
+        $('#pg2ListGrid').append(`<li id = '${sections[i]}Item' class = 'resumeListItems'>${sections[i]}</li>`);        
     }
+    $('.resumeListItems').append('<div class = "dropArrow"></div>');
     //$('#pg2ListGrid').after('<div id = "resumeContent"></div>');
     $('#pg2ListGrid li').on('click', function() {
         switch($(this).attr('id')) {
