@@ -11,15 +11,10 @@ class Navigation {
         this.name = name || null;
         this.scrollPos = scrollPos || null;
         this.setToggle = setToggle || 0;
-        if(this.setToggle === 1) {
-            setTimeout(resetToggle, 1000);
-        }
     }
 }
 
-const resetToggle = () => {
-    Navigation.current.setToggle = 0;
-}
+
 
 const pages = ['about', 'resume', 'examples', 'projects', 'design'];
 
@@ -61,8 +56,13 @@ const doPortraitNav = () => {
     let tempCheckTop = 25;
     let tempCheckLeft = 25;
     $('#navBtn').on('click', function(){
-        $('#mainMenu').toggle(300);
-        Navigation.current.setToggle = 1;
+        if(Navigation.current.setToggle === 0) {
+            $('#mainMenu').show(300);
+            Navigation.current.setToggle = 1;
+        } else {
+            $('#mainMenu').hide(300);
+            Navigation.current.setToggle = 0;
+        }
     });
 }
 
