@@ -70,6 +70,7 @@
         /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
     }
 
+    /*-------------------------------------------------------------------about page styling*/
     #pg1Div{
         border-radius:0% 65% 0% 0%;
     }
@@ -97,101 +98,112 @@
     #pg2ListGrid{
         grid-template-columns:.75fr;
     }
+    /*xxxxxxxxxxx--------------------------------------------------------End about page styling*/
+
+    /*-------------------------------------------------------------------Resume page styling*/
+    
     .viewResume{
         height:85vh;
         width:60vw;
         margin:0% 10% 20% 10%;
     }
-    /*-------------------------------------------------------------------Resume page styling*/
 
-/*This is the clickable section headers on the resume page that expand*/
-#pg2ListGrid{
-    display: grid;
-    grid-template-columns:1fr 1fr;    
-    width:80%;
-    list-style-type: none;
-    margin-left:2%;
-}
 
-#pg2ListGrid li{
-    font: Helvetica;
-    font-size: 1.6em;
-}
+    /*This is the clickable section headers on the resume page that expand*/
+    #pg2ListGrid{
+        display: grid;
+        grid-template-columns:1fr 1fr;    
+        width:80%;
+        list-style-type: none;
+        margin-left:2%;
+    }
 
-#resumeImg{    
-    height:60%;
-    width:35%;
-    margin:8vh 0vw 8vh 30vw;
-}
+    #pg2ListGrid li{
+        font: Helvetica;
+        font-size: 1.6em;
+    }
 
-#resumeContent{
-    height:40%;
-    width:70%;
-}
+    #resumeImg{    
+        height:60%;
+        width:35%;
+        margin:8vh 0vw 8vh 30vw;
+    }
 
-.resumeSections {
-    position:absolute;
-    top:50%;
-    left:10%;
-    width:80%;
-}
+    #resumeContent{
+        height:40%;
+        width:70%;
+    }
 
-.projTiles{    
-    height:20vh;
-    width:20vw;
-    margin-top:5vh;
-}
+    .resumeSections {
+        position:absolute;
+        top:50%;
+        left:10%;
+        width:80%;
+    }
 
-#summaryContent {
 
-}
 
-/*------*/
+    #summaryContent {
 
-#educationDiv {
+    }
 
-}
+    /*------*/
 
-#educationList1 {
-    
-}
+    #educationDiv {
 
-#educationList2 {
+    }
 
-}
+    #educationList1 {
 
-/*------*/
+    }
 
-#experienceDiv {
+    #educationList2 {
 
-}
+    }
 
-/*------*/
+    /*------*/
 
-#skillsDiv {
+    #experienceDiv {
 
-}
+    }
 
-#skillsGrid {
-    display:grid;    
-    list-style-type:none;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap:13%;
-}
+    /*------*/
 
-/*------*/
+    #skillsDiv {
 
-#awardsDiv {
+    }
 
-}
+    #skillsGrid {
+        display:grid;    
+        list-style-type:none;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap:13%;
+    }
 
-/*------*/
+    /*------*/
 
-#volunteeringDiv {
+    #awardsDiv {
 
-}
-/*-------------------------------------------------------------------End Resume page styling*/
+    }
 
+    /*------*/
+
+    #volunteeringDiv {
+
+    }
+    /*xxxxxxxxxxx---------------------------------------------------------End Resume page styling*/
+
+
+    /*-------------------------------------------------------------------Projects page styling*/
+    .projTiles{    
+        height:20vh;
+        width:20vw;
+        margin-top:15vh;
+    }
+    /*xxxxxxxxxxx--------------------------------------------------------End Project page styling*/
+
+    /*-------------------------------------------------------------------example page styling*/
+    /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
 
 }
 
