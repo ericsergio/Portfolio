@@ -55,15 +55,17 @@ const doPortraitNav = () => {
     $('#mainMenu').css('gridTemplateColumns', '1fr');
     let tempCheckTop = 25;
     let tempCheckLeft = 25;
-    $('#navBtn').on('click', function(){
-        if(Navigation.current.setToggle === 0) {
-            $('#mainMenu').show(300);
+    if(Navigation.current.setToggle === 0) {
+        $('#navBtn').on('click', function() {
             Navigation.current.setToggle = 1;
-        } else {
-            $('#mainMenu').hide(300);
+            $('#mainMenu').show(300);            
+        });
+    } else {
+        $('#navBtn').on('click', function() {
             Navigation.current.setToggle = 0;
-        }
-    });
+            $('#mainMenu').hide(300);            
+        });
+    }
 }
 
 const doLandscapeNav = () => {
