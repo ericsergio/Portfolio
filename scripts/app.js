@@ -23,6 +23,10 @@ const getOrientation = () => {
     return window.innerHeight / window.innerWidth > 1 ? 0 : 1
 };
 
+const isLandscapeMode = () => {
+    return getOrientation() === 1;
+}
+
 Navigation.current = new Navigation();
 
 $(window).on("resize load", function(event){
@@ -208,8 +212,8 @@ $(document).ready(function(){
             </p>
             <p id = "greeting2"> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
                 ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
-                around C#, and my strongest tech skills include JavaScript, Bash, MySQL, jQuery, PHP, GCP and Azure. I can adapt and learn new languages 
-                as needed. My site is under construction, below are temporary links to a few of my projects.
+                around C#, some of my strongest tech skills include JavaScript, Bash, SQL, jQuery, PHP, C#, GCP and Azure. I can adapt and learn new languages 
+                as needed. My site is under construction, please visit the projects section to view some of the projects I have built. 
             </p> 
         <div id = "tempLinks">
             Inventory Management:<a href="Pages/orders/index.html">Inventory Management</a><br>
@@ -295,19 +299,20 @@ $(document).ready(function(){
     
     //---------------------------------------------//---------------------------------------------
     //projects page content
-    let projects = ['orders', 'tictactoe', 'trivia', 'extra'];
+    let projects = ['orders', 'tictactoe', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     for(let i in projects) {
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
             
             <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>
-                <img id="${projects[i]}Img" class = "projTile" alt="ordersTile" src='assets/${projects[i]}Img.png' />
+                <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
                 </img>
             
         </li>`);
     }
+
     $('.pgContainer').append(`<p id = 'tempDisclaimer'>Some content is only temporary, Site is under construction, working on functionality first. 
     Note: I am intentionally avoiding using wordpress/joomla templates and helper libraries (exception of jquery). Site is built from scratch</p>`);
     //design page content

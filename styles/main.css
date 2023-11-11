@@ -68,27 +68,7 @@ body{
 
 
 
-#projGrid{
-    display:grid;
-    list-style-type: none;
-    margin:15% 2% 0% 2%;
-}
 
-.projTiles{        
-    margin-top:25vh;    
-}
-
-.projTile {
-    position:relative;
-    height:20vh;
-    width:13vw;
-    
-}
-#ordersLink {
-    position:relative;
-    height:20vh;
-    width:20vw;
-}
 
 
 
@@ -259,8 +239,29 @@ body{
 /*-------------------------------------------------------------------Projects page styling*/
 
 #projGrid{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
+#projGrid{
+    display:grid;
+    list-style-type: none;
+    margin:15% 2% 0% 2%;
+}
+
+.projTiles{        
+    margin-top:25vh;    
+}
+
+.projTile {
+    position:relative;
+    height:20vh;
+    width:13vw;
+    
+}
+#ordersLink {
+    position:relative;
+    height:20vh;
+    width:20vw;
+}
 
 /*-------------------------------------------------------------------End Projects page styling*/
