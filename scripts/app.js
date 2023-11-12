@@ -39,13 +39,11 @@ $(window).on("resize load", function(event){
     if(Orientation.ScreenOrientation.id < 1) {
         doPortraitNav();
         $('#mainMenu').hide();
-        
     } else {
         //when the viewport is in landscape mode
         $('#mainMenu').show(100);
         doLandscapeNav();
     }
-    
 });
 
 
@@ -53,8 +51,6 @@ $(window).on("resize load", function(event){
 const doPortraitNav = () => {
     $('#navBtn').show();
     $('#mainMenu').css('gridTemplateColumns', '1fr');
-    let tempCheckTop = 25;
-    let tempCheckLeft = 25;
     if(Navigation.current.setToggle === 0) {
         $('#navBtn').on('click', function() {
             Navigation.current.setToggle = 1;
@@ -183,7 +179,7 @@ $(document).ready(function() {
         'backgroundColor':`#00747C`
     }).append(`
     <div id='pg3Div' class = 'pgContainer'>
-        <h1>PAGE 3</h1>
+        
     </div>`
     );
     
@@ -211,7 +207,7 @@ $(document).ready(function() {
         'backgroundColor':`#00747C`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'>
-        <h1>PAGE 5</h1>
+        
     </div>`
     );
     
@@ -307,33 +303,42 @@ $(document).ready(function(){
     //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
     //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>
     $('#pg3Div').append(`
-    <h5>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills using various languages. Unless
+    <h5 id = 'exampleDescription'>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills using various languages. Unless
     I make a note saying otherwise, everything included here is code that I originally wrote, I will point it out if there is code included that was from a colleague/team member.
     These are only snippets, click on the heading to display each snippet.</h5>
     <ul id='codeExampleList'>
-        <li>
-            Example SQL Procedure code snip
+        <li id = 'codeExample0'>
+            Example orders SQL Procedure code snippet
         </li>
-        <li>
-            PHP PDO Database Connectivity Code snip            
+        <li id = 'codeExample1'>
+            Example trivia SQL Procedure code snippet
         </li>
-        <li>
-            JavaScript classes, prototypes, 
+        <li id = 'codeExample2'>
+            JavaScript to PHP workflow example            
         </li>
-        <li>
-            Mongo DB REST API development
-        </li>
-        <li>
+        <li id = 'codeExample3'>
             C# Unity User Interface development
         </li>
-        <li>
-            Bash shell programming snippets
+        <li id = 'codeExample4'>
+            Mongo DB REST API development
+        </li>
+        <li id = 'codeExample5'>
+            Bash shell programming and Docker snippets
         </li>
 
     </ul>
-    <div class = 'zoomedImg'></div>`
+    <div class = 'selectedImg'></div>`
     );
-
+    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
+    $('#codeExampleList li').append(`<div class = 'dropArrow' class = "dropArrow"></div>`);
+    $('#codeExampleList li').each(function() {
+        $(this).on('click', function() {
+            let idx = Number($(this).attr('id').substr(-1, 1));
+            $('.selectedImg').empty();
+            $('.selectedImg').append(`<div id = 'currentExampleImgDiv'><img alt = '${examples[idx]} image' src='assets/${examples[idx]}.png' /></div>`)
+        });
+        
+    });
 
     //---------------------------------------------//---------------------------------------------
     
@@ -353,8 +358,8 @@ $(document).ready(function(){
         </li>`);
     }
 
-    $('.pgContainer').append(`<p id = 'tempDisclaimer'>Some content is only temporary, Site is under construction, working on functionality first. 
-    Note: I am intentionally avoiding using wordpress/joomla templates and helper libraries (exception of jquery). Site is built from scratch</p>`);
+    $('.pgContainer').append(`<p id = 'tempDisclaimer'> Site is under construction. <br>
+    Note: I am intentionally avoiding using wordpress/joomla templates and/or helper libraries with the exception of jquery, otherwise the site is built from scratch</p>`);
     //design page content
 });
 

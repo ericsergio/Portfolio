@@ -229,6 +229,23 @@
     /*xxxxxxxxxxx--------------------------------------------------------End Project page styling*/
 
     /*-------------------------------------------------------------------example page styling*/
+
+    
+    #exampleDescription {
+        font-size:.7em;
+    }
+    
+    .selectedImg img{
+        position:absolute;
+        top:50vh;
+        left:7vw;
+        height:40vh;
+        width:80vw;
+    }
+
+    #codeExampleList li {
+        width:72vw;
+    }
     /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
 
 }
