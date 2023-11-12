@@ -254,8 +254,7 @@ body{
 /*xxxxxxxxxxxx-------------------------------------------------------End Resume page styling*/
 
 /*-------------------------------------------------------------------example page styling*/
-#exampleDescription {
-    border:solid red 2px;
+#exampleDescription {    
     padding:0% 4% 0% 4%;
 }
 

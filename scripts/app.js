@@ -303,9 +303,8 @@ $(document).ready(function(){
     //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
     //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>
     $('#pg3Div').append(`
-    <h5 id = 'exampleDescription'>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills using various languages. Unless
-    I make a note saying otherwise, everything included here is code that I originally wrote, I will point it out if there is code included that was from a colleague/team member.
-    These are only snippets, click on the heading to display each snippet.</h5>
+    <h5 id = 'exampleDescription'>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills
+     using various languages. Unless I make a note saying otherwise, everything included here is code that I originally wrote, Click on the heading to display each example snippet.</h5>
     <ul id='codeExampleList'>
         <li id = 'codeExample0'>
             Example orders SQL Procedure code snippet
