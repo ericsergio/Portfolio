@@ -238,9 +238,9 @@
     .selectedImg img{
         position:absolute;
         top:50vh;
-        left:7vw;
-        height:40vh;
-        width:80vw;
+        left:13vw;
+        height:20vh;
+        width:60vw;
     }
 
     #codeExampleList li {
