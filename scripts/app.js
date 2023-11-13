@@ -44,6 +44,7 @@ $(window).on("resize load", function(event){
         $('#mainMenu').show(100);
         doLandscapeNav();
     }
+    
 });
 
 
@@ -93,7 +94,7 @@ Navigation.prototype.scrollToPage = function() {
     });
     if(isLandscapeMode() === false) {
         $(`#${pgs[this.id]}`).css({
-            'height':`${document.body.clientHeight + 100}px`
+            'height':`${document.body.clientHeight + 500}px`
             
         }).siblings().not((`#${pgs[this.id]}`)).each(function() {
         
@@ -144,11 +145,12 @@ $(document).ready(function() {
     $('body').css('height', `${pgHeight * pages.length}px`)
 /****************************************************************************   About Page  **********/
     $('#pg1').css({
-        'position':`absolute`,
+        'position':`fixed`,
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#00747C`,
+        'z-index':6
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
     
