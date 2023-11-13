@@ -359,7 +359,7 @@ $(document).ready(function(){
         </li>`);
     }
 
-    $('.pgContainer').append(`<p id = 'tempDisclaimer'> Site is under construction. <br>
+    $('#pg1').append(`<p id = 'tempDisclaimer'> Site is under construction. <br>
     Note: I am intentionally avoiding using wordpress/joomla templates and/or helper libraries with the exception of jquery, otherwise the site is built from scratch</p>`);
     //design page content
 });
