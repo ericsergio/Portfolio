@@ -149,7 +149,7 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#00747C`,
+        'backgroundColor':`#fff`,
         'z-index':6
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
@@ -178,7 +178,7 @@ $(document).ready(function() {
         'top':`${pgHeight * 2}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#00747C`
+        'backgroundColor':`#fff`
     }).append(`
     <div id='pg3Div' class = 'pgContainer'>
         
@@ -206,7 +206,7 @@ $(document).ready(function() {
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#00747C`
+        'backgroundColor':`#fff`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'>
         
@@ -229,7 +229,7 @@ $(document).ready(function(){
             <p id = "greeting2"> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
                 ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
                 around C#, some of my strongest tech skills include JavaScript, Node, Bash, SQL, jQuery, PHP, C#, GCP and Azure.  I can adapt and learn new languages 
-                as needed.                 
+                as needed. I am currently learning Python and am enrolled in the Google Data Analytics professional certificate course.
             </p> 
             <p>My site is under construction, please visit the projects section to view some of the projects I have built.</p> 
 
