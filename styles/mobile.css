@@ -5,7 +5,7 @@
         position:fixed;
         height:10%;
         color:#fff;
-        width:100%;        
+        width:100%;
     }
     
     #mainMenu{
@@ -62,6 +62,28 @@
     #pg1Div{
         border-radius:0% 65% 0% 0%;
     }
+    /*#lineDesignVertical {
+        position:absolute;
+        top:0vh;
+        left:80vw;
+        height:80vh;
+        width:5vw;
+        background-color: none; 
+        border-right:ridge yellow 5px;
+        z-index: -1;
+        opacity:1;
+    }
+    #lineDesignHorizontal {
+        position:absolute;
+        top:20vh;
+        left:0vw;
+        height:5vh;
+        width:100vw;
+        background-color: none;
+        border-top: ridge yellow 5px;
+        z-index: -1;
+        opacity:1;
+    }*/
     #pg1List{
         display:grid;
         list-style-type: none;

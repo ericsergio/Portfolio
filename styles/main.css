@@ -5,13 +5,55 @@ body{
 
 }
 
+.vLines li{
+    position: absolute;
+    top:0px;
+    width:0px;
+    height:100vh;
+    border-right:ridge rgb(65, 65, 49) 5px;
+    z-index: -1;
+}
+
+.hLines li{
+    position: absolute;
+    left:0px;
+    width:100vw;
+    height:0vh;
+    border-top:ridge rgb(229, 226, 221) 5px;    
+    z-index: -1;    
+}
+
+/*#lineDesignVertical {
+    position:absolute;
+    top:0vh;
+    left:87vw;
+    height:100vh;
+    width:5vw;
+    background-color: none; 
+    border-right:ridge yellow 5px;
+    border-left:ridge yellow 50px;
+    z-index: -1;
+    opacity:1;
+}
+#lineDesignHorizontal {
+    position:absolute;
+    top:28vh;
+    left:0vw;
+    height:5vh;
+    width:100vw;
+    background-color: none;
+    border-top: ridge yellow 24px;
+    z-index: -1;
+    opacity:1;
+}*/
+
 .fixedNav {
     position:fixed;
     height:12%;
     background-color:#878787;
     color:#fff;
     width:100%;
-    z-index: 7;
+    z-index: 6;
 }
 
 #mainMenu{

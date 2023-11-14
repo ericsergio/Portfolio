@@ -51,7 +51,7 @@ $(window).on("resize load", function(event){
 
 const doPortraitNav = () => {
     $('#navBtn').show();
-    $('#mainMenu').css('gridTemplateColumns', '1fr');
+    $('#mainMenu').css('gridTemplateColumns', '1fr');    
     if(Navigation.current.setToggle === 0) {
         $('#navBtn').on('click', function() {
             Navigation.current.setToggle = 1;
@@ -63,6 +63,7 @@ const doPortraitNav = () => {
             $('#mainMenu').hide(300);            
         });
     }
+
 }
 
 const doLandscapeNav = () => {
@@ -72,17 +73,19 @@ const doLandscapeNav = () => {
 
 Navigation.prototype.scrollToPage = function() {
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
+    let prevPage = pgs[Navigation.current.id];
     window.scrollTo(0, this.scrollPos);
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
+    designSite(pgs[this.id]);
     if(this.id === null) {
         this.id = 0;
     }    
     $(`#${pgs[this.id]}`).css({
         'position':`fixed`,
         'top':'1px',
-        'z-index':6
+        'z-index':5
     }).siblings().not((`#${pgs[this.id]}`)).each(function() {
     //$(`#${pgs}`).siblings().not((`#${pgs[this.id]}`)).each(function() {
         $(this).css({
@@ -100,6 +103,32 @@ Navigation.prototype.scrollToPage = function() {
         
         });
     }
+}
+
+const designSite = (page) => {
+    let rnd10 = Math.floor(Math.random() * 6) + 3;
+    $(`#${page}`).find($('.vLines')).remove();
+    $(`#${page}`).append(`<ul class = 'vLines'></ul>`);
+    $(`#${page}`).find($('.hLines')).remove();
+    $(`#${page}`).append(`<ul class = 'hLines'></ul>`);
+    for(let i = 0;i<=rnd10;i++) {
+        $('.vLines').append(`<li id = 'vLine${i}'></li>`)
+    }
+    for(let i = 0;i<=rnd10;i++) {
+        $('.hLines').append(`<li id = 'hLine${i}'></li>`)
+    }
+    $('.vLines').children().each(function() {        
+        $(this).css({
+            'left':`${Math.floor(Math.random() * document.body.clientWidth)}px`,
+            'borderRightWidth':`${Math.floor(Math.random() * 40)}px`
+        })
+    });
+    $('.hLines').children().each(function() {        
+        $(this).css({
+            'top':`${Math.floor(Math.random() * 100)}vh`,
+            'borderTopWidth':`${Math.floor(Math.random() * 40)}px`            
+        })
+    });
 }
 
 //getters
@@ -150,7 +179,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#fff`,
-        'z-index':6
+        'z-index':5
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
     
@@ -455,11 +484,13 @@ function zoomIn(element, mouseX, mouseY) {
 
 
 
-       /*$( "img#ordersImg.projTile" ).hover(
-            function() {
-              $( this ).append( $( "<span> ***</span>" ) );
-            }, function() {
-              $( this ).find( "span" ).last().remove();
-            }
-          );
-        */
+/*$( "img#ordersImg.projTile" ).hover(
+    function() {/
+      $( this )./append( $( "<span> ***</span>" ) );
+    }, function() {/
+      $( this ).fin/d( "span" ).last().remove();
+    }/
+  );/
+*/
+
+
