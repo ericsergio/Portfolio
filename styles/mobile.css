@@ -1,16 +1,6 @@
 /* iPhone portrait */
 @media only screen and (orientation: portrait) {
-    #tempDisclaimer {
-        position: absolute;
-        top:72%;
-        left:73%;
-        z-index:7;
-        height:16vh;
-        width:25vw;
-        border:solid black 2px;
-        font-size:.5em;
-        background-color: yellow;    
-    }
+
     .fixedNav {
         position:fixed;
         height:10%;
@@ -34,7 +24,6 @@
     }
 
     #mainMenu li {
-        /*background-color: #ffffff;*/
         width:80%;        
         color:#000;
         padding:2% 12% 2% 2%;

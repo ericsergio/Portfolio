@@ -5,19 +5,6 @@ body{
 
 }
 
-#tempDisclaimer {
-    position: absolute;
-    top:83vh;
-    left:84%;
-    z-index:7;
-    height:12vh;
-    width:15vw;
-    border:solid black 2px;
-    font-size:.7em;
-    background-color: yellow;
-}
-
-
 .fixedNav {
     position:fixed;
     height:12%;

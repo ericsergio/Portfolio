@@ -387,8 +387,6 @@ $(document).ready(function(){
             }
         });
     }
-    $('#pg1').append(`<p id = 'tempDisclaimer'> Site is under construction. <br>
-    Note*** Site is built from scratch. With the exception of jQuery, I am avoiding templates and helper libraries</p>`);
     //design page content
 });
 
