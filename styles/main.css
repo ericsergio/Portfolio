@@ -11,6 +11,7 @@ body{
     width:0px;
     height:100vh;
     border-right:ridge rgb(65, 65, 49) 5px;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
 
@@ -19,7 +20,8 @@ body{
     left:0px;
     width:100vw;
     height:0vh;
-    border-top:ridge rgb(229, 226, 221) 5px;    
+    border-top:ridge rgb(229, 226, 221) 5px;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     z-index: -1;    
 }
 
