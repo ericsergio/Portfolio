@@ -316,12 +316,15 @@ body{
     position:relative;
     height:20vh;
     width:13vw;
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius:25%;
 }
 #ordersLink {
     position:relative;
     height:20vh;
     width:20vw;
 }
+
+
 
 /*xxxxxxxxxxxxx------------------------------------------------------End Projects page styling*/

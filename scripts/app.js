@@ -228,9 +228,10 @@ $(document).ready(function(){
             </p>
             <p id = "greeting2"> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
                 ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
-                around C#, some of my strongest tech skills include JavaScript, Bash, SQL, jQuery, PHP, C#, GCP and Azure. I can adapt and learn new languages 
-                as needed. My site is under construction, please visit the projects section to view some of the projects I have built. 
+                around C#, some of my strongest tech skills include JavaScript, Node, Bash, SQL, jQuery, PHP, C#, GCP and Azure.  I can adapt and learn new languages 
+                as needed.                 
             </p> 
+            <p>My site is under construction, please visit the projects section to view some of the projects I have built.</p> 
 
         <li id='pg1Item2'>
             <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
@@ -355,14 +356,43 @@ $(document).ready(function(){
                 <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
                 </img>
-            
         </li>`);
     }
-
+    if(Orientation.ScreenOrientation.id < 1) {
+        //$('a#triviaLink').preventDefault();
+        let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
+        let leftValue = $('#trivia_proj')[0].getBoundingClientRect().left;
+        console.log(`top:${topValue} | left: ${leftValue}`);
+        $('#triviaLink').before(`<div id = 'triviaBlock'></div>`);
+        $('#triviaBlock').css({    
+            'position':`absolute`,
+            'height':`200px`,
+            'width':`100px`,
+            'backgroundColor':`none`,
+            'z-index':`7`
+        }).on('click', function() {
+            if($('#triviaErr').text().length === 0) {
+                $('#pg4Div').append(`<div id='triviaErr'><p>I apologize but it appears that you are on a mobile device 
+                and the Trivia project has been problematic on mobile devices. I am working to fix this, in the meantime though, 
+                please view the trivia project from a desktop.</p></div>`);
+                $('#triviaErr').css({
+                    'position':`absolute`,
+                    'top':`18vh`,                
+                    'right':`22vw`,
+                    'width':`40vw`,
+                    'height':`16vh`
+                });
+            } else {
+                $('#triviaErr').remove();
+            }
+        });
+    }
     $('#pg1').append(`<p id = 'tempDisclaimer'> Site is under construction. <br>
-    Note: I am intentionally avoiding using wordpress/joomla templates and/or helper libraries with the exception of jquery, otherwise the site is built from scratch</p>`);
+    Note*** Site is built from scratch. With the exception of jQuery, I am avoiding templates and helper libraries</p>`);
     //design page content
 });
+
+
 
 
 
@@ -406,7 +436,7 @@ magnifyingGlass.addEventListener('mousedown', (event) => {
 }
 
 
-
+/*
 function zoomIn(element, mouseX, mouseY) {
     const elementWidth = element.offsetWidth;
     const elementHeight = element.offsetHeight;
@@ -423,4 +453,15 @@ function zoomIn(element, mouseX, mouseY) {
     console.log(`zoomedLeft: ${zoomedLeft} \n zoomed:${zoomedTop}`);
     element.style.transform = `scale(${zoomFactorHeight}) translate(${zoomedLeft}px, ${zoomedTop}px)`;
   }
+*/
 
+
+
+       /*$( "img#ordersImg.projTile" ).hover(
+            function() {
+              $( this ).append( $( "<span> ***</span>" ) );
+            }, function() {
+              $( this ).find( "span" ).last().remove();
+            }
+          );
+        */
