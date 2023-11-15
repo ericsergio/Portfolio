@@ -53,14 +53,14 @@ const doPortraitNav = () => {
     $('#navBtn').show();
     $('#mainMenu').css('gridTemplateColumns', '1fr');    
     if(Navigation.current.setToggle === 0) {
-        $('#navBtn').on('click', function() {
+        $('#navBtn').on('click', function() {            
+            $('#mainMenu').show(300);
             Navigation.current.setToggle = 1;
-            $('#mainMenu').show(300);            
         });
     } else {
-        $('#navBtn').on('click', function() {
+        $('#navBtn').on('click', function() {            
+            $('#mainMenu').hide(300);
             Navigation.current.setToggle = 0;
-            $('#mainMenu').hide(300);            
         });
     }
 
