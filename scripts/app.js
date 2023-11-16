@@ -38,10 +38,10 @@ $(window).on("resize load", function(event){
     //when the viewport is in Portrait mode
     if(Orientation.ScreenOrientation.id < 1) {
         doPortraitNav();
-        //$('#mainMenu').hide();
+        $('#mainMenu').hide();
     } else {
         //when the viewport is in landscape mode
-        //$('#mainMenu').show(100);
+        $('#mainMenu').show(100);
         doLandscapeNav();
     }
     
@@ -54,15 +54,16 @@ const doPortraitNav = () => {
     $('#mainMenu').css('gridTemplateColumns', '1fr');    
     if(Navigation.current.setToggle === 0) {
         $('#navBtn').on('click', function() {            
-            $('#mainMenu').show(300);
-            Navigation.current.setToggle = 1;
+            $('#mainMenu').toggle(300);
+            //Navigation.current.setToggle = 1;
         });
-    } else {
-        $('#navBtn').on('click', function() {            
+    } /*else {
+        $('#navBtn').on('click', function() {    
+            console.log("one two three")        
             $('#mainMenu').hide(300);
             Navigation.current.setToggle = 0;
         });
-    }
+    }*/
 
 }
 
