@@ -77,7 +77,7 @@ Navigation.prototype.scrollToPage = function() {
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
-    designSite(pgs[this.id]);
+    //designSite(pgs[this.id]);
     if(this.id === null) {
         this.id = 0;
     }    
