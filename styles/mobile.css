@@ -276,13 +276,18 @@
     /*-------------------------------------------------------------------contact page styling*/
     .contactGrid{
         display:grid;
+        position:fixed;
+        top:1vh;
+        left:65vw;
+        width:20vw;
         grid-template-columns: 1fr 1fr 1fr;
         list-style-type:none;
+        z-index: 7;
     }
-
+    
     .contactGrid > li > a > img {
-        height:15vh;
-        width:20vw;
+        height:8vh;
+        width:12vw;
     }
 
 

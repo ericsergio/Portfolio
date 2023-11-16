@@ -195,7 +195,7 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#fff`
     }).append(`
-    <div id='pg2Div' class = 'pgContainerE'>
+    <div id='pg2Div' class = 'pgContainer'>
         
     </div>`
     );
@@ -223,7 +223,7 @@ $(document).ready(function() {
         'width':`100%`,
         'backgroundColor':`#fff`
     }).append(`
-    <div id='pg4Div' class = 'pgContainerE'>
+    <div id='pg4Div' class = 'pgContainer'>
         
     </div>`
     );
@@ -247,7 +247,17 @@ $(document).ready(function() {
 
 //This function is where to add dynamic content to the pages
 $(document).ready(function(){
-    
+    $('.pgContainer').append(`<div class = 'contactGrid'></div>`);
+    let contactItems = ['mailIcon', 'githubIcon', 'linkedInIcon'];
+    let contactHrefs = ['mailto:ericdsergio87@icloud.com','https://github.com/ericsergio','https://linkedin.com/in/ericsergio']
+    for(let i in contactItems) {
+        $('.contactGrid').append(`
+        <li id = ${contactItems[i]}>
+            <a href = '${contactHrefs[i]}'>
+                <img src = 'assets/icons/${contactItems[i]}.png' alt = '${contactItems[i]} icon png'>
+            </a>
+        </li>`)
+    }
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
     <ul id = 'pg1List'>
@@ -417,16 +427,7 @@ $(document).ready(function(){
         });
     }
     //*********************************************************************************************** design page content
-    /*let contactItems = ['mailIcon', 'githubIcon', 'linkedInIcon'];
-    let contactHrefs = ['mailto:ericdsergio87@icloud.com','https://github.com/ericsergio','https://linkedin.com/in/ericsergio']
-    for(let i in contactItems) {
-        $('#pg5Div .contactGrid').append(`
-        <li id = ${contactItems[i]}>
-            <a href = '${contactHrefs[i]}'>
-                <img src = 'assets/icons/${contactItems[i]}.png' alt = '${contactItems[i]} icon png'>
-            </a>
-        </li>`)
-    }*/
+
     
 });
 
