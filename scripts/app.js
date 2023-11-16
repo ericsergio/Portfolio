@@ -38,10 +38,10 @@ $(window).on("resize load", function(event){
     //when the viewport is in Portrait mode
     if(Orientation.ScreenOrientation.id < 1) {
         doPortraitNav();
-        $('#mainMenu').hide();
+        //$('#mainMenu').hide();
     } else {
         //when the viewport is in landscape mode
-        $('#mainMenu').show(100);
+        //$('#mainMenu').show(100);
         doLandscapeNav();
     }
     
@@ -67,7 +67,7 @@ const doPortraitNav = () => {
 }
 
 const doLandscapeNav = () => {
-    $('#navBtn').hide();
+    //$('#navBtn').hide();
     $('#mainMenu').css('gridTemplateColumns', '.7fr .7fr .7fr .7fr .7fr 2fr')
 }
 
