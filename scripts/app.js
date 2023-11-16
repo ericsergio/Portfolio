@@ -51,21 +51,19 @@ $(window).on("resize load", function(event){
 
 const doPortraitNav = () => {
     $('#navBtn').show();
-    $('#mainMenu').css('gridTemplateColumns', '1fr');    
-    if(Navigation.current.setToggle === 0) {
-        $('#navBtn').on('click', function() {            
+    $('#mainMenu').css('gridTemplateColumns', '1fr');
+    let timer = null;
+    $('#navBtn').on('click', function() {
+        if(!timer) {
             $('#mainMenu').toggle(300);
-            //Navigation.current.setToggle = 1;
-        });
-    } /*else {
-        $('#navBtn').on('click', function() {    
-            console.log("one two three")        
-            $('#mainMenu').hide(300);
-            Navigation.current.setToggle = 0;
-        });
-    }*/
-
+            timer = setTimeout(function() {
+                timer = null;
+            }, 1200);
+        }
+    });
 }
+
+
 
 const doLandscapeNav = () => {
     //$('#navBtn').hide();
@@ -105,8 +103,9 @@ Navigation.prototype.scrollToPage = function() {
         });
     }
 }
-
-const designSite = (page) => {
+/*This was one idea i had to randomly place lines going vertically and horizontally accross the screen
+which is kinda cool but not very professional looking so i'm shelfing this for now.*/
+/*const designSite = (page) => {
     let rnd10 = Math.floor(Math.random() * 6) + 3;
     $(`#${page}`).find($('.vLines')).remove();
     $(`#${page}`).append(`<ul class = 'vLines'></ul>`);
@@ -130,7 +129,7 @@ const designSite = (page) => {
             'borderTopWidth':`${Math.floor(Math.random() * 40)}px`            
         })
     });
-}
+}*/
 
 //getters
 
