@@ -16,7 +16,7 @@ class Navigation {
 
 
 
-const pages = ['about', 'resume', 'examples', 'projects', 'design'];
+const pages = ['about', 'resume', 'examples', 'projects', 'contact'];
 
 
 
@@ -66,7 +66,7 @@ const doPortraitNav = () => {
 
 
 const doLandscapeNav = () => {
-    //$('#navBtn').hide();
+    $('#navBtn').hide();
     $('#mainMenu').css('gridTemplateColumns', '.7fr .7fr .7fr .7fr .7fr 2fr')
 }
 
@@ -228,7 +228,7 @@ $(document).ready(function() {
     </div>`
     );
     
-/****************************************************************************   Design Page Content **********/
+/****************************************************************************   Contact Page Content **********/
     
     $('#pg5').css({
         'position':`absolute`,
@@ -248,7 +248,7 @@ $(document).ready(function() {
 //This function is where to add dynamic content to the pages
 $(document).ready(function(){
     
-    //about page content
+    //*********************************************************************************************** about page content
     $('#pg1Div').append(`
     <ul id = 'pg1List'>
         <li id = 'pg1Item1'>
@@ -266,7 +266,7 @@ $(document).ready(function(){
             <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
         </li>
     </ul>`);
-    //resume page content
+    //*********************************************************************************************** resume page content
     //$('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Volunteering'];
     $('#pg2Div').append(`<ul id = 'pg2ListGrid'></ul><div id = "resumeContent"></div>`);
@@ -331,7 +331,7 @@ $(document).ready(function(){
                 break;
         }
     })
-    //examples page content
+    //*********************************************************************************************** examples page content
     //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
     //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>
     $('#pg3Div').append(`
@@ -374,7 +374,7 @@ $(document).ready(function(){
     //---------------------------------------------//---------------------------------------------
     
     //---------------------------------------------//---------------------------------------------
-    //projects page content
+    //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     for(let i in projects) {
@@ -416,7 +416,18 @@ $(document).ready(function(){
             }
         });
     }
-    //design page content
+    //*********************************************************************************************** design page content
+    /*let contactItems = ['mailIcon', 'githubIcon', 'linkedInIcon'];
+    let contactHrefs = ['mailto:ericdsergio87@icloud.com','https://github.com/ericsergio','https://linkedin.com/in/ericsergio']
+    for(let i in contactItems) {
+        $('#pg5Div .contactGrid').append(`
+        <li id = ${contactItems[i]}>
+            <a href = '${contactHrefs[i]}'>
+                <img src = 'assets/icons/${contactItems[i]}.png' alt = '${contactItems[i]} icon png'>
+            </a>
+        </li>`)
+    }*/
+    
 });
 
 
