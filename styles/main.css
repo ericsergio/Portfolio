@@ -60,12 +60,13 @@ body{
 
 #mainMenu{
     position:relative;
-    top:25%;		
+    top:25%;
     display:grid;
     list-style-type:none;
     grid-template-columns:.7fr .7fr .7fr .7fr .7fr 2fr;
     grid-column-gap: 5%;
     grid-row-gap: 5%;
+    font-size:.75em;
     margin: 0% 7% 7% 12%;
 }
 
@@ -88,7 +89,7 @@ body{
 .contactGrid{
     display:grid;
     position:fixed;
-    top:2vh;
+    top:1vh;
     left:75vw;
     width:20vw;
     grid-template-columns: 1fr 1fr 1fr;
@@ -99,6 +100,14 @@ body{
 .contactGrid > li > a > img {
     height:10vh;
     width:8vw;
+}
+
+#githubIcon > a > img {
+    margin-top:7px;
+}
+
+#linkedInIcon > a > img {
+    margin-top:3px;
 }
 
 

@@ -277,8 +277,8 @@
     .contactGrid{
         display:grid;
         position:fixed;
-        top:1vh;
-        left:65vw;
+        top:0vh;
+        left:48vw;
         width:20vw;
         grid-template-columns: 1fr 1fr 1fr;
         list-style-type:none;
@@ -286,8 +286,8 @@
     }
     
     .contactGrid > li > a > img {
-        height:8vh;
-        width:12vw;
+        height:12vh;
+        width:16vw;
     }
 
 

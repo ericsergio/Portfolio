@@ -14,11 +14,7 @@ class Navigation {
     }
 }
 
-
-
 const pages = ['about', 'resume', 'examples', 'projects', 'contact'];
-
-
 
 
 const getOrientation = () => {
@@ -33,8 +29,7 @@ Navigation.current = new Navigation();
 
 $(window).on("resize load", function(event){
     Orientation.ScreenOrientation = new Orientation(getOrientation());
-    let names = ['portrait', 'landscape'];
-    //$( "#orientation" ).text(`${names[Orientation.ScreenOrientation.id]} mode | Width: ${window.innerWidth} px | Height: ${window.innerHeight} px `);
+    let names = ['portrait', 'landscape'];    
     //when the viewport is in Portrait mode
     if(Orientation.ScreenOrientation.id < 1) {
         doPortraitNav();
@@ -43,12 +38,10 @@ $(window).on("resize load", function(event){
         //when the viewport is in landscape mode
         $('#mainMenu').show(100);
         doLandscapeNav();
-    }
-    
+    }    
 });
 
-
-
+/*gets ran on load or page resize to Portrait mode */
 const doPortraitNav = () => {
     $('#navBtn').show();
     $('#mainMenu').css('gridTemplateColumns', '1fr');
@@ -63,13 +56,17 @@ const doPortraitNav = () => {
     });
 }
 
-
-
+/*gets ran on load or page resize to Landscape mode */
 const doLandscapeNav = () => {
     $('#navBtn').hide();
     $('#mainMenu').css('gridTemplateColumns', '.7fr .7fr .7fr .7fr .7fr 2fr')
 }
 
+/*This is the site Navigation. Rather than creating new pages, this calculates the device's page
+size and navigating scrolls to the page's/section's position. The navigation is set to be fixed
+so as you scroll, the navigation remains in place making it appear to go to a new page. The 
+clicked page stats are stored in a js class constructor's properties as to store the data
+needed to do this. The actual page containers are dynamically created below.*/
 Navigation.prototype.scrollToPage = function() {
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
     let prevPage = pgs[Navigation.current.id];
@@ -86,18 +83,14 @@ Navigation.prototype.scrollToPage = function() {
         'top':'1px',
         'z-index':5
     }).siblings().not((`#${pgs[this.id]}`)).each(function() {
-    //$(`#${pgs}`).siblings().not((`#${pgs[this.id]}`)).each(function() {
         $(this).css({
             'position':`absolute`,
             'z-index':2
         });
-        //console.log(this)
-        //console.log($('.bodyContent').children())
     });
     if(isLandscapeMode() === false) {
         $(`#${pgs[this.id]}`).css({
             'height':`${document.body.clientHeight + 500}px`
-            
         }).siblings().not((`#${pgs[this.id]}`)).each(function() {
         
         });
@@ -132,7 +125,6 @@ which is kinda cool but not very professional looking so i'm shelfing this for n
 }*/
 
 //getters
-
 Navigation.prototype.getScrolledPage = function() {
     return this.scrollPos;
 }
@@ -147,17 +139,14 @@ Navigation.prototype.getPageId = function() {
 
 
 
-//This function is the page set up and navigation system - page containers are created here
+//This function is the page set up and navigation system - page static containers are created here
 $(document).ready(function() {
     let pageIdx = 0;
-    let currPageHeight = document.body.scrollHeight / pages.length;
-    console.log(document.body.scrollHeight);
     for(let current in pages) {
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
         $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
         pageIdx += 1;
     }
-    
     $('#mainMenu li').each(function(){
         $(this).on('click', function(){           
             //this is where the navigation occurs using the prototype function scrollToPage
@@ -166,13 +155,12 @@ $(document).ready(function() {
             Navigation[[$(this).attr('id')]].scrollToPage();
             if(Orientation.ScreenOrientation.id < 1) {
                 $('#mainMenu').hide(100);
-            };
-            
+            };            
         });
     });
     let pgHeight = window.innerHeight;    
     $('body').css('height', `${pgHeight * pages.length}px`)
-/****************************************************************************   About Page  **********/
+    /****************************************************************************   About Page  **********/
     $('#pg1').css({
         'position':`fixed`,
         'top':`0px`,
@@ -185,9 +173,7 @@ $(document).ready(function() {
     
     </div>`
     );
-    
-/****************************************************************************   Resume Page  **********/
-
+    /****************************************************************************   Resume Page  **********/
     $('#pg2').css({
         'position':`absolute`,
         'top':`${pgHeight}px`,
@@ -199,9 +185,7 @@ $(document).ready(function() {
         
     </div>`
     );
-    
-/****************************************************************************   Examples Page Content **********/
-    
+    /****************************************************************************   Examples Page Content **********/
     $('#pg3').css({
         'position':`absolute`,
         'top':`${pgHeight * 2}px`,
@@ -213,9 +197,7 @@ $(document).ready(function() {
         
     </div>`
     );
-    
-/****************************************************************************   Projects Page Content **********/
-
+    /****************************************************************************   Projects Page Content **********/
     $('#pg4').css({
         'position':`absolute`,
         'top':`${pgHeight * 3}px`,
@@ -227,9 +209,7 @@ $(document).ready(function() {
         
     </div>`
     );
-    
-/****************************************************************************   Contact Page Content **********/
-    
+    /****************************************************************************   Contact Page Content **********/
     $('#pg5').css({
         'position':`absolute`,
         'top':`${pgHeight * 4}px`,
@@ -241,23 +221,24 @@ $(document).ready(function() {
         
     </div>`
     );
-    
 });
 
-
-//This function is where to add dynamic content to the pages
-$(document).ready(function(){
-    $('.pgContainer').append(`<div class = 'contactGrid'></div>`);
+$(document).ready(function() {
     let contactItems = ['mailIcon', 'githubIcon', 'linkedInIcon'];
     let contactHrefs = ['mailto:ericdsergio87@icloud.com','https://github.com/ericsergio','https://linkedin.com/in/ericsergio']
     for(let i in contactItems) {
         $('.contactGrid').append(`
         <li id = ${contactItems[i]}>
-            <a href = '${contactHrefs[i]}'>
+            <a href = '${contactHrefs[i]}' target="_blank">
                 <img src = 'assets/icons/${contactItems[i]}.png' alt = '${contactItems[i]} icon png'>
             </a>
-        </li>`)
+        </li>`);
     }
+});
+
+
+//This function is where to add dynamic content to the pages
+$(document).ready(function(){
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
     <ul id = 'pg1List'>
@@ -380,10 +361,6 @@ $(document).ready(function(){
         });
         
     });
-
-    //---------------------------------------------//---------------------------------------------
-    
-    //---------------------------------------------//---------------------------------------------
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
@@ -428,12 +405,7 @@ $(document).ready(function(){
     }
     //*********************************************************************************************** design page content
 
-    
 });
-
-
-
-
 
 const exampleLandscapeZoom = () => {
     $('#sqlProcOrders-magnifyingGlass').on('mouseenter', function() {
