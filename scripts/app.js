@@ -7,9 +7,9 @@ class Orientation {
 
 class Navigation {
     constructor(id, name, scrollPos, setToggle) {
-        this.id = id || null;
-        this.name = name || null;
-        this.scrollPos = scrollPos || null;
+        this.id = id || 0;
+        this.name = name || 'about';
+        this.scrollPos = scrollPos || 0;
         this.setToggle = setToggle || 0;
     }
 }
@@ -40,6 +40,7 @@ $(window).on("resize load", function(event){
         doLandscapeNav();
     }    
 });
+
 
 /*gets ran on load or page resize to Portrait mode */
 const doPortraitNav = () => {
@@ -77,9 +78,10 @@ Navigation.prototype.scrollToPage = function() {
     //designSite(pgs[this.id]);
     if(this.id === null) {
         this.id = 0;
-    }    
+    }
     $(`#${pgs[this.id]}`).css({
         'position':`fixed`,
+        'display':`block`,
         'top':'1px',
         'z-index':5
     }).siblings().not((`#${pgs[this.id]}`)).each(function() {
