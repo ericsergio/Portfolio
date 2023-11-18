@@ -183,7 +183,8 @@ $(document).ready(function() {
         'top':`${pgHeight}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`
+        'backgroundColor':`#fff`,
+        'display':`none`
     }).append(`
     <div id='pg2Div' class = 'pgContainer'>
         
@@ -195,7 +196,8 @@ $(document).ready(function() {
         'top':`${pgHeight * 2}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`
+        'backgroundColor':`#fff`,
+        'display':`none`
     }).append(`
     <div id='pg3Div' class = 'pgContainer'>
         
@@ -207,7 +209,8 @@ $(document).ready(function() {
         'top':`${pgHeight * 3}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`
+        'backgroundColor':`#fff`,
+        'display':`none`
     }).append(`
     <div id='pg4Div' class = 'pgContainer'>
         
@@ -219,7 +222,8 @@ $(document).ready(function() {
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`
+        'backgroundColor':`#fff`,
+        'display':`none`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'>
         
