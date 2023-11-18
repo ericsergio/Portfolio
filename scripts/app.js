@@ -85,6 +85,7 @@ Navigation.prototype.scrollToPage = function() {
     }).siblings().not((`#${pgs[this.id]}`)).each(function() {
         $(this).css({
             'position':`absolute`,
+            'display':'none',
             'z-index':2
         });
     });
@@ -159,14 +160,13 @@ $(document).ready(function() {
             };            
         });
     });
-    let pgHeight = window.innerHeight;
-    let xbrowserBarHeight = pgHeight * .12;
+    let pgHeight = window.innerHeight;    
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
     $('#pg1').css({
         'position':`fixed`,
         'top':`0px`,
-        'height':`${pgHeight + xbrowserBarHeight}px`,
+        'height':`${pgHeight}px`,
         'width':`100%`,
         'backgroundColor':`#fff`,
         'z-index':5
