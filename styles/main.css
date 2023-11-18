@@ -4,7 +4,7 @@ body{
 :root {
 
 }
-
+/*
 .vLines li{
     position: absolute;
     top:0px;
@@ -23,7 +23,7 @@ body{
     border-top:ridge rgb(229, 226, 221) 5px;
     box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     z-index: -1;    
-}
+}*/
 
 /*#lineDesignVertical {
     position:absolute;
@@ -66,8 +66,13 @@ body{
     grid-template-columns:.7fr .7fr .7fr .7fr .7fr 2fr;
     grid-column-gap: 5%;
     grid-row-gap: 5%;
-    font-size:.75em;
+    font-size:1.3em;
+    font-family: Arial, Helvetica, sans-serif;    
     margin: 0% 7% 7% 12%;
+}
+
+#mainMenu li {    
+    font: 1.4em bold Grey;
 }
 
 #mainMenu li:hover {
@@ -77,10 +82,13 @@ body{
 
 
 .pgContainer{
+    position:absolute;
+    top:16vh;
+    left:11vw;
     color:#202022;
-    margin:12% 10% 10% 10%;
+    /*margin:12% 10% 10% 10%;*/
     height:70vh;
-    width:75%;
+    width:78vw;
     background-color:#CACACA;
     box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
@@ -112,42 +120,31 @@ body{
 
 
 /*-------------------------------------------------------------------About page styling*/
-#pg1List{
-    display:grid;
-    list-style-type: none;
-    grid-template-columns:1fr 1fr;
+div#pg1Content{    
     
 }
 
-#pImage{
-    max-height:200px;
-    max-width:137.5px;
-    margin:-5% 5% 0% 70%;
-    /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
-    border-radius: 30%;
-    /*border-left-color:rgb(44, 177, 200);*/
-}
-
-#pg1Item1{
-    height:83%;
-    width:100%;
-    margin:2% 0% 0% -10%;
-    padding:10%;
-    font-family: Georgia, serif;
-    color:#202022;
-   /*border:ridge 51px #173d47;
-    background-color:rgb(22, 22, 20);
-    border-radius: 470px;
-    border-right-color:rgb(44, 177, 200);
-    border-left-color:rgb(44, 177, 200);*/
-}
-
 #greeting {
-    width:45vw;
+    width:70%;
 }
 
 #greeting2 {    
-    width:50vw;
+    width:70%;
+}
+
+#pMid {
+    width:70%;
+}
+
+#pImage{
+    position: absolute;
+    top:1%;
+    right:1%;
+    max-height:200px;
+    max-width:137.5px;    
+    /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
+    border-radius: 30%;
+    /*border-left-color:rgb(44, 177, 200);*/
 }
 /*xxxxxxxxxxx--------------------------------------------------------End About page styling*/
 
@@ -186,47 +183,10 @@ body{
     border-left-color:transparent;
 }
 
-/*#SummaryDrop {
-    left:64%;
-}
-
-#ExperienceDrop {
-    left:74%;
-}
-
-#AwardsDrop {
-    left:48%;
-}
-
-#EducationDrop {
-    left:66%;
-}
-
-#SkillsDrop {
-    left:40%;
-}
-
-#VolunteeringDrop {
-    left:85%;
-}*/
-
 .resumeListItems:nth-child(4):nth-child(5) {
     left:70%;
 }
 
-
-#resumeImg{    
-    height:60%;
-    width:35%;
-    margin:8vh 0vw 8vh 30vw;
-}
-
-div#resumeContent {
-    top:12vh;
-    height:40vh;
-    width:70vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
-}
 
 .resumeSections {
     position:absolute;
@@ -277,12 +237,6 @@ div#summaryDiv.resumeSections > p {
     left:60%;
     width:35vw;
     /*margin-bottom:8%;*/
-}
-
-/*------*/
-
-#skillsDiv {
-
 }
 
 #skillsGrid {

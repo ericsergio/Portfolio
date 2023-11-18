@@ -90,6 +90,7 @@ Navigation.prototype.scrollToPage = function() {
     });
     if(isLandscapeMode() === false) {
         $(`#${pgs[this.id]}`).css({
+            //I need to check this -- this was to account for the bottom of iphone's viewport being made visible when scrolling
             'height':`${document.body.clientHeight + 500}px`
         }).siblings().not((`#${pgs[this.id]}`)).each(function() {
         
@@ -158,7 +159,8 @@ $(document).ready(function() {
             };            
         });
     });
-    let pgHeight = window.innerHeight;    
+    let pgHeight = window.innerHeight;
+    
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
     $('#pg1').css({
@@ -234,6 +236,7 @@ $(document).ready(function() {
             </a>
         </li>`);
     }
+    
 });
 
 
@@ -241,31 +244,36 @@ $(document).ready(function() {
 $(document).ready(function(){
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
-    <ul id = 'pg1List'>
-        <li id = 'pg1Item1'>
-            <p id = "greeting" class = "aboutContent">My name is Eric Sergio and am based out of the Greater Seattle Area.
-                As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. 
-            </p>
-            <p id = "greeting2"> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
-                ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
-                around C#, some of my strongest tech skills include JavaScript, Node, Bash, SQL, jQuery, PHP, C#, GCP and Azure.  I can adapt and learn new languages 
-                as needed. I am currently learning Python and am enrolled in the Google Data Analytics professional certificate course.
-            </p> 
-            <p>My site is under construction, please visit the projects section to view some of the projects I have built.</p> 
-
-        <li id='pg1Item2'>
-            <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
-        </li>
-    </ul>`);
+    <div id = 'pg1Content'>
+        <div id = "greeting" class = "aboutContent"><p>My name is Eric Sergio and am based out of the Greater Seattle Area.
+            As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. 
+        </p></div>
+        <div id = "greeting2"><p> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
+            ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
+            around C#, some of my strongest tech skills include JavaScript, Node, Bash, SQL, jQuery, PHP, C#, GCP and Azure.  I can adapt and learn new languages 
+            as needed. I am currently learning Python and am enrolled in the Google Data Analytics professional certificate course.
+            <br>My site is under construction, please visit the projects section to view some of the projects I have built.
+        </p></div> 
+        <div id = "pMid">
+        </div>
+        <div id = 'pBack'></div>        
+        <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
+    </div>
+    `);
     //*********************************************************************************************** resume page content
     //$('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Volunteering'];
-    $('#pg2Div').append(`<ul id = 'pg2ListGrid'></ul><div id = "resumeContent"></div>`);
+    $('#pg2Div').append(`
+        <ul id = 'pg2ListGrid'></ul>
+        <div id = "resumeContent"></div>
+    `);
     for(let i in sections) {
         $('#pg2ListGrid').append(`<li id = '${sections[i]}Item' class = 'resumeListItems'>${sections[i]}</li>`)
     }
     for(let i in sections) {
-        $(`#${sections[i]}Item`).append(`<div id = '${sections[i]}Drop' class = "dropArrow"></div>`);
+        $(`#${sections[i]}Item`).append(`
+            <div id = '${sections[i]}Drop' class = "dropArrow"></div>
+        `);
     }
     //$('.resumeListItems').append('<div class = "dropArrow"></div>');
     //$('#pg2ListGrid').after('<div id = "resumeContent"></div>');

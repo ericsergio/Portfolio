@@ -39,28 +39,21 @@
         margin:3%;
     }
     .pgContainer{
-        color:rgb(103, 114, 102);
-        margin:25% 8% 0% 6%;
-        height:82vh;
-        width:88vw;
+        position:absolute;
+        top:12vh;
+        left:5vw;
+        color:rgb(103, 114, 102);        
+        height:83vh;
+        width:90vw;
         border:solid 1px rgb(103, 114, 102);
-        border-radius:0% 0% 0% 0%;
+        border-radius:0% 45% 0% 0%;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     }
 
-    .pgContainerE{
-        color:#202022;
-        margin:25% 8% 0% 6%;
-        height:82vh;
-        width:88vw;
-        background-color:#CACACA;
-        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5);
-        /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
-    }
 
     /*-------------------------------------------------------------------about page styling*/
     #pg1Div{
-        border-radius:0% 65% 0% 0%;
+        border-radius:0% 15% 0% 0%;
     }
     /*#lineDesignVertical {
         position:absolute;
@@ -84,25 +77,99 @@
         z-index: -1;
         opacity:1;
     }*/
-    #pg1List{
-        display:grid;
-        list-style-type: none;
-        grid-template-columns:1fr 1fr;
+    div#pg1Content{        
+        width:100%;
+        margin:0% 0% 0% 0%;        
+        /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);*/
     }
-    
+
+    #greeting{
+        position: absolute;
+        top:0%;
+        right:0%;
+        height:30%;
+        width:90%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        border-radius: 0% 45% 5% 25%;
+        background-color: orange;
+        z-index:4;        
+    }
+
+    #greeting p{ 
+        max-width: 50%;
+        padding:0% 0% 6% 6%;
+    }
+
+    #greeting2{     
+        position: absolute;
+        bottom:2%;
+        left:4%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);   
+        width:80%;
+        height:65%;
+        color:#000;
+        background-color: none;
+        padding:2%;
+        z-index:4;
+    }
+
+    #greeting2 p{ 
+        
+    }
+
+    #pMid{
+        position: absolute;
+        top:0%;
+        right:0%;
+        height:75%;
+        width:54%;        
+        max-width:157.5px;
+        border-radius: 0% 45% 5% 25%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        background-color: rgb(4, 80, 94);
+        z-index:3;
+    }
+
+
+    /*
+        #greeting3{
+        position: absolute;
+        bottom:-3%;
+        right:0%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);   
+        width:80%;
+        height:40%;
+        border-radius: 0% 0% 0% 0%;
+        background-color: #fff;
+    }
+    */
+
+    #pBack {
+        position: absolute;
+        top:0%;
+        right:0%;
+        height:45%;
+        width:34%;
+        max-height:190px;
+        max-width:157.5px;
+        border-radius: 0% 45% 5% 25%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        background-color: #fff;
+        z-index:5;
+    }
+
 
     #pImage{
-        max-height:150px;
-        max-width:117.5px;
-        margin:4% 0% 0% 0%;
-        margin:-10% 0% 0% 0%;
-        border:ridge rgba(80, 227, 227, 0.248) 25px;
-        border-radius: 50%;
-        border-left-color:rgb(44, 177, 200);
-        float:left;
-    }
-    #greeting2{        
-        width:150%;
+        position: absolute;
+        top:0%;
+        right:0%;
+        max-height:170px;
+        max-width:137.5px;        
+        border-radius: 0% 45% 5% 25%;        
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        z-index:6;
+        /*border-left-color:rgb(44, 177, 200);*/
+        /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
     }
 
 
@@ -110,14 +177,6 @@
 
     /*-------------------------------------------------------------------Resume page styling*/
     
-    .viewResume{
-        height:85vh;
-        width:60vw;
-        margin:0% 10% 20% 10%;
-    }
-
-
-
     #pg2ListGrid{
         position:relative;
         top:7.5vh;
@@ -132,25 +191,6 @@
         font-size: 1.3em;
         margin-bottom:5%;
     }
-    /*This is the clickable section headers on the resume page that expand*/
-    /*#pg2ListGrid{
-        display: grid;
-        grid-template-columns:1fr 1fr;    
-        width:80vw;
-        list-style-type: none;
-        margin-left:2%;
-    }
-
-    #pg2ListGrid li{
-        font: Helvetica;
-        font-size: 1.6em;
-    }*/
-
-    #resumeImg{    
-        height:60%;
-        width:35%;
-        margin:8vh 0vw 8vh 30vw;
-    }
 
     #resumeContent{
         height:40vh;
@@ -164,30 +204,30 @@
         width:80vw;
     }
 
-
-
-    #summaryContent {
-
+    .dropArrow {
+        position:relative;
+        top:-30%;
+        left:85%;
+        display:block;
+        width:0px;
+        height:0px;
+        border:.4em solid rgb(38, 44, 151);
+        border-bottom-color:transparent;
+        border-right-color:transparent;
+        border-left-color:transparent;
     }
 
-    /*------*/
-
-    #educationDiv {
-
+    .resumeListItems:nth-child(4):nth-child(5) {
+        left:70%;
     }
 
-    #educationList1 {
-
-    }
-
-    #educationList2 {
-
-    }
-
-    /*------*/
-
-    #experienceDiv {
-
+    .resumeSections {
+        position:absolute;
+        top:55vh;
+        left:8.5vw;
+        width:70vw;
+        background-color: #fff;
+        padding:5%;
     }
 
     #experienceList1 {
@@ -202,12 +242,6 @@
         top:18vh;
         left:-8vw;
         width:75vw;
-    }
-
-    /*------*/
-
-    #skillsDiv {
-
     }
 
     #skillsGrid {
