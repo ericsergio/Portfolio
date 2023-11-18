@@ -160,13 +160,13 @@ $(document).ready(function() {
         });
     });
     let pgHeight = window.innerHeight;
-    
+    let xbrowserBarHeight = pgHeight * .10;
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
     $('#pg1').css({
         'position':`fixed`,
         'top':`0px`,
-        'height':`${pgHeight}px`,
+        'height':`${pgHeight + xbrowserBarHeight}px`,
         'width':`100%`,
         'backgroundColor':`#fff`,
         'z-index':5
