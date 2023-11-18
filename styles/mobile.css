@@ -51,7 +51,6 @@
         border:solid 1px rgb(103, 114, 102);
         border-radius:0% 45% 0% 0%;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
-        background: repeating-linear-gradient(to right bottom, transparent 50%, black 50%);
     }
 
 
