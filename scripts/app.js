@@ -160,7 +160,7 @@ $(document).ready(function() {
         });
     });
     let pgHeight = window.innerHeight;
-    let xbrowserBarHeight = pgHeight * .10;
+    let xbrowserBarHeight = pgHeight * .12;
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
     $('#pg1').css({
