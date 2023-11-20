@@ -397,9 +397,8 @@ $(document).ready(function(){
             'z-index':`7`
         }).on('click', function() {
             if($('#triviaErr').text().length === 0) {
-                $('#pg4Div').append(`<div id='triviaErr'><p>I apologize but it appears that you are on a mobile device 
-                and the Trivia project has been problematic on mobile devices. I am working to fix this, in the meantime though, 
-                please view the trivia project from a desktop.</p></div>`);
+                $('#pg4Div').append(`<div id='triviaErr'>Please view the Trivia project from a desktop. 
+                The mobile version is under construction. Click the Trivia project again to exit.</div>`);
                 $('#triviaErr').css({
                     'position':`absolute`,
                     'top':`18vh`,                
