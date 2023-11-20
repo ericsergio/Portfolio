@@ -57,7 +57,7 @@
         height:76vh;
         width:90vw;
         border:solid 1px rgb(103, 114, 102);
-        border-radius:0% 45% 0% 0%;
+        border-radius:0% 15% 0% 15%;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     }
 
@@ -70,40 +70,6 @@
         width:100%;
         margin:0% 0% 0% 0%;
     }
-
-    /*#greeting{
-        position: absolute;
-        top:0%;
-        right:0%;
-        height:100%;
-        width:90%;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-        border-radius: 0% 45% 5% 25%;
-        background-color: orange;
-        z-index:4;        
-    }
-
-    #greeting p{ 
-        max-width: 50%;
-        padding:0% 0% 6% 6%;        
-    }
-
-    #greeting2{     
-        position: absolute;
-        top:0%;
-        right:0%;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);   
-        width:100%;
-        height:100%;
-        color:#000;        
-        padding:2%;
-        border-radius: 0% 45% 5% 25%;          
-        z-index:4;        
-    }
-
-    #greeting2 p{ 
-        
-    }*/
 
     #pMid{
         position: absolute;
@@ -157,13 +123,18 @@
 
     /*-------------------------------------------------------------------Resume page styling*/
     
+    #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
+        radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
+    }
+
     #pg2ListGrid{
         position:relative;
-        top:7.5vh;
+        top:2.5vh;
         display: grid;    
         grid-template-columns:1fr 1fr;
         width:80%;
-        list-style-type: none;    
+        list-style-type: none;
     }
     
     #pg2ListGrid li{
@@ -263,6 +234,7 @@
         padding:5%;
         border-radius:10%;
         width:60vw;
+        height:60vh;
         opacity:.7;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     }

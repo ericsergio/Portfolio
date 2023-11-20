@@ -158,10 +158,6 @@ $(document).ready(function(){
     });
 })
 
-
-
-
-
 //This function is the page set up and navigation system - page static containers are created here
 $(document).ready(function() {
 
@@ -267,7 +263,7 @@ $(document).ready(function(){
     `);
     //*********************************************************************************************** resume page content
     //$('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
-    let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Volunteering'];
+    let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Other'];
     $('#pg2Div').append(`
         <ul id = 'pg2ListGrid'></ul>
         <div id = "resumeContent"></div>
