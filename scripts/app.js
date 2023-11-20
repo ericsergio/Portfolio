@@ -32,7 +32,17 @@ $(window).on("resize load", function(event){
     let names = ['portrait', 'landscape'];    
     //when the viewport is in Portrait mode
     if(Orientation.ScreenOrientation.id < 1) {
-        doPortraitNav();
+        $('#navBtn').show();
+        $('#mainMenu').css('gridTemplateColumns', '1fr');
+        let timer = null;
+        $('#navBtn').on('click', function() {
+            if(!timer) {
+                $('#mainMenu').toggle(300);
+                timer = setTimeout(function() {
+                    timer = null;
+                }, 1200);
+            }
+        });
         $('#mainMenu').hide();
     } else {
         //when the viewport is in landscape mode
@@ -44,17 +54,7 @@ $(window).on("resize load", function(event){
 
 /*gets ran on load or page resize to Portrait mode */
 const doPortraitNav = () => {
-    $('#navBtn').show();
-    $('#mainMenu').css('gridTemplateColumns', '1fr');
-    let timer = null;
-    $('#navBtn').on('click', function() {
-        if(!timer) {
-            $('#mainMenu').toggle(300);
-            timer = setTimeout(function() {
-                timer = null;
-            }, 1200);
-        }
-    });
+
 }
 
 /*gets ran on load or page resize to Landscape mode */
