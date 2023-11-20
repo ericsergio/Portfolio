@@ -18,13 +18,13 @@
         grid-row-gap: 1%;
         margin: 1% 7% 3% 0%;
         padding:2% 0% 5% 4%;
-        width:20%;
+        width:35%;
         background-color: #ffffff;
         border:solid yellow 1px;
     }
 
     #mainMenu li {
-        width:80%;        
+        width:90%;        
         color:#000;
         padding:2% 12% 2% 2%;
     }
@@ -37,6 +37,15 @@
 
     #navBtn{
         margin:3%;
+    }
+
+    #navBtn img {
+        height:30px;
+        width:40px;
+        padding:1%;
+        border:solid #655959 1px;
+        border-radius:20%;
+        opacity:.8;
     }
 
     /*******************The browser bar on iphones takes up 10% of the page's viewport height*************/
@@ -53,45 +62,21 @@
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     }
 
-
     /*-------------------------------------------------------------------about page styling*/
     #pg1Div{
-        border-radius:0% 15% 0% 0%;
+        border-radius:0% 15% 0% 15%;
     }
-    /*#lineDesignVertical {
-        position:absolute;
-        top:0vh;
-        left:80vw;
-        height:80vh;
-        width:5vw;
-        background-color: none; 
-        border-right:ridge yellow 5px;
-        z-index: -1;
-        opacity:1;
-    }
-    #lineDesignHorizontal {
-        position:absolute;
-        top:20vh;
-        left:0vw;
-        height:5vh;
-        width:100vw;
-        background-color: none;
-        border-top: ridge yellow 5px;
-        z-index: -1;
-        opacity:1;
-    }*/
+
     div#pg1Content{        
         width:100%;
         margin:0% 0% 0% 0%;
-        
-        /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);*/
     }
 
-    #greeting{
+    /*#greeting{
         position: absolute;
         top:0%;
         right:0%;
-        height:30%;
+        height:100%;
         width:90%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         border-radius: 0% 45% 5% 25%;
@@ -109,124 +94,51 @@
         top:0%;
         right:0%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);   
-        width:92%;
-        height:90%;
+        width:100%;
+        height:100%;
         color:#000;        
         padding:2%;
         border-radius: 0% 45% 5% 25%;          
-        z-index:4;
-        
+        z-index:4;        
     }
 
     #greeting2 p{ 
         
-    }
+    }*/
 
     #pMid{
         position: absolute;
         top:0%;
         right:0%;
-        height:75%;
-        width:54%;        
-        max-width:157.5px;
+        height:100%;
+        width:100%;        
+        /*max-width:157.5px;*/
         border-radius: 0% 45% 5% 25%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         background-color: rgb(4, 80, 94);
         z-index:3;
     }
 
-/*
-.horizontal-gradient {
-  background: linear-gradient(to right, transparent 50%, black 50%);
-}
-
-.vertical-gradient {
-  background: linear-gradient(to bottom, transparent 50%, black 50%);
-}
-
-.diagonal-gradient {
-  background: linear-gradient(to right bottom, transparent 50%, black 50%);
-}
-.circular-gradient {
-  background: radial-gradient(circle, transparent 50%, black 50%);
-}
-
-.elliptical-gradient {
-  background: radial-gradient(ellipse, transparent 50%, black 50%);
-}
-
-.conical-gradient {
-  background: radial-gradient(conic, transparent 50%, black 50%);
-}
-.repeating-horizontal-gradient {
-  background: repeating-linear-gradient(to right, transparent 50%, black 50%);
-}
-
-.repeating-vertical-gradient {
-  background: repeating-linear-gradient(to bottom, transparent 50%, black 50%);
-}
-
-.repeating-diagonal-gradient {
-  background: repeating-linear-gradient(to right bottom, transparent 50%, black 50%);
-}
-.repeating-circular-gradient {
-  background: repeating-radial-gradient(circle, transparent 50%, black 50%);
-}
-
-.repeating-elliptical-gradient {
-  background: repeating-radial-gradient(ellipse, transparent 50%, black 50%);
-}
-
-.repeating-conical-gradient {
-  background: repeating-radial-gradient(conic, transparent 50%, black 50%);
-}
-.diamond-gradient {
-  background: radial-gradient(to right top, transparent 50%, black 50%) 0% 50%,
-          radial-gradient(to left top, transparent 50%, black 50%) 50% 0%,
-          radial-gradient(to left bottom, transparent 50%, black 50%) 100% 50%,
-          radial-gradient(to right bottom, transparent 50%, black 50%) 50% 100%;
-}
-
-.starburst-gradient {
-  background: radial-gradient(circle at center, transparent 50%, black 50%) 0% 25%,
-          radial-gradient(circle at 25% 25%, transparent 50%, black 50%) 25% 50%,
-          radial-gradient(circle at 50% 50%, transparent 50%, black 50%) 50% 75%,
-          radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;
-}
-
-.zigzag-gradient {
-  background: linear-gradient(to right, transparent 50%, black 50%) 0% 50%,
-          linear-gradient(to left, transparent 50%, black 50%) 50% 100%;
-}
-
-*/
-    /*
-        #greeting3{
-        position: absolute;
-        bottom:-3%;
-        right:0%;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);   
-        width:80%;
-        height:40%;
-        border-radius: 0% 0% 0% 0%;
-        background-color: #fff;
-    }
-    */
-
     #pBack {
         position: absolute;
         top:0%;
         right:0%;
-        height:45%;
-        width:34%;
-        max-height:190px;
-        max-width:157.5px;
-        border-radius: 0% 45% 5% 25%;
+        height:105%;
+        width:100%;        
+        border-radius: 0% 15% 5% 25%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         background-color: #fff;
         z-index:5;
+        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
+        radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
+        /*radial-gradient(circle at 50% 50%, transparent 50%, black 50%) 50% 75%,
+        /*radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;*/
     }
 
+    #pBack p {
+        width:50%;
+        padding:8%;
+    }
 
     #pImage{
         position: absolute;
@@ -400,3 +312,69 @@
 
 
 
+
+/*
+.horizontal-gradient {
+  background: linear-gradient(to right, transparent 50%, black 50%);
+}
+
+.vertical-gradient {
+  background: linear-gradient(to bottom, transparent 50%, black 50%);
+}
+
+.diagonal-gradient {
+  background: linear-gradient(to right bottom, transparent 50%, black 50%);
+}
+.circular-gradient {
+  background: radial-gradient(circle, transparent 50%, black 50%);
+}
+
+.elliptical-gradient {
+  background: radial-gradient(ellipse, transparent 50%, black 50%);
+}
+
+.conical-gradient {
+  background: radial-gradient(conic, transparent 50%, black 50%);
+}
+.repeating-horizontal-gradient {
+  background: repeating-linear-gradient(to right, transparent 50%, black 50%);
+}
+
+.repeating-vertical-gradient {
+  background: repeating-linear-gradient(to bottom, transparent 50%, black 50%);
+}
+
+.repeating-diagonal-gradient {
+  background: repeating-linear-gradient(to right bottom, transparent 50%, black 50%);
+}
+.repeating-circular-gradient {
+  background: repeating-radial-gradient(circle, transparent 50%, black 50%);
+}
+
+.repeating-elliptical-gradient {
+  background: repeating-radial-gradient(ellipse, transparent 50%, black 50%);
+}
+
+.repeating-conical-gradient {
+  background: repeating-radial-gradient(conic, transparent 50%, black 50%);
+}
+.diamond-gradient {
+  background: radial-gradient(to right top, transparent 50%, black 50%) 0% 50%,
+          radial-gradient(to left top, transparent 50%, black 50%) 50% 0%,
+          radial-gradient(to left bottom, transparent 50%, black 50%) 100% 50%,
+          radial-gradient(to right bottom, transparent 50%, black 50%) 50% 100%;
+}
+
+.starburst-gradient {
+  background: radial-gradient(circle at center, transparent 50%, black 50%) 0% 25%,
+          radial-gradient(circle at 25% 25%, transparent 50%, black 50%) 25% 50%,
+          radial-gradient(circle at 50% 50%, transparent 50%, black 50%) 50% 75%,
+          radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;
+}
+
+.zigzag-gradient {
+  background: linear-gradient(to right, transparent 50%, black 50%) 0% 50%,
+          linear-gradient(to left, transparent 50%, black 50%) 50% 100%;
+}
+
+*/

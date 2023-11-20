@@ -251,18 +251,14 @@ $(document).ready(function(){
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
     <div id = 'pg1Content'>
-        <div id = "greeting" class = "aboutContent"><p>My name is Eric Sergio and am based out of the Greater Seattle Area.
-            As a prior longtime bartender, I am a career transitioning millennial aspiring to launch a new career in IT. 
-        </p></div>
-        <div id = "greeting2"><p> Wherever I land, I will take the opportunity to learn as much as I can and as quickly as I can as I have a lot of
-            ground to make up to fulfill my goals. I am an excellent problem solver with a strong sense of curiosity and drive. My degree was based 
-            around C#, some of my strongest tech skills include JavaScript, Node, Bash, SQL, jQuery, PHP, C#, GCP and Azure.  I can adapt and learn new languages 
-            as needed. I am currently learning Python and am enrolled in the Google Data Analytics professional certificate course.
-            <br>My site is under construction, please visit the projects section to view some of the projects I have built.
-        </p></div> 
+        <div id = "pBack" class = "aboutContent">
+            <p>My name is Eric Sergio and am based out of the Greater Seattle Area.            
+            </p>
+        </div>
+        
         <div id = "pMid">
         </div>
-        <div id = 'pBack'></div>        
+        
         <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
     </div>
     `);
