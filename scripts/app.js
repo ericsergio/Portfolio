@@ -141,10 +141,7 @@ Navigation.prototype.getPageId = function() {
     return this.id;
 }
 
-
-
-//This function is the page set up and navigation system - page static containers are created here
-$(document).ready(function() {
+$(document).ready(function(){
     let pageIdx = 0;
     for(let current in pages) {
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
@@ -162,6 +159,15 @@ $(document).ready(function() {
             };            
         });
     });
+})
+
+
+
+
+
+//This function is the page set up and navigation system - page static containers are created here
+$(document).ready(function() {
+
     let pgHeight = window.innerHeight;    
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
