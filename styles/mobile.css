@@ -1,6 +1,20 @@
 /* iPhone portrait */
 @media only screen and (orientation: portrait) {
 
+    .countToggles {
+        position: fixed;
+        top:50%;
+        left:40%;
+        height:100px;
+        width:100px;
+        border:solid red 3px;
+        z-index: 7;
+        text-align: center;
+        padding:15px;
+        font-size: 2.4em;
+    }
+
+
     .fixedNav {
         position:fixed;
         height:10%;

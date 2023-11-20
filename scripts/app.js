@@ -6,11 +6,12 @@ class Orientation {
 }
 
 class Navigation {
-    constructor(id, name, scrollPos, setToggle) {
+    constructor(id, name, scrollPos, setToggle, countToggles) {
         this.id = id || 0;
         this.name = name || 'about';
         this.scrollPos = scrollPos || 0;
         this.setToggle = setToggle || 0;
+        this.countToggles = countToggles || 0;
     }
 }
 
@@ -31,19 +32,18 @@ $(window).on("resize load", function(event){
     Orientation.ScreenOrientation = new Orientation(getOrientation());
     let names = ['portrait', 'landscape'];    
     //when the viewport is in Portrait mode
-    if(Orientation.ScreenOrientation.id < 1) {
+    if(Orientation.ScreenOrientation.id < 1) {        
         $('#navBtn').show();
         $('#mainMenu').css('gridTemplateColumns', '1fr');
         let timer = null;
         $('#navBtn').on('click', function() {
-            if(!timer) {
-                $('#mainMenu').toggle(300);
-                timer = setTimeout(function() {
-                    timer = null;
-                }, 1200);
-            }
+            Navigation.current.countToggles += 1;
+            $('#mainMenu').toggle(300);
+            $('.countToggles').text(Navigation.current.countToggles);
         });
         $('#mainMenu').hide();
+        Navigation.current.countToggles += 1;
+        $('.countToggles').text(Navigation.current.countToggles);
     } else {
         //when the viewport is in landscape mode
         $('#mainMenu').show(100);
@@ -84,7 +84,7 @@ Navigation.prototype.scrollToPage = function() {
         'display':`block`,
         'top':'1px',
         'z-index':5
-    }).siblings().not((`#${pgs[this.id]}`)).each(function() {
+    }).siblings().not((`#${pgs[this.id]}`)).not($('.countToggles')).each(function() {
         $(this).css({
             'position':`absolute`,
             'display':'none',
