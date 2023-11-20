@@ -6,12 +6,11 @@ class Orientation {
 }
 
 class Navigation {
-    constructor(id, name, scrollPos, setToggle, countToggles) {
+    constructor(id, name, scrollPos, setToggle) {
         this.id = id || 0;
         this.name = name || 'about';
         this.scrollPos = scrollPos || 0;
-        this.setToggle = setToggle || 0;
-        this.countToggles = countToggles || 0;
+        this.setToggle = setToggle || 0;        
     }
 }
 
@@ -34,11 +33,8 @@ $(window).on("resize load", function(event){
     //when the viewport is in Portrait mode
     if(Orientation.ScreenOrientation.id < 1) {        
         $('#navBtn').show();
-        $('#mainMenu').css('gridTemplateColumns', '1fr');        
-
+        $('#mainMenu').css('gridTemplateColumns', '1fr');
         $('#mainMenu').hide();
-        //Navigation.current.countToggles += 1;
-        //$('.countToggles').text(Navigation.current.countToggles);
     } else {
         //when the viewport is in landscape mode
         $('#mainMenu').show(100);
@@ -48,9 +44,7 @@ $(window).on("resize load", function(event){
 
 $(document).ready(function(){
     $('#navBtn').on('click', function() {
-        Navigation.current.countToggles += 1;
         $('#mainMenu').toggle(300);
-        $('.countToggles').text(Navigation.current.countToggles);
     });
 });
 
