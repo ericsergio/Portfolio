@@ -251,7 +251,10 @@ $(document).ready(function(){
     $('#pg1Div').append(`
     <div id = 'pg1Content'>
         <div id = "pBack" class = "aboutContent">
-            <p>My name is Eric Sergio and am based out of the Greater Seattle Area.            
+            <p>My name is Eric Sergio and live in the Greater Seattle area. I have experience in front-end and back-end development
+            with a proven ability to create responsive and mobile-friendly websites. I set high expectations for myself in anything
+            I do and have a strong drive to continue to learn and improve. Thank you for taking the time to visit my site.
+            <br><br>**Site is under construction.<br><br>**Site is built from scratch.
             </p>
         </div>
         
@@ -337,39 +340,44 @@ $(document).ready(function(){
     $('#pg3Div').append(`
     <h5 id = 'exampleDescription'>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills
      using various languages. Unless I make a note saying otherwise, everything included here is code that I originally wrote, Click on the heading to display each example snippet.</h5>
-    <ul id='codeExampleList'>
-        <li id = 'codeExample0'>
+    <select id='codeExampleList'>
+        <option id = 'codeExample0' value="option0">
             Example orders SQL Procedure code snippet
-        </li>
-        <li id = 'codeExample1'>
+        </option>
+        <option id = 'codeExample1' value="option1">
             Example trivia SQL Procedure code snippet
-        </li>
-        <li id = 'codeExample2'>
+        </option>
+        <option id = 'codeExample2' value="option2">
             JavaScript to PHP workflow example            
-        </li>
-        <li id = 'codeExample3'>
+        </option>
+        <option id = 'codeExample3' value="option3">
             C# Unity User Interface development
-        </li>
-        <li id = 'codeExample4'>
+        </option>
+        <option id = 'codeExample4' value="option4">
             Mongo DB REST API development
-        </li>
-        <li id = 'codeExample5'>
+        </option>
+        <option id = 'codeExample5' value="option5">
             Bash shell programming and Docker snippets
-        </li>
-
-    </ul>
+        </option>
+    </select>
     <div class = 'selectedImg'></div>`
     );
     let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
-    $('#codeExampleList li').append(`<div class = 'dropArrow' class = "dropArrow"></div>`);
-    $('#codeExampleList li').each(function() {
-        $(this).on('click', function() {
-            let idx = Number($(this).attr('id').substr(-1, 1));
+    $('#codeExampleList option').append(`<div class = 'dropArrow'></div>`);
+    $('#codeExampleList').on('change', function() {
+        //$('#codeExampleList').on('change', function() {
+            console.log($('#codeExampleList option:selected'))
+            //console.log($(this))
+            let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
+            console.log(idx)
             $('.selectedImg').empty();
-            $('.selectedImg').append(`<div id = 'currentExampleImgDiv'><img alt = '${examples[idx]} image' src='assets/${examples[idx]}.png' /></div>`)
+            $('.selectedImg').append(`
+            <div id = 'currentExampleImgDiv'>
+                <img alt = '${examples[idx]} image' src='assets/${examples[idx]}.png' />
+            </div>`)
         });
         
-    });
+    //});
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);

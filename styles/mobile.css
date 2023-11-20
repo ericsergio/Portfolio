@@ -123,7 +123,7 @@
 
     /*-------------------------------------------------------------------Resume page styling*/
     
-    #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
         background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
         radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
     }
@@ -223,9 +223,6 @@
         margin-top:5vh;
     }
 
-    #triviaErr p{
-        
-    }
     #triviaErr{
         position:absolute;
         right:13vw;
@@ -235,7 +232,7 @@
         border-radius:10%;
         width:60vw;
         height:100vh;
-        opacity:.7;
+        opacity:.8;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
     }
     /*xxxxxxxxxxx--------------------------------------------------------End Project page styling*/
@@ -245,17 +242,19 @@
     
     #exampleDescription {
         font-size:.7em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:#fff;
     }
     
-    .selectedImg img{
+    .selectedImg #currentExampleImgDiv img{
         position:absolute;
-        top:50vh;
-        left:13vw;
-        height:20vh;
-        width:60vw;
+        top:30vh;
+        left:5vw;
+        height:40vh;
+        width:80vw;
     }
 
-    #codeExampleList li {
+    #codeExampleList option {
         width:72vw;
     }
     /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
