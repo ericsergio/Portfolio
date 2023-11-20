@@ -123,9 +123,9 @@
         position: absolute;
         top:0%;
         right:0%;
-        height:105%;
+        height:100%;
         width:100%;        
-        border-radius: 0% 15% 5% 25%;
+        border-radius: 0% 15% 5% 5%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         background-color: #fff;
         z-index:5;
@@ -294,14 +294,14 @@
         position:fixed;
         top:0vh;
         left:48vw;
-        width:20vw;
+        width:12vw;
         grid-template-columns: 1fr 1fr 1fr;
         list-style-type:none;
         z-index: 7;
     }
     
     .contactGrid > li > a > img {
-        height:12vh;
+        height:10vh;
         width:16vw;
     }
 
