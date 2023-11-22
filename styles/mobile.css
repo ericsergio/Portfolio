@@ -48,8 +48,8 @@
     }
 
     #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
-        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
-        radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
+        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
+        radial-gradient(circle at 45% 95%, transparent 2%, black 80%) 5% 15%;
     }
 
     /*******************The browser bar on iphones takes up 10% of the page's viewport height*************/
@@ -68,7 +68,7 @@
 
     /*-------------------------------------------------------------------about page styling*/
     #pg1Div{
-        border-radius:0% 15% 0% 15%;
+        border-radius:0% 15% 5% 5%;
     }
 
     div#pg1Content{        
@@ -95,7 +95,7 @@
         right:0%;
         height:100%;
         width:100%;        
-        border-radius: 0% 15% 5% 5%;
+        border-radius: 0% 15% 0% 5%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         color:#fff;
         /*background-color: #fff;*/
