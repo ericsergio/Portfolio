@@ -342,27 +342,28 @@ $(document).ready(function(){
      using various languages. Unless I make a note saying otherwise, everything included here is code that I originally wrote, Click on the heading to display each example snippet.</h5>
     <select id='codeExampleList'>
         <option id = 'codeExample0' value="option0">
-            Example orders SQL Procedure code snippet
+            SQL Procedure
         </option>
         <option id = 'codeExample1' value="option1">
-            Example trivia SQL Procedure code snippet
+            SQL Procedure
         </option>
         <option id = 'codeExample2' value="option2">
-            JavaScript to PHP workflow example            
+            JS->PHP
         </option>
         <option id = 'codeExample3' value="option3">
-            C# Unity User Interface development
+            C# Unity
         </option>
         <option id = 'codeExample4' value="option4">
-            Mongo DB REST API development
+            MongoDB REST API
         </option>
         <option id = 'codeExample5' value="option5">
-            Bash shell programming and Docker snippets
+            Bash -> Docker
         </option>
     </select>
     <div class = 'selectedImg'></div>`
     );
-    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
+    //shellProgramming
+    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'rubikCube' ];
     $('#codeExampleList option').append(`<div class = 'dropArrow'></div>`);
     $('#codeExampleList').on('change', function() {
         //$('#codeExampleList').on('change', function() {
@@ -376,6 +377,7 @@ $(document).ready(function(){
                 <img alt = '${examples[idx]} image' src='assets/${examples[idx]}.png' />
             </div>`)
         });
+
         
     //});
     //*********************************************************************************************** projects page content
@@ -419,9 +421,9 @@ $(document).ready(function(){
             }
         });
     }
-    //*********************************************************************************************** design page content
-
 });
+
+
 
 const exampleLandscapeZoom = () => {
     $('#sqlProcOrders-magnifyingGlass').on('mouseenter', function() {

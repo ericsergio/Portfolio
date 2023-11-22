@@ -9,6 +9,7 @@ body{
     width:40px;
     padding:1%;
     border:solid #655959 1px;
+    background-color: #fff;
     border-radius:20%;
     opacity:.8;
 }
@@ -16,7 +17,7 @@ body{
 .fixedNav {
     position:fixed;
     height:12%;
-    background-color:#878787;
+    background-color:#302e2e;
     color:#fff;
     width:100%;
     z-index: 6;

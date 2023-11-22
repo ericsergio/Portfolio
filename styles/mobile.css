@@ -41,10 +41,15 @@
     #navBtn img {
         height:30px;
         width:40px;
-        padding:1%;
-        border:solid #655959 1px;
+        padding:.7%;
+        border:solid #271a1a 4px;
         border-radius:20%;
         opacity:.8;
+    }
+
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
+        radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
     }
 
     /*******************The browser bar on iphones takes up 10% of the page's viewport height*************/
@@ -123,10 +128,7 @@
 
     /*-------------------------------------------------------------------Resume page styling*/
     
-    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
-        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
-        radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;
-    }
+
 
     #pg2ListGrid{
         position:relative;
@@ -252,6 +254,12 @@
         left:5vw;
         height:40vh;
         width:80vw;
+    }
+
+    #codeExampleList {
+        position: absolute;
+        top:20vh;
+        left:6vw;
     }
 
     #codeExampleList option {
