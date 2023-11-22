@@ -4,6 +4,11 @@ body{
 :root {
 
 }
+
+#pg1, #pg2, #pg3, #pg4, #pg5{
+    background-image: url("../assets/woodSculpture.png");
+} 
+
 #navBtn img {
     height:30px;
     width:40px;
@@ -55,8 +60,7 @@ body{
     height:70vh;
     width:78vw;
     background-color:#CACACA;
-    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
-    background-image: url("../assets/woodSculpture.png");
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);    
     /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
 }
 
