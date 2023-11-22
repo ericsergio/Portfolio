@@ -90,7 +90,7 @@ body{
 
 .contactGrid > li > a > img {
     height:10vh;
-    width:8vw;
+    width:6vw;
 }
 
 #githubIcon > a > img {
@@ -305,7 +305,7 @@ div#summaryDiv.resumeSections > p {
 .projTile {
     position:relative;
     height:20vh;
-    width:13vw;
+    width:10vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius:25%;
 }
@@ -318,3 +318,31 @@ div#summaryDiv.resumeSections > p {
 
 
 /*xxxxxxxxxxxxx------------------------------------------------------End Projects page styling*/
+
+    /*-------------------------------------------------------------------example page styling*/
+
+    
+    #exampleDescription {
+        font-size:.7em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:#fff;
+    }
+    
+    .selectedImg #currentExampleImgDiv img{
+        position:absolute;
+        top:20vh;
+        left:20vw;
+        height:40vh;
+        width:50vw;
+    }
+
+    #codeExampleList {
+        position: absolute;
+        top:20vh;
+        left:6vw;
+    }
+
+    #codeExampleList option {
+        width:72vw;
+    }
+    /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/

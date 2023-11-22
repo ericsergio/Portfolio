@@ -253,7 +253,8 @@ $(document).ready(function(){
         <div id = "pBack" class = "aboutContent">
             <p id = 'aboutTxt'>
             <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. I have experience in front-end and back-end development
-                with a proven ability to create responsive and mobile-friendly websites.</span>
+                with a proven ability to create responsive and mobile-friendly websites.
+                </span>
                 <span class = 'fullWidth'>I set high expectations for myself in anything I do and have a strong drive to continue to learn and improve. 
                     Thank you for taking the time to visit my site.
                     <br><br>**Site is under construction.<br><br>**Site is built from scratch.
@@ -366,7 +367,7 @@ $(document).ready(function(){
     <div class = 'selectedImg'></div>`
     );
     //shellProgramming
-    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'rubikCube' ];
+    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
     $('#codeExampleList option').append(`<div class = 'dropArrow'></div>`);
     $('#codeExampleList').on('change', function() {
         //$('#codeExampleList').on('change', function() {
