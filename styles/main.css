@@ -137,47 +137,53 @@ div#pg1Content{
 /*This is the clickable section headers on the resume page that expand*/
 #pg2ListGrid{
     position:absolute;
-    top:25%;
+    top:5%;
+    left:-5%;
     display: grid;    
-    grid-template-columns:1fr 1fr 1fr;
-    width:70%;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    width:50%;
     list-style-type: none;    
 }
 
 #pg2ListGrid li{
     font: Helvetica;
-    background-color: rgb(111, 124, 128);
+    background-color: transparent;
     color:#ffffff;
     border:solid #f0f0f0;
+    border-radius: 5%;
     font-size: 1.3em;
-    margin-bottom:5%;
+    margin:0 5% 5% 35%;
+    width:10vw;
     padding:8px;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
 }
 
 .dropArrow {
     position:relative;
     top:-30%;
-    left:85%;
+    left:80%;
     display:block;
     width:0px;
     height:0px;
-    border:.4em solid rgb(38, 44, 151);
+    border:.4em solid rgb(231, 232, 237);
     border-bottom-color:transparent;
     border-right-color:transparent;
     border-left-color:transparent;
 }
 
 .resumeListItems:nth-child(4):nth-child(5) {
-    left:70%;
+    left:0%;
 }
 
 
 .resumeSections {
     position:absolute;
-    top:55vh;
-    left:8.5vw;
-    width:70vw;
-    background-color: #fff;
+    top:14vh;
+    left:4.5vw;
+    width:50vw;
+    color:#fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:1.3em;
     padding:5%;
 }
 
@@ -209,8 +215,8 @@ div#summaryDiv.resumeSections > p {
     position:absolute;
     list-style-type:none;
     top:4vh;
-    right:32%;
-    width:35vw;
+    right:44%;
+    width:30vw;
     /*margin-bottom:8%;*/
 }
 
@@ -218,7 +224,7 @@ div#summaryDiv.resumeSections > p {
     position:absolute;
     list-style-type:none;
     top:4vh;
-    left:60%;
+    left:55%;
     width:35vw;
     /*margin-bottom:8%;*/
 }

@@ -368,7 +368,7 @@ $(document).ready(function(){
     );
     //shellProgramming
     let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
-    $('#codeExampleList option').append(`<div class = 'dropArrow'></div>`);
+    $('#codeExampleList option');
     $('#codeExampleList').on('change', function() {
         //$('#codeExampleList').on('change', function() {
             console.log($('#codeExampleList option:selected'))
