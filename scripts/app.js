@@ -251,10 +251,13 @@ $(document).ready(function(){
     $('#pg1Div').append(`
     <div id = 'pg1Content'>
         <div id = "pBack" class = "aboutContent">
-            <p>My name is Eric Sergio and live in the Greater Seattle area. I have experience in front-end and back-end development
-            with a proven ability to create responsive and mobile-friendly websites. I set high expectations for myself in anything
-            I do and have a strong drive to continue to learn and improve. Thank you for taking the time to visit my site.
-            <br><br>**Site is under construction.<br><br>**Site is built from scratch.
+            <p id = 'aboutTxt'>
+            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. I have experience in front-end and back-end development
+                with a proven ability to create responsive and mobile-friendly websites.</span>
+                <span class = 'fullWidth'>I set high expectations for myself in anything I do and have a strong drive to continue to learn and improve. 
+                    Thank you for taking the time to visit my site.
+                    <br><br>**Site is under construction.<br><br>**Site is built from scratch.
+                </span>
             </p>
         </div>
         
@@ -374,7 +377,7 @@ $(document).ready(function(){
             $('.selectedImg').empty();
             $('.selectedImg').append(`
             <div id = 'currentExampleImgDiv'>
-                <img alt = '${examples[idx]} image' src='assets/${examples[idx]}.png' />
+                <img alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`)
         });
 
