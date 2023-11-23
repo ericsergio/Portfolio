@@ -201,11 +201,11 @@
 
     .resumeSections {
         position:absolute;
-        top:55vh;
+        top:35vh;
         left:8.5vw;
-        width:70vw;
-        background-color: #fff;
+        width:70vw;        
         padding:5%;
+        font-size: .8em;
     }
 
     #experienceList1 {
