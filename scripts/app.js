@@ -251,11 +251,12 @@ $(document).ready(function(){
     <div id = 'pg1Content'>
         <div id = "pBack" class = "aboutContent">
             <p id = 'aboutTxt'>
-            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. I have experience in front-end and back-end development
-                with a proven ability to create responsive and mobile-friendly websites.
+            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area.
                 </span>
-                <span class = 'fullWidth'>I set high expectations for myself in anything I do and have a strong drive to continue to learn and improve. 
-                    Thank you for taking the time to visit my site.
+                <span class = 'fullWidth'>I have experience in front-end and back-end development
+                with a proven ability to create responsive and mobile-friendly websites. I set high expectations 
+                for myself in anything I do and have a strong drive to continue to learn and improve. 
+                Thank you for taking the time to visit my site.
                     <br><br>**Site is under construction.<br><br>**Site is built from scratch.
                 </span>
             </p>
@@ -323,7 +324,8 @@ $(document).ready(function(){
                     'Another language that I have extensive experience with. I am a Mac user and as such I work in a UNIX environment. I use my command line for just about everything I do on my computer and rarely need to use the UI. I really enjoy shell programming and have devoted a ton of my free time to learning how to most effectively accomplish tasks from my shell. I often use languages/utilities such as SED and AWK in conjunction with bash as I love the puzzle of turning data into useful information via text manipulation.',
                     'Although I am very cautious using Git I have several years of experience using it in team projects. There is plenty more for me to learn using git but I am very comfortable with day to day github usage',
                     'C# is the language that my BAS degree was based around and I have used it in numerous scenarios. ',
-                    'SQL is one of my favorite languages as I love working with databases. I have used MySQL extensively, SQL server extensively, sqlite3 and the MySQL and SQL Server cloud based SQL solutions '
+                    'SQL is one of my favorite languages as I love working with databases. I have used MySQL and SQL server extensively, sqlite3, and the MySQL and SQL Server cloud based SQL solutions. I have built numerous databases from scratch for various projects and am proficient creating stored procedures, views, and transactions in addition to incorporating them into backend code to display data on the frontend. On the projects page, my Inventory Management application provides live examples of this in a functional app; there are also code snippets available on the examples page.',
+                    'I acquired the experience I have in Unity during my Capstone project for my BAS degree. I was put on a team of 4 developers working on the improvement of a game being sponsored by the University of Minnesota to help people learn the Native American language, Ojibwe. I held the role of Scrum Master for this project and as such, I organized our daily stand-ups, weekly reviews, our DevOps dashboard/project boards, and served as a general team helper as needed. In addition to my role as the scrum master, I was one of the main development contributors too, and in fact, I built the entire framework for the UI and designed the UI. It happened this way because I pitched the idea that was chosen in the early stages of our team being onboarded to the development team. After my pitch was selected, I conducted a great deal of research because this was my first time using Unity. This research led me to pitching a new idea which was scrapping the pre-fab method of building the UI and using the more modern UI Toolkit technology. '
                 ];
                 $('#resumeContent').append(`<div id = 'skillsDiv' class = 'resumeSections'> <ul id="skillsGrid"></ul></div>`);
                 $('#resumeContent').append(`<p id = 'skillDescription'></p>`);

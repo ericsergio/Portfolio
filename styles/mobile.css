@@ -127,7 +127,10 @@
     
 
     #aboutTxt > span.fullWidth{
-        width:90vw;
+        position: absolute;
+        top:30vh;
+        left:12vw;
+        width:80vw;
         color:#fff;
         padding: 0% 8% 8% 8%;
     }
