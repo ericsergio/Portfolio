@@ -241,7 +241,6 @@ $(document).ready(function() {
             </a>
         </li>`);
     }
-    
 });
 
 
@@ -318,10 +317,31 @@ $(document).ready(function(){
                 $('#resumeContent').empty();
                 let skills = ['JavaScript', 'jQuery', 'Bash', 'Git', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
                 'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Unit Testing' ];
+                let skillDescriptions = [
+                    'By far JavaScript is the language that I am the most proficient with. I intentionally learned JavaScript without using an IDE and while using "strict mode". Although a lot of my code samples utilize JQuery, I initially spent a great deal of time without using any helper libraries. I am very comfortable using OO JavaScript including prototyping and classes. I earned a LinkedIn skills badge for JavaScript where I scored within the top tenth percentile of those who attempted the assessment, and for those who aren\'t familiar with LinkedIn skills badges, they are assessments where you are only allowed to take the assessment a set number of times and if you score within the top fifteenth percentile then you earn a skill badge for that language. Over a million LinkedIn users had taken the js assessment and so I am especially proud to have scored as high as I did for this particular assessment.',                     
+                    'Shortly after learning base js, I took a course on JavaScript frameworks and libraries where JQuery was the most utilized library that the curriculum covered. I found JQuery to be a huge time saver and use it almost any time I use JavaScript. I would consider myself to be highly proficient using it.',                    
+                    'Another language that I have extensive experience with. I am a Mac user and as such I work in a UNIX environment. I use my command line for just about everything I do on my computer and rarely need to use the UI. I really enjoy shell programming and have devoted a ton of my free time to learning how to most effectively accomplish tasks from my shell. I often use languages/utilities such as SED and AWK in conjunction with bash as I love the puzzle of turning data into useful information via text manipulation.',
+                    'Although I am very cautious using Git I have several years of experience using it in team projects. There is plenty more for me to learn using git but I am very comfortable with day to day github usage',
+                    'C# is the language that my BAS degree was based around and I have used it in numerous scenarios. ',
+                    'SQL is one of my favorite languages as I love working with databases. I have used MySQL extensively, SQL server extensively, sqlite3 and the MySQL and SQL Server cloud based SQL solutions '
+                ];
                 $('#resumeContent').append(`<div id = 'skillsDiv' class = 'resumeSections'> <ul id="skillsGrid"></ul></div>`);
+                $('#resumeContent').append(`<p id = 'skillDescription'></p>`);
                 for(let i in skills) {
                     $('#skillsGrid').append(`<li>${skills[i]}</li>`)
                 };
+                if(Orientation.ScreenOrientation.id === 1) {
+                    $('#skillsGrid li').each(function() {
+                        $(this).on('mouseenter', function() {
+                            $(this).css('color', 'yellow');                            
+                            $('#skillDescription').append(`${skillDescriptions[$(this).index()]}`)
+                        });
+                        $(this).on('mouseleave', function() {
+                            $('#skillDescription').empty();
+                            $(this).css('color', '#fff');
+                        });
+                    });
+                }
                 break;
             case 'AwardsItem':
                 $('#resumeContent').empty();
@@ -337,7 +357,8 @@ $(document).ready(function(){
                 console.log('default');
                 break;
         }
-    })
+    });
+
     //*********************************************************************************************** examples page content
     //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
     //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>

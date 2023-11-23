@@ -237,6 +237,15 @@ div#summaryDiv.resumeSections > p {
     grid-column-gap:13%;
 }
 
+#skillDescription {
+    position: absolute;
+    top:50vh;
+    left:20vw;
+    height:15vh;
+    width:40vw;
+    color:#fff; 
+}
+
 /*------*/
 
 #awardsDiv {
