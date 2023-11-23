@@ -156,8 +156,9 @@
 
 
     #pg2ListGrid{
-        position:relative;
+        position:absolute;
         top:2.5vh;
+        left:-23vw;
         display: grid;    
         grid-template-columns:1fr 1fr;
         width:80%;
@@ -168,6 +169,7 @@
         font: Helvetica;
         font-size: 1.3em;
         margin-bottom:5%;
+        width:35vw;
     }
 
     #resumeContent{
@@ -189,7 +191,7 @@
         display:block;
         width:0px;
         height:0px;
-        border:.4em solid rgb(38, 44, 151);
+        border:.4em solid #fff;
         border-bottom-color:transparent;
         border-right-color:transparent;
         border-left-color:transparent;
@@ -202,10 +204,10 @@
     .resumeSections {
         position:absolute;
         top:35vh;
-        left:8.5vw;
+        left:4.5vw;
         width:70vw;        
         padding:5%;
-        font-size: .8em;
+        font-size: .9em;
     }
 
     #experienceList1 {
