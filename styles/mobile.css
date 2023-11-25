@@ -251,16 +251,17 @@
 
 
     /*-------------------------------------------------------------------Projects page styling*/
+    #projGrid{
+        left:0;
+    }
+
     .projTile{
         height:10vh;
         width:17vw;
         margin-top:5vh;
     }
 
-    #triviaErr{
-        position:absolute;
-        right:13vw;
-        top:0vh;
+    #triviaErr{        
         background-color:rgb(238, 238, 234);
         padding:5%;
         border-radius:10%;

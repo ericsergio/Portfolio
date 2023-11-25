@@ -406,7 +406,6 @@ $(document).ready(function(){
     for(let i in projects) {
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
-            
             <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>
                 <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
@@ -431,7 +430,7 @@ $(document).ready(function(){
                 The mobile version is under construction. Click the Trivia project again to exit.</div>`);
                 $('#triviaErr').css({
                     'position':`absolute`,
-                    'top':`18vh`,                
+                    'top':`5vh`,                
                     'right':`22vw`,
                     'width':`40vw`,
                     'height':`16vh`
