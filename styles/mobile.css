@@ -163,7 +163,7 @@
     #pg2ListGrid{
         position:absolute;
         top:2.5vh;
-        left:-23vw;
+        left:-16vw;
         display: grid;    
         grid-template-columns:1fr 1fr;
         width:80%;
@@ -174,7 +174,7 @@
         font: Helvetica;
         font-size: 1.3em;
         margin-bottom:5%;
-        width:35vw;
+        width:30vw;
     }
 
     #resumeContent{
