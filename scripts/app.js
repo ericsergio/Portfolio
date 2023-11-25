@@ -51,7 +51,6 @@ $(document).ready(function(){
 
 /*gets ran on load or page resize to Portrait mode */
 const doPortraitNav = () => {
-
 }
 
 /*gets ran on load or page resize to Landscape mode */
@@ -79,7 +78,7 @@ Navigation.prototype.scrollToPage = function() {
     $(`#${pgs[this.id]}`).css({
         'position':`fixed`,
         'display':`block`,
-        'top':'1px',
+        'top':'1px',        
         'z-index':5
     }).siblings().not((`#${pgs[this.id]}`)).not($('.countToggles')).each(function() {
         $(this).css({
@@ -160,7 +159,6 @@ $(document).ready(function(){
 
 //This function is the page set up and navigation system - page static containers are created here
 $(document).ready(function() {
-
     let pgHeight = window.innerHeight;    
     $('body').css('height', `${pgHeight * pages.length}px`)
     /****************************************************************************   About Page  **********/
@@ -169,7 +167,6 @@ $(document).ready(function() {
         'top':`0px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`,
         'z-index':5
     }).append(`
     <div id='pg1Div' class = 'pgContainer'>
@@ -182,7 +179,6 @@ $(document).ready(function() {
         'top':`${pgHeight}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`,
         'display':`none`
     }).append(`
     <div id='pg2Div' class = 'pgContainer'>
@@ -195,7 +191,6 @@ $(document).ready(function() {
         'top':`${pgHeight * 2}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`,
         'display':`none`
     }).append(`
     <div id='pg3Div' class = 'pgContainer'>
@@ -208,7 +203,6 @@ $(document).ready(function() {
         'top':`${pgHeight * 3}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`,
         'display':`none`
     }).append(`
     <div id='pg4Div' class = 'pgContainer'>
@@ -221,7 +215,6 @@ $(document).ready(function() {
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
-        'backgroundColor':`#fff`,
         'display':`none`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'>

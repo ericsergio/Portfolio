@@ -47,10 +47,7 @@
         opacity:.8;
     }
 
-    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
-        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
-        radial-gradient(circle at 45% 95%, transparent 2%, black 80%) 5% 15%;
-    }
+
 
     /*******************The browser bar on iphones takes up 10% of the page's viewport height*************/
     /*****************top and height should equal no more than 88% of the viewport height*****************/
@@ -64,6 +61,17 @@
         border:solid 1px rgb(103, 114, 102);
         border-radius:0% 15% 0% 15%;
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    #pg1, #pg2, #pg3, #pg4, #pg5{
+        background-image: url("../assets/woodSculpture.png");
+        background-repeat: no-repeat;
+        background-position:top;
+        height:100vh;
+    } 
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
+        radial-gradient(circle at 45% 95%, transparent 2%, black 80%) 5% 15%;
     }
 
     /*-------------------------------------------------------------------about page styling*/
@@ -106,8 +114,6 @@
         /*radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;*/
     }
 
-
-
     #pBack p {
         font-size:1.2em;
     }
@@ -124,7 +130,6 @@
         /*margin: 0 35px 0 0;        */
         padding: 0% 8% 8% 8%;
     }
-    
 
     #aboutTxt > span.fullWidth{
         position: absolute;
@@ -179,7 +184,7 @@
 
     .resumeSections {
         position:absolute;
-        top:50vh;
+        top:30vh;
         left:10vw;
         width:80vw;
     }
@@ -203,8 +208,8 @@
 
     .resumeSections {
         position:absolute;
-        top:35vh;
-        left:4.5vw;
+        top:27.5vh;
+        left:2.5vw;
         width:70vw;        
         padding:5%;
         font-size: .9em;
@@ -311,9 +316,9 @@
     }
 
 
-    #pg1, #pg2, #pg3, #pg4, #pg5{
+    /*#pg1, #pg2, #pg3, #pg4, #pg5{
         background-image: url("../assets/woodSculpture.png");
-    }
+    }*/
     /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
 
 }
