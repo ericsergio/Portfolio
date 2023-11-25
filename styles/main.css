@@ -60,13 +60,13 @@ body{
     /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
 }
 
-#pg1, #pg2, #pg3, #pg4, #pg5{
+#pg1, #pg2, #pg3, #pg4{
     background-image: url("../assets/woodSculpture.png");
     background-repeat: no-repeat;
     background-position: left;
     height:100vh;
 } 
-#pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+#pg1Div, #pg2Div, #pg3Div, #pg4Div{
     background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
     radial-gradient(circle at 35% 75%, transparent 2%, black 70%) 55% 15%,
     radial-gradient(circle at 25% 5%, transparent 12%, black 70%) 5% 15%;

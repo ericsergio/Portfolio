@@ -3,7 +3,7 @@ class Orientation {
     constructor(id) {    
         this.id = id;
     }
-}
+};
 
 class Navigation {
     constructor(id, name, scrollPos, setToggle) {
@@ -12,9 +12,9 @@ class Navigation {
         this.scrollPos = scrollPos || 0;
         this.setToggle = setToggle || 0;        
     }
-}
+};
 
-const pages = ['about', 'resume', 'examples', 'projects', 'contact'];
+const pages = ['about', 'resume', 'examples', 'projects'];
 
 
 const getOrientation = () => {
@@ -91,39 +91,12 @@ Navigation.prototype.scrollToPage = function() {
         $(`#${pgs[this.id]}`).css({
             //I need to check this -- this was to account for the bottom of iphone's viewport being made visible when scrolling
             'height':`${document.body.clientHeight + 500}px`
-        }).siblings().not((`#${pgs[this.id]}`)).each(function() {
-        
         });
-    }
+        //}).siblings().not((`#${pgs[this.id]}`)).each(function() {
+        
+        //});
+    };
 }
-/*This was one idea i had to randomly place lines going vertically and horizontally accross the screen
-which is kinda cool but not very professional looking so i'm shelfing this for now.*/
-/*const designSite = (page) => {
-    let rnd10 = Math.floor(Math.random() * 6) + 3;
-    $(`#${page}`).find($('.vLines')).remove();
-    $(`#${page}`).append(`<ul class = 'vLines'></ul>`);
-    $(`#${page}`).find($('.hLines')).remove();
-    $(`#${page}`).append(`<ul class = 'hLines'></ul>`);
-    for(let i = 0;i<=rnd10;i++) {
-        $('.vLines').append(`<li id = 'vLine${i}'></li>`)
-    }
-    for(let i = 0;i<=rnd10;i++) {
-        $('.hLines').append(`<li id = 'hLine${i}'></li>`)
-    }
-    $('.vLines').children().each(function() {        
-        $(this).css({
-            'left':`${Math.floor(Math.random() * document.body.clientWidth)}px`,
-            'borderRightWidth':`${Math.floor(Math.random() * 40)}px`
-        })
-    });
-    $('.hLines').children().each(function() {        
-        $(this).css({
-            'top':`${Math.floor(Math.random() * 100)}vh`,
-            'borderTopWidth':`${Math.floor(Math.random() * 40)}px`            
-        })
-    });
-}*/
-
 //getters
 Navigation.prototype.getScrolledPage = function() {
     return this.scrollPos;
@@ -169,9 +142,7 @@ $(document).ready(function() {
         'width':`100%`,
         'z-index':5
     }).append(`
-    <div id='pg1Div' class = 'pgContainer'>
-    
-    </div>`
+    <div id='pg1Div' class = 'pgContainer'></div>`
     );
     /****************************************************************************   Resume Page  **********/
     $('#pg2').css({
@@ -181,9 +152,7 @@ $(document).ready(function() {
         'width':`100%`,
         'display':`none`
     }).append(`
-    <div id='pg2Div' class = 'pgContainer'>
-        
-    </div>`
+    <div id='pg2Div' class = 'pgContainer'></div>`
     );
     /****************************************************************************   Examples Page Content **********/
     $('#pg3').css({
@@ -193,9 +162,7 @@ $(document).ready(function() {
         'width':`100%`,
         'display':`none`
     }).append(`
-    <div id='pg3Div' class = 'pgContainer'>
-        
-    </div>`
+    <div id='pg3Div' class = 'pgContainer'></div>`
     );
     /****************************************************************************   Projects Page Content **********/
     $('#pg4').css({
@@ -205,22 +172,18 @@ $(document).ready(function() {
         'width':`100%`,
         'display':`none`
     }).append(`
-    <div id='pg4Div' class = 'pgContainer'>
-        
-    </div>`
+    <div id='pg4Div' class = 'pgContainer'></div>`
     );
     /****************************************************************************   Contact Page Content **********/
-    $('#pg5').css({
+    /*$('#pg5').css({
         'position':`absolute`,
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
         'width':`100%`,
         'display':`none`
     }).append(`
-    <div id='pg5Div' class = 'pgContainer'>
-        
-    </div>`
-    );
+    <div id='pg5Div' class = 'pgContainer'></div>`
+    );*/
 });
 
 $(document).ready(function() {
@@ -255,8 +218,7 @@ $(document).ready(function(){
             </p>
         </div>
         
-        <div id = "pMid">
-        </div>
+        <div id = "pMid"></div>
         
         <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
     </div>
@@ -276,8 +238,6 @@ $(document).ready(function(){
             <div id = '${sections[i]}Drop' class = "dropArrow"></div>
         `);
     }
-    //$('.resumeListItems').append('<div class = "dropArrow"></div>');
-    //$('#pg2ListGrid').after('<div id = "resumeContent"></div>');
     $('#pg2ListGrid li').on('click', function() {
         switch($(this).attr('id')) {
             case 'SummaryItem':
@@ -362,6 +322,9 @@ $(document).ready(function(){
      using various languages. Unless I make a note saying otherwise, everything included here is code that I originally wrote, Click on the heading to display each example snippet.</h5>
     <select id='codeExampleList'>
         <option id = 'codeExample0' value="option0">
+            Example Code Snippets
+        </option>
+        <option id = 'codeExample0' value="option0">
             SQL Procedure
         </option>
         <option id = 'codeExample1' value="option1">
@@ -397,9 +360,6 @@ $(document).ready(function(){
                 <img alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`)
         });
-
-        
-    //});
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
@@ -442,76 +402,8 @@ $(document).ready(function(){
     }
 });
 
-
-
 const exampleLandscapeZoom = () => {
     $('#sqlProcOrders-magnifyingGlass').on('mouseenter', function() {
         console.log($(this));
     });
-
-/*    const magnifyingGlass = $('#ordersProcImage')[0];
-
-    magnifyingGlass.addEventListener('mouseover', (event) => {
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-        console.log("mousemove event fired");
-
-        const magnifyingGlassWidth = magnifyingGlass.offsetWidth;
-        const magnifyingGlassHeight = magnifyingGlass.offsetHeight;
-
-        // Position the magnifying glass at the mouse coordinates
-        magnifyingGlass.style.left = `${mouseX - magnifyingGlassWidth / 2}px`;
-        magnifyingGlass.style.top = `${mouseY - magnifyingGlassHeight / 2}px`;
-    });
-magnifyingGlass.addEventListener('mousedown', (event) => {
-    event.preventDefault();
-  
-    const elementUnderMagnifyingGlass = document.elementFromPoint(event.clientX, event.clientY);
-  
-    if (elementUnderMagnifyingGlass) {
-      zoomIn(elementUnderMagnifyingGlass, event.clientX, event.clientY);
-    }
-  });
-
-  document.addEventListener('mouseup', () => {
-  const zoomedElements = document.querySelectorAll('[style^="transform: scale("]');
-
-
-  for (const element of zoomedElements) {
-    element.style.transform = '';
-  }
-});*/
 }
-
-
-/*
-function zoomIn(element, mouseX, mouseY) {
-    const elementWidth = element.offsetWidth;
-    const elementHeight = element.offsetHeight;
-  
-    const zoomFactorHeight = 3;
-    const zoomFactorWidth = 2;
-    const zoomedWidth = elementWidth * zoomFactorWidth;
-    const zoomedHeight = elementHeight * zoomFactorHeight;
-    console.log(`zoomedHeight: ${zoomedHeight} \n zoomedWidth:${zoomedWidth}`);
-  
-    const zoomedLeft = mouseX - zoomedWidth / 2;
-    const zoomedTop = mouseY - zoomedHeight / 2;
-  
-    console.log(`zoomedLeft: ${zoomedLeft} \n zoomed:${zoomedTop}`);
-    element.style.transform = `scale(${zoomFactorHeight}) translate(${zoomedLeft}px, ${zoomedTop}px)`;
-  }
-*/
-
-
-
-/*$( "img#ordersImg.projTile" ).hover(
-    function() {/
-      $( this )./append( $( "<span> ***</span>" ) );
-    }, function() {/
-      $( this ).fin/d( "span" ).last().remove();
-    }/
-  );/
-*/
-
-
