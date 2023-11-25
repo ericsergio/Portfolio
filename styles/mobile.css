@@ -71,7 +71,8 @@
     } 
     #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
         background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
-        radial-gradient(circle at 45% 95%, transparent 2%, black 80%) 5% 15%;
+        radial-gradient(circle at 45% 95%, transparent 20%, black 80%) 5% 15%,
+        radial-gradient(circle at 35% 35%, transparent 2%, black 70%) 5% 15%;
     }
 
     /*-------------------------------------------------------------------about page styling*/
