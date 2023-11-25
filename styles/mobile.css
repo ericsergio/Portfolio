@@ -252,7 +252,7 @@
 
     /*-------------------------------------------------------------------Projects page styling*/
     #projGrid{
-        left:0;
+        left:-5vw;
     }
 
     .projTile{
