@@ -19,15 +19,6 @@ function Players(id, name, score) {
 	this.currentTurn = false;
 }
 
-/*function getActivePlayer() {
-	for(var p in Players) {
-		if (Players[p].currentTurn === true) {
-			var activePlayer = Players[p];
-		}
-	}
-	return activePlayer;
-}*/
-
 const getActivePlayer = () => {
 	for(var p in Players) {
 		if (Players[p].currentTurn === true) {
@@ -54,17 +45,6 @@ const turnOver = () => {
 	return turnOver;
 }
 
-/*function turnOver() {
-	var pArr = [];
-	for(var p in Players) {
-		pArr.push(Players[p]);
-		if(Players[p].currentTurn === true) {
-			var turnOver = Players[p];
-		}
-	}
-	return turnOver;
-}
-*/
 const newTurn = () => {
 	var pArr = [];
 	for(var p in Players) {
@@ -75,18 +55,6 @@ const newTurn = () => {
 	}
 	return nextTurn;
 }
-/*
-function newTurn() {
-	var pArr = [];
-	for(var p in Players) {
-		pArr.push(Players[p]);
-		if(Players[p].currentTurn === false) {
-			var nextTurn = Players[p];
-		}
-	}
-	return nextTurn;
-}
-*/
 
 const switchTurn = (prev, next) => {
 	prev = turnOver();
@@ -96,15 +64,6 @@ const switchTurn = (prev, next) => {
 	CurrentTurn.turnInit.player_turn = next.name;
 }
 
-/*
-function switchTurn(prev, next) {
-	prev = turnOver();
-	next = newTurn();
-	prev.currentTurn = false;
-	next.currentTurn = true;
-	CurrentTurn.turnInit.player_turn = next.name;
-}
-*/
 
 Players.prototype.addPoints = () => {
 	var activePlayer = getActivePlayer();
@@ -170,7 +129,7 @@ $(document).ready(function () {
 });
 
 
-function doPlayers() {
+const doPlayers = () => {
 	$('#levelQ').remove();
 	if($('#p1').val().length > 0) {
 		CurrentGame.gameInit.player1 = $('#p1').val();
@@ -203,7 +162,7 @@ function doPlayers() {
 	startGame();
 }
 
-function insertNewPlayers(obj) {
+const insertNewPlayers = (obj) => {
 	var props = [];
 	for(var p in obj) {
 		props.push(obj[p]);	
@@ -213,7 +172,7 @@ function insertNewPlayers(obj) {
 		console.log("ajax response : " + data);
 	});
 };
-function updateGoesFirst(obj) {
+const updateGoesFirst = (obj) => {
 	CurrentGame.gameInit.stage = 2;
 	/////////////set players current
 	var props = [];
@@ -225,7 +184,7 @@ function updateGoesFirst(obj) {
 		//console.log("updateFunction: " + data);
 	});
 }
-function getCurrentQuestion(obj) {
+const getCurrentQuestion = (obj) => {
 	var props = [];
 	for(var p in obj) {
 		props.push(obj[p]);
@@ -234,10 +193,9 @@ function getCurrentQuestion(obj) {
 	.done(function(data) {
 		$('#questionDiv').append(data);
 	});
-	////////////////
 }
 
-function startGame() {
+const startGame = () => {
 	var p1 = $('#player1Display'), p2 = $('#player2Display');
 	var p1Left = p1.offset().left, p2Left = p2.offset().left, p2Top = p2.offset().top;
 	var p2Height = Number(p2.css('height').replace('px', ''));
@@ -262,8 +220,7 @@ function startGame() {
 		$('#newGameDiv').append('<p id = "selectedFirst">' + firstP + '</p>');
 		CurrentGame.gameInit.goes_first = firstP;
 		
-		
-		var gamePlayers = [CurrentGame.gameInit.player1, CurrentGame.gameInit.player2];
+		let gamePlayers = [CurrentGame.gameInit.player1, CurrentGame.gameInit.player2];
 		Players[[CurrentGame.gameInit.goes_first]] = new Players(1, CurrentGame.gameInit.goes_first, 0);
 		
 		if(CurrentGame.gameInit.goes_first !== Players[[CurrentGame.gameInit.player1]]) {
@@ -283,11 +240,10 @@ function startGame() {
 		p1.fadeOut(1000);
 		p2.fadeOut(1000);
 		$('#vs').fadeOut(1000);
-		var countStart = 3;
-		var timer = setInterval(function() {
+		let countStart = 3;
+		let timer = setInterval(function() {
 			if(countStart === 1) {
-				countStart = null;
-				//$('#selectedFirst').remove();
+				countStart = null;				
 				CurrentGame.gameInit.stage = 3;
 				var idx = 1;
 				CurrentTurn.turnInit = new CurrentTurn(CurrentGame.gameInit.stage, idx, CurrentGame.gameInit.goes_first);
@@ -296,29 +252,29 @@ function startGame() {
 				p1.css({
 					'top': '15%',
 					'left': '4%'
-				})
+				});
 				p1.show();
 				var p1ScoreTop = p1.offset().top + 15;
 				p1.before('<p id = "p1Score"></p>');
 				$('#p1Score').css({
-					'top':p1ScoreTop + 'px',
+					'top':`${p1ScoreTop}px`,
 					'left':'4%'
-				})
+				});
 				p2.css({
 					'top': '30%',
 					'left': '4%'
-				})
+				});
 				p2.show();
 				var p2ScoreTop = p2.offset().top + 15;
 				p2.before('<p id = "p2Score"></p>');
 				$('#p2Score').css({
-					'top':p2ScoreTop + 'px',
+					'top':`${p2ScoreTop}px`,
 					'left':'4%'
-				})
+				});
 			}
 			$('#selectedFirst').html(countStart);
 			$('#selectedFirst').css({
-				"fontSize" : "3.7em"
+				'fontSize' : "3.7em"
 			})
 			countStart -= 1;
 		}, 1000);
@@ -329,7 +285,7 @@ function startGame() {
 	}, startNum);
 };
 
-function doStart(startNum) {
+const doStart = (startNum) => {
 	var p1 = $('#player1Display'), p2 = $('#player2Display');
 	if(startNum % 2 === 0) {
 		var p1Color = "#ff0000", p2Color = "#00cccc";
@@ -348,16 +304,16 @@ function doStart(startNum) {
 	};
 };
 
-function doCorrect() {
-	setTimeout(function() {
+const doCorrect = () => {
+	setTimeout(() => {
 		Players.prototype.addPoints();
 		$('#questionDiv').children().remove();
 		getCurrentQuestion(CurrentTurn.turnInit);
 		CurrentTurn.turnInit.idx += 1;
 	}, 400);
 }
-function doWrong() {
-	setTimeout(function() {
+const doWrong = () => {
+	setTimeout(() => {
 		$('#showTurn').remove();
 		switchTurn();
 		$('#player1Display').after('<p id = "showTurn">' + CurrentTurn.turnInit.player_turn + '</p>');
