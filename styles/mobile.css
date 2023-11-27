@@ -218,7 +218,7 @@
     #experienceDiv ul {
         position: absolute;
         top:1vh;
-        left:-8vw;
+        left:0vw;
         width:75vw;
     }
 
