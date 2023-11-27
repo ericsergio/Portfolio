@@ -248,8 +248,33 @@ $(document).ready(function(){
                 break;
             case 'EducationItem':
                 $('#resumeContent').empty();
-                $('#resumeContent').append(`<div id = 'educationDiv' class = 'resumeSections'><ul id = 'educationList1'>Degree: Software Development BAS</ul><li>GPA:3.9</li><li>April 2021 - June 2023</li></ul>
-                <ul id = 'educationList2'>Web Application And Cloud Development ATA</ul><li>GPA:3.8</li><li>April 2018 - April 2021</li></ul></div>`);
+                $('#resumeContent').append(`<div id = 'educationDiv' class = 'resumeSections'>
+                <ul id = 'educationList1'>
+                    <li>Bellevue College \t April 2021 - June 2023</li>    
+                    <li>Degree: Software Development BAS</li>
+                    <li>GPA:3.9 | Magna Cum Laude</li>                    
+                    <li>Undergraduate Coursework: Mobile Application Development, Web Development, Application Architecture, Unit
+                    Testing, Data Structures and Algorithms, Object Oriented Programming, Database Architecture and Manipulation,
+                    Agile Framework, Project Management</li>
+                </ul>
+                <ul id = 'educationList2'>
+                    <li>Edmonds College \t April 2018 - April 2021</li>    
+                    <li>Web Application And Cloud Development ATA</li>
+                    <li>GPA:3.8 | Phi Theta Kappa</li>                    
+                    <li>Undergraduate Coursework: Full Stack Web Development, JavaScript Frameworks, Database Implementation,
+                    Systems Analysis, Project Management</li>
+                </ul>
+                </div>`);
+                if(Orientation.ScreenOrientation.id === 0) {
+                    $('#educationList2').hide();
+                    $('#resumeContent').append(`<button id = 'edNext'>Next</button>`);
+                    $('#edNext').on('click', function() {
+                        $('#educationDiv ul').each(function(){
+                            $(this).toggle();                            
+                        });
+                        $('#educationList1')[0].style.display ? $('#edNext').html('Previous') : $('#edNext').html('Next');              
+                    });
+                }
                 break;
             case 'ExperienceItem':
                 $('#resumeContent').empty();
@@ -267,13 +292,17 @@ $(document).ready(function(){
 
                 </ul>
                 <ul id = 'experienceList2'>
-                    <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
-                    <li>August 2005 - Present</li>
-                    <li>Became the lead bartender in 2018. In 2019, as the internship required to graduate with my associates degree, I proposed building a full stack
-                    web application to digitize the ordering process of all liquor, beer, and wine which was previously done using pen and paper. This</a href = 'pages/orders/index.html'> app </a>
-                    can be viewed via the projects page. </li>
-                    <li>Piloted the adoption of Unity's UI Toolkit, replacing legacy UI and significantly enhancing the game's user
-                    experience.</li>
+                <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
+                <li>August 2005 - Present</li>
+                <li>Became the lead bartender in 2018.</li>
+                <ol>
+                    <li> In 2019, I proposed building a full stack web application to digitize the ordering process of all liquor,
+                        beer, and wine for the restaurant that I bartended at and as the lead bartender, conducted the ordering for. </li>
+                    <li>Virtually eliminated unit quantity ordering errors and standardized product type units.</li>
+                    <li>Built a dedicated database management page to allow a non-technical user to be capable of updating database
+                        directly from a web interface.</li>
+                </ol>
+
                 </ul>`);
                 if(Orientation.ScreenOrientation.id === 0) {
                     $('#experienceList2').hide();

@@ -183,12 +183,7 @@
         width:70vw;
     }
 
-    .resumeSections {
-        position:absolute;
-        top:30vh;
-        left:10vw;
-        width:80vw;
-    }
+
 
     .dropArrow {
         position:relative;
@@ -210,15 +205,19 @@
     .resumeSections {
         position:absolute;
         top:27.5vh;
-        left:2.5vw;
+        left:-5vw;
         width:70vw;        
         padding:5%;
         font-size: .9em;
     }
-
+    
+    #educationDiv > ul > li:nth-child(1) {
+        font-size: 1.2em;
+        list-style-type: none;
+    }
     #experienceDiv ul {
         position: absolute;
-        top:2vh;
+        top:1vh;
         left:-8vw;
         width:75vw;
     }
@@ -228,13 +227,17 @@
     }
 
     #skillsGrid {
-        display:grid;    
+        display:grid;
         list-style-type:none;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap:13%;
+        grid-column-gap:2%;
     }
 
-    #expNext {
+    #skillsGrid li{ 
+        width:25vw;
+    }
+
+    #expNext, #edNext {
         position: absolute;
         top:70vh;
         left:25vw;
