@@ -216,18 +216,15 @@
         font-size: .9em;
     }
 
-    #experienceList1 {
+    #experienceDiv ul {
         position: absolute;
-        top:4vh;
+        top:2vh;
         left:-8vw;
         width:75vw;
     }
 
-    #experienceList2 {
-        position: absolute;
-        top:18vh;
-        left:-8vw;
-        width:75vw;
+    ol{
+        list-style-type: disc;
     }
 
     #skillsGrid {
@@ -235,6 +232,15 @@
         list-style-type:none;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap:13%;
+    }
+
+    #expNext {
+        position: absolute;
+        top:70vh;
+        left:25vw;
+        height:30px;
+        width:90px;
+        border-radius: 15%;
     }
 
     /*------*/

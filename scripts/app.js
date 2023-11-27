@@ -257,7 +257,14 @@ $(document).ready(function(){
                 <ul id = 'experienceList1'>
                     <li>Position: Software Engineer, Intern</li>
                     <li>January 2023 - June 2023</li>
-                    <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe. </li>
+                    <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe.</li>
+                    <ol>
+                        <li>Piloted the adoption of Unity's UI Toolkit, replacing legacy UI and significantly enhancing the game's user
+                        experience.</li>
+                        <li>Organized and oversaw daily stand-up meetings and sprint retrospectives and configured DevOps.</li>
+                        <li>Wrote the code for the entire UI's initial framework in which everyone else built off of.</li>
+                    </ol>
+
                 </ul>
                 <ul id = 'experienceList2'>
                     <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
@@ -265,7 +272,19 @@ $(document).ready(function(){
                     <li>Became the lead bartender in 2018. In 2019, as the internship required to graduate with my associates degree, I proposed building a full stack
                     web application to digitize the ordering process of all liquor, beer, and wine which was previously done using pen and paper. This</a href = 'pages/orders/index.html'> app </a>
                     can be viewed via the projects page. </li>
+                    <li>Piloted the adoption of Unity's UI Toolkit, replacing legacy UI and significantly enhancing the game's user
+                    experience.</li>
                 </ul>`);
+                if(Orientation.ScreenOrientation.id === 0) {
+                    $('#experienceList2').hide();
+                    $('#resumeContent').append(`<button id = 'expNext'>Next</button>`);
+                    $('#expNext').on('click', function() {
+                        $('#experienceDiv ul').each(function(){
+                            $(this).toggle();                            
+                        });
+                        $('#experienceList1')[0].style.display ? $('#expNext').html('Previous') : $('#expNext').html('Next');              
+                    });
+                }
                 break;
             case 'SkillsItem':
                 $('#resumeContent').empty();
@@ -281,7 +300,7 @@ $(document).ready(function(){
                     'I acquired the experience I have in Unity during my Capstone project for my BAS degree. I was put on a team of 4 developers working on the improvement of a game being sponsored by the University of Minnesota to help people learn the Native American language, Ojibwe. I held the role of Scrum Master for this project and as such, I organized our daily stand-ups, weekly reviews, our DevOps dashboard/project boards, and served as a general team helper as needed. In addition to my role as the scrum master, I was one of the main development contributors too, and in fact, I built the entire framework for the UI and designed the UI. It happened this way because I pitched the idea that was chosen in the early stages of our team being onboarded to the development team. After my pitch was selected, I conducted a great deal of research because this was my first time using Unity. This research led me to pitching a new idea which was scrapping the pre-fab method of building the UI and using the more modern UI Toolkit technology. '
                 ];
                 $('#resumeContent').append(`<div id = 'skillsDiv' class = 'resumeSections'> <ul id="skillsGrid"></ul></div>`);
-                $('#resumeContent').append(`<p id = 'skillDescription'></p>`);
+                $('#resumeContent').append(`<p id = 'skillDescription'></p>`);                
                 for(let i in skills) {
                     $('#skillsGrid').append(`<li>${skills[i]}</li>`)
                 };
