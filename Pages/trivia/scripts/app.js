@@ -98,7 +98,7 @@ $(document).ready(function () {
 			if($('#levelQ').children() > 0) {
 				$('#levelQ').children().remove();
 			}
-			$('#levelQ').append('<li id = "' + levels[p] + '">' + levels[p] + '</li>');
+			$('#levelQ').append(`<li id = '${levels[p]}'>${levels[p]}</li>`);
 		}
 		var startLeftPx = $('#start').offset().left;
 		var levelQPaddingLeftPx = Number($('#levelQ').css('paddingLeft').replace('px', '')) / 2;
