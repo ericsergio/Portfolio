@@ -123,3 +123,16 @@
 	color:grey;
 	font-size: 1.5em;
 }
+
+#disclaimer p{
+	position:absolute;
+	top:50vh;
+	left:50vw;
+	width:30vw;
+	height:25vh;
+	background-color:rgb(238, 238, 234);
+	padding:2%;
+	border-radius:10%;
+	opacity:.8;
+	box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
+}
