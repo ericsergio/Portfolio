@@ -19,7 +19,16 @@ function Players(id, name, score) {
 	this.currentTurn = false;
 }
 
-function getActivePlayer() {
+/*function getActivePlayer() {
+	for(var p in Players) {
+		if (Players[p].currentTurn === true) {
+			var activePlayer = Players[p];
+		}
+	}
+	return activePlayer;
+}*/
+
+const getActivePlayer = () => {
 	for(var p in Players) {
 		if (Players[p].currentTurn === true) {
 			var activePlayer = Players[p];
@@ -34,7 +43,7 @@ function getActivePlayer() {
 //	}
 //}
 
-function turnOver() {
+const turnOver = () => {
 	var pArr = [];
 	for(var p in Players) {
 		pArr.push(Players[p]);
@@ -44,6 +53,29 @@ function turnOver() {
 	}
 	return turnOver;
 }
+
+/*function turnOver() {
+	var pArr = [];
+	for(var p in Players) {
+		pArr.push(Players[p]);
+		if(Players[p].currentTurn === true) {
+			var turnOver = Players[p];
+		}
+	}
+	return turnOver;
+}
+*/
+const newTurn = () => {
+	var pArr = [];
+	for(var p in Players) {
+		pArr.push(Players[p]);
+		if(Players[p].currentTurn === false) {
+			var nextTurn = Players[p];
+		}
+	}
+	return nextTurn;
+}
+/*
 function newTurn() {
 	var pArr = [];
 	for(var p in Players) {
@@ -54,7 +86,9 @@ function newTurn() {
 	}
 	return nextTurn;
 }
-function switchTurn(prev, next) {
+*/
+
+const switchTurn = (prev, next) => {
 	prev = turnOver();
 	next = newTurn();
 	prev.currentTurn = false;
@@ -62,7 +96,17 @@ function switchTurn(prev, next) {
 	CurrentTurn.turnInit.player_turn = next.name;
 }
 
-Players.prototype.addPoints = function () {
+/*
+function switchTurn(prev, next) {
+	prev = turnOver();
+	next = newTurn();
+	prev.currentTurn = false;
+	next.currentTurn = true;
+	CurrentTurn.turnInit.player_turn = next.name;
+}
+*/
+
+Players.prototype.addPoints = () => {
 	var activePlayer = getActivePlayer();
 	var consecutiveCorrect = CurrentTurn.turnInit.idx;
 	
