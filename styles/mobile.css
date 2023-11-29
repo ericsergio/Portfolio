@@ -332,12 +332,25 @@
         width:16vw;
     }
 
+    
 
     /*#pg1, #pg2, #pg3, #pg4, #pg5{
         background-image: url("../assets/woodSculpture.png");
     }*/
     /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
-
+    #pageStats {
+        position: absolute;
+        top:5vh;
+        left:5vw;
+        height:50vh;
+        width:70vw;
+        border:solid yellow 2px;
+    }
+    #pageStats li{
+        list-style-type: none;
+        color:#000;
+        background-color: #fff;
+    }
 }
 
 

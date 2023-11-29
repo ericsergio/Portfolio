@@ -169,7 +169,7 @@ const insertNewPlayers = (obj) => {
 	}
 	$.post("pages/fn.php", { stage: props[0], level: props[1], player1: props[2], player2: props[3], goes_first: props[4], current_turn: props[5], get_question: props[6] })
 	.done(function(data) {
-		console.log("ajax response : " + data);
+		console.log("ajax response : " + data.CurrentGame);
 	});
 };
 const updateGoesFirst = (obj) => {
@@ -196,9 +196,12 @@ const getCurrentQuestion = (obj) => {
 }
 
 const startGame = () => {
-	var p1 = $('#player1Display'), p2 = $('#player2Display');
-	var p1Left = p1.offset().left, p2Left = p2.offset().left, p2Top = p2.offset().top;
-	var p2Height = Number(p2.css('height').replace('px', ''));
+	const p1 = $('#player1Display');
+	const p2 = $('#player2Display');
+	let p1Left = p1.offset().left;
+	let p2Left = p2.offset().left;
+	let p2Top = p2.offset().top;
+	let p2Height = Number(p2.css('height').replace('px', ''));
 	$('body').prepend('<p id = "vs">VS</p>');
 	var pVs = $('#vs');
 	var vsLeft = (p1Left + p2Left) / 2;
@@ -212,12 +215,10 @@ const startGame = () => {
 	var interval = setInterval(function() {doStart(startNum)}, 200);
 	setTimeout(function() {
 		clearInterval(interval);
-		if((startNum % 2) === 0) {
-			firstP = p2.html();
-		} else {
-			firstP = p1.html();
-		}
-		$('#newGameDiv').append('<p id = "selectedFirst">' + firstP + '</p>');
+		((startNum % 2) === 0) ? firstP = p2.html() : firstP = p1.html();
+		let theFirstPlayer;
+		CurrentGame.gameInit.goes_first === CurrentGame.gameInit.player1 ? theFirstPlayer = CurrentGame.gameInit.player1 : theFirstPlayer = CurrentGame.gameInit.player2
+		$('#newGameDiv').append(`<p id = "selectedFirst"> ${theFirstPlayer} </p>`);
 		CurrentGame.gameInit.goes_first = firstP;
 		
 		let gamePlayers = [CurrentGame.gameInit.player1, CurrentGame.gameInit.player2];
@@ -245,9 +246,10 @@ const startGame = () => {
 			if(countStart === 1) {
 				countStart = null;				
 				CurrentGame.gameInit.stage = 3;
-				var idx = 1;
-				CurrentTurn.turnInit = new CurrentTurn(CurrentGame.gameInit.stage, idx, CurrentGame.gameInit.goes_first);
-				
+				let idx = 1;
+				let playerIdx
+
+				CurrentTurn.turnInit = new CurrentTurn(CurrentGame.gameInit.stage, idx, CurrentGame.gameInit.goes_first);				
 				getCurrentQuestion(CurrentTurn.turnInit);
 				p1.css({
 					'top': '15%',
@@ -272,21 +274,23 @@ const startGame = () => {
 					'left':'4%'
 				});
 			}
-			$('#selectedFirst').html(countStart);
+//			$('#selectedFirst').html(countStart);
 			$('#selectedFirst').css({
 				'fontSize' : "3.7em"
 			})
 			countStart -= 1;
 		}, 1000);
 		setTimeout(function () {
-			clearInterval(timer);
+			clearInterval(timer)
 		}, 4000);
 		$('#newGameDiv').append('<div id = "questionDiv"></div>');
 	}, startNum);
 };
 
+
 const doStart = (startNum) => {
-	var p1 = $('#player1Display'), p2 = $('#player2Display');
+	let p1 = $('#player1Display');
+	let p2 = $('#player2Display');
 	if(startNum % 2 === 0) {
 		var p1Color = "#ff0000", p2Color = "#00cccc";
 	} else {

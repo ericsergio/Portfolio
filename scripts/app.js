@@ -5,6 +5,15 @@ class Orientation {
     }
 };
 
+class AspectRatio {
+    constructor(ratio) {
+        this.ratio = ratio;
+    }
+}
+
+AspectRatio.currentAspectRatio = new AspectRatio(window.innerWidth / window.innerHeight);
+
+
 class Navigation {
     constructor(id, name, scrollPos, setToggle) {
         this.id = id || 0;
@@ -14,7 +23,7 @@ class Navigation {
     }
 };
 
-const pages = ['about', 'resume', 'examples', 'projects'];
+const pages = ['about', 'resume', 'examples', 'projects', 'test'];
 
 
 const getOrientation = () => {
@@ -175,7 +184,7 @@ $(document).ready(function() {
     <div id='pg4Div' class = 'pgContainer'></div>`
     );
     /****************************************************************************   Contact Page Content **********/
-    /*$('#pg5').css({
+    $('#pg5').css({
         'position':`absolute`,
         'top':`${pgHeight * 4}px`,
         'height':`${pgHeight}px`,
@@ -183,7 +192,7 @@ $(document).ready(function() {
         'display':`none`
     }).append(`
     <div id='pg5Div' class = 'pgContainer'></div>`
-    );*/
+    );
 });
 
 $(document).ready(function() {
@@ -446,8 +455,19 @@ $(document).ready(function(){
             } else {
                 $('#triviaErr').remove();
             }
-        });
+        });        
     }
+    $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
+    let stats = ['aspectRatio', 'orientation', 'pageHeight', 'pageWidth'];
+    //let vals = [AspectRatio.currentAspectRatio, Orientation.current.id, window.innerHeight, window.innerWidth];
+    for(let i = 0; i < stats.length;i++){
+        $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
+    }
+    console.log(window.innerHeight)
+    $('#aspectRatio').html(`AspectRatio: ${AspectRatio.currentAspectRatio.ratio}`);
+    $('#orientation').html(`Orientation(0:portrait, 1:landscape): ${getOrientation()}`);
+    $('#pageHeight').html(`window.innerHeight: ${window.innerHeight}`);
+    $('#pageWidth').html(`window.innerWidth: ${window.innerWidth}`);
 });
 
 const exampleLandscapeZoom = () => {

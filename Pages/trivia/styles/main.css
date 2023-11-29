@@ -136,3 +136,7 @@
 	opacity:.8;
 	box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
 }
+
+#questionDiv{
+	border:solid yellow 4px;
+}
