@@ -465,7 +465,7 @@ $(document).ready(function(){
         });        
     }
     $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
-    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', ];
+    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];
     //let vals = [AspectRatio.currentAspectRatio, Orientation.current.id, window.innerHeight, window.innerWidth];
     for(let i = 0; i < stats.length;i++){
         $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
@@ -477,6 +477,9 @@ $(document).ready(function(){
     $('#innerWidth').html(`window.innerWidth: ${window.innerWidth}`);
     $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
+    $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
+
+    //devicePixelRatio
 
 
 });
