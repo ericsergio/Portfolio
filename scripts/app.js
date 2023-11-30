@@ -37,6 +37,11 @@ const isLandscapeMode = () => {
 Navigation.current = new Navigation();
 
 $(window).on("resize load", function(event){
+    $(document.body).css({
+        'backgroundImage': 'url("https://ericdsergio.webhop.me/assets/woodSculpture.png")',
+        'backgroundRepeat': `no-repeat`,
+        'backgroundAttachment': `fixed`
+    })
     Orientation.ScreenOrientation = new Orientation(getOrientation());
     let names = ['portrait', 'landscape'];    
     //when the viewport is in Portrait mode
@@ -80,6 +85,7 @@ Navigation.prototype.scrollToPage = function() {
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
+
     //designSite(pgs[this.id]);
     if(this.id === null) {
         this.id = 0;
@@ -87,7 +93,7 @@ Navigation.prototype.scrollToPage = function() {
     $(`#${pgs[this.id]}`).css({
         'position':`fixed`,
         'display':`block`,
-        'top':'1px',        
+        'top':'1px',
         'z-index':5
     }).siblings().not((`#${pgs[this.id]}`)).not($('.countToggles')).each(function() {
         $(this).css({
@@ -96,6 +102,7 @@ Navigation.prototype.scrollToPage = function() {
             'z-index':2
         });
     });
+
     if(isLandscapeMode() === false) {
         $(`#${pgs[this.id]}`).css({
             //I need to check this -- this was to account for the bottom of iphone's viewport being made visible when scrolling
@@ -458,7 +465,7 @@ $(document).ready(function(){
         });        
     }
     $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
-    let stats = ['aspectRatio', 'orientation', 'pageHeight', 'pageWidth'];
+    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', ];
     //let vals = [AspectRatio.currentAspectRatio, Orientation.current.id, window.innerHeight, window.innerWidth];
     for(let i = 0; i < stats.length;i++){
         $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
@@ -466,8 +473,12 @@ $(document).ready(function(){
     console.log(window.innerHeight)
     $('#aspectRatio').html(`AspectRatio: ${AspectRatio.currentAspectRatio.ratio}`);
     $('#orientation').html(`Orientation(0:portrait, 1:landscape): ${getOrientation()}`);
-    $('#pageHeight').html(`window.innerHeight: ${window.innerHeight}`);
-    $('#pageWidth').html(`window.innerWidth: ${window.innerWidth}`);
+    $('#innerHeight').html(`window.innerHeight: ${window.innerHeight}`);
+    $('#innerWidth').html(`window.innerWidth: ${window.innerWidth}`);
+    $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
+    $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
+
+
 });
 
 const exampleLandscapeZoom = () => {
