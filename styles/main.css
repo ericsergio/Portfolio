@@ -302,9 +302,9 @@ div#summaryDiv.resumeSections > p {
 #projGrid{
     position: absolute;
     top:20vh;
-    left:3vw;
+    left:-5vw;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     list-style-type: none;
     /*margin:15% 2% 0% 2%;*/
 }

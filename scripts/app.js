@@ -425,7 +425,7 @@ $(document).ready(function(){
             </div>`)
         });
     //*********************************************************************************************** projects page content
-    let projects = ['orders', 'tictactoe', 'trivia'];    
+    let projects = ['orders', 'tictactoe', 'slotMachine', 'trivia'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     for(let i in projects) {
         $('#projGrid').append(`
