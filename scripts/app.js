@@ -41,6 +41,7 @@ $(window).on("resize load", function(event){
         'backgroundImage': 'url("https://ericdsergio.webhop.me/assets/woodSculpture.png")',
         'backgroundRepeat': `no-repeat`,
         'backgroundAttachment': `fixed`
+        
     })
     Orientation.ScreenOrientation = new Orientation(getOrientation());
     let names = ['portrait', 'landscape'];    
@@ -223,12 +224,14 @@ $(document).ready(function(){
     <div id = 'pg1Content'>
         <div id = "pBack" class = "aboutContent">
             <p id = 'aboutTxt'>
-            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area.
+            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. 
                 </span>
-                <span class = 'fullWidth'>I have experience in front-end and back-end development
-                with a proven ability to create responsive and mobile-friendly websites. I set high expectations 
-                for myself in anything I do and have a strong drive to continue to learn and improve. 
-                Thank you for taking the time to visit my site.
+                <span class = 'fullWidth'>Thank you for taking the time to visit my website! I am a full stack web developer 
+                that's adaptive and constantly expanding my developer tool set. As a developer with an extensive background
+                in customer service, I excel at being a part of the customer/client facing team and possess the technical 
+                know-how to deliver high quality deliverables.
+
+
                     <br><br>**Site is under construction.<br><br>**Site is built from scratch.
                 </span>
             </p>
@@ -236,9 +239,15 @@ $(document).ready(function(){
         
         <div id = "pMid"></div>
         
-        <img id="pImage" alt="Profile Image" src="assets/ame.png"/>
+        
     </div>
+    
     `);
+    if(Orientation.ScreenOrientation.id === 1) {
+        $('#pg1').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
+    } else {
+        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
+    }
     //*********************************************************************************************** resume page content
     //$('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Other'];
@@ -296,10 +305,10 @@ $(document).ready(function(){
                 $('#resumeContent').empty();
                 $('#resumeContent').append(`<div id = 'experienceDiv' class = 'resumeSections'>
                 <ul id = 'experienceList1'>
-                    <li>Position: Software Engineer, Intern</li>
-                    <li>January 2023 - June 2023</li>
-                    <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe.</li>
+                    <li>Position: Software Engineer | Game Development, University of Minnesota</li>
+                    <li>January 2023 - June 2023</li>                    
                     <ol>
+                        <li>Scrum master for a 4-person developer team working on building a Unity game that helps people learn the Native American language, Ojibwe.</li>
                         <li>Piloted the adoption of Unity's UI Toolkit, replacing legacy UI and significantly enhancing the game's user
                         experience.</li>
                         <li>Organized and oversaw daily stand-up meetings and sprint retrospectives and configured DevOps.</li>
@@ -308,16 +317,17 @@ $(document).ready(function(){
 
                 </ul>
                 <ul id = 'experienceList2'>
-                <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
-                <li>August 2005 - Present</li>
-                <li>Became the lead bartender in 2018.</li>
-                <ol>
-                    <li> In 2019, I proposed building a full stack web application to digitize the ordering process of all liquor,
-                        beer, and wine for the restaurant that I bartended at and as the lead bartender, conducted the ordering for. </li>
-                    <li>Virtually eliminated unit quantity ordering errors and standardized product type units.</li>
-                    <li>Built a dedicated database management page to allow a non-technical user to be capable of updating database
-                        directly from a web interface.</li>
-                </ol>
+                    <li>Position: Lead Bartender/Temporary Software Engineer Intern </li>
+                    <li>August 2005 - Present</li>                
+                    <ol>
+                        <li> In 2019, I proposed building a full stack web application to digitize the ordering process of all liquor,
+                            beer, and wine for the restaurant that I bartended at and as the lead bartender, conducted the ordering for. </li>
+                        <li>Virtually eliminated unit quantity ordering errors and standardized product type units.</li>
+                        <li>Built a dedicated database management page to allow a non-technical user to be capable of updating database
+                            directly from a web interface.</li>
+                    </ol>
+                    <li id = "xnote">***Currently work part time while conducting job search. Held lead bartender role from 2017
+                    through 2021 when I stepped down to attend school full time to finish my BAS degree.</li>
 
                 </ul>`);
                 if(Orientation.ScreenOrientation.id === 0) {

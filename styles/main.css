@@ -65,6 +65,8 @@ body{
     background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
     radial-gradient(circle at 35% 75%, transparent 2%, black 70%) 55% 15%,
     radial-gradient(circle at 25% 5%, transparent 12%, black 70%) 5% 15%;
+    background: radial-gradient(circle at 30% 35%, #000 2%, transparent 95%) 90% 25%;
+    
 }
 
 #pBack {
@@ -118,12 +120,13 @@ div#pg1Content{
 
 #pImage{
     position: absolute;
-    top:1%;
-    right:1%;
-    max-height:200px;
-    max-width:137.5px;    
+    bottom:0%;
+    right:0%;
+    max-height:400px;
+    max-width:337.5px;    
     /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
-    border-radius: 30%;
+    border-radius: 30% 30% 0% 0%;
+    z-index: -1;
     /*border-left-color:rgb(44, 177, 200);*/
 }
 /*xxxxxxxxxxx--------------------------------------------------------End About page styling*/
@@ -225,6 +228,16 @@ div#summaryDiv.resumeSections > p {
     /*margin-bottom:8%;*/
 }
 
+#xnote {
+    font-size: .6em;
+    margin-top:10px;
+}
+
+ol {        
+    list-style-type: disc;
+    font-size:.8em;
+}
+
 #skillsGrid {
     display:grid;    
     list-style-type:none;
@@ -317,7 +330,7 @@ div#summaryDiv.resumeSections > p {
     position:relative;
     height:20vh;
     width:10vw;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
     border-radius:25%;
 }
 #ordersLink {

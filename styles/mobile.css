@@ -95,7 +95,7 @@
 
     #pBack {
         position: absolute;
-        top:0%;
+        top:-10%;
         right:0%;
         height:100%;
         width:100%;        
@@ -111,12 +111,13 @@
     }
 
     #pBack p {
-        font-size:1.2em;
+        font-size:1.1em;
     }
     
     #pBack #aboutTxt {
         width:90%;
         padding:5%;
+        margin-top:6vh;
     }
 
     #aboutTxt > span.halfWidth{
@@ -221,7 +222,7 @@
         width:75vw;
     }
 
-    ol{
+    ol {        
         list-style-type: disc;
     }
 
@@ -262,6 +263,7 @@
     /*-------------------------------------------------------------------Projects page styling*/
     #projGrid{
         left:-5vw;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .projTile{
