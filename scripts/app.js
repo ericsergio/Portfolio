@@ -1,7 +1,7 @@
 //check
 class Orientation {
     constructor(id) {    
-        this.id = id;
+        this.id = id || 0;
     }
 };
 
@@ -243,7 +243,8 @@ $(document).ready(function(){
     </div>
     
     `);
-    if(Orientation.ScreenOrientation.id === 1) {
+    //if(Orientation.ScreenOrientation.id === 1) {
+    if(getOrientation() === 1) {
         $('#pg1').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     } else {
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
@@ -446,7 +447,8 @@ $(document).ready(function(){
                 </img>
         </li>`);
     }
-    if(Orientation.ScreenOrientation.id < 1) {
+   // if(Orientation.ScreenOrientation.id < 1) {
+    if(getOrientation() < 1) {
         //$('a#triviaLink').preventDefault();
         let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
         let leftValue = $('#trivia_proj')[0].getBoundingClientRect().left;
