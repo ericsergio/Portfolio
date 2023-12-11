@@ -86,8 +86,7 @@ Navigation.prototype.scrollToPage = function() {
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
-
-    //designSite(pgs[this.id]);
+    
     if(this.id === null) {
         this.id = 0;
     }
@@ -105,13 +104,9 @@ Navigation.prototype.scrollToPage = function() {
     });
 
     if(isLandscapeMode() === false) {
-        $(`#${pgs[this.id]}`).css({
-            //I need to check this -- this was to account for the bottom of iphone's viewport being made visible when scrolling
+        $(`#${pgs[this.id]}`).css({            
             'height':`${document.body.clientHeight + 500}px`
         });
-        //}).siblings().not((`#${pgs[this.id]}`)).each(function() {
-        
-        //});
     };
 }
 //getters
@@ -145,7 +140,7 @@ $(document).ready(function(){
             };            
         });
     });
-})
+});
 
 //This function is the page set up and navigation system - page static containers are created here
 $(document).ready(function() {
@@ -230,27 +225,18 @@ $(document).ready(function(){
                 that's adaptive and constantly expanding my developer tool set. As a developer with an extensive background
                 in customer service, I excel at being a part of the customer/client facing team and possess the technical 
                 know-how to deliver high quality deliverables.
-
-
-                    <br><br>**Site is under construction.<br><br>**Site is built from scratch.
                 </span>
             </p>
-        </div>
-        
-        <div id = "pMid"></div>
-        
-        
+        </div>        
+        <div id = "pMid"></div>        
     </div>
-    
     `);
-    //if(Orientation.ScreenOrientation.id === 1) {
     if(getOrientation() === 1) {
         $('#pg1').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     } else {
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     }
     //*********************************************************************************************** resume page content
-    //$('#pg2Div').append(`<img id = 'resumeImg' alt='Resume Image' src='assets/EricDSergioResumeAsImage.png' />`);
     let sections = ['Summary', 'Education', 'Experience', 'Skills', 'Awards', 'Other'];
     $('#pg2Div').append(`
         <ul id = 'pg2ListGrid'></ul>
@@ -331,7 +317,7 @@ $(document).ready(function(){
                     through 2021 when I stepped down to attend school full time to finish my BAS degree.</li>
 
                 </ul>`);
-                if(Orientation.ScreenOrientation.id === 0) {
+                if(getOrientation() === 0) {
                     $('#experienceList2').hide();
                     $('#resumeContent').append(`<button id = 'expNext'>Next</button>`);
                     $('#expNext').on('click', function() {
@@ -390,8 +376,6 @@ $(document).ready(function(){
     });
 
     //*********************************************************************************************** examples page content
-    //<img id="ordersProcImage" alt="ordersProc Image" src="assets/ordersProc.png"/>
-    //<img id="randQuestionProcImage" alt="randQuestionProc Image" src="assets/randQuestionProc.png"/>
     $('#pg3Div').append(`
     <h5 id = 'exampleDescription'>These examples are code snippets of various projects that show my contributions/work. This section is intended to provide some insight of my coding ability/skills
      using various languages. Unless I make a note saying otherwise, everything included here is code that I originally wrote, Click on the heading to display each example snippet.</h5>
@@ -420,13 +404,10 @@ $(document).ready(function(){
     </select>
     <div class = 'selectedImg'></div>`
     );
-    //shellProgramming
     let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
     $('#codeExampleList option');
     $('#codeExampleList').on('change', function() {
-        //$('#codeExampleList').on('change', function() {
             console.log($('#codeExampleList option:selected'))
-            //console.log($(this))
             let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
             console.log(idx)
             $('.selectedImg').empty();
@@ -447,7 +428,6 @@ $(document).ready(function(){
                 </img>
         </li>`);
     }
-   // if(Orientation.ScreenOrientation.id < 1) {
     if(getOrientation() < 1) {
         //$('a#triviaLink').preventDefault();
         let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
@@ -477,8 +457,7 @@ $(document).ready(function(){
         });        
     }
     $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
-    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];
-    //let vals = [AspectRatio.currentAspectRatio, Orientation.current.id, window.innerHeight, window.innerWidth];
+    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];    
     for(let i = 0; i < stats.length;i++){
         $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
     }
@@ -490,14 +469,4 @@ $(document).ready(function(){
     $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
     $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
-
-    //devicePixelRatio
-
-
 });
-
-const exampleLandscapeZoom = () => {
-    $('#sqlProcOrders-magnifyingGlass').on('mouseenter', function() {
-        console.log($(this));
-    });
-}
