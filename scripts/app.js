@@ -332,6 +332,7 @@ $(document).ready(function(){
                 $('#resumeContent').empty();
                 let skills = ['JavaScript', 'jQuery', 'Bash', 'Git', 'C#', 'SQL', 'Unity', 'MongoDB', 'MacOS/Unix', 'Docker', 'NodeJS', 'AngularJS', 
                 'Agile', 'Perl', 'PHP', 'Dotnet', 'PowerShell', 'Android Studio', 'React Native', 'Unit Testing' ];
+                //descriptions need to be shortened to a max of column 380
                 let skillDescriptions = [
                     'By far JavaScript is the language that I am the most proficient with. I intentionally learned JavaScript without using an IDE and while using "strict mode". Although a lot of my code samples utilize JQuery, I initially spent a great deal of time without using any helper libraries. I am very comfortable using OO JavaScript including prototyping and classes. I earned a LinkedIn skills badge for JavaScript where I scored within the top tenth percentile of those who attempted the assessment, and for those who aren\'t familiar with LinkedIn skills badges, they are assessments where you are only allowed to take the assessment a set number of times and if you score within the top fifteenth percentile then you earn a skill badge for that language. Over a million LinkedIn users had taken the js assessment and so I am especially proud to have scored as high as I did for this particular assessment.',                     
                     'Shortly after learning base js, I took a course on JavaScript frameworks and libraries where JQuery was the most utilized library that the curriculum covered. I found JQuery to be a huge time saver and use it almost any time I use JavaScript. I would consider myself to be highly proficient using it.',                    
@@ -346,7 +347,7 @@ $(document).ready(function(){
                 for(let i in skills) {
                     $('#skillsGrid').append(`<li>${skills[i]}</li>`)
                 };
-                if(Orientation.ScreenOrientation.id === 1) {
+                if(getOrientation() === 1) {
                     $('#skillsGrid li').each(function() {
                         $(this).on('mouseenter', function() {
                             $(this).css('color', 'yellow');                            
@@ -356,6 +357,19 @@ $(document).ready(function(){
                             $('#skillDescription').empty();
                             $(this).css('color', '#fff');
                         });
+                    });
+                } else {
+                    let active = 0;
+                    $('#skillsGrid li').each(function() {                        
+                        $(this).on('click', function() {
+                            if($('#skillDescription').text().length > 0) {
+                                $('#skillDescription').text('');    
+                            }
+                            $(this).css('color', 'yellow');
+                            $('#skillDescription').append(`${skillDescriptions[$(this).index()]}`);
+                            active = 1;
+                        });
+
                     });
                 }
                 break;
@@ -470,3 +484,7 @@ $(document).ready(function(){
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
     $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
 });
+
+//possibly incorporate the following url which was the initial design pitch that evolved into the game UI
+//for my contributions to Reclaim:
+//https://assets.adobe.com/id/urn:aaid:sc:US:0764a64f-df76-43da-b362-54ac76726b23?view=published

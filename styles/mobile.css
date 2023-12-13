@@ -167,19 +167,18 @@
         list-style-type: none;
     }
     
-    #pg2ListGrid li{
+    #pg2ListGrid li.resumeListItems{
         font: Helvetica;
         font-size: 1.3em;
         margin-bottom:5%;
         width:30vw;
+        height:3vh;
     }
 
     #resumeContent{
         height:40vh;
         width:70vw;
     }
-
-
 
     .dropArrow {
         position:relative;
@@ -200,7 +199,7 @@
 
     .resumeSections {
         position:absolute;
-        top:27.5vh;
+        top:23.5vh;
         left:-5vw;
         width:70vw;        
         padding:5%;
@@ -235,6 +234,15 @@
 
     #skillsGrid li{ 
         width:25vw;
+    }
+
+    #skillDescription {
+        position:absolute;
+        top:45vh;
+        left:5vw;
+        width:80vw;
+        max-height:50vh;
+        overflow:hidden;
     }
 
     #expNext, #edNext {
