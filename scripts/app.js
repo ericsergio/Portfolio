@@ -340,7 +340,20 @@ $(document).ready(function(){
                     'Although I am very cautious using Git I have several years of experience using it in team projects. There is plenty more for me to learn using git but I am very comfortable with day to day github usage',
                     'C# is the language that my BAS degree was based around and I have used it in numerous scenarios. ',
                     'SQL is one of my favorite languages as I love working with databases. I have used MySQL and SQL server extensively, sqlite3, and the MySQL and SQL Server cloud based SQL solutions. I have built numerous databases from scratch for various projects and am proficient creating stored procedures, views, and transactions in addition to incorporating them into backend code to display data on the frontend. On the projects page, my Inventory Management application provides live examples of this in a functional app; there are also code snippets available on the examples page.',
-                    'I acquired the experience I have in Unity during my Capstone project for my BAS degree. I was put on a team of 4 developers working on the improvement of a game being sponsored by the University of Minnesota to help people learn the Native American language, Ojibwe. I held the role of Scrum Master for this project and as such, I organized our daily stand-ups, weekly reviews, our DevOps dashboard/project boards, and served as a general team helper as needed. In addition to my role as the scrum master, I was one of the main development contributors too, and in fact, I built the entire framework for the UI and designed the UI. It happened this way because I pitched the idea that was chosen in the early stages of our team being onboarded to the development team. After my pitch was selected, I conducted a great deal of research because this was my first time using Unity. This research led me to pitching a new idea which was scrapping the pre-fab method of building the UI and using the more modern UI Toolkit technology. '
+                    'I acquired the experience I have in Unity during my Capstone project for my BAS degree. I was put on a team of 4 developers working on the improvement of a game being sponsored by the University of Minnesota to help people learn the Native American language, Ojibwe. I held the role of Scrum Master for this project and as such, I organized our daily stand-ups, weekly reviews, our DevOps dashboard/project boards, and served as a general team helper as needed. In addition to my role as the scrum master, I was one of the main development contributors too, and in fact, I built the entire framework for the UI and designed the UI. It happened this way because I pitched the idea that was chosen in the early stages of our team being onboarded to the development team. After my pitch was selected, I conducted a great deal of research because this was my first time using Unity. This research led me to pitching a new idea which was scrapping the pre-fab method of building the UI and using the more modern UI Toolkit technology. ',
+                    'In Progress', //MongoDB
+                    'In Progress', //MacOS/Unix
+                    'In Progress', //Docker
+                    'In Progress', //NodeJS
+                    'In Progress', //Angular
+                    'In Progress', //Agile
+                    'In Progress', //Perl
+                    'In Progress', //PHP
+                    'In Progress', //Dotnet
+                    'In Progress', //Powershell
+                    'In Progress', //Android Studio
+                    'In Progress', //React Native
+                    'In Progress' //Unit Testing                    
                 ];
                 $('#resumeContent').append(`<div id = 'skillsDiv' class = 'resumeSections'> <ul id="skillsGrid"></ul></div>`);
                 $('#resumeContent').append(`<p id = 'skillDescription'></p>`);                
