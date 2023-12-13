@@ -358,9 +358,11 @@ $(document).ready(function(){
                             $(this).css('color', '#fff');
                         });
                     });
-                } else {                    
+                } else {
+                    $('#skillDescription').hide();
                     $('#skillsGrid li').each(function() {                        
                         $(this).on('click', function() {
+                            $('#skillDescription').show()
                             $(this).siblings().css('color','#fff');
                             if($('#skillDescription').text().length > 0) {
                                 $('#skillDescription').text('');                                
