@@ -358,17 +358,15 @@ $(document).ready(function(){
                             $(this).css('color', '#fff');
                         });
                     });
-                } else {
-                    let active = 0;
+                } else {                    
                     $('#skillsGrid li').each(function() {                        
                         $(this).on('click', function() {
-                            $(this).siblings.css('color','#fff');
+                            $(this).siblings().css('color','#fff');
                             if($('#skillDescription').text().length > 0) {
                                 $('#skillDescription').text('');                                
                             }
                             $(this).css('color', 'yellow');
                             $('#skillDescription').append(`${skillDescriptions[$(this).index()]}`);
-                            active = 1;
                         });
 
                     });
