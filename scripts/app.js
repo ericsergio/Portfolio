@@ -362,8 +362,9 @@ $(document).ready(function(){
                     let active = 0;
                     $('#skillsGrid li').each(function() {                        
                         $(this).on('click', function() {
+                            $(this).siblings.css('color','#fff');
                             if($('#skillDescription').text().length > 0) {
-                                $('#skillDescription').text('');    
+                                $('#skillDescription').text('');                                
                             }
                             $(this).css('color', 'yellow');
                             $('#skillDescription').append(`${skillDescriptions[$(this).index()]}`);
