@@ -229,15 +229,15 @@ $(document).ready(function(){
     <div id = 'pg1Content'>
         <div id = "pBack" class = "aboutContent">
             <p id = 'aboutTxt'>
-            <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. 
-                </span>
+                <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. </span>
                 <span class = 'fullWidth'>Thank you for taking the time to visit my website! I am a full stack web developer 
                 that's adaptive and constantly expanding my developer tool set. As a developer with an extensive background
                 in customer service, I excel at being a part of the customer/client facing team and possess the technical 
                 know-how to deliver high quality deliverables.
                 </span>
+                <span id = 'inprogress'>**Site under construction<br>**Site is built from scratch</span>
             </p>
-        </div>        
+        </div>
         <div id = "pMid"></div>        
     </div>
     `);
