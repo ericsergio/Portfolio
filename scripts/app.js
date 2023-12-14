@@ -209,6 +209,16 @@ $(document).ready(function() {
             </a>
         </li>`);
     }
+    /*if(getOrientation() === 1) {
+        $('.pgContainer').each(function() {
+            $(this).on('mouseenter', function() {
+                $(this).css('opacity', '.9');                
+            });
+            $(this).on('mouseleave', function() {
+                $(this).css('opacity', '.5');
+            });
+        });
+    }*/
 });
 
 
@@ -262,18 +272,18 @@ $(document).ready(function(){
                 $('#resumeContent').empty();
                 $('#resumeContent').append(`<div id = 'educationDiv' class = 'resumeSections'>
                 <ul id = 'educationList1'>
-                    <li>Bellevue College \t April 2021 - June 2023</li>    
-                    <li>Degree: Software Development BAS</li>
-                    <li>GPA:3.9 | Magna Cum Laude</li>                    
-                    <li>Undergraduate Coursework: Mobile Application Development, Web Development, Application Architecture, Unit
+                    <li class = "school">Bellevue College \t April 2021 - June 2023</li>    
+                    <li class = "program">Degree: Software Development BAS</li>
+                    <li class = "gpa">GPA:3.9 | Magna Cum Laude</li>                    
+                    <li class = "coursework">Undergraduate Coursework: Mobile Application Development, Web Development, Application Architecture, Unit
                     Testing, Data Structures and Algorithms, Object Oriented Programming, Database Architecture and Manipulation,
                     Agile Framework, Project Management</li>
                 </ul>
                 <ul id = 'educationList2'>
-                    <li>Edmonds College \t April 2018 - April 2021</li>    
-                    <li>Web Application And Cloud Development ATA</li>
-                    <li>GPA:3.8 | Phi Theta Kappa</li>                    
-                    <li>Undergraduate Coursework: Full Stack Web Development, JavaScript Frameworks, Database Implementation,
+                    <li class = "school">Edmonds College \t April 2018 - April 2021</li>    
+                    <li class = "program">Web Application And Cloud Development ATA</li>
+                    <li class = "gpa">GPA:3.8 | Phi Theta Kappa</li>                    
+                    <li class = "coursework">Undergraduate Coursework: Full Stack Web Development, JavaScript Frameworks, Database Implementation,
                     Systems Analysis, Project Management</li>
                 </ul>
                 </div>`);
@@ -341,7 +351,7 @@ $(document).ready(function(){
                     'C# is the language that my BAS degree was based around and I have used it in numerous scenarios. ',
                     'SQL is one of my favorite languages as I love working with databases. I have used MySQL and SQL server extensively, sqlite3, and the MySQL and SQL Server cloud based SQL solutions. I have built numerous databases from scratch for various projects and am proficient creating stored procedures, views, and transactions in addition to incorporating them into backend code to display data on the frontend. On the projects page, my Inventory Management application provides live examples of this in a functional app; there are also code snippets available on the examples page.',
                     'I acquired the experience I have in Unity during my Capstone project for my BAS degree. I was put on a team of 4 developers working on the improvement of a game being sponsored by the University of Minnesota to help people learn the Native American language, Ojibwe. I held the role of Scrum Master for this project and as such, I organized our daily stand-ups, weekly reviews, our DevOps dashboard/project boards, and served as a general team helper as needed. In addition to my role as the scrum master, I was one of the main development contributors too, and in fact, I built the entire framework for the UI and designed the UI. It happened this way because I pitched the idea that was chosen in the early stages of our team being onboarded to the development team. After my pitch was selected, I conducted a great deal of research because this was my first time using Unity. This research led me to pitching a new idea which was scrapping the pre-fab method of building the UI and using the more modern UI Toolkit technology. ',
-                    'In Progress', //MongoDB
+                    'I have used Mongo while working on several projects and consider myself to be highly capable using it. There are example snippets in the examples section of this website that show my contributions to an angular app\'s backend where I wrote the code for the app\'s login and all of it\'s data queries from a mongo database for the app\'s functionality. In most cases, when I have used mongo, it was in conjunction with frontend AJAX requests that query the database to retrieve the needed data. I have also built several Mongo databases from scratch for various projects providing me with a fair amount of experience designing NOSQL databases.', //MongoDB
                     'In Progress', //MacOS/Unix
                     'In Progress', //Docker
                     'In Progress', //NodeJS
