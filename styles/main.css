@@ -384,6 +384,10 @@ ol {
     width:20vw;
 }
 
+#reclaimFrameExit:hover {
+    cursor: pointer;;
+}
+
 
 
 /*xxxxxxxxxxxxx------------------------------------------------------End Projects page styling*/
@@ -392,7 +396,7 @@ ol {
 
     
     #exampleDescription {
-        font-size:.7em;
+        font-size:1.3em;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color:#fff;
     }

@@ -222,6 +222,7 @@ $(document).ready(function() {
 
 
 //This function is where to add dynamic content to the pages
+
 $(document).ready(function(){
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
@@ -229,10 +230,13 @@ $(document).ready(function(){
         <div id = "pBack" class = "aboutContent">
             <p id = 'aboutTxt'>
                 <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. </span>
-                <span class = 'fullWidth'>Thank you for taking the time to visit my website! I am a full stack web developer 
-                that's adaptive and constantly expanding my developer tool set. As a developer with an extensive background
-                in customer service, I excel at being a part of the customer/client facing team and possess the technical 
-                know-how to deliver high quality deliverables.
+                <span class = 'fullWidth'>Thank you for taking the time to visit my website! I am a recent 
+                graduate of Bellevue College's Software Development BAS program. I am a bartender and former bar manager
+                in the process of transitioning careers into IT. I have a strong customer service background as
+                well as a strong academic background in software development. I am currently seeking a position where 
+                I can leverage my strong customer service background with the technical skills that I have gained through 
+                my recent BAS degree.
+
                 </span>
                 <span id = 'inprogress'>**Site under construction<br>**Site is built from scratch</span>
             </p>
@@ -355,7 +359,7 @@ $(document).ready(function(){
                     'I learned to use Docker initially because during my advanced data access course, our instructor told us that we would need to log in to our school computers remotely in order to use a pre-configured VM that he had configured; he also more or less dared us to try to set up our own cluster on our own system. Since I was already determined to use my mac as my main system through my degree, I accepted that challenge and quickly learned that setting up my own cluster was far easier to do using docker. I was the only person in my class to have established my own cluster and I incorporated it into my course project where I used pig to filter a large dataset that I retrieved from a paid API that provided large datasets of filterable ebay listings.', //Docker
                     'I was first introduced to Node at the start of my Bacheler\'s program having had a fair amount of experience with JavaScript and JavaScript libraries throughout my Associates degree. Over the following two years I used Node more than anything else as I quickly learned the necessity of it for utilizing APIs and retrieving data.', //NodeJS
                     'During one of my courses in my third year of my degree, I took a class that was specific to Angular and learning it to an acceptable degree was required to pass the course. I was placed on a team that chose to build an educational application that assigned and organized students\' relevant course projects that were assigned to their perspective teams depending on the requirements that the teacher or admin set. This project was very worthwhile to me and helped me learn how to use JavaScript promises to retrieve data from a MongoDB dataset which I can confidently say I was almost entirely responsible for building and connecting to the angular modules.', //Angular
-                    'In Progress', //Agile
+                    'I held the role of scrum master during my capstone project/internship of a 4 person development team on a 6 month contract where I ran our daily standups, managed our devOps boards, and organized tasks as was needed for our sprints. All throughout my degree, each project I worked on used the Agile framework and subsequently provided me with a lot of experience ', //Agile
                     'In Progress', //Perl
                     'In Progress', //PHP
                     'In Progress', //Dotnet
@@ -454,17 +458,46 @@ $(document).ready(function(){
             </div>`)
         });
     //*********************************************************************************************** projects page content
-    let projects = ['orders', 'tictactoe', 'slotMachine', 'trivia'];    
+    let projects = ['orders', 'tictactoe', 'slotMachine', 'trivia', 'reclaim'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
-    for(let i in projects) {
+    for(let i in projects) {        
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
             <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>
                 <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
                 </img>
-        </li>`);
+        </li>`)
     }
+    if('#reclaimLink') {
+        $('#reclaimLink').attr('href', '#');
+        $('#reclaimLink').on('click', function() {
+            $('#pg4Div').append(`<iframe id = 'reclaimFrame' src = 'reclaimDocumentation.html'></iframe>`);
+            $('#reclaimFrame').css({
+                'position':`absolute`,
+                'top':`0px`,
+                'left':`0px`,                
+                'width':`100%`,
+                'height':`100%`
+            });
+            $('#pg4Div').append(`<div id = 'reclaimFrameExit'>X</div>`);
+            $('#reclaimFrameExit').css({
+                'position':`relative`,
+                'top':`5%`,
+                'left':`97%`,
+                'fontSize':`1.3em`,
+                'color':`red`
+            });
+            $('#reclaimFrameExit').on('click', function() {
+                $('#reclaimFrame').remove();
+                $('#reclaimFrameExit').remove();
+            });
+        })
+    }
+    
+
+
+
     if(getOrientation() < 1) {
         //$('a#triviaLink').preventDefault();
         let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
