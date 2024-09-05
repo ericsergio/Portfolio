@@ -287,8 +287,8 @@
     }
 
     .projTile{
-        height:10vh;
-        width:17vw;
+        height:calc(100vh / 12);
+        width:calc(100vh / 12);
         margin-top:5vh;
     }
 

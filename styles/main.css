@@ -357,32 +357,39 @@ ol {
 
 /*-------------------------------------------------------------------Projects page styling*/
 
+ul {
+    padding-inline-start: 0;
+  }
+
 #projGrid{
     position: absolute;
     top:20vh;
-    left:-5vw;
+    /*left:2vw;*/
+    width:100%;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap:calc(100vh / 15);
     list-style-type: none;
+    margin:0 auto;
     /*margin:15% 2% 0% 2%;*/
 }
 
 .projTiles{
-    margin:0 5vw 0 5vw;
+    margin: 0 0 5% 30%;
 }
 
 .projTile {
     position:relative;
-    height:20vh;
-    width:10vw;
+    height:calc(100vh / 8);
+    width:calc(100vh / 8);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
     border-radius:25%;
 }
-#ordersLink {
+/*#ordersLink {
     position:relative;
     height:20vh;
     width:20vw;
-}
+}*/
 
 #reclaimFrameExit:hover {
     cursor: pointer;;
