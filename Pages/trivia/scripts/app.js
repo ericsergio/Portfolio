@@ -192,6 +192,7 @@ const getCurrentQuestion = (obj) => {
 	$.post("pages/fn.php", {stage: props[0], idx: props[1], player_turn: props[2] })
 	.done(function(data) {
 		$('#questionDiv').append(data);
+		console.log("ajax response : " + data);
 	});
 }
 

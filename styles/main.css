@@ -363,12 +363,12 @@ ul {
 
 #projGrid{
     position: absolute;
-    top:20vh;
+    top:10vh;
     /*left:2vw;*/
     width:100%;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    row-gap:calc(100vh / 15);
+    row-gap:calc(100vh / 15);    
     list-style-type: none;
     margin:0 auto;
     /*margin:15% 2% 0% 2%;*/
@@ -380,8 +380,8 @@ ul {
 
 .projTile {
     position:relative;
-    height:calc(100vh / 8);
-    width:calc(100vh / 8);
+    height:calc(100vh / 6);
+    width:calc(100vh / 6);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
     border-radius:25%;
 }

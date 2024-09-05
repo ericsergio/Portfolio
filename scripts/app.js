@@ -458,7 +458,7 @@ $(document).ready(function(){
             </div>`)
         });
     //*********************************************************************************************** projects page content
-    let projects = ['orders', 'tictactoe', 'slotMachine', 'trivia', 'reclaim'];    
+    let projects = ['orders', 'tictactoe', 'slotMachine'/*, 'trivia'*/, 'reclaim'];    
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     for(let i in projects) {        
         $('#projGrid').append(`
@@ -498,9 +498,9 @@ $(document).ready(function(){
 
 
 
-    if(getOrientation() < 1) {
+    /*if(getOrientation() < 1) {
         //$('a#triviaLink').preventDefault();
-        let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
+        /*let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
         let leftValue = $('#trivia_proj')[0].getBoundingClientRect().left;
         console.log(`top:${topValue} | left: ${leftValue}`);
         $('#triviaLink').before(`<div id = 'triviaBlock'></div>`);
@@ -524,8 +524,8 @@ $(document).ready(function(){
             } else {
                 $('#triviaErr').remove();
             }
-        });        
-    }
+        });
+    }*/
     $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
     let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];    
     for(let i = 0; i < stats.length;i++){
