@@ -4,6 +4,10 @@
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 
 <style>
+*{
+	box-sizing: border-box;
+	font-size: clamp(.6rem, 2vw, 2rem);
+}
 
 #div_contact {
 	width:calc(100%);
@@ -23,6 +27,8 @@
 #div_certifications {
 	width:calc(100%);
 }
+
+
 
 /*Contact Heading***************************** 0 */
 #tbl_contact-heading {	
@@ -63,6 +69,28 @@ h1 {
 	margin-left:22.5pt;
 	border-collapse:collapse;
 	border:none;
+}
+
+.col-1 {width: 16.66%;}
+
+.col-2 {width: 33.33%;}
+
+.col-3 {width: 50%;}
+
+.col-4 {width: 66.66%;}
+
+.col-5 {width: 83.33%;}
+
+.col-6 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  width:16.66%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 	
 </style>
@@ -251,46 +279,52 @@ h1 {
     	<h1>Technical Skills</h1>
 	
 	<table id="tbl_skills">
+		<div class="row">
+			
     	<tr>
-    		<td>
+    		<td class="col-1">
         		JS/jQuery
     		</td>
-    		<td>
+    		<td class="col-2">
         		Git
     		</td>
-    		<td>
+    		<td class="col-3">
         		Bash/AWK/SED
     		</td>
-    		<td>
+    		<td class="col-4">
         		XML/UXML
     		</td>
-    		<td>
+    		<td class="col-5">
         		C#/Python/PHP
     		</td>
-    		<td>
+    		<td class="col-6">
         		JS Frameworks
     		</td>
     	</tr>
+		
+	</div>
+	<div class="row">
     	<tr>
-    		<td>
+    		<td class="col-1">
         		SQL/NoSQL
     		</td>
-    		<td>
+    		<td class="col-2">
         		Unity
     		</td>
-    		<td>
+    		<td class="col-3">
         		Agile/Project Management
     		</td>
-    		<td>
+    		<td class="col-4">
         		GCP/Azure/AWS
     		</td>
-    		<td>
+    		<td class="col-5">
         		Docker
     		</td>
-    		<td>
+    		<td class="col-6">
         		Hadoop/Pig
     		</td>
     	</tr>
+		</div>
 	</table>
 </div>
 <!--*********************************************CERTIFICATIONS START**********************************************-->
