@@ -1,5 +1,6 @@
 /* iPhone portrait */
 @media only screen and (orientation: portrait) {
+
     .fixedNav {
         position:fixed;
         height:10%;
@@ -19,13 +20,13 @@
         padding:2% 0% 5% 4%;
         width:35%;
         background-color: #ffffff;
-        border:solid yellow 1px;
     }
 
     #mainMenu li {
-        width:90%;        
-        color:#000;
+        width:90%;
         padding:2% 12% 2% 2%;
+        color:grey;        
+        font-size: clamp(1.2rem, 1.5rem, 2rem);
     }
 
     #mainMenu li:hover {
@@ -65,9 +66,9 @@
 
 
     #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
-        background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 95%) 10% 25%,
-        radial-gradient(circle at 45% 95%, transparent 20%, black 80%) 5% 15%,
-        radial-gradient(circle at 35% 35%, transparent 2%, black 70%) 5% 15%;
+        background: radial-gradient(circle at 30% 35%, transparent 60%, rgba(255, 255, 255, 1) 95%) 10% 25%,
+        radial-gradient(circle at 45% 95%, transparent 20%, rgba(25, 22, 22, 1) 80%) 5% 15%,
+        radial-gradient(circle at 35% 35%, transparent 2%, rgba(0, 0, 0, 1) 70%) 5% 15%;
     }
 
     /*-------------------------------------------------------------------about page styling*/
@@ -94,9 +95,8 @@
     }
 
     #pBack {
-        position: absolute;
-        top:-10%;
-        right:0%;
+        position: absolute;        
+        right:10%;
         height:100%;
         width:100%;        
         border-radius: 0% 15% 0% 5%;
@@ -106,8 +106,8 @@
         z-index:5;        
         /*background: radial-gradient(circle at 30% 35%, transparent 60%, #fff 75%) 10% 15%,
         radial-gradient(circle at 40% 95%, transparent 2%, black 90%) 5% 15%;*/
-        /*radial-gradient(circle at 50% 50%, transparent 50%, black 50%) 50% 75%,
-        /*radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;*/
+        /*radial-gradient(circle at 50% 50%, transparent 50%, black 50%) 50% 75%,/
+        /*radial-gradient(circle at 75% 75%, transparent 50%, black 50%) 75% 100%;*/        
     }
 
     #inprogress {
@@ -130,7 +130,7 @@
         width:50vw;
         color:#fff;
         display: inline-block;
-        /*margin: 0 35px 0 0;        */
+        /*margin: 0 35px 0 0;*/
         padding: 0% 8% 8% 8%;
     }
 
@@ -437,4 +437,15 @@
           linear-gradient(to left, transparent 50%, black 50%) 50% 100%;
 }
 
+*/
+
+/*
+this sorta creates a somewhat realistic looking moon
+
+
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+        background: radial-gradient(circle at 30% 35%, transparent 30%, rgba(255, 255, 255, 1) 5%) 10% 25%,
+        radial-gradient(circle at 45% 45%, transparent 2%, rgb(0, 0, 0, 1) 18%) 55% 85%,
+        radial-gradient(circle at 35% 35%, transparent 10%, rgb(0, 0, 0, 1) 7%) 55% 75%;
+    }
 */

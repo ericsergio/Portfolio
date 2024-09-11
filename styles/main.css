@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); 
+
 body{
     margin:0;
 }
@@ -57,26 +59,42 @@ body{
     top:16vh;
     left:11vw;
     color:#202022;
-    /*margin:12% 10% 10% 10%;*/
     height:70vh;
     width:78vw;
-    /*background-color:#CACACA;*/
     box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);    
-    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/    
+    box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);
 }
 
-
+/*
 #pg1Div, #pg2Div, #pg3Div, #pg4Div{
-    background: radial-gradient(circle at 90% 5%, #000 2%, transparent 95%) 90% 25%,    
+    background: radial-gradient(circle at 90% 5%, #000 2%, transparent 95%) 90% 25%,
     radial-gradient(circle at 95% 75%, transparent 42%, #000 90%) 5% 5%,
     radial-gradient(circle at 65% 75%, transparent 42%, #000 90%) 5% 5%;
     opacity: .8;
 }
 
+#pg1Div, #pg2Div, #pg3Div, #pg4Div{
+    background: 
+        radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0) 95%) 90% 25%,
+        radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
+        radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+}
+
+
+}*/
+#pg1Div, #pg2Div, #pg3Div, #pg4Div{
+    background: 
+        radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
+        radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
+        radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+}
+
+
 #pBack {
     color:#fff;
     padding:7%;
     width:75%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #inprogress {
