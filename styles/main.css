@@ -7,7 +7,7 @@ body{
 
 *{
 	box-sizing: border-box;
-	font-size: clamp(.6rem, 2vw, 2rem);
+    font-size:clamp(.6rem, 2vh, 1.5rem);
 }
 
 #navBtn img {
@@ -43,7 +43,7 @@ body{
 }
 
 #mainMenu li {    
-    font: 1.4em bold Grey;
+    font: clamp(.6rem, 2.5vw, 3rem) bold Grey;
 }
 
 #mainMenu li:hover {
