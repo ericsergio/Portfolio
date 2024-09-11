@@ -285,14 +285,17 @@ $(document).ready(function(){
     let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
     $('#codeExampleList option');
     $('#codeExampleList').on('change', function() {
-            console.log($('#codeExampleList option:selected'))
             let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
-            console.log(idx)
             $('.selectedImg').empty();
             $('.selectedImg').append(`
             <div id = 'currentExampleImgDiv'>
                 <img alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
-            </div>`)
+            </div>`);
+            $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
+            $('.currentExampleImgDivX').on('click', function() {
+                $('.selectedImg').empty();
+            });
+            $('#pg3Div').css('opacity', 1);
         });
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'slotMachine'/*, 'trivia'*/, 'reclaim'];    
