@@ -36,12 +36,7 @@ const isLandscapeMode = () => {
 
 Navigation.current = new Navigation();
 
-$(window).on("resize load", function(event){
-    $(document.body).css({
-        'backgroundImage': 'url("https://ericdsergio.webhop.me/assets/woodSculpture.png")',
-        'backgroundRepeat': `no-repeat`,
-        'backgroundAttachment': `fixed`
-    })
+$(window).on("resize load", function(event) {
     Orientation.ScreenOrientation = new Orientation(getOrientation());
     let names = ['portrait', 'landscape'];    
     //when the viewport is in Portrait mode
