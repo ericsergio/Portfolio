@@ -245,7 +245,7 @@ $(document).ready(function(){
     </div>
     `);
     if(getOrientation() === 1) {
-        $('#pg1').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
+        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     } else {
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     }

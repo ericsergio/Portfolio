@@ -56,7 +56,7 @@
         position:absolute;
         top:12vh;
         left:5vw;
-        color:rgb(103, 114, 102);        
+        color:rgb(103, 114, 102);
         height:76vh;
         width:90vw;
         border:solid 1px rgb(103, 114, 102);
@@ -65,12 +65,19 @@
     }
 
 
-    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+    /*#pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
         background: radial-gradient(circle at 30% 35%, transparent 60%, rgba(255, 255, 255, 1) 95%) 10% 25%,
         radial-gradient(circle at 45% 95%, transparent 20%, rgba(25, 22, 22, 1) 80%) 5% 15%,
         radial-gradient(circle at 35% 35%, transparent 2%, rgba(0, 0, 0, 1) 70%) 5% 15%;
-    }
+    }*/
 
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div, #pg5Div{
+        background: 
+            radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
+            radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
+            radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+        border-radius: 0 20% 0 0;
+    }
     /*-------------------------------------------------------------------about page styling*/
     #pg1Div{
         border-radius:0% 15% 5% 5%;
@@ -136,7 +143,7 @@
 
     #aboutTxt > span.fullWidth{
         position: absolute;
-        top:30vh;
+        top:22vh;
         left:12vw;
         width:80vw;
         color:#fff;
@@ -147,8 +154,8 @@
         position: absolute;
         top:0%;
         right:0%;
-        max-height:170px;
-        max-width:137.5px;        
+        max-height:calc(35vw);
+        max-width:calc(35vw);
         border-radius: 0% 45% 5% 25%;        
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         z-index:6;

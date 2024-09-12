@@ -2,7 +2,7 @@
 
 body{
     margin:0;
-    background-color:#c7f60c;
+    background-color:rgb(1, 95, 95);
 }
 :root {
 
@@ -63,7 +63,7 @@ body{
     height:70vh;
     width:78vw;
     box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);    
-    box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);
+    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/
 }
 
 /*
@@ -88,6 +88,7 @@ body{
         radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
         radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
         radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+        border-radius: 0 20% 0 0;
 }
 
 
@@ -96,6 +97,7 @@ body{
     padding:7%;
     width:75%;
     font-family: 'Open Sans', sans-serif;
+    z-index:5;
 }
 
 #inprogress {
@@ -132,7 +134,7 @@ body{
 
 
 /*-------------------------------------------------------------------About page styling*/
-div#pg1Content{    
+div#pg1Content {    
     
 }
 
@@ -149,15 +151,15 @@ div#pg1Content{
     width:70%;
 }
 
-#pImage{
+#pImage {
     position: absolute;
-    bottom:0%;
+    top:0%;
     right:0%;
-    max-height:400px;
-    max-width:337.5px;    
+    max-height:calc(20vw);
+    max-width:calc(20vw);    
     /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
-    border-radius: 30% 30% 0% 0%;
-    z-index: -1;
+    border-radius: 0 30% 0 30%;
+    z-index: 6;
     /*border-left-color:rgb(44, 177, 200);*/
 }
 /*xxxxxxxxxxx--------------------------------------------------------End About page styling*/
