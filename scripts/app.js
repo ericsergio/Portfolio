@@ -286,10 +286,12 @@ $(document).ready(function(){
             <div id = 'currentExampleImgDiv'>
                 <img alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`);
-            $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
-            $('.currentExampleImgDivX').on('click', function() {
-                $('.selectedImg').empty();
-            });
+            if(getOrientation() === 1) {
+                $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
+                $('.currentExampleImgDivX').on('click', function() {
+                    $('.selectedImg').empty();
+                });
+            }
             $('#pg3Div').css('opacity', 1);
         });
     //*********************************************************************************************** projects page content

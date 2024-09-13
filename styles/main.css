@@ -93,9 +93,12 @@ body{
         radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
         radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
         radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
-        border-radius: 0 20% 0 0;
 }
 
+
+#pg1Div {
+    border-radius: 0 20% 0 0;
+}
 
 #pBack {
     color:#fff;
