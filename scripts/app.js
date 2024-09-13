@@ -308,21 +308,9 @@ $(document).ready(function(){
         $('#reclaimLink').attr('href', '#');
         $('#reclaimLink').on('click', function() {
             $('#pg4Div').append(`<iframe id = 'reclaimFrame' src = 'reclaimDocumentation.html'></iframe>`);
-            $('#reclaimFrame').css({
-                'position':`absolute`,
-                'top':`0px`,
-                'left':`0px`,                
-                'width':`100%`,
-                'height':`100%`
-            });
+
             $('#pg4Div').append(`<div id = 'reclaimFrameExit'>X</div>`);
-            $('#reclaimFrameExit').css({
-                'position':`relative`,
-                'top':`5%`,
-                'left':`97%`,
-                'fontSize':`1.3em`,
-                'color':`red`
-            });
+
             $('#reclaimFrameExit').on('click', function() {
                 $('#reclaimFrame').remove();
                 $('#reclaimFrameExit').remove();
