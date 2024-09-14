@@ -135,7 +135,7 @@
 
     #aboutTxt > span.fullWidth{
         position: absolute;
-        top:22vh;
+        top:27vh;
         left:12vw;
         width:80vw;
         color:#fff;
@@ -146,8 +146,8 @@
         position: absolute;
         top:0%;
         right:0%;
-        max-height:calc(35vw);
-        max-width:calc(35vw);
+        max-height:calc(30vw);
+        max-width:calc(30vw);
         border-radius: 0% 45% 5% 25%;        
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
         z-index:6;
@@ -330,6 +330,25 @@
 
     #codeExampleList option {
         width:72vw;
+    }
+
+    #ordersProc_img {
+
+    } 
+    #randQuestionProc_img {
+
+    } 
+    #ordersWorkflowPHP_img {
+
+    } 
+    #UIReclaimCSharp_img {
+
+    } 
+    #restAPINode_img {
+
+    } 
+    #shellProgramming_img {
+
     }
     /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
     /*-------------------------------------------------------------------contact page styling*/

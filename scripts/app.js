@@ -284,7 +284,7 @@ $(document).ready(function(){
             $('.selectedImg').empty();
             $('.selectedImg').append(`
             <div id = 'currentExampleImgDiv'>
-                <img alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
+                <img id = '${examples[idx]}_img' alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`);
             if(getOrientation() === 1) {
                 $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
