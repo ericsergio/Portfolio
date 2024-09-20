@@ -1,340 +1,460 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); 
 
-body{
-    margin:0;
-    background-color:rgb(1, 95, 95);
-    background-image:url("https://ericdsergio.webhop.me/assets/woodSculpture.png");
-    background-repeat:no-repeat;
-    background-size:calc(100vh);
-    /*background-size:cover;*/
-    background-attachment: fixed;
+/*---------SITE WIDE-------------------DEFAULT--------------------------Site Wide page styling*/
+@media(min-width:1px) {
+    body {
+        margin:0;
+        background-color:rgb(1, 95, 95);
+        background-image:url("https://ericdsergio.webhop.me/assets/woodSculpture.png");
+        background-repeat:no-repeat;
+        background-size:calc(100vh);        
+        background-attachment: fixed;
+    }
+
+    * {
+	    box-sizing: border-box;
+        font-size:clamp(.6rem, 2vh, 1.5rem);
+    }
+
+    #navBtn img {
+        height:30px;
+        width:40px;
+        padding:1%;
+        border:solid #655959 1px;
+        background-color: #fff;
+        border-radius:20%;
+        opacity:.8;
+    }
+
+    .fixedNav {
+        position:fixed;
+        height:12%;
+        background-color:#302e2e;
+        color:#fff;
+        width:100%;
+        z-index: 6;
+    }
+
+    #mainMenu {
+        position:relative;
+        top:25%;
+        display:grid;
+        list-style-type:none;
+        grid-template-columns:.7fr .7fr .7fr .7fr .7fr 2fr;
+        grid-column-gap: 5%;
+        grid-row-gap: 5%;
+        font-size:1.3em;
+        font-family: Arial, Helvetica, sans-serif;    
+        margin: 0% 7% 7% 12%;
+    }
+
+    #mainMenu li {    
+        font: clamp(.6rem, 2.5vw, 3rem) bold Grey;
+    }
+
+    #mainMenu li:hover {
+        cursor:pointer;
+        color:#c7f60c;
+    }
+
+    .pgContainer {
+        position:absolute;
+        top:16vh;
+        left:11vw;
+        color:#202022;
+        height:70vh;
+        width:78vw;
+        box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    #pg1Div, #pg2Div, #pg3Div, #pg4Div{
+        background: 
+            radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
+            radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
+            radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+    }
+
+    .contactGrid {
+        display:grid;
+        position:fixed;
+        top:1vh;
+        left:75vw;
+        width:20vw;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style-type:none;
+        z-index: 7;
+    }
+
+    .contactGrid > li > a > img {
+        height:10vh;
+        width:6vw;
+    }
+
+    #githubIcon > a > img {
+        margin-top:7px;
+    }
+
+    #linkedInIcon > a > img {
+        margin-top:3px;
+    }
 }
-:root {
+/*---------SITE WIDE-------------------MOBILE--------------------------Site Wide page styling*/
+@media only screen and (orientation: portrait) {
+    #navBtn{
+        margin:3%;
+    }
 
-}
-
-*{
-	box-sizing: border-box;
-    font-size:clamp(.6rem, 2vh, 1.5rem);
-}
-
-#navBtn img {
-    height:30px;
-    width:40px;
-    padding:1%;
-    border:solid #655959 1px;
-    background-color: #fff;
-    border-radius:20%;
-    opacity:.8;
-}
-
-.fixedNav {
-    position:fixed;
-    height:12%;
-    background-color:#302e2e;
-    color:#fff;
-    width:100%;
-    z-index: 6;
-}
-
-#mainMenu{
-    position:relative;
-    top:25%;
-    display:grid;
-    list-style-type:none;
-    grid-template-columns:.7fr .7fr .7fr .7fr .7fr 2fr;
-    grid-column-gap: 5%;
-    grid-row-gap: 5%;
-    font-size:1.3em;
-    font-family: Arial, Helvetica, sans-serif;    
-    margin: 0% 7% 7% 12%;
-}
-
-#mainMenu li {    
-    font: clamp(.6rem, 2.5vw, 3rem) bold Grey;
-}
-
-#mainMenu li:hover {
-    cursor:pointer;
-    color:#c7f60c;
-}
-
-
-.pgContainer{
-    position:absolute;
-    top:16vh;
-    left:11vw;
-    color:#202022;
-    height:70vh;
-    width:78vw;
-    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.7);    
-    /*box-shadow: -35px 10px 10px rgba(188, 178, 178, 0.5);*/
-}
-
-/*
-#pg1Div, #pg2Div, #pg3Div, #pg4Div{
-    background: radial-gradient(circle at 90% 5%, #000 2%, transparent 95%) 90% 25%,
-    radial-gradient(circle at 95% 75%, transparent 42%, #000 90%) 5% 5%,
-    radial-gradient(circle at 65% 75%, transparent 42%, #000 90%) 5% 5%;
-    opacity: .8;
-}
-
-#pg1Div, #pg2Div, #pg3Div, #pg4Div{
-    background: 
-        radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0) 95%) 90% 25%,
-        radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
-        radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
-}
-
-
-}*/
-#pg1Div, #pg2Div, #pg3Div, #pg4Div{
-    background: 
-        radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
-        radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
-        radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
-}
-
-
-#pg1Div {
-    border-radius: 0 20% 0 0;
-}
-
-#pBack {
-    color:#fff;
-    padding:7%;
-    width:75%;
-    font-family: 'Open Sans', sans-serif;
-    z-index:5;
-}
-
-#inprogress {
-    position:absolute;
-    top:60vh;
-    left:8vw;
-    width:50vw;    
-    font-size:.8em;
-}
-
-.contactGrid{
-    display:grid;
-    position:fixed;
-    top:1vh;
-    left:75vw;
-    width:20vw;
-    grid-template-columns: 1fr 1fr 1fr;
-    list-style-type:none;
-    z-index: 7;
-}
-
-.contactGrid > li > a > img {
-    height:10vh;
-    width:6vw;
-}
-
-#githubIcon > a > img {
-    margin-top:7px;
-}
-
-#linkedInIcon > a > img {
-    margin-top:3px;
-}
-
-
-/*-------------------------------------------------------------------About page styling*/
-div#pg1Content {    
+    #navBtn img {
+        padding:.7%;
+        border:solid #271a1a 4px;
+    }
     
-}
-
-#greeting {
-    width:70%;
-}
-
-#greeting2 {    
-    width:70%;
+    .fixedNav {
+        height:10%;
+    }
     
-}
+    #mainMenu {
+        top:0%;        
+        grid-template-columns:1fr;
+        grid-column-gap: 2%;
+        grid-row-gap: 1%;        
+        padding:2% 0% 5% 4%;
+        width:35%;
+        background-color: #ffffff;
+        margin: 1% 7% 3% 0%;
+    }
 
-#pMid {
-    width:70%;
-}
+    #mainMenu li {
+        width:90%;
+        padding:2% 12% 2% 2%;
+        color:grey;        
+        font-size: clamp(1.2rem, 1.5rem, 2rem);
+    }
 
-#pImage {
-    position: absolute;
-    top:0%;
-    right:0%;
-    max-height:calc(13vw);
-    max-width:calc(13vw);
-    /*border:ridge rgba(80, 227, 227, 0.248) 25px;*/
-    border-radius: 0 30% 0 30%;
-    z-index: 6;
-    /*border-left-color:rgb(44, 177, 200);*/
+    .pgContainer {
+        top:12vh;
+        left:5vw;
+        color:rgb(103, 114, 102);
+        height:76vh;
+        width:90vw;
+        border:solid 1px rgb(103, 114, 102);        
+    }
+
+    .contactGrid {
+        top:0vh;
+        left:48vw;
+        width:12vw;
+    }
+
+    .contactGrid > li > a > img {
+        width:16vw;
+    }
+}
+/*xxxxxxxxxxx--------------------------------------------------------Site Wide styling end*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+/*--------ABOUT--------------------DEFAULT--------------------------About page styling*/
+@media(min-width:1px) {
+    #pg1Div {
+        border-radius: 0 20% 0 0;
+    }
+
+    #aboutBackUpper .aboutTxt {
+        color:red;
+        padding:1%;
+        
+        font-family: 'Open Sans', sans-serif;
+        z-index:5;
+    }
+
+    #aboutBackUpper {
+        color:red;
+        padding:3%;
+        width:calc(100% - 30vh);
+        height:25vh;
+        z-index:5;
+    }
+    
+    #aboutBackUpper .aboutTxt {
+        margin-top:10%;
+    }
+
+    #aboutBackLower {
+        padding:3%;
+        width:calc(100% - 10vh);
+        color:yellow;
+        z-index:5;
+        height:30vh;
+    }
+
+    .intro {
+        font-family: 'Open Sans', sans-serif;
+        font-size:1.3em;
+        color:#fff;
+    }
+
+    #pImage {
+        position: absolute;
+        top:0%;
+        right:0%;
+        max-height:calc(13vw);
+        max-width:calc(13vw);
+        border-radius: 0 30% 0 30%;
+        z-index: 6;
+    }
+}
+/*--------ABOUT--------------------MOBILE--------------------------About page styling*/
+@media only screen and (orientation: portrait) {
+    #pg1Div{
+        border-radius:0% 15% 5% 5%;
+    }
+
+    #pImage{
+        max-height:calc(30vw);
+        max-width:calc(30vw);
+        border-radius: 0% 45% 5% 25%;
+        z-index:6;
+    }
+
+    #aboutBackUpper {        
+        padding:1%;
+        width:calc(100% - 30vw);
+        height:calc(30vw);
+        z-index:5;        
+    }
+
+    #aboutBackLower {
+        padding:1%;    
+        width:85vw;        
+        z-index:5;
+        height:50vh;        
+    }
+    .aboutTxt {
+        font-family: 'Open Sans', sans-serif;
+    }
+
 }
 /*xxxxxxxxxxx--------------------------------------------------------End About page styling*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
-/*-------------------------------------------------------------------Resume page styling*/
 
-/*This is the clickable section headers on the resume page that expand*/
-#resumeFrame, #iframeBack {
-    position:absolute;
-    top:0px;
-    left:0px;  
-    width:100%;    
-    height:100%;
-}
-#iframeBack{
-    background-color: #fff;
+/*-------RESUME---------------------DEFAULT--------------------------Resume page styling*/
+@media(min-width:1px) {
+    #resumeFrame, #iframeBack {
+        position:absolute;
+        top:0px;
+        left:0px;  
+        width:100%;    
+        height:100%;
+    }
+    #iframeBack{
+        background-color: #fff;
+    }
 }
 /*xxxxxxxxxxxx-------------------------------------------------------End Resume page styling*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
-/*-------------------------------------------------------------------example page styling*/
-#exampleDescription {    
-    padding:0% 4% 0% 4%;
+
+/*-------EXAMPLE---------------------DEFAULT--------------------------Example page styling*/
+@media(min-width:1px) {
+    #exampleDescription {    
+        padding:0% 4% 0% 4%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:#fff;
+    }
+
+    .selectedImg img{
+        position:absolute;
+        top:42vh;
+        left:35vw;
+        height:40vh;
+        width:45vw;
+    }
+
+    #ordersProcImage {
+        height:20%;
+        width:35%;
+    }
+
+    #randQuestionProcImage{
+        height:20%;
+        width:35%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+    }
+
+    #sqlProcOrders {
+        height:20%;
+        width:25%;
+        overflow-y:auto;
+    }
+
+    #ordersProcImage {
+        position: absolute;
+        border: 2px solid black;
+        background-color: #fff;
+        width:20%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        cursor: none;
+    }
+
+    #exampleDescription {
+        font-size:1.3em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:#fff;
+    }
+
+    .selectedImg #currentExampleImgDiv img{
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+    }
+
+    .currentExampleImgDivX {
+        position:absolute;
+        top:0;
+        right:2%;
+        height:calc(5vh);
+        width:calc(5vh);
+        background-color: #fff;
+        border-radius: 30%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        text-align: center;
+        padding:1%;
+    }
+
+    .currentExampleImgDivX:hover {
+        background-color: hsl(64, 88%, 51%);
+    }
+
+    #codeExampleList {
+        position: absolute;
+        top:40vh;
+        left:2vw;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #codeExampleList li {
+        width:12vw;
+    }
+
+    #codeExampleList option {
+        width:72vw;
+    }
 }
+/*-------EXAMPLE-----------------------MOBILE------------------------Example page styling*/
+@media only screen and (orientation: portrait) {
+    #exampleDescription {
+        font-size:.7em;
+    }
 
-.selectedImg img{
-    position:absolute;
-    top:42vh;
-    left:35vw;
-    height:40vh;
-    width:45vw;
-}
+    .selectedImg #currentExampleImgDiv img{        
+        top:30vh;
+        left:5vw;
+        width:80vw;
+    }
 
-
-
-#ordersProcImage {
-    height:20%;
-    width:35%;
-}
-
-#randQuestionProcImage{
-    height:20%;
-    width:35%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-}
-
-#sqlProcOrders {
-    height:20%;
-    width:25%;
-    overflow-y:auto;
-}
-
-#ordersProcImage {
-    position: absolute;
-    border: 2px solid black;
-    background-color: #fff;
-    width:20%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: none;
-}
-
-#exampleDescription {
-    font-size:1.3em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#fff;
-}
-
-.selectedImg #currentExampleImgDiv img{
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-}
-
-.currentExampleImgDivX {
-    position:absolute;
-    top:0;
-    right:2%;
-    height:calc(5vh);
-    width:calc(5vh);
-    background-color: #fff;
-    border-radius: 30%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    text-align: center;
-    padding:1%;
-}
-
-.currentExampleImgDivX:hover {
-    background-color: hsl(64, 88%, 51%);
-}
-
-#codeExampleList {
-    position: absolute;
-    top:40vh;
-    left:2vw;
-}
-
-#codeExampleList li {
-    width:12vw;
-}
-
-
-#codeExampleList option {
-    width:72vw;
+    #codeExampleList {
+        top:15vh;
+        left:6vw;
+        height:5vh;        
+    }
 }
 /*xxxxxxxxxxxx-------------------------------------------------------End example page styling*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
-/*-------------------------------------------------------------------Projects page styling*/
 
-ul {
-    padding-inline-start: 0;
-  }
+/*-------PROJECT-----------------------DEFAULT------------------------Project page styling*/
+@media(min-width:1px) {
+    ul {
+        padding-inline-start: 0;
+    }
 
-#projGrid{
-    position: absolute;
-    top:10vh;
-    /*left:2vw;*/
-    width:100%;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap:calc(100vh / 15);    
-    list-style-type: none;
-    margin:0 auto;
-    /*margin:15% 2% 0% 2%;*/
+    #projGrid{
+        position: absolute;
+        top:5vh;
+        width:100%;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap:calc(100vh / 15);
+        list-style-type: none;
+        margin:0 auto;
+    }
+
+    .projTiles{
+        margin: 0 0 5% 30%;
+    }
+
+    .projTitles {
+        font-size:1.3em;
+        font-family: 'Open Sans', sans-serif;
+        font-variant: small-caps;        
+        margin: 0 0 5% 9%;
+        color:#fff;
+    }
+
+    .projTile {
+        position:relative;
+        height:calc(100vh / 6);
+        width:calc(100vh / 6);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+        border-radius:25%;
+    }
+
+    #descriptionBox {
+        position:absolute;
+        width:50%;
+        height:auto;
+        background-color:rgba(255, 255, 255);
+        /*box-shadow: 20px 30px 20px rgba(153, 150, 118, 0.583);*/
+        padding:3%;
+        border-radius: 8%;
+    }
+
+    #reclaimFrameExit:hover {
+        cursor: pointer;;
+    }
+
+    #reclaimFrame {
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:100%;
+        height:100%;
+    }
+
+    #reclaimFrameExit {
+        position:relative;
+        top:5%;
+        left:97%;
+        font-size:1.3em;
+        color:red;
+    }
 }
+/*-------PROJECT----------------------------MOBILE------------------Project page styling*/
+@media only screen and (orientation: portrait) {
+    #projGrid{
+        left:-5vw;        
+    }
 
-.projTiles{
-    margin: 0 0 5% 30%;
+    .projTile{
+        height:calc(100vh / 12);
+        width:calc(100vh / 12);
+        margin-top:5vh;
+    }
+    .projTitles {
+        font-size:1.1em;                
+    }
 }
-
-.projTile {
-    position:relative;
-    height:calc(100vh / 6);
-    width:calc(100vh / 6);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
-    border-radius:25%;
-}
-/*#ordersLink {
-    position:relative;
-    height:20vh;
-    width:20vw;
-}*/
-
-#reclaimFrameExit:hover {
-    cursor: pointer;;
-}
-
-#reclaimFrame {
-    position:absolute;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
-}
-
-#reclaimFrameExit {
-    position:relative;
-    top:5%;
-    left:97%;
-    font-size:1.3em;
-    color:red;
-}
-
 /*xxxxxxxxxxxxx------------------------------------------------------End Projects page styling*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
-    /*-------------------------------------------------------------------example page styling*/
 
-    
 
-    /*xxxxxxxxxxx--------------------------------------------------------End example page styling*/
+
+
+
+    /*******************The browser bar on iphones takes up 10% of the page's viewport height*************/
+    /*****************top and height should equal no more than 88% of the viewport height*****************/

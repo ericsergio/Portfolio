@@ -9,7 +9,7 @@ class AspectRatio {
     constructor(ratio) {
         this.ratio = ratio;
     }
-}
+};
 
 AspectRatio.currentAspectRatio = new AspectRatio(window.innerWidth / window.innerHeight);
 
@@ -32,7 +32,7 @@ const getOrientation = () => {
 
 const isLandscapeMode = () => {
     return getOrientation() === 1;
-}
+};
 
 Navigation.current = new Navigation();
 
@@ -57,16 +57,10 @@ $(document).ready(function(){
     });
 });
 
-
-/*gets ran on load or page resize to Portrait mode */
-const doPortraitNav = () => {
-}
-
 /*gets ran on load or page resize to Landscape mode */
 const doLandscapeNav = () => {
     $('#navBtn').hide();
-    $('#mainMenu').css('gridTemplateColumns', '.7fr .7fr .7fr .7fr .7fr 2fr')
-}
+};
 
 /*This is the site Navigation. Rather than creating new pages, this calculates the device's page
 size and navigating scrolls to the page's/section's position. The navigation is set to be fixed
@@ -116,15 +110,15 @@ Navigation.prototype.getPageId = function() {
     return this.id;
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
     let pageIdx = 0;
     for(let current in pages) {
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
         $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
         pageIdx += 1;
     }
-    $('#mainMenu li').each(function(){
-        $(this).on('click', function(){           
+    $('#mainMenu li').each(function() {
+        $(this).on('click', function() {           
             //this is where the navigation occurs using the prototype function scrollToPage
             //using the ids the click runs the prototype on the clicked nav item and scrolls  
             //to the appropriate spot
@@ -203,49 +197,43 @@ $(document).ready(function() {
             </a>
         </li>`);
     }
-    /*if(getOrientation() === 1) {
-        $('.pgContainer').each(function() {
-            $(this).on('mouseenter', function() {
-                $(this).css('opacity', '.9');                
-            });
-            $(this).on('mouseleave', function() {
-                $(this).css('opacity', '.5');
-            });
-        });
-    }*/
 });
 
-
-//This function is where to add dynamic content to the pages
-
-$(document).ready(function(){
+$(document).ready(function() {
     //*********************************************************************************************** about page content
     $('#pg1Div').append(`
-    <div id = 'pg1Content'>
-        <div id = "pBack" class = "aboutContent">
-            <p id = 'aboutTxt'>
-                <span class = 'halfWidth'>My name is Eric Sergio and live in the Greater Seattle area. </span>
-                <span class = 'fullWidth'>Thank you for taking the time to visit my website! I am a recent 
-                graduate of Bellevue College's Software Development BAS program. I am a bartender and former bar manager
-                in the process of transitioning careers into IT. I have a strong customer service background as
-                well as a strong academic background in software development. I am currently seeking a position where 
-                I can leverage my strong customer service background with the technical skills that I have gained through 
-                my recent BAS degree.
+        <div id = 'pg1Content'>
+            <div id = "aboutBackUpper" class = "aboutContent">
+                <p class = 'aboutTxt'>
+                    <span class = 'intro'>My name is Eric Sergio and live in the Greater Seattle area.
+                        Thank you for taking the time to visit my website!
+                    </span>                        
+                </p>
+            </div>
 
-                </span>
-                <span id = 'inprogress'>**Site under construction<br>**Site is built from scratch</span>
-            </p>
+            <div id = "aboutBackLower" class = "aboutContent">
+                <p class = 'aboutTxt'>
+                    <span class = "intro">I am a graduate of Bellevue College's 
+                        Thank you for taking the time to visit my website! I am a recent graduate of Bellevue College's 
+                        Software Development BAS program. I am a bartender and former bar manager in the process of 
+                        transitioning careers into IT. I have a strong customer service background as well as a strong 
+                        academic background in software development. I am currently seeking a position where I can leverage 
+                        my strong customer service background with the technical skills that I have gained through my BAS degree.                        
+                    </span>
+                </p>
+            </div>
         </div>
-        <div id = "pMid"></div>        
-    </div>
-    `);
+    `);    
     if(getOrientation() === 1) {
-        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
+        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);        
     } else {
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
     }
     //*********************************************************************************************** resume page content
-    $('#pg2Div').append(`<div id='iframeBack'><iframe id = 'resumeFrame' src = 'resume.html'></iframe></div>`);
+    $('#pg2Div').append(`
+        <div id='iframeBack'>
+            <iframe id = 'resumeFrame' src = 'resume.html'></iframe>
+        </div>`);
 
 
     //*********************************************************************************************** examples page content
@@ -295,68 +283,75 @@ $(document).ready(function(){
             $('#pg3Div').css('opacity', 1);
         });
     //*********************************************************************************************** projects page content
-    let projects = ['orders', 'tictactoe', 'slotMachine'/*, 'trivia'*/, 'reclaim'];    
-    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
-    for(let i in projects) {        
+    let projects = ['orders', 'tictactoe', 'slotMachine', 'reclaim'];
+    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];
+        
+    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);    
+    for(let i in projects) {      
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
-            <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>
+            <h5 id = '${projects[i]}Title' class = 'projTitles'>${projectTitles[i]}</h5>
+            <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>                
                 <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
                 </img>
-        </li>`)
+        </li>        
+        `);
     }
+    let descriptions = ['This app was one that I used in a live setting while I was the lead bartender/bar manager from 2019 to 2021 for the \
+        Outback Steakhouse. One of my acquired responsibilities was to conduct the liquor, beer, and wine ordering which had previously been done using \
+        a pen, paper, and and outdated order sheet so I built an inventory management system. The application allows a non-technical user to update and alter the \
+        database via a web interface and automatically create orders based on digital liquor counts. I wrote this at the end of my 2nd year in my degree  \
+        and consider it an ongoing project. I used PHP, MySQL, and JavaScript (with Jquery and AJAX). Feel free to navigate to the app to test it out.', 
+        'I wrote this Tic Tac Toe game to provide content to my portfolio and built the game specifically to showcase my ability to write OO JavaScript \
+        and display my familiarity with algorithms. The algorithm that I came up with after studying the game and searching for a programmable pattern was \
+        that the differences between any 3 winning boxes, set up as a grid or matrix, consistently match. So for instance, any 3 winning combinations going \
+        from left to right, top to bottom, or diagonally, the differences between the 3 boxes are always the same. I used this to write the game logic. \
+        I also used the game to showcase my ability to write CSS and HTML. Feel free to navigate to the app to test it out.',        
+        'I created this slot machine game to add content for my portfolio and it sounded like a fun project at the time. I suppose I should \
+        mention too that I built this game based on a game called the "Copper Dropper" that an ex-girlfriend of mine got me into years ago \
+        from the Tulalip Casino. Its loosely based on that game with a few modifications and I have found is fun to play without gambling.', 
+        'This is not the project itself, but a link to the documentation that I wrote after completing the project. The project was a group project \
+        which I was the scrum master for and is highlighted on my resume under my work experience. The project is privately hosted and since I \
+        cannot provide a link to the project itself, I converted the md markup file which had my exit documentation for the next group to use which \
+        shows the C# contributions that I provided to the project. Every method, class, and interface that I wrote is documented here as I built the initial \
+        framework for the project. Feel free to navigate to the documentation to see my contributions.'];
+    $(`.projTiles h5`).on('mouseover', function() {        
+        let description = descriptions[($(this).parent().index())];        
+        $('#projGrid').append(`<div id = 'descriptionBox'><p>${description}</p></div>`);
+        let left = $(this).parent()[0].getBoundingClientRect().left;
+        let tileWidth = $(this).parent()[0].getBoundingClientRect().width;
+        let tileHeight = $(this).parent()[0].getBoundingClientRect().height;
+        let top = $(this).parent()[0].getBoundingClientRect().top;
+        
+        $($(this).parent().index() % 3 > 0 ? $('#descriptionBox').css({
+            'top': top,
+            'left': left - (tileWidth * ($(this).parent().index() % 3)),
+        }) : $('#descriptionBox').css({        
+            'top': top - tileHeight / 2,
+            'left': left - tileWidth        
+        }));
+    });
+    $(`.projTiles h5`).on('mouseout', function() {
+        $('#descriptionBox').remove();
+    });
     if('#reclaimLink') {
         $('#reclaimLink').attr('href', '#');
         $('#reclaimLink').on('click', function() {
             $('#pg4Div').append(`<iframe id = 'reclaimFrame' src = 'reclaimDocumentation.html'></iframe>`);
-
             $('#pg4Div').append(`<div id = 'reclaimFrameExit'>X</div>`);
-
             $('#reclaimFrameExit').on('click', function() {
                 $('#reclaimFrame').remove();
                 $('#reclaimFrameExit').remove();
             });
         })
-    }
+    };
     
-
-
-
-    /*if(getOrientation() < 1) {
-        //$('a#triviaLink').preventDefault();
-        /*let topValue = $('#trivia_proj')[0].getBoundingClientRect().top;
-        let leftValue = $('#trivia_proj')[0].getBoundingClientRect().left;
-        console.log(`top:${topValue} | left: ${leftValue}`);
-        $('#triviaLink').before(`<div id = 'triviaBlock'></div>`);
-        $('#triviaBlock').css({    
-            'position':`absolute`,
-            'height':`200px`,
-            'width':`100px`,
-            'backgroundColor':`none`,
-            'z-index':`7`
-        }).on('click', function() {
-            if($('#triviaErr').text().length === 0) {
-                $('#pg4Div').append(`<div id='triviaErr'>Please view the Trivia project from a desktop. 
-                The mobile version is under construction. Click the Trivia project again to exit.</div>`);
-                $('#triviaErr').css({
-                    'position':`absolute`,
-                    'top':`5vh`,                
-                    'right':`22vw`,
-                    'width':`40vw`,
-                    'height':`16vh`
-                });
-            } else {
-                $('#triviaErr').remove();
-            }
-        });
-    }*/
     $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
     let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];    
-    for(let i = 0; i < stats.length;i++){
+    for(let i = 0; i < stats.length;i++) {
         $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
     }
-    console.log(window.innerHeight)
     $('#aspectRatio').html(`AspectRatio: ${AspectRatio.currentAspectRatio.ratio}`);
     $('#orientation').html(`Orientation(0:portrait, 1:landscape): ${getOrientation()}`);
     $('#innerHeight').html(`window.innerHeight: ${window.innerHeight}`);
