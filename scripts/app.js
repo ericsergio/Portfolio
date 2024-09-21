@@ -213,12 +213,10 @@ $(document).ready(function() {
 
             <div id = "aboutBackLower" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = "intro">I am a graduate of Bellevue College's 
-                        Thank you for taking the time to visit my website! I am a recent graduate of Bellevue College's 
-                        Software Development BAS program. I am a bartender and former bar manager in the process of 
-                        transitioning careers into IT. I have a strong customer service background as well as a strong 
-                        academic background in software development. I am currently seeking a position where I can leverage 
-                        my strong customer service background with the technical skills that I have gained through my BAS degree.                        
+                    <span class = "intro">I am a graduate of Bellevue College's Software Development BAS program. 
+                        I am a bartender and former bar manager in the process of transitioning careers into IT. 
+                        I am currently seeking a position where I can leverage my strong customer service background 
+                        with the technical skills that I have gained through my BAS degree and several years of self-study.
                     </span>
                 </p>
             </div>
