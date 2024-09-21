@@ -284,13 +284,14 @@ $(document).ready(function() {
         });
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'slotMachine', 'reclaim'];
-    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];
-        
-    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);    
-    for(let i in projects) {      
+    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];        
+    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
+    let idx = 0;    
+    for(let i in projects) {
+        idx += 1;
         $('#projGrid').append(`
         <li id = '${projects[i]}_proj' class = 'projTiles'>
-            <h5 id = '${projects[i]}Title' class = 'projTitles'>${projectTitles[i]}</h5>
+            <h5 id = '${projects[i]}Title' class = 'projTitles' data-tile-idx = '${idx}'>${projectTitles[i]}</h5>
             <a id = '${projects[i]}Link' href='Pages/${projects[i]}/index.html'>                
                 <img id="${projects[i]}Img" class = "projTile" alt="${projects[i]}Tile" src='assets/${projects[i]}Img.png' />
                     </a>
@@ -316,21 +317,37 @@ $(document).ready(function() {
         cannot provide a link to the project itself, I converted the md markup file which had my exit documentation for the next group to use which \
         shows the C# contributions that I provided to the project. Every method, class, and interface that I wrote is documented here as I built the initial \
         framework for the project. Feel free to navigate to the documentation to see my contributions.'];
-    $(`.projTiles h5`).on('mouseover', function() {        
-        let description = descriptions[($(this).parent().index())];        
+    $(`.projTiles h5`).on('mouseover', (event) => {
+        const hoveredElement = event.target;
+        console.log(hoveredElement.dataset.tileIdx % 3);
+        let description = descriptions[hoveredElement.dataset.tileIdx - 1];        
         $('#projGrid').append(`<div id = 'descriptionBox'><p>${description}</p></div>`);
-        let left = $(this).parent()[0].getBoundingClientRect().left;
-        let tileWidth = $(this).parent()[0].getBoundingClientRect().width;
-        let tileHeight = $(this).parent()[0].getBoundingClientRect().height;
-        let top = $(this).parent()[0].getBoundingClientRect().top;
-        
-        $($(this).parent().index() % 3 > 0 ? $('#descriptionBox').css({
-            'top': top,
-            'left': left - (tileWidth * ($(this).parent().index() % 3)),
-        }) : $('#descriptionBox').css({        
-            'top': top - tileHeight / 2,
-            'left': left - tileWidth        
-        }));
+        let left = hoveredElement.getBoundingClientRect().left;
+        let tileWidth = hoveredElement.getBoundingClientRect().width;
+        let tileHeight = hoveredElement.getBoundingClientRect().height;
+        let top = hoveredElement.getBoundingClientRect().top;
+        console.log(`left - (tileWidth * Number(hoveredElement.dataset.tileIdx: ${left - (tileWidth * Number(hoveredElement.dataset.tileIdx))}`);
+        console.log(`left: ${left}`);
+        console.log(`tileWidth: ${tileWidth}`);
+        console.log(`tileWidth * Number(hoveredElement.dataset.tileIdx: ${tileWidth * Number(hoveredElement.dataset.tileIdx)}`);
+        console.log(`tileWidth: ${tileWidth}`);
+        if(Orientation.ScreenOrientation.id < 1) {
+            Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
+                'top': top,            
+                'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
+            }) : $('#descriptionBox').css({        
+                'top': top,
+                'left': tileWidth * 2,            
+            });
+        } else {
+            Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
+                'top': top,            
+                'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
+            }) : $('#descriptionBox').css({        
+                'top': '-400px',
+                'left': tileWidth * 2,            
+            });
+        }
     });
     $(`.projTiles h5`).on('mouseout', function() {
         $('#descriptionBox').remove();
@@ -360,6 +377,43 @@ $(document).ready(function() {
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
     $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
 });
+
+function getAncestorElements(element) {
+    const ancestors = [];
+    let currentElement = element.parentElement; // Start with the direct parent
+  
+    while (currentElement) {
+      ancestors.push(currentElement);
+      currentElement = currentElement.parentElement; // Move to the next ancestor
+    }
+  
+    console.log(ancestors);
+    return ancestors;
+  }
+  
+
+  /*const getDescendantElements = (element) => {
+    const descendants = [];
+    const children = element.querySelectorAll('*'); 
+  
+    children.forEach(child => { descendants.push(child); });
+    console.log(descendants);
+    return descendants;
+  }*/
+
+  const getDescElems = (element) => {
+    const descendants = [];
+    let child = element.querySelector('*'); // Get the first child (if any)
+  
+    while (child) {
+      descendants.push(child);
+      descendants.push(...getDescElems(child)); // Recursively get descendants of the child
+      child = child.nextElementSibling; // Move to the next sibling at the same level
+    }
+    //console.log(descendants);
+    return descendants.sort();
+  }
+
 
 //possibly incorporate the following url which was the initial design pitch that evolved into the game UI
 //for my contributions to Reclaim:

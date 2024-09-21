@@ -70,8 +70,8 @@
     #pg1Div, #pg2Div, #pg3Div, #pg4Div{
         background: 
             radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
-            radial-gradient(circle at 95% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%,
-            radial-gradient(circle at 65% 75%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 1) 90%) 5% 5%;
+            radial-gradient(circle at 55% 5%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, .7) 90%) 25% 5%,
+            radial-gradient(circle at 85% 55%, rgba(0, 0, 0, 0) 82%, rgba(0, 0, 0, .7) 90%) 5% 25%;
     }
 
     .contactGrid {
@@ -228,10 +228,15 @@
         padding:1%;    
         width:85vw;        
         z-index:5;
-        height:50vh;        
+        height:50vh;
+        margin-top:3vh;
     }
     .aboutTxt {
         font-family: 'Open Sans', sans-serif;
+        font-size: .95em;        
+    }
+    .intro {
+        color:rgb(255, 255, 255);
     }
 
 }
@@ -390,7 +395,7 @@
     .projTitles {
         font-size:1.3em;
         font-family: 'Open Sans', sans-serif;
-        font-variant: small-caps;        
+        font-variant: small-caps;
         margin: 0 0 5% 9%;
         color:#fff;
     }
@@ -405,12 +410,17 @@
 
     #descriptionBox {
         position:absolute;
-        width:50%;
+        width:auto;
         height:auto;
         background-color:rgba(255, 255, 255);
         /*box-shadow: 20px 30px 20px rgba(153, 150, 118, 0.583);*/
-        padding:3%;
-        border-radius: 8%;
+        padding:2%;
+        border-radius: 3%;  
+        font-family: Arial, Helvetica, sans-serif;        
+    }
+
+    #descriptionBox p {
+        font-size:1.1em;
     }
 
     #reclaimFrameExit:hover {
@@ -437,6 +447,11 @@
 @media only screen and (orientation: portrait) {
     #projGrid{
         left:-5vw;        
+    }
+
+    #descriptionBox {
+        top:0;
+        left:0;
     }
 
     .projTile{
