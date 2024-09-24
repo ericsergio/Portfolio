@@ -157,7 +157,7 @@
 /*--------ABOUT--------------------DEFAULT--------------------------About page styling*/
 @media(min-width:1px) {
     #pg1Div {
-        border-radius: 0 20% 0 0;
+        border-radius: 0 12% 0 0;
     }
 
     #aboutBackUpper .aboutTxt {

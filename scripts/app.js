@@ -223,9 +223,9 @@ $(document).ready(function() {
         </div>
     `);    
     if(getOrientation() === 1) {
-        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);        
+        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/meHS.jpeg"/>`);        
     } else {
-        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/me.jpg"/>`);
+        $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/meHS.jpeg"/>`);
     }
     //*********************************************************************************************** resume page content
     $('#pg2Div').append(`
