@@ -297,24 +297,26 @@ $(document).ready(function() {
         </li>        
         `);
     }
-    let descriptions = ['This app was one that I used in a live setting while I was the lead bartender/bar manager from 2019 to 2021 for the \
-        Outback Steakhouse. One of my acquired responsibilities was to conduct the liquor, beer, and wine ordering which had previously been done using \
-        a pen, paper, and and outdated order sheet so I built an inventory management system. The application allows a non-technical user to update and alter the \
-        database via a web interface and automatically create orders based on digital liquor counts. I wrote this at the end of my 2nd year in my degree  \
-        and consider it an ongoing project. I used PHP, MySQL, and JavaScript (with Jquery and AJAX). Feel free to navigate to the app to test it out.', 
+    let descriptions = [
+        
+        'I built this web application as my final project and internship for finishing my AA degree at Edmonds College. At the time, \
+        I was the lead bartender at the Outback Steakhouse and I conducted all of the liquor, beer, and wine ordering and inventory management \
+        I used PHP, MySQL, JS and used this application in a live setting for over a year. It cut my labor time in half and virtually eliminated \
+        ordering errors. ',
+        
         'I wrote this Tic Tac Toe game to provide content to my portfolio and built the game specifically to showcase my ability to write OO JavaScript \
-        and display my familiarity with algorithms. The algorithm that I came up with after studying the game and searching for a programmable pattern was \
-        that the differences between any 3 winning boxes, set up as a grid or matrix, consistently match. So for instance, any 3 winning combinations going \
-        from left to right, top to bottom, or diagonally, the differences between the 3 boxes are always the same. I used this to write the game logic. \
-        I also used the game to showcase my ability to write CSS and HTML. Feel free to navigate to the app to test it out.',        
-        'I created this slot machine game to add content for my portfolio and it sounded like a fun project at the time. I suppose I should \
-        mention too that I built this game based on a game called the "Copper Dropper" that an ex-girlfriend of mine got me into years ago \
-        from the Tulalip Casino. Its loosely based on that game with a few modifications and I have found is fun to play without gambling.', 
-        'This is not the project itself, but a link to the documentation that I wrote after completing the project. The project was a group project \
-        which I was the scrum master for and is highlighted on my resume under my work experience. The project is privately hosted and since I \
-        cannot provide a link to the project itself, I converted the md markup file which had my exit documentation for the next group to use which \
-        shows the C# contributions that I provided to the project. Every method, class, and interface that I wrote is documented here as I built the initial \
-        framework for the project. Feel free to navigate to the documentation to see my contributions.'];
+        and algoithms. ',
+        
+        'I created this slot machine game to add content for my portfolio and to showcase my ability to write OO JavaScript, js promises, async/await, and \
+        it just seemed like a fun project. ', 
+        
+        'Reclaim is a game being built by the University of Minnesota that teaches users the Native American language Ojibwe. \
+        In completing my capstone project, I was the team scrum master and software engineer. I designed and implemented the initial game UI. \
+        The game isnt set to launch until 2025 so I am providing my exit documentation showing the initial UI framework that I designed & built. \
+        '
+        
+    ];
+
     $(`.projTiles h5`).on('mouseover', (event) => {
         const hoveredElement = event.target;
         console.log(hoveredElement.dataset.tileIdx % 3);
@@ -329,22 +331,32 @@ $(document).ready(function() {
         console.log(`tileWidth: ${tileWidth}`);
         console.log(`tileWidth * Number(hoveredElement.dataset.tileIdx: ${tileWidth * Number(hoveredElement.dataset.tileIdx)}`);
         console.log(`tileWidth: ${tileWidth}`);
-        if(Orientation.ScreenOrientation.id < 1) {
+        if(Orientation.ScreenOrientation.id > 0) {
             Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
                 'top': top,            
                 'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
             }) : $('#descriptionBox').css({        
                 'top': top,
-                'left': tileWidth * 2,            
+                'left': tileWidth * 2,
             });
+            console.log('+++++++++++++++++++++++ LANDSCAPE  +++++++++++++++++++++++++++');
         } else {
+            console.log(`left - (tileWidth * Number(hoveredElement.dataset.tileIdx: ${left - (tileWidth * Number(hoveredElement.dataset.tileIdx) % 3)}`);
+            console.log(`top: ${top}`);
             Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
                 'top': top,            
                 'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
-            }) : $('#descriptionBox').css({        
+                'color': 'purple',
+                'width': 'auto'
+            })
+            
+            : $('#descriptionBox').css({        
                 'top': '-400px',
-                'left': tileWidth * 2,            
+                'left': tileWidth * 2,
+                'color': 'red',
             });
+            console.log('+++++++++++++++++++++++ PORTRAIT  +++++++++++++++++++++++++++');
+            
         }
     });
     $(`.projTiles h5`).on('mouseout', function() {
