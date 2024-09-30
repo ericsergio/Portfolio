@@ -23,7 +23,7 @@ class Navigation {
     }
 };
 
-const pages = ['about', 'resume', 'examples', 'projects', 'test'];
+const pages = ['about', 'resume', 'examples', 'projects', 'contact'];
 
 
 const getOrientation = () => {
@@ -130,6 +130,8 @@ $(document).ready(function() {
     });
 });
 
+
+//You need to refactor this to use the Navigation class
 //This function is the page set up and navigation system - page static containers are created here
 $(document).ready(function() {
     let pgHeight = window.innerHeight;    
@@ -300,7 +302,7 @@ $(document).ready(function() {
     let descriptions = [
         
         'I built this web application as my final project and internship for finishing my AA degree at Edmonds College. At the time, \
-        I was the lead bartender at the Outback Steakhouse and I conducted all of the liquor, beer, and wine ordering and inventory management \
+        I was the lead bartender at the Outback Steakhouse and I conducted all of the liquor, beer, and wine ordering. \
         I used PHP, MySQL, JS and used this application in a live setting for over a year. It cut my labor time in half and virtually eliminated \
         ordering errors. ',
         
@@ -332,31 +334,31 @@ $(document).ready(function() {
         console.log(`tileWidth * Number(hoveredElement.dataset.tileIdx: ${tileWidth * Number(hoveredElement.dataset.tileIdx)}`);
         console.log(`tileWidth: ${tileWidth}`);
         if(Orientation.ScreenOrientation.id > 0) {
-            Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
+            Number(hoveredElement.dataset.tileIdx) % 4 > 0 ? $('#descriptionBox').css({
                 'top': top,            
                 'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
+                'color': 'green',
             }) : $('#descriptionBox').css({        
                 'top': top,
                 'left': tileWidth * 2,
+                'color': 'teal',
             });
             console.log('+++++++++++++++++++++++ LANDSCAPE  +++++++++++++++++++++++++++');
         } else {
-            console.log(`left - (tileWidth * Number(hoveredElement.dataset.tileIdx: ${left - (tileWidth * Number(hoveredElement.dataset.tileIdx) % 3)}`);
+            console.log(`left - (tileWidth * Number(hoveredElement.dataset.tileIdx) % 4)}: ${left - (tileWidth * Number(hoveredElement.dataset.tileIdx) % 4)}`);
             console.log(`top: ${top}`);
-            Number(hoveredElement.dataset.tileIdx) % 3 > 0 ? $('#descriptionBox').css({
+            console.log(`(Number(hoveredElement.dataset.tileIdx) % 3) : ${(Number(hoveredElement.dataset.tileIdx) % 3)}`)
+            Number(hoveredElement.dataset.tileIdx) % 4 === 3 ? $('#descriptionBox').css({
                 'top': top,            
-                'left': left - (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3)),
-                'color': 'purple',
-                'width': 'auto'
-            })
-            
-            : $('#descriptionBox').css({        
-                'top': '-400px',
-                'left': tileWidth * 2,
+                'left': tileWidth /*- (tileWidth * (Number(hoveredElement.dataset.tileIdx) % 3))*/,
+                'color': 'purple',                
+            }) : $('#descriptionBox').css({        
+                'top': top / 2,
+                'left': tileWidth * 1.5,
                 'color': 'red',
             });
             console.log('+++++++++++++++++++++++ PORTRAIT  +++++++++++++++++++++++++++');
-            
+            console.log(`(Number(hoveredElement.dataset.tileIdx) % 4) : ${(Number(hoveredElement.dataset.tileIdx) % 4)}`)
         }
     });
     $(`.projTiles h5`).on('mouseout', function() {
@@ -386,6 +388,12 @@ $(document).ready(function() {
     $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
     $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
+
+    $('#pg5Div').append(`<p class = 'testp' id = 'testp1'>+</p><p class = 'testp' id = 'testp2'>x</p>`);
+    $('#pg5Div').append(`<p class = 'testp' id = 'testp3'>X</p><p class = 'testp' id = 'testp4'>_</p>`);
+    let testps = ['+','x','X','_'];
+    
+
 });
 
 function getAncestorElements(element) {

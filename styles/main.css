@@ -2,13 +2,18 @@
 
 /*---------SITE WIDE-------------------DEFAULT--------------------------Site Wide page styling*/
 @media(min-width:1px) {
+    html, body {
+        overflow:hidden;
+    }
     body {
         margin:0;
         background-color:rgb(1, 95, 95);
         background-image:url("https://ericdsergio.webhop.me/assets/woodSculpture.png");
         background-repeat:no-repeat;
-        background-size:calc(100vh);        
+        background-size:calc(55vw);
         background-attachment: fixed;
+        background-position-x: left;
+        transform-origin: center;        
     }
 
     * {
@@ -17,8 +22,8 @@
     }
 
     #navBtn img {
-        height:30px;
-        width:40px;
+        height:5vh;
+        width:14vw;
         padding:1%;
         border:solid #655959 1px;
         background-color: #fff;
@@ -71,8 +76,9 @@
         background: 
             radial-gradient(circle at 90% 5%, rgba(0, 0, 0, 1) 2%, transparent 95%) 90% 25%,
             radial-gradient(circle at 55% 5%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, .7) 90%) 25% 5%,
-            radial-gradient(circle at 85% 55%, rgba(0, 0, 0, 0) 82%, rgba(0, 0, 0, .7) 90%) 5% 25%;
+            radial-gradient(circle at 85% 55%, rgba(0, 0, 0, 0) 82%, rgba(0, 0, 0, .7) 90%) 5% 25%;                        
     }
+    
 
     .contactGrid {
         display:grid;
@@ -101,7 +107,7 @@
 /*---------SITE WIDE-------------------MOBILE--------------------------Site Wide page styling*/
 @media only screen and (orientation: portrait) {
     #navBtn{
-        margin:3%;
+        margin:4.5%;
     }
 
     #navBtn img {
@@ -142,12 +148,12 @@
 
     .contactGrid {
         top:0vh;
-        left:48vw;
+        left:42vw;
         width:12vw;
     }
 
     .contactGrid > li > a > img {
-        width:16vw;
+        width:20vw;
     }
 }
 /*xxxxxxxxxxx--------------------------------------------------------Site Wide styling end*/
@@ -160,16 +166,7 @@
         border-radius: 0 12% 0 0;
     }
 
-    #aboutBackUpper .aboutTxt {
-        color:red;
-        padding:1%;
-        
-        font-family: 'Open Sans', sans-serif;
-        z-index:5;
-    }
-
     #aboutBackUpper {
-        color:red;
         padding:3%;
         width:calc(100% - 30vh);
         height:25vh;
@@ -177,6 +174,9 @@
     }
     
     #aboutBackUpper .aboutTxt {
+        padding:1%;        
+        font-family: 'Open Sans', sans-serif;
+        z-index:5;
         margin-top:10%;
     }
 
@@ -192,6 +192,12 @@
         font-family: 'Open Sans', sans-serif;
         font-size:1.3em;
         color:#fff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;        
+    }
+
+    .aboutTxt {
+        font-family: 'Open Sans', sans-serif;
+        font-size: calc(1.75vh);
     }
 
     #pImage {
@@ -201,11 +207,14 @@
         max-height:calc(13vw);
         max-width:calc(13vw);
         border-radius: 0 30% 0 30%;
-        z-index: 6;
+        z-index: 6;        
     }
 }
 /*--------ABOUT--------------------MOBILE--------------------------About page styling*/
 @media only screen and (orientation: portrait) {
+    #pg1Content {
+        padding:0% 5% 0% 5%;
+    }
     #pg1Div{
         border-radius:0% 15% 5% 5%;
     }
@@ -217,26 +226,22 @@
         z-index:6;
     }
 
-    #aboutBackUpper {        
+    #aboutBackUpper {
         padding:1%;
         width:calc(100% - 30vw);
         height:calc(30vw);
         z-index:5;        
     }
 
-    #aboutBackLower {
-        padding:1%;    
+    #aboutBackLower {        
         width:85vw;        
         z-index:5;
         height:50vh;
-        margin-top:3vh;
+        margin-top:6vh;
     }
-    .aboutTxt {
-        font-family: 'Open Sans', sans-serif;
-        font-size: .95em;        
-    }
+
     .intro {
-        color:rgb(255, 255, 255);
+        color:rgb(255, 255, 255);        
     }
 
 }
@@ -252,6 +257,10 @@
         left:0px;  
         width:100%;    
         height:100%;
+        /*
+        **testing zooming out of iframe - remove if you don't use it
+        transform:scale(0.95);
+        transform-origin: center;*/
     }
     #iframeBack{
         background-color: #fff;
@@ -370,7 +379,6 @@
 /*xxxxxxxxxxxx-------------------------------------------------------End example page styling*/
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
-
 /*-------PROJECT-----------------------DEFAULT------------------------Project page styling*/
 @media(min-width:1px) {
     ul {
@@ -452,6 +460,7 @@
     #descriptionBox {
         top:0;
         left:0;
+        width: calc(70vw);
     }
 
     .projTile{
@@ -466,6 +475,48 @@
 /*xxxxxxxxxxxxx------------------------------------------------------End Projects page styling*/
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
+
+
+
+
+
+/*-------CONTACT-----------------------DEFAULT------------------------Contact page styling*/
+@media(min-width:1px) {
+    #pageStats {
+        color:#fff;
+    }
+
+    .testp {
+        position:absolute;
+        top:0vh;
+        left:55vw;
+        font-size:3.3em;
+        font-family: futura;
+        color:#fff;
+        -webkit-text-stroke: 10px yellow;
+        /*filter:blur(1px);*/
+        filter:drop-shadow(0 0 10px yellow);
+    }
+
+    #testp1{
+        -webkit-text-stroke: 30px rgb(20, 100, 100, .7);
+    }
+    #testp2{
+        -webkit-text-stroke: 120px rgb(30, 100, 100, .5);
+    }
+    #testp3{
+        -webkit-text-stroke: 210px rgb(40, 100, 100, .3);
+    }
+    #testp4{
+        -webkit-text-stroke: 300px rgb(50, 100, 100, .1);
+    }
+}
+/*-------CONTACT----------------------------MOBILE------------------Contact page styling*/
+@media only screen and (orientation: portrait) {
+
+}
+/*xxxxxxxxxxxxx------------------------------------------------------End Contact page styling*/
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 
 
