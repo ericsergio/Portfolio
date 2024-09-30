@@ -48,7 +48,7 @@ $(window).on("resize load", function(event) {
         //when the viewport is in landscape mode
         $('#mainMenu').show(100);
         doLandscapeNav();
-    }    
+    }
 });
 
 $(document).ready(function(){
@@ -376,18 +376,9 @@ $(document).ready(function() {
         })
     };
     
-    $('#pg5Div').append(`<ul id = 'pageStats'></ul>`);
-    let stats = ['aspectRatio', 'orientation', 'innerHeight', 'innerWidth', 'visualViewportHeight', 'visualViewportWidth', 'devicePixelRatio' ];    
-    for(let i = 0; i < stats.length;i++) {
-        $('#pageStats').append(`<li id = '${stats[i]}'>text</li>`);
-    }
-    $('#aspectRatio').html(`AspectRatio: ${AspectRatio.currentAspectRatio.ratio}`);
-    $('#orientation').html(`Orientation(0:portrait, 1:landscape): ${getOrientation()}`);
-    $('#innerHeight').html(`window.innerHeight: ${window.innerHeight}`);
-    $('#innerWidth').html(`window.innerWidth: ${window.innerWidth}`);
-    $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
-    $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
-    $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
+    $('#pg5Div').append(`<ul id = 'contactItems'></ul>`);
+
+
 });
 
 

@@ -2,14 +2,13 @@
 
 /*---------SITE WIDE-------------------DEFAULT--------------------------Site Wide page styling*/
 @media(min-width:1px) {
-    html, body {
-        overflow:hidden;
+    html, body {        
+        scrollbar-width: none;
         background-image:url("https://ericdsergio.webhop.me/assets/woodSculpture.png");
     }
     body {
         margin:0;
-        background-color:rgb(1, 95, 95);
-        
+        background-color:rgb(5, 61, 98);
         background-repeat:no-repeat;
         background-size:calc(55vw);
         background-attachment: fixed;
@@ -483,11 +482,11 @@
 
 /*-------CONTACT-----------------------DEFAULT------------------------Contact page styling*/
 @media(min-width:1px) {
-    #pageStats {
+    #contactItems {
         color:#fff;
     }
 
-    .testp {
+    /*.testp {
         position:absolute;
         top:0vh;
         left:55vw;
@@ -495,9 +494,9 @@
         font-family: futura;
         color:#fff;
         -webkit-text-stroke: 10px yellow;
-        /*filter:blur(1px);*/
+        filter:blur(1px);
         filter:drop-shadow(0 0 10px yellow);
-    }
+    }*/
 
 }
 /*-------CONTACT----------------------------MOBILE------------------Contact page styling*/
