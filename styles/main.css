@@ -498,18 +498,6 @@
         filter:drop-shadow(0 0 10px yellow);
     }
 
-    #testp1{
-        -webkit-text-stroke: 30px rgb(20, 100, 100, .7);
-    }
-    #testp2{
-        -webkit-text-stroke: 120px rgb(30, 100, 100, .5);
-    }
-    #testp3{
-        -webkit-text-stroke: 210px rgb(40, 100, 100, .3);
-    }
-    #testp4{
-        -webkit-text-stroke: 300px rgb(50, 100, 100, .1);
-    }
 }
 /*-------CONTACT----------------------------MOBILE------------------Contact page styling*/
 @media only screen and (orientation: portrait) {

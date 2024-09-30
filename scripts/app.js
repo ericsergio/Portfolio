@@ -388,49 +388,7 @@ $(document).ready(function() {
     $('#visualViewportHeight').html(`visualViewportHeight: ${window.visualViewport.height}`);
     $('#visualViewportWidth').html(`visualViewportWidth: ${window.visualViewport.width}`);
     $('#devicePixelRatio').html(`devicePixelRatio: ${window.devicePixelRatio}`);
-
-    $('#pg5Div').append(`<p class = 'testp' id = 'testp1'>+</p><p class = 'testp' id = 'testp2'>x</p>`);
-    $('#pg5Div').append(`<p class = 'testp' id = 'testp3'>X</p><p class = 'testp' id = 'testp4'>_</p>`);
-    let testps = ['+','x','X','_'];
-    
-
 });
-
-function getAncestorElements(element) {
-    const ancestors = [];
-    let currentElement = element.parentElement; // Start with the direct parent
-  
-    while (currentElement) {
-      ancestors.push(currentElement);
-      currentElement = currentElement.parentElement; // Move to the next ancestor
-    }
-  
-    console.log(ancestors);
-    return ancestors;
-  }
-  
-
-  /*const getDescendantElements = (element) => {
-    const descendants = [];
-    const children = element.querySelectorAll('*'); 
-  
-    children.forEach(child => { descendants.push(child); });
-    console.log(descendants);
-    return descendants;
-  }*/
-
-  const getDescElems = (element) => {
-    const descendants = [];
-    let child = element.querySelector('*'); // Get the first child (if any)
-  
-    while (child) {
-      descendants.push(child);
-      descendants.push(...getDescElems(child)); // Recursively get descendants of the child
-      child = child.nextElementSibling; // Move to the next sibling at the same level
-    }
-    //console.log(descendants);
-    return descendants.sort();
-  }
 
 
 //possibly incorporate the following url which was the initial design pitch that evolved into the game UI
