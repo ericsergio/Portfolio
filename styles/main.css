@@ -3,7 +3,7 @@
 /*---------SITE WIDE-------------------DEFAULT--------------------------Site Wide page styling*/
 @media(min-width:1px) {
     html, body {        
-        scrollbar-width: none;
+        overflow: hidden;
         background-image:url("https://ericdsergio.webhop.me/assets/woodSculpture.png");
     }
     body {
