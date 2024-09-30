@@ -270,14 +270,17 @@ $(document).ready(function() {
     $('#codeExampleList').on('change', function() {
             let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
             $('.selectedImg').empty();
+            $('blankBack').remove();
             $('.selectedImg').append(`
             <div id = 'currentExampleImgDiv'>
                 <img id = '${examples[idx]}_img' alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`);
+            $('#pg3Div').prepend(`<div id = blankBack></div>`);
             if(getOrientation() === 1) {
                 $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
                 $('.currentExampleImgDivX').on('click', function() {
                     $('.selectedImg').empty();
+                    $('#blankBack').remove();
                 });
             }
             $('#pg3Div').css('opacity', 1);
