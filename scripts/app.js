@@ -251,7 +251,7 @@ $(document).ready(function() {
             SQL Procedure
         </option>
         <option id = 'codeExample2' value="option2">
-            JS->PHP
+            PHP
         </option>
         <option id = 'codeExample3' value="option3">
             C# Unity
@@ -259,14 +259,11 @@ $(document).ready(function() {
         <option id = 'codeExample4' value="option4">
             MongoDB REST API
         </option>
-        <option id = 'codeExample5' value="option5">
-            Bash -> Docker
-        </option>
     </select>
     <div class = 'selectedImg'></div>`
     );
-    let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
-    let PortraitExamples = ['orderProc', 'randomQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
+    let examples = ['ordersProc', 'randQuestionProc', 'phpWide', 'cSharpWide', 'restAPIWide' ];
+    let PortraitExamples = ['orderProc', 'randomQuestionProc', 'phpNarrow', 'cSharpNarrow', 'restAPINarrow' ];
     $('#codeExampleList option');
     $('#codeExampleList').on('change', function() {
             let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
