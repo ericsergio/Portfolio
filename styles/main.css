@@ -372,9 +372,11 @@
     }
 
     .selectedImg #currentExampleImgDiv img{        
-        top:30vh;
-        left:5vw;
-        width:80vw;
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
     }
 
     #codeExampleList {

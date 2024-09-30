@@ -266,23 +266,29 @@ $(document).ready(function() {
     <div class = 'selectedImg'></div>`
     );
     let examples = ['ordersProc', 'randQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
+    let PortraitExamples = ['orderProc', 'randomQuestionProc', 'ordersWorkflowPHP', 'UIReclaimCSharp', 'restAPINode', 'shellProgramming' ];
     $('#codeExampleList option');
     $('#codeExampleList').on('change', function() {
             let idx = Number($('#codeExampleList option:selected').attr('id').substr(-1, 1));
             $('.selectedImg').empty();
             $('blankBack').remove();
+            if(getOrientation() === 1) {
             $('.selectedImg').append(`
             <div id = 'currentExampleImgDiv'>
                 <img id = '${examples[idx]}_img' alt = '${examples[idx]} image' src='assets/exampleImages/${examples[idx]}.png' />
             </div>`);
-            $('#pg3Div').prepend(`<div id = blankBack></div>`);
-            if(getOrientation() === 1) {
-                $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
-                $('.currentExampleImgDivX').on('click', function() {
-                    $('.selectedImg').empty();
-                    $('#blankBack').remove();
-                });
+            } else {
+                $('.selectedImg').append(`
+                    <div id = 'currentExampleImgDiv'>
+                        <img id = '${PortraitExamples[idx]}_img' alt = '${PortraitExamples[idx]} image' src='assets/exampleImages/${PortraitExamples[idx]}.png' />
+                    </div>`);
             }
+            $('#pg3Div').prepend(`<div id = blankBack></div>`);            
+            $('#currentExampleImgDiv').after(`<p class = 'currentExampleImgDivX'>X</p>`);
+            $('.currentExampleImgDivX').on('click', function() {
+                $('.selectedImg').empty();
+                $('#blankBack').remove();
+            });            
             $('#pg3Div').css('opacity', 1);
         });
     //*********************************************************************************************** projects page content
