@@ -97,8 +97,7 @@ Navigation.prototype.scrollToPage = function() {
         $(`#${pgs[this.id]}`).css({            
             'height':`${document.body.clientHeight + 500}px`
         });
-    };
-    console.log('prototype end');
+    };    
 }
 //getters
 Navigation.prototype.getScrolledPage = function() {
@@ -129,8 +128,7 @@ $(document).ready(function() {
     $('#mainMenu li').each(function() {
         $(this).on('click', async function() {            
             $(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
-            await delay(1000);
-            Navigation[[$(this).attr('id')]].scrollToPage();
+
             //this is where the navigation occurs using the prototype function scrollToPage
             //using the ids the click runs the prototype on the clicked nav item and scrolls  
             //to the appropriate spot
@@ -138,7 +136,9 @@ $(document).ready(function() {
             
             if(Orientation.ScreenOrientation.id < 1) {
                 $('#mainMenu').hide(100);
-            };            
+            };
+            await delay(1000);
+            Navigation[[$(this).attr('id')]].scrollToPage();
         });
     });
 });
