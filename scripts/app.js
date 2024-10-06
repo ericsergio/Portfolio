@@ -62,6 +62,9 @@ const doLandscapeNav = () => {
     $('#navBtn').hide();
 };
 
+
+
+
 /*This is the site Navigation. Rather than creating new pages, this calculates the device's page
 size and navigating scrolls to the page's/section's position. The navigation is set to be fixed
 so as you scroll, the navigation remains in place making it appear to go to a new page. The 
@@ -69,8 +72,6 @@ clicked page stats are stored in a js class constructor's properties as to store
 needed to do this. The actual page containers are dynamically created below.*/
 Navigation.prototype.scrollToPage = function() {
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
-    let prevPage = pgs[Navigation.current.id];
-    window.scrollTo(0, this.scrollPos);
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
@@ -78,6 +79,7 @@ Navigation.prototype.scrollToPage = function() {
     if(this.id === null) {
         this.id = 0;
     }
+    
     $(`#${pgs[this.id]}`).css({
         'position':`fixed`,
         'display':`block`,
@@ -96,6 +98,7 @@ Navigation.prototype.scrollToPage = function() {
             'height':`${document.body.clientHeight + 500}px`
         });
     };
+    console.log('prototype end');
 }
 //getters
 Navigation.prototype.getScrolledPage = function() {
@@ -110,19 +113,29 @@ Navigation.prototype.getPageId = function() {
     return this.id;
 }
 
+async function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
 $(document).ready(function() {
     let pageIdx = 0;
+    const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
     for(let current in pages) {
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
         $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
         pageIdx += 1;
     }
     $('#mainMenu li').each(function() {
-        $(this).on('click', function() {           
+        $(this).on('click', async function() {            
+            $(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
+            await delay(1000);
+            Navigation[[$(this).attr('id')]].scrollToPage();
             //this is where the navigation occurs using the prototype function scrollToPage
             //using the ids the click runs the prototype on the clicked nav item and scrolls  
             //to the appropriate spot
-            Navigation[[$(this).attr('id')]].scrollToPage();
+            //console.log(`mainMenu li id, used as the prototype property: ${$(this).attr('id')}`);
+            
             if(Orientation.ScreenOrientation.id < 1) {
                 $('#mainMenu').hide(100);
             };            
@@ -143,9 +156,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'z-index':5
-    }).append(`
-    <div id='pg1Div' class = 'pgContainer'></div>`
-    );
+    }).append(`<div id='pg1Div' class = 'pgContainer'></div>`);
     /****************************************************************************   Resume Page  **********/
     $('#pg2').css({
         'position':`absolute`,
@@ -153,9 +164,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'display':`none`
-    }).append(`
-    <div id='pg2Div' class = 'pgContainer'></div>`
-    );
+    }).append(`<div id='pg2Div' class = 'pgContainer'></div>`);
     /****************************************************************************   Examples Page Content **********/
     $('#pg3').css({
         'position':`absolute`,
@@ -163,9 +172,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'display':`none`
-    }).append(`
-    <div id='pg3Div' class = 'pgContainer'></div>`
-    );
+    }).append(`<div id='pg3Div' class = 'pgContainer'></div>`);
     /****************************************************************************   Projects Page Content **********/
     $('#pg4').css({
         'position':`absolute`,
@@ -173,9 +180,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'display':`none`
-    }).append(`
-    <div id='pg4Div' class = 'pgContainer'></div>`
-    );
+    }).append(`<div id='pg4Div' class = 'pgContainer'></div>`);
     /****************************************************************************   Contact Page Content **********/
     $('#pg5').css({
         'position':`absolute`,
@@ -183,9 +188,7 @@ $(document).ready(function() {
         'height':`${pgHeight}px`,
         'width':`100%`,
         'display':`none`
-    }).append(`
-    <div id='pg5Div' class = 'pgContainer'></div>`
-    );
+    }).append(`<div id='pg5Div' class = 'pgContainer'></div>`);
 });
 
 $(document).ready(function() {
@@ -326,19 +329,13 @@ $(document).ready(function() {
     ];
 
     $(`.projTiles h5`).on('mouseover', (event) => {
-        const hoveredElement = event.target;
-        console.log(hoveredElement.dataset.tileIdx % 3);
+        const hoveredElement = event.target;        
         let description = descriptions[hoveredElement.dataset.tileIdx - 1];        
         $('#projGrid').append(`<div id = 'descriptionBox'><p>${description}</p></div>`);
         let left = hoveredElement.getBoundingClientRect().left;
         let tileWidth = hoveredElement.getBoundingClientRect().width;
-        let tileHeight = hoveredElement.getBoundingClientRect().height;
         let top = hoveredElement.getBoundingClientRect().top;
-        console.log(`left - (tileWidth * Number(hoveredElement.dataset.tileIdx: ${left - (tileWidth * Number(hoveredElement.dataset.tileIdx))}`);
-        console.log(`left: ${left}`);
-        console.log(`tileWidth: ${tileWidth}`);
-        console.log(`tileWidth * Number(hoveredElement.dataset.tileIdx: ${tileWidth * Number(hoveredElement.dataset.tileIdx)}`);
-        console.log(`tileWidth: ${tileWidth}`);
+
         if(Orientation.ScreenOrientation.id > 0) {
             Number(hoveredElement.dataset.tileIdx) % 4 > 0 ? $('#descriptionBox').css({
                 'top': top,            

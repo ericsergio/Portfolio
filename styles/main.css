@@ -12,8 +12,10 @@
         background-repeat:no-repeat;
         background-size:calc(55vw);
         background-attachment: fixed;
-        background-position-x: left;
-        transform-origin: center;        
+        background-position: 0% 25%;
+        
+        /*transform: rotateX('angle');*/
+         
     }
 
     * {
