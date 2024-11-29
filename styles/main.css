@@ -215,7 +215,13 @@
 /*--------ABOUT--------------------MOBILE--------------------------About page styling*/
 @media only screen and (orientation: portrait) {
     #pg1Content {
-        padding:0% 5% 0% 5%;
+        padding:0% 1% 0% 2%;
+        overflow-y:hidden;
+    }
+
+    #more {
+        margin-left:15%;
+        width:65%;
     }
     #pg1Div{
         border-radius:0% 15% 5% 5%;
@@ -243,7 +249,7 @@
     }
 
     .intro {
-        color:rgb(255, 255, 255);        
+        color:rgb(255, 255, 255);
     }
 
 }

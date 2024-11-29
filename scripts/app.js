@@ -127,8 +127,8 @@ $(document).ready(function() {
     }
     $('#mainMenu li').each(function() {
         $(this).on('click', async function() {            
+            //$(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
             $(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
-
             //this is where the navigation occurs using the prototype function scrollToPage
             //using the ids the click runs the prototype on the clicked nav item and scrolls  
             //to the appropriate spot
@@ -218,10 +218,7 @@ $(document).ready(function() {
 
             <div id = "aboutBackLower" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = "intro">I am a graduate of Bellevue College's Software Development BAS program. 
-                        I am a bartender and former bar manager in the process of transitioning careers into IT. 
-                        I am currently seeking a position where I can leverage my strong customer service background 
-                        with the technical skills that I have gained through my BAS degree and several years of self-study.
+                    <span class = "intro">I graduated from Bellevue College in 2023 with a BAS in Software Development. I have spent most of my life working in the restaurant industry, primarily as a bartender. Although I was/am good at my job and earn enough to live relatively comfortably, it isn't what I enjoy doing. A few years ago, when the older of my two daughters was 1 years old, I decided that I needed to pursue a new career that I would be passionate about and that would enable me to provide my daughters with more of my time and financial security. This wasn't the first attempt I had made at making a career transition and although my first attempt resulted in a failed business, it did cause me to discover that I loved building, testing, tinkering, customizing, and generally solving the puzzles that software development presents. After my first time leaving the restaurant industry to start a e-commerce business, I came to realize that I needed to learn how to manage and manipulate data. I began by working with VBA which led to SQL, C#, JavaScript and everything from AutoHotkey to Selenium.I switched from only knowing Windows to being a dedicated UNIX environment user who prefers to doing mostly everything from my shell and finding UI's to be cumbersome. I completed my BAS degree in Software Development with a 3.9 GPA and am confident that if I am confronted with a problem to solve, I will find a way to solve it. Along with the technical skills I have gained an enormous amount of experience throughout my numerous years working in a high-volume, fast-paced, high-stress, multi-task required environment where your job and livelihood revolves around keeping scores of varying personalities happy while being timed and minor priority mishaps can lead to a snowball effect of negative compounding problems.
                     </span>
                 </p>
             </div>
@@ -230,6 +227,13 @@ $(document).ready(function() {
     if(getOrientation() === 1) {
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/meHS.jpeg"/>`);        
     } else {
+        //mobile
+        $('#pg1Content').after(`<button id = 'more'>more</button>`);        
+        $('#more').on('click', function() {            
+            $('#pg1Content').css({
+                'overflow-y' : 'auto'
+            })
+        })
         $('#pg1Div').append(`<img id="pImage" alt="Profile Image" src="assets/meHS.jpeg"/>`);
     }
     //*********************************************************************************************** resume page content
@@ -380,6 +384,11 @@ $(document).ready(function() {
     };
     
     $('#pg5Div').append(`<ul id = 'contactItems'></ul>`);
+    let theContactItems = ['one', 'two', 'three'];
+    for(let i = 0;i <= theContactItems.length;i++) {
+        $('#contactItems').append(`<li id = '${theContactItems[i]}'>${theContactItems[i]}</li>`)
+    }
+    
 
 
 });
