@@ -179,25 +179,25 @@
         padding:1%;        
         font-family: 'Open Sans', sans-serif;
         z-index:5;
-        margin-top:10%;
+        margin-top:7%;
     }
 
     #aboutBackLower {
         padding:3%;
-        width:calc(100% - 10vh);
-        color:yellow;
+        width:calc(100% - 10vh);        
         z-index:5;
         height:30vh;
     }
 
-    .intro {
-        font-family: 'Open Sans', sans-serif;
-        font-size:1.3em;
+    .intro0, .intro1 {
+        font-family: 'Open Sans', sans-serif;        
         color:#fff;
+        line-height: 1.4;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;        
     }
 
     .aboutTxt {
+        margin-bottom:100px;
         font-family: 'Open Sans', sans-serif;
         font-size: calc(1.75vh);
     }
@@ -248,7 +248,7 @@
         margin-top:6vh;
     }
 
-    .intro {
+    .intro {        
         color:rgb(255, 255, 255);
     }
 

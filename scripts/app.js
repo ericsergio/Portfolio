@@ -72,6 +72,8 @@ clicked page stats are stored in a js class constructor's properties as to store
 needed to do this. The actual page containers are dynamically created below.*/
 Navigation.prototype.scrollToPage = function() {
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
+    //console.log(this.name)
+    //console.log(this.id)
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
@@ -97,7 +99,8 @@ Navigation.prototype.scrollToPage = function() {
         $(`#${pgs[this.id]}`).css({            
             'height':`${document.body.clientHeight + 500}px`
         });
-    };    
+    };
+    return this.id;
 }
 //getters
 Navigation.prototype.getScrolledPage = function() {
@@ -121,24 +124,32 @@ $(document).ready(function() {
     let pageIdx = 0;
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
     for(let current in pages) {
+        //console.log(`-----${current}`);
+        //console.log(`+++++${pages[current]}`);
+        //console.log(`=====${pageIdx}`);
+        
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
         $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
+        //console.log(`||||||${Navigation.current.id}`);
         pageIdx += 1;
+
     }
+    
     $('#mainMenu li').each(function() {
-        $(this).on('click', async function() {            
-            //$(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
-            $(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
-            //this is where the navigation occurs using the prototype function scrollToPage
-            //using the ids the click runs the prototype on the clicked nav item and scrolls  
-            //to the appropriate spot
-            //console.log(`mainMenu li id, used as the prototype property: ${$(this).attr('id')}`);
-            
-            if(Orientation.ScreenOrientation.id < 1) {
-                $('#mainMenu').hide(100);
-            };
-            await delay(1000);
-            Navigation[[$(this).attr('id')]].scrollToPage();
+        $(this).on('click', async function() {
+            //only do it if user is clicking on a different tab than they are currently on because after scrollToPage() gets called Navigation.current.id will change
+            if(pages.indexOf($(this).attr('id')) !== Navigation.current.id) {
+                $(`#${pgs[Navigation.current.id]}`).fadeOut(1000);
+                //this is where the navigation occurs using the prototype function scrollToPage
+                //using the ids the click runs the prototype on the clicked nav item and scrolls  
+                //to the appropriate spot
+                //console.log(`mainMenu li id, used as the prototype property: ${$(this).attr('id')}`);
+                if(Orientation.ScreenOrientation.id < 1) {
+                    $('#mainMenu').hide(100);
+                };
+                await delay(1000);            
+                Navigation[[$(this).attr('id')]].scrollToPage();                
+            }
         });
     });
 });
@@ -210,15 +221,13 @@ $(document).ready(function() {
         <div id = 'pg1Content'>
             <div id = "aboutBackUpper" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = 'intro'>My name is Eric Sergio and live in the Greater Seattle area.
-                        Thank you for taking the time to visit my website!
-                    </span>                        
+                    <span class = 'intro0'>My name is Eric Sergio and live in the Greater Seattle area. Thank you for taking the time to visit my website! I graduated from Bellevue College in 2023 with a BAS in Software Development. I have spent most of my life working in the restaurant industry, primarily as a bartender. Although I was/am good at my job and earn enough to live relatively comfortably, it isn't what I enjoy doing.</span>                    
                 </p>
             </div>
 
             <div id = "aboutBackLower" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = "intro">I graduated from Bellevue College in 2023 with a BAS in Software Development. I have spent most of my life working in the restaurant industry, primarily as a bartender. Although I was/am good at my job and earn enough to live relatively comfortably, it isn't what I enjoy doing. A few years ago, when the older of my two daughters was 1 years old, I decided that I needed to pursue a new career that I would be passionate about and that would enable me to provide my daughters with more of my time and financial security. This wasn't the first attempt I had made at making a career transition and although my first attempt resulted in a failed business, it did cause me to discover that I loved building, testing, tinkering, customizing, and generally solving the puzzles that software development presents. After my first time leaving the restaurant industry to start a e-commerce business, I came to realize that I needed to learn how to manage and manipulate data. I began by working with VBA which led to SQL, C#, JavaScript and everything from AutoHotkey to Selenium.I switched from only knowing Windows to being a dedicated UNIX environment user who prefers to doing mostly everything from my shell and finding UI's to be cumbersome. I completed my BAS degree in Software Development with a 3.9 GPA and am confident that if I am confronted with a problem to solve, I will find a way to solve it. Along with the technical skills I have gained an enormous amount of experience throughout my numerous years working in a high-volume, fast-paced, high-stress, multi-task required environment where your job and livelihood revolves around keeping scores of varying personalities happy while being timed and minor priority mishaps can lead to a snowball effect of negative compounding problems.
+                    <span class = "intro1"> A few years ago, when the older of my two daughters was 1 years old, I decided that I needed to pursue a new career that I would be passionate about and that would enable me to provide my daughters with more of my time and financial security. This wasn't the first attempt I had made at making a career transition and although my first attempt resulted in a failed business, it did cause me to discover that I loved building, testing, tinkering, customizing, and generally solving the puzzles that software development presents. After my first time leaving the restaurant industry to start a e-commerce business, I came to realize that I needed to learn how to manage and manipulate data. I began by working with VBA which led to SQL, C#, JavaScript and everything from AutoHotkey to Selenium.I switched from only knowing Windows to being a dedicated UNIX environment user who prefers to doing mostly everything from my shell and finding UI's to be cumbersome. I completed my BAS degree in Software Development with a 3.9 GPA and am confident that if I am confronted with a problem to solve, I will find a way to solve it. Along with the technical skills I have gained an enormous amount of experience throughout my numerous years working in a high-volume, fast-paced, high-stress, multi-task required environment where your job and livelihood revolves around keeping scores of varying personalities happy while being timed and minor priority mishaps can lead to a snowball effect of negative compounding problems.
                     </span>
                 </p>
             </div>
@@ -388,9 +397,6 @@ $(document).ready(function() {
     for(let i = 0;i <= theContactItems.length;i++) {
         $('#contactItems').append(`<li id = '${theContactItems[i]}'>${theContactItems[i]}</li>`)
     }
-    
-
-
 });
 
 
