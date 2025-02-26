@@ -23,7 +23,7 @@ class Navigation {
     }
 };
 
-const pages = ['about', 'resume', 'examples', 'projects', 'contact'];
+const pages = ['about', 'resume', 'examples', 'projects', 'certifications'];
 
 
 const getOrientation = () => {
@@ -72,8 +72,6 @@ clicked page stats are stored in a js class constructor's properties as to store
 needed to do this. The actual page containers are dynamically created below.*/
 Navigation.prototype.scrollToPage = function() {
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
-    //console.log(this.name)
-    //console.log(this.id)
     Navigation.current.name = this.name;
     Navigation.current.scrollPos = this.scrollPos;
     Navigation.current.id = this.id;
@@ -124,15 +122,10 @@ $(document).ready(function() {
     let pageIdx = 0;
     const pgs = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'];
     for(let current in pages) {
-        //console.log(`-----${current}`);
-        //console.log(`+++++${pages[current]}`);
-        //console.log(`=====${pageIdx}`);
         
         Navigation[[pages[current]]] = new Navigation(pageIdx, pages[current], (window.innerHeight * pageIdx));        
         $('#mainMenu').append(`<li id = ${pages[current]}>${pages[current]}</li>`);
-        //console.log(`||||||${Navigation.current.id}`);
         pageIdx += 1;
-
     }
     
     $('#mainMenu li').each(function() {
@@ -227,7 +220,7 @@ $(document).ready(function() {
 
             <div id = "aboutBackLower" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = "intro1">I graduated from Bellevue College in 2023 with a BAS in Software Development. I have spent most of my life working in the restaurant industry, primarily as a bartender. Although I was/am good at my job and earn enough to live relatively comfortably, it isn't what I enjoy doing. A few years ago, when the older of my two daughters was 1 years old, I decided that I needed to pursue a new career that I would be passionate about and that would enable me to provide my daughters with more of my time and financial security. This wasn't the first attempt I had made at making a career transition and although my first attempt resulted in a failed business, it did cause me to discover that I loved building, testing, tinkering, customizing, and generally solving the puzzles that software development presents. After my first time leaving the restaurant industry to start a e-commerce business, I came to realize that I needed to learn how to manage and manipulate data. I began by working with VBA which led to SQL, C#, JavaScript and everything from AutoHotkey to Selenium.I switched from only knowing Windows to being a dedicated UNIX environment user who prefers to doing mostly everything from my shell and finding UI's to be cumbersome. I completed my BAS degree in Software Development with a 3.9 GPA and am confident that if I am confronted with a problem to solve, I will find a way to solve it. Along with the technical skills I have gained an enormous amount of experience throughout my numerous years working in a high-volume, fast-paced, high-stress, multi-task required environment where your job and livelihood revolves around keeping scores of varying personalities happy while being timed and minor priority mishaps can lead to a snowball effect of negative compounding problems.
+                    <span class = "intro1">I graduated from Bellevue College in 2023 with a BAS in Software Development. I graduated Magna Cum Laude with a 3.9 cumulative GPA. I have spent most of my life working in the restaurant industry, primarily as a bartender. A few years ago, when the older of my two daughters was 1 years old, I decided that I needed to pursue a new career that I would be passionate about and that would enable me to provide my daughters with more of my time and financial security. I was already passionate about software development and spent a great deal of my free time learning various programming languages. I love building, testing, tinkering, customizing, and generally solving the puzzles that software development presents. I began by working with VBA which led to SQL, C#, JavaScript and everything from AutoHotkey to Selenium. I am most proficient working with JavaScript, C#, Bash, and SQL. I prefer using UNIX/Linux but am just as capable working in Windows and am far more comfortable using a shell over a UI. I am proficient using cloud technologies and am in the final portion of completing the Google Cloud Cyber Security certification. Along with my technical skillset, I have a great deal of experience from working in a high-volume, fast-paced and high-stress restaurant environment, that includes teamwork, leadership, multi-tasking and more. Some of my hobbies include playing basketball, coaching my daughter’s soccer team, skateboarding, and everything involved from being a parent. I built this website from scratch and am hosting it via a Google Compute Engine virtual machine. Thank you for visiting!
                     </span>
                 </p>
             </div>
@@ -392,10 +385,17 @@ $(document).ready(function() {
         })
     };
     
-    $('#pg5Div').append(`<ul id = 'contactItems'></ul>`);
-    let theContactItems = ['one', 'two', 'three'];
-    for(let i = 0;i <= theContactItems.length;i++) {
-        $('#contactItems').append(`<li id = '${theContactItems[i]}'>${theContactItems[i]}</li>`)
+    $('#pg5Div').append(`<ul id = 'credItems'></ul>`);    
+    let creds = ["CourseraAIEssentials.png", "GoogleCloudCyber1.png", "GoogleCloudCyber2.png", "GoogleCloudCyber3.png", "GoogleCloudCyber4.png", 
+        "GoogleDataAnalytics3.png", "TCPDumpAnalyzeNetworkTrafficLoggingTool.png", "ataDegree.png", "basDegree.png"];
+    let credNames = ["Coursera AI Essentials", "Google Cloud CyberSecurity Course 1", "Google Cloud CyberSecurity Course 2", 
+        "Google Cloud CyberSecurity Course 3", "Google Cloud CyberSecurity Course 4", "Google Data Analytics Course 3", 
+        "TCP Dump Analyze Network Traffic Logging", "Web and Cloud Developer Associates Degree.png", "Software Development Bachelors Degree.png"];
+    for(let i = 0;i < creds.length;i++) {
+        $('#credItems').append(`<li>${credNames[i]}</li>`).children($(this)[i]).on('click', function() {
+            
+            $('#credItems').after(`<div><img id=${creds[i].trimEnd(".png")} src='assets/certs/${creds[i]}' /> </div>`)
+        })
     }
 });
 
