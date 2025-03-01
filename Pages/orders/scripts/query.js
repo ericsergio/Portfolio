@@ -1,16 +1,20 @@
-function Order(dist, count) {
-    this.dist = dist;
-    this.count = count || null;
+class Order {
+    constructor(dist, count) {
+        this.dist = dist;
+        this.count = count || null;
+    }
 }
 
-function OrderItem(orderItemId, inventoryId, name, orderQuantity, unit, orderUnit,searchString) {
-    this.orderItemId = orderItemId;
-    this.inventoryId = inventoryId;
-    this.name = name;
-    this.orderQuantity = orderQuantity;
-    this.unit = unit;
-    this.orderUnit = orderUnit;
-    this.searchString = searchString;
+class OrderItem {
+    constructor(orderItemId, inventoryId, name, orderQuantity, unit, orderUnit, searchString) {
+        this.orderItemId = orderItemId;
+        this.inventoryId = inventoryId;
+        this.name = name;
+        this.orderQuantity = orderQuantity;
+        this.unit = unit;
+        this.orderUnit = orderUnit;
+        this.searchString = searchString;
+    }
 }
 
 const _Items = [];

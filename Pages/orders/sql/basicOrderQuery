@@ -1,7 +1,11 @@
+CREATE VIEW `so_order` AS
 SELECT `i`.`i_name` AS `name`,     `i`.`default_order` AS `default`,      `ou`.`ou_name` AS `unit`,     `uq`.`uq_name` AS `unit_type`,     `i`.`on_hand` AS `current` FROM ((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))  JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))  WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 1));
 
+CREATE VIEW `co_order` AS
 SELECT `i`.`i_name` AS `name`,     `i`.`default_order` AS `default`,      `ou`.`ou_name` AS `unit`,     `uq`.`uq_name` AS `unit_type`,     `i`.`on_hand` AS `current` FROM ((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))  JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))  WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 2));
 
+CREATE VIEW `cr_order` AS
 SELECT `i`.`i_name` AS `name`,     `i`.`default_order` AS `default`,      `ou`.`ou_name` AS `unit`,     `uq`.`uq_name` AS `unit_type`,     `i`.`on_hand` AS `current` FROM ((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))  JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))  WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 3));
 
+CREATE VIEW `yo_order` AS
 SELECT `i`.`i_name` AS `name`,     `i`.`default_order` AS `default`,      `ou`.`ou_name` AS `unit`,     `uq`.`uq_name` AS `unit_type`,     `i`.`on_hand` AS `current` FROM ((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))  JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))  WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 4));

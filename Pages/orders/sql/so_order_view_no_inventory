@@ -1,0 +1,19 @@
+SELECT `i`.`i_name` AS `name`,                                                                                                                                             
+    `i`.`default_order` AS `default`,                                                                                                                                      
+    `ou`.`ou_name` AS `unit`,                                                                                                                                              
+    `uq`.`uq_name` AS `unit_type`,                                                                                                                                         
+    `i`.`on_hand` AS `current`                                                                                                                                             
+FROM (((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))                                                                                                                     
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))                                                                                                     
+--JOIN `soInventory` `inv` ON(((`inv`.`order_unit_id` = `ou`.`ou_id`) AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`,'%'))))) 
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 1)) 
+
+
+SELECT `i`.`i_name` AS `name`,
+    `i`.`default_order` AS `default`,
+    `ou`.`ou_name` AS `unit`,
+    `uq`.`uq_name` AS `unit_type`,
+    `i`.`on_hand` AS `current`
+FROM ((`items` `i` join `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`)))
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 1));
