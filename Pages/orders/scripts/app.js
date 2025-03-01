@@ -741,19 +741,26 @@ infoCases = [
     "#filterYoInfo",
 ];
 
-jQuery(function () {
+
+$(document).ready(function(){
+    $('.resultFilterInfoList').append(`
+        <div id = 'filterSoInfo'><li> Output Southern's order</li></div>
+        <div id = 'filterCoInfo'><li> Output Columbia's order</li></div>
+        <div id = 'filterCrInfo'><li> Output Crown's order</li></div>
+        <div id = 'filterYoInfo'><li> Output RNDC's(Youngs) order</li></div>`
+    )
     for (let i = 0; i < showInfoCases.length; i++) {
-        jQuery(showInfoCases[i]).on("mouseover", function () {
-            jQuery(infoCases[i]).show();
+        $(showInfoCases[i]).on("mouseover", function () {
+            $(infoCases[i]).show();
         });
-        jQuery(showInfoCases[i]).on("mouseout", function () {
-            jQuery(infoCases[i]).hide();
+        $(showInfoCases[i]).on("mouseout", function () {
+            $(infoCases[i]).hide();
         });
     }
-    jQuery("#closeExplanation").on("click", function () {
-        jQuery("#hoverExplanation").hide();
+    $("#closeExplanation").on("click", function () {
+        $("#hoverExplanation").hide();
     });
-    jQuery("html").on("click", function () {
-        jQuery("#hoverExplanation").hide();
+    $("html").on("click", function () {
+        $("#hoverExplanation").hide();
     });
-});
+})
