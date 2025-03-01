@@ -748,12 +748,19 @@ $(document).ready(function(){
         <div id = 'filterCoInfo'><li> Output Columbia's order</li></div>
         <div id = 'filterCrInfo'><li> Output Crown's order</li></div>
         <div id = 'filterYoInfo'><li> Output RNDC's(Youngs) order</li></div>`
-    )
+    );
+    $('.typeInfoList').append(`
+        <div id = 'liquorInfo'><li>Displays the liquor count list</li></div>
+        <div id = 'wineInfo'><li>Displays the wine count list</li></div>
+        <div id = 'bottlesInfo'><li>Displays the bottles count list</li></div>
+        <div id = 'kegsInfo'><li>Displays the liquor kegs list</li></div>
+        <div id = 'NAInfo'><li>Displays the liquor non-alcoholic list</li></div>
+    `);
     for (let i = 0; i < showInfoCases.length; i++) {
-        $(showInfoCases[i]).on("mouseover", function () {
+        $(showInfoCases[i]).parent().on("mouseover", function () {
             $(infoCases[i]).show();
         });
-        $(showInfoCases[i]).on("mouseout", function () {
+        $(showInfoCases[i]).parent().on("mouseout", function () {
             $(infoCases[i]).hide();
         });
     }
