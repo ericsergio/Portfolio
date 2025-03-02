@@ -1,3 +1,13 @@
+/*class ToggleHelp {
+    constructor(evenOdd) {
+        this.evenOdd;
+    }
+}
+
+ToggleHelp.init = new ToggleHelp(0);
+ToggleHelp.init.evenOdd = 0;
+*/
+
 function doFilters(typeName) {
     if($('#filterList').children().length > 0) {
         $('#filterList').remove();
@@ -119,3 +129,67 @@ function doFilters(typeName) {
 		});
 	});
 };
+
+$(document).ready(function(){
+    showInfoCases = [
+        "#showDbItemsInfo",
+        "#showDbDistsInfo",
+        "#showDbUnitsInfo",
+        "#showDbOrderedInfo",
+        "#showDbQuantityInfo"
+    ];
+    infoCases = [
+        "#itemsTblInfo",
+        "#distsTblInfo",
+        "#unitsTblInfo",
+        "#orderedTblInfo",
+        "#quantityTblInfo"
+    ];
+    $('.dbTypeInfoList').append(`
+        <div id = 'itemsTblInfo'><li>
+            This will display the items table. The items table is the main table in the database and contains the products for the orders. Opening this table will provide
+            you with the ability to modify the database directly from this UI. Four filters will also be created that will allow you to filter the products by distributor,
+            type of item (liquor, beer, wine, kegs, non-alcoholic), and the unit in which each item is set to be ordered by (bottle, case, keg). There is also a search 
+            bar that will allow you to bring up any particular item you may need to modify.
+        </li></div>
+        <div id = 'distsTblInfo'><li>
+            Dists table info
+        </li></div>
+        <div id = 'unitsTblInfo'><li>
+            Units table info
+        </li></div>
+        <div id = 'orderedTblInfo'><li>
+            Ordered table info
+        </li></div>
+        <div id = 'quantityTblInfo'><li>
+            Quantity table info
+        </li></div>
+    `);
+    
+    
+    var infoLeftVals = [];
+    
+    $('.typeList li').each(function(){
+        infoLeftVals.push($(this).offset().left);                                        
+    });
+    for(let i = 0;i < infoCases.length;i++) {
+        $(infoCases[i]).css('left', `${infoLeftVals[i]}px`);
+    }
+
+
+    for (let i = 0; i < showInfoCases.length; i++) {
+        $(showInfoCases[i]).parent().on("mouseover", function () {
+            //if ((ToggleHelp.init.evenOdd % 2) < 1) {
+                //$('#toggleInfo').text("TURN HELP OFF");
+                $(infoCases[i]).show();
+            //}
+            //else {
+            //    $('#toggleInfo').text("TURN HELP ON");
+            //}
+        });
+
+    $(showInfoCases[i]).parent().on("mouseout", function () {
+    $(infoCases[i]).hide();
+});
+}
+})

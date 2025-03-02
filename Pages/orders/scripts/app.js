@@ -810,7 +810,8 @@ $(document).ready(function() {
             that is currently displayed with any values entered. Leaving a field blank will not modify that item's current
             on-hand level.
         </li></div>
-        `)            
+        `);        
+
         for (let i = 0; i < showInfoCases.length; i++) {
                 $(showInfoCases[i]).parent().on("mouseover", function () {
                     if ((ToggleHelp.init.evenOdd % 2) < 1) {

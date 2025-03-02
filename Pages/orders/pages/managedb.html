@@ -24,12 +24,13 @@
 		<!--<div class = "typeBar">-->
 			<div class = "typeWrapper">
 				<ul class = "typeList">
-					<li id = 'Items' class = "type selected">Items</li>
-					<li id = 'Dists' class = "type">Dists</li>
-					<li id = 'Units' class = "type">Units</li>
-					<li id = 'Ordered' class = "type">Ordered</li>
-					<li id = 'Quantity' class = "type">Quantity</li>
+					<li id = 'Items' class = "type selected">Items<div id="showDbItemsInfo" class="typeInfo"></div></li>
+					<li id = 'Dists' class = "type">Dists<div id="showDbDistsInfo" class="typeInfo"></div></li>
+					<li id = 'Units' class = "type">Units<div id="showDbUnitsInfo" class="typeInfo"></div></li>
+					<li id = 'Ordered' class = "type">Ordered<div id="showDbOrderedInfo" class="typeInfo"></div></li>
+					<li id = 'Quantity' class = "type">Quantity<div id="showDbQuantityInfo" class="typeInfo"></div></li>
 				</ul>
+				<ul class = "dbTypeInfoList"></ul>
 				<ul class = "typeLeftRight" style = "visibility: hidden;">
 					<li id = 'tableMoveLeft'><img src = "../images/arrowLeft.png" onclick = "decrementIdx()"></li>
 					<li id = 'tableMoveRight'><img src = "../images/arrowRight.png" onclick = "incrementIdx()"></li>

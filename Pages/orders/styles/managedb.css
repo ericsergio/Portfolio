@@ -89,3 +89,21 @@ li[id*="_"] {
 input[type="button"] {
     cursor:pointer;
 }
+
+.dbTypeInfoList {
+	position: absolute;
+	z-index: 10;
+  }
+
+.dbTypeInfoList div {
+/*	max-width: 33vw;
+    min-width: 13vw;*/
+    width:30vw;
+	display: none;
+	position: absolute;
+	background-color: rgb(24, 8, 195);
+    color:#ffffff;
+	padding: 40%;
+	border-radius: 5%;
+	list-style-type: none;
+  }
