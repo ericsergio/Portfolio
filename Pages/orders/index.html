@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html lang = "en">
 	<head>
-		<title>Quick Liquor</title>
+		<title>Quick Order</title>
 		<!--<meta name=”description” content=”Description of page here.”/>-->
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,11 +46,7 @@
 					<li id = "countNA" class="type">NA<div id="showNAInfo" class="typeInfo"></div></li>
 				</ul>
 				<ul class="typeInfoList">
-					<!--<div id="liquorInfo"><li>Displays the liquor count list</li></div>
-					<div id="wineInfo"><li>Displays the wine count list</li></div>
-					<div id="bottlesInfo"><li>Displays the bottled beer count list</li></div>
-					<div id="kegsInfo"><li>Displays the keg beer count list</li></div>
-					<div id="NAInfo"><li>Displays the non-alcoholic count list</li></div>-->
+					<!--li info boxes dynamically created in app.js anonymously -->
 				</ul>
 				<ul class = "typeLeftRight" style = "visibility: hidden;">
 					<li id = 'typeMoveLeft'><img alt = "arrowMoveLeftImg" src = "images/arrowLeft.png" onclick = "decrementIdx()"></li>
@@ -57,20 +54,25 @@
 				</ul>
 				<div class = resultFilter>
 					<ul id = 'resultFilterList' class = 'countFilters'>
-						<li id = 'filterSo'>Southern</li>
-						<li id = 'filterCo'>Columbia</li>
-						<li id = 'filterCr'>Crown</li>
-						<li id = 'filterYo'>Youngs</li>
+						<li id = 'filterSo'>Southern<div id = "showSoCountFilterInfo" class = "typeInfo"></div></li>
+						<li id = 'filterCo'>Columbia<div id = "showCoCountFilterInfo" class = "typeInfo"></div></li>
+						<li id = 'filterCr'>Crown<div id = "showCrCountFilterInfo" class = "typeInfo"></div></li>
+						<li id = 'filterYo'>Youngs<div id = "showYoCountFilterInfo" class = "typeInfo"></div></li>
 						<!--<li id = "processCount" value = "Submit" onclick = "processCount()">Submit</li>-->
-						<li id = "processCount" onclick = "processCount()">Submit</li>
+						<li id = "processCount" class = "typeInfo" onclick = "processCount()">Submit<div id = "showSubmitInfo" class = "typeInfo"></div></li>
 					</ul>
-				</div>	
+					<ul class = 'distFilterInfoList'>
+
+					</ul>
+				</div>
 			</div>
 			<div id="hoverExplanation">
 				<div id="closeExplanation"><i class="far fa-times-circle"></i></div>
-				                Product buttons up top (Liquor, Wine etc) display the count sheets. Buttons to the right display the order sheet
-                based on the current count sheets per that distributer. The distributor buttons seperated by the yellow lines are to filter the product count sheets to include only products from that distributor. Check Order button is not functional, it makes an API request to a proof of concept API that acts as a distributor to verify that the order is in stock. I lost access to the Azure cloud database that I had as a student. ManageDB page provides full access to the MySQL database that holds the product info. Products on the ManageDB page are editable from the web interface by clicking on the product to edit the associated values.
-		</div>
+				<p id = "initialMsg">
+					Hover over page controls to view help information for what each control does. If you do not want the help controls active then you can turn them off below. Keep help boxes on until 
+					you understand which controls do what.
+				</p>
+			</div>
 		<!--</div>-->
 		<!--<div class = "distBar">-->
 		<div class = "distWrapper">
@@ -79,6 +81,7 @@
 				<li id = 'distCo' class = "dist" onclick = "placeControls(this)">Columbia<div id="showCoInfo" class="typeInfo"></div></li>
 				<li id = 'distCr' class = "dist" onclick = "placeControls(this)">Crown<div id="showCrInfo" class="typeInfo"></div></li>
 				<li id = 'distYo' class = "dist" onclick = "placeControls(this)">Youngs<div id="showYoInfo" class="typeInfo"></div></li>
+				<button type = 'button' id = 'toggleInfo' onclick = "toggleHelp()">TURN HELP OFF</button>
 			</ul>
 			<ul class='resultFilterInfoList'>
 				<!--li info boxes dynamically created in app.js anonymously -->
@@ -102,7 +105,7 @@
 		</footer>
 		
 		<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>-->
-		<script src = 'scripts/app.js'></script>
+		<script src = 'scripts/app.js'></script>		
 		<script src = 'scripts/query.js'></script>
 		
 	</body>

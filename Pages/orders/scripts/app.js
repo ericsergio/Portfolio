@@ -38,7 +38,16 @@ class ToggleMenu {
     }
 }
 
+class ToggleHelp {
+    constructor(evenOdd) {
+        this.evenOdd;
+    }
+}
+
 ToggleMenu.init = new ToggleMenu(0);
+
+ToggleHelp.init = new ToggleHelp(0);
+ToggleHelp.init.evenOdd = 0;
 
 /* Something is up with selected class */
 
@@ -504,7 +513,7 @@ $(document).ready(function () {
     } else {
         //in landscape view
         //doFooter();
-    }
+    }    
     $(".dist").each(function () {
         $(this)[0].addEventListener("click", function doDist(distName) {
             $(".resultWrapper").children().remove();
@@ -717,38 +726,55 @@ function mobileDisplayDists() {
 //
 //
 // For main page (index.html)
-// Question mark feature
-showInfoCases = [
-    "#showLiquorInfo",
-    "#showWineInfo",
-    "#showBottlesInfo",
-    "#showKegsInfo",
-    "#showNAInfo",
-    "#showSoInfo",
-    "#showCoInfo",
-    "#showCrInfo",
-    "#showYoInfo",
-];
-infoCases = [
-    "#liquorInfo",
-    "#wineInfo",
-    "#bottlesInfo",
-    "#kegsInfo",
-    "#NAInfo",
-    "#filterSoInfo",
-    "#filterCoInfo",
-    "#filterCrInfo",
-    "#filterYoInfo",
-];
+// Info boxes (how to) feature
 
+const toggleHelp = () => {    
+    ToggleHelp.init.evenOdd += 1;
+}
 
-$(document).ready(function(){
-    $('.resultFilterInfoList').append(`
-        <div id = 'filterSoInfo'><li> Output Southern's order</li></div>
-        <div id = 'filterCoInfo'><li> Output Columbia's order</li></div>
-        <div id = 'filterCrInfo'><li> Output Crown's order</li></div>
-        <div id = 'filterYoInfo'><li> Output RNDC's(Youngs) order</li></div>`
-    );
+$(document).ready(function() {
+    /*$('#hoverExplanation').append(`
+        <button id = 'helpInfoOff'>TURN HELP OFF</button>
+        `)*/
+
+    //$('#toggleInfo').on('click', function() {
+        //ToggleHelp.init.helpEvenOdd = 1;
+    //});
+    
+        
+    
+    showInfoCases = [
+        "#showLiquorInfo",
+        "#showWineInfo",
+        "#showBottlesInfo",
+        "#showKegsInfo",
+        "#showNAInfo",
+        "#showSoInfo",
+        "#showCoInfo",
+        "#showCrInfo",
+        "#showYoInfo",
+        "#showSoCountFilterInfo",
+        "#showCoCountFilterInfo",
+        "#showCrCountFilterInfo",
+        "#showYoCountFilterInfo",
+        "#showSubmitInfo"
+    ];
+    infoCases = [
+        "#liquorInfo",
+        "#wineInfo",
+        "#bottlesInfo",
+        "#kegsInfo",
+        "#NAInfo",
+        "#filterSoInfo",
+        "#filterCoInfo",
+        "#filterCrInfo",
+        "#filterYoInfo",
+        "#filterSoCountInfo",
+        "#filterCoCountInfo",
+        "#filterCrCountInfo",
+        "#filterYoCountInfo",
+        "#submitCountBtnInfo"
+    ];
     $('.typeInfoList').append(`
         <div id = 'liquorInfo'><li>Displays the liquor count list</li></div>
         <div id = 'wineInfo'><li>Displays the wine count list</li></div>
@@ -756,18 +782,55 @@ $(document).ready(function(){
         <div id = 'kegsInfo'><li>Displays the liquor kegs list</li></div>
         <div id = 'NAInfo'><li>Displays the liquor non-alcoholic list</li></div>
     `);
-    for (let i = 0; i < showInfoCases.length; i++) {
-        $(showInfoCases[i]).parent().on("mouseover", function () {
-            $(infoCases[i]).show();
-        });
-        $(showInfoCases[i]).parent().on("mouseout", function () {
+    $('.resultFilterInfoList').append(`
+        <div id = 'filterSoInfo'><li> Output Southern's order</li></div>
+        <div id = 'filterCoInfo'><li> Output Columbia's order</li></div>
+        <div id = 'filterCrInfo'><li> Output Crown's order</li></div>
+        <div id = 'filterYoInfo'><li> Output RNDC's(Youngs) order</li></div>`
+    );
+    $('.distFilterInfoList').append(`
+        <div id = 'filterSoCountInfo'><li>
+            Display Southern items for chosent type. After displaying the count sheet for a product type above, 
+            you can use this to only display those product types distributed by Southern.
+        </li></div>
+        <div id = 'filterCoCountInfo'><li>
+            Display Columbia items for chosent type. After displaying the count sheet for a product type above, 
+            you can use this to only display those product types distributed by Columbia.
+        </li></div>
+        <div id = 'filterCrCountInfo'><li>
+            Display Crown items for chosent type. After displaying the count sheet for a product type above, 
+            you can use this to only display those product types distributed by Crown. 
+        </li></div>
+        <div id = 'filterYoCountInfo'><li>
+            Display RNDC (Youngs) items for chosent type. After displaying the count sheet for a product type above, 
+            you can use this to only display those product types distributed by RNDC (Youngs).
+        </li></div>
+        <div id = 'submitCountBtnInfo'><li>
+            Submit new on-hand levels for displayed count sheet. Clicking this button will submit whatever count sheet
+            that is currently displayed with any values entered. Leaving a field blank will not modify that item's current
+            on-hand level.
+        </li></div>
+        `)            
+        for (let i = 0; i < showInfoCases.length; i++) {
+                $(showInfoCases[i]).parent().on("mouseover", function () {
+                    if ((ToggleHelp.init.evenOdd % 2) < 1) {
+                        $('#toggleInfo').text("TURN HELP OFF");
+                        $(infoCases[i]).show();
+                    }
+                    else {
+                        $('#toggleInfo').text("TURN HELP ON");
+                    }
+                });
+        
+            $(showInfoCases[i]).parent().on("mouseout", function () {
             $(infoCases[i]).hide();
         });
     }
+    
     $("#closeExplanation").on("click", function () {
         $("#hoverExplanation").hide();
     });
     $("html").on("click", function () {
         $("#hoverExplanation").hide();
-    });
+    });  
 })
