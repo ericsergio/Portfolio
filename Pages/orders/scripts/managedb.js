@@ -125,7 +125,7 @@ function doFilters(typeName) {
         var head = $('.resultHead');
 		$('#resultTable tr:gt(0)').filter(function () {
             $('.tableHead').toggle();
-			$(this).toggle($(this).text().indexOf(textVal) > -1);
+			$(this).toggle($(this).text().indexOf(textVal) > -1);            
 		});
 	});
 };
@@ -153,16 +153,16 @@ $(document).ready(function(){
             bar that will allow you to bring up any particular item you may need to modify.
         </li></div>
         <div id = 'distsTblInfo'><li>
-            Dists table info
+            The distributor table can be viewed however cannot be edited yet
         </li></div>
         <div id = 'unitsTblInfo'><li>
-            Units table info
+            The units table can be viewed however cannot be edited yet
         </li></div>
         <div id = 'orderedTblInfo'><li>
-            Ordered table info
+            The ordered table can be viewed however cannot be edited yet
         </li></div>
         <div id = 'quantityTblInfo'><li>
-            Quantity table info
+            The quantity table can be viewed however cannot be edited yet
         </li></div>
     `);
     
