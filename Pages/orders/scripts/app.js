@@ -123,7 +123,7 @@ $(document).ready(function () {
             );
             // purpose 1: is for count page and correlates to the do_booz_by_type php function
             // purpose 4: is for managedb page and will correlate to a php function not yet created
-            console.log(currPage);
+            //console.log(currPage);
             var purposeTypes = [1, 4, 6];
             var purposePages = ["index.html", "managedb.html", "info.html"];
             //I did it this way so I could add more pages that could have page specific php functions from the same php class depending on which html page the below ajax request is run from.
@@ -714,23 +714,13 @@ function mobileDisplayDists() {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 // For main page (index.html)
 // Info boxes (how to) feature
 
 const toggleHelp = () => {    
     ToggleHelp.init.evenOdd += 1;
 }
+
 
 $(document).ready(function() {
     /*$('#hoverExplanation').append(`
@@ -740,9 +730,6 @@ $(document).ready(function() {
     //$('#toggleInfo').on('click', function() {
         //ToggleHelp.init.helpEvenOdd = 1;
     //});
-    
-        
-    
     showInfoCases = [
         "#showLiquorInfo",
         "#showWineInfo",
@@ -834,4 +821,4 @@ $(document).ready(function() {
     $("html").on("click", function () {
         $("#hoverExplanation").hide();
     });  
-})
+});

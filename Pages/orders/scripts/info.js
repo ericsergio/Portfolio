@@ -7,7 +7,7 @@ function selectItemInfo() {
         });
         //click will add LI to clickedItemInfo class (highlights the li Blue)
         $(".itemList li").on("click", function () {
-            $(this).addClass("clickedItemInfo"); // LINE MODIFIED
+            $(this).addClass("clickedItemInfo");
         });
     });
 }
@@ -65,22 +65,22 @@ $(document).ready(function() {
     ];
     $('.infoTypeInfoList').append(`
         <div id = 'liquorInfo'><li>
-            Liquor info
+            Displays a table of liquor items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
         <div id = 'wineInfo'><li>
-            Wine info
+            Displays a table of Wine items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
         <div id = 'bottleInfo'><li>
-            Bottle info
+            Displays a table of bottle items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
         <div id = 'kegInfo'><li>
-            Keg Info
+            Displays a table of keg items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
         <div id = 'NAInfo'><li>
-            NA info
+            Displays a table of non-alcoholic items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
         <div id = 'submitBtnInfo'><li>
-            Submit button info
+            An item must be selected. Clicking this button will gather the selected item's past order information.
         </li></div>
     `);
     
@@ -91,7 +91,10 @@ $(document).ready(function() {
         infoLeftVals.push($(this).offset().left);                                        
     });
     for(let i = 0;i < infoCases.length;i++) {
-        $(infoCases[i]).css('left', `${infoLeftVals[i]}px`);
+        $(infoCases[i]).css({
+            'left': `${infoLeftVals[i]}px`,
+            'bottom': `${$(showInfoCases[i]).offset().top}`
+        });        
     }
 
 

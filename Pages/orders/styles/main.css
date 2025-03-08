@@ -229,7 +229,7 @@ footer {
 }
 .contact {
 	display:grid;
-	grid-template-columns: 15% 10% 15% 35% 10%;
+	grid-template-columns: 15% 10% 30% 15% 10%;
 }
 
 #resultTable {
@@ -407,7 +407,7 @@ tbody tr:nth-child(even) {
   .resultFilterInfoList,
   .distFilterInfoList {
 	position: absolute;
-	z-index: 10;
+	z-index: 7;
   }
   .typeInfoList div,
   .resultFilterInfoList div,
