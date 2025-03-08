@@ -18,8 +18,6 @@ function doItemInfoStats() {
         $("#resultTable").remove();
     }
 
-    //remove instructions for padding issues
-    $("#statsInstruction").remove();
     //I have the values pushed into itemNames
     const purpose = 7;
     let data = $(this).serializeArray();
@@ -48,3 +46,70 @@ function doItemInfoStats() {
         console.log("ajax response : " + data);
     });
 }
+$(document).ready(function() {
+    showInfoCases = [
+        "#showInfoLiquorInfo",
+        "#showInfoWineInfo",
+        "#showInfoBottleInfo",
+        "#showInfoKegInfo",
+        "#showInfoNAInfo",
+        '#showInfoSubmitBtnInfo'
+    ];
+    infoCases = [
+        "#liquorInfo",
+        "#wineInfo",
+        "#bottleInfo",
+        "#kegInfo",
+        "#NAInfo",
+        '#submitBtnInfo'
+    ];
+    $('.infoTypeInfoList').append(`
+        <div id = 'liquorInfo'><li>
+            Liquor info
+        </li></div>
+        <div id = 'wineInfo'><li>
+            Wine info
+        </li></div>
+        <div id = 'bottleInfo'><li>
+            Bottle info
+        </li></div>
+        <div id = 'kegInfo'><li>
+            Keg Info
+        </li></div>
+        <div id = 'NAInfo'><li>
+            NA info
+        </li></div>
+        <div id = 'submitBtnInfo'><li>
+            Submit button info
+        </li></div>
+    `);
+    
+    
+    var infoLeftVals = [];
+    
+    $('.typeList li').each(function(){
+        infoLeftVals.push($(this).offset().left);                                        
+    });
+    for(let i = 0;i < infoCases.length;i++) {
+        $(infoCases[i]).css('left', `${infoLeftVals[i]}px`);
+    }
+
+
+    for (let i = 0; i < showInfoCases.length; i++) {
+        $(showInfoCases[i]).parent().on("mouseover", function () {
+            //if ((ToggleHelp.init.evenOdd % 2) < 1) {
+                //$('#toggleInfo').text("TURN HELP OFF");
+                $(infoCases[i]).show();
+            //}
+            //else {
+            //    $('#toggleInfo').text("TURN HELP ON");
+            //}
+        });
+
+    $(showInfoCases[i]).parent().on("mouseout", function () {
+    $(infoCases[i]).hide();
+});
+}
+})
+
+

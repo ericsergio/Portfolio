@@ -92,7 +92,7 @@ input[type="button"] {
 
 .dbTypeInfoList {
 	position: absolute;
-	z-index: 10;
+	z-index: 7;
   }
 
 .dbTypeInfoList div {

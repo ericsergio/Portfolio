@@ -36,31 +36,32 @@
   color: #ffffff;
   font-family: Helvetica;
 }
+
+.infoTypeInfoList {
+  position: absolute;
+  z-index: 7;
+}
+
+.infoTypeInfoList div {
+  width:30vw;
+  display: none;
+  position: absolute;
+  background-color: rgb(24, 8, 195);
+  color:#ffffff;
+  padding: 40%;
+  border-radius: 5%;
+  list-style-type: none;
+}
+
 #submitItemInfo {
+  position: absolute;
+  top:20vh;
   background: linear-gradient(to top, #000000 0%, #003399 70%);
   color: #ffffff;
   font-family: Helvetica;
   font-variant: small-caps;
   font-size: 14px;
-  width: 20%;
-  height: 40px;
   border-radius: 5px;
-  padding: 0.45em 2.85em 0.25em 2.85em;
-  margin: 2% 0% 1% 50%;
-  text-align: center;
-  clear: both;
+  padding: 0.45em 2.85em 0.25em 2.85em;  
+  text-align: center;  
 }
-#statsInstruction {
-	background: linear-gradient(to top, #000000 0%, #003399 70%);
-	color: #ffffff;
-	font-family: Helvetica;
-	font-variant: small-caps;
-	font-size: 14px;
-	width: 20%;
-	height: 40px;
-	border-radius: 5px;
-	padding: 0.45em 2.85em 0.25em 2.85em;
-	margin: 2% 0% 1% 50%;
-	text-align: center;
-	clear: both;
-  }

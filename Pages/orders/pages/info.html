@@ -21,14 +21,22 @@
 				</ul>
 			</div>
 		</nav>
-		<!--<div class = "typeBar">-->
+		<!--<div class = "typeBar">
+			showInfoWineInfo
+			showInfoBottleInfo
+			showInfoKegInfo
+			showInfoNAInfo
+			showInfoSubmitBtnInfo
+			-->
+
 			<div class = "typeWrapper">
 				<ul class = "typeList">
-					<li id = "infoLiquor" class = "type selected">Liquor</li>
-					<li id = "infoWine" class = "type">Wine</li>
-					<li id = "infoBottles" class = "type">Bottles</li>
-					<li id = "infoKegs" class = "type">Kegs</li>
-					<li id = "infoNA" class = "type">NA</li>
+					<li id = "infoLiquor" class = "type selected">Liquor<div id="showInfoLiquorInfo" class="typeInfo"></div></li>
+					<li id = "infoWine" class = "type">Wine<div id="showInfoWineInfo" class="typeInfo"></div></li>
+					<li id = "infoBottles" class = "type">Bottles<div id="showInfoBottleInfo" class="typeInfo"></div></li>
+					<li id = "infoKegs" class = "type">Kegs<div id="showInfoKegInfo" class="typeInfo"></div></li>
+					<li id = "infoNA" class = "type">NA<div id="showInfoNAInfo" class="typeInfo"></div></li>
+					<li><input id = "submitItemInfo" type = "button" value = "Submit" onclick = "doItemInfoStats()"><div id="showInfoSubmitBtnInfo" class="typeInfo"></div></input></li>
 				</ul>
 				<ul class = "typeLeftRight" style = "visibility: hidden;">
 					<li id = 'infoTypeMoveLeft'><img src = "../images/arrowLeft.png" onclick = "decrementIdx()"></li>
@@ -36,7 +44,8 @@
 				</ul>
 			</div>
 		<!--</div>-->
-		<input id = "submitItemInfo" type = "button" value = "Submit" onclick = "doItemInfoStats()"></input>
+		
+		<ul class = "infoTypeInfoList"></ul>
 		<div class = "results">
 			<div class = "resultWrapper">
 			</div>
