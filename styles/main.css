@@ -221,6 +221,10 @@
         overflow-y:hidden;
     }
 
+    .intro0 {
+        font-size: 1.3rem;
+    }
+
     #more {
         margin-left:15%;
         width:65%;
