@@ -98,12 +98,12 @@ input[type="button"] {
 .dbTypeInfoList div {
 /*	max-width: 33vw;
     min-width: 13vw;*/
-    width:30vw;
+    width:12vw;
 	display: none;
 	position: absolute;
-	background-color: rgb(24, 8, 195);
+	background-color: #005c99;
     color:#ffffff;
-	padding: 40%;
+	padding: 30%;
 	border-radius: 5%;
 	list-style-type: none;
   }
