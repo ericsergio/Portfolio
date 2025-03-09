@@ -47,21 +47,25 @@ function doItemInfoStats() {
     });
 }
 $(document).ready(function() {
+    let typeListHeight = $('.typeList').css('height').replace('px', '');
+    let typeListOffsetTop = $('.typeList').offset().top;
+    let typeListHeightPlus_typeListOffsetTop = Number(typeListHeight) + Number(typeListOffsetTop);
+    let percentageOfHeightTypelistIs = typeListHeightPlus_typeListOffsetTop / window.innerHeight;
+    let percentageOfHeightTypelistIsFormatted = (percentageOfHeightTypelistIs.toFixed(2) * 100) + 'vh';
+    $('#submitItemInfo').css('top', `${percentageOfHeightTypelistIsFormatted}`);
     showInfoCases = [
         "#showInfoLiquorInfo",
         "#showInfoWineInfo",
         "#showInfoBottleInfo",
         "#showInfoKegInfo",
-        "#showInfoNAInfo",
-        '#showInfoSubmitBtnInfo'
+        "#showInfoNAInfo"        
     ];
     infoCases = [
         "#liquorInfo",
         "#wineInfo",
         "#bottleInfo",
         "#kegInfo",
-        "#NAInfo",
-        '#submitBtnInfo'
+        "#NAInfo"
     ];
     $('.infoTypeInfoList').append(`
         <div id = 'liquorInfo'><li>
@@ -79,9 +83,6 @@ $(document).ready(function() {
         <div id = 'NAInfo'><li>
             Displays a table of non-alcoholic items. Click on an item to select that item, double click to de-select. Click submit to get that item's historic ordered information.
         </li></div>
-        <div id = 'submitBtnInfo'><li>
-            An item must be selected. Clicking this button will gather the selected item's past order information.
-        </li></div>
     `);
     
     
@@ -90,11 +91,14 @@ $(document).ready(function() {
     $('.typeList li').each(function(){
         infoLeftVals.push($(this).offset().left);                                        
     });
+
+
+   
+
     for(let i = 0;i < infoCases.length;i++) {
         $(infoCases[i]).css({
-            'left': `${infoLeftVals[i]}px`,
-            'bottom': `${$(showInfoCases[i]).offset().top}`
-        });        
+            'left': `${infoLeftVals[i]}px`            
+        });
     }
 
 
@@ -103,11 +107,14 @@ $(document).ready(function() {
             //if ((ToggleHelp.init.evenOdd % 2) < 1) {
                 //$('#toggleInfo').text("TURN HELP OFF");
                 $(infoCases[i]).show();
+                console.log($(infoCases[i]).offset().top)
             //}
             //else {
             //    $('#toggleInfo').text("TURN HELP ON");
             //}
         });
+
+
 
     $(showInfoCases[i]).parent().on("mouseout", function () {
     $(infoCases[i]).hide();
