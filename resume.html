@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-
+	
 <style>
 *{
 	box-sizing: border-box;
@@ -26,6 +26,10 @@
 }
 #div_certifications {
 	width:calc(100%);
+}
+
+.tblCertRight, .tblCertLeft {
+	width:50%;
 }
 
 
@@ -82,6 +86,8 @@ h1 {
   clear: both;
   display: table;
 }
+
+
 	
 </style>
 
@@ -332,27 +338,33 @@ h1 {
 </div>
 <!--*********************************************CERTIFICATIONS START**********************************************-->
 	<div id="div_certifications">
-		<h1>Certifications</h1>
-	
-	<table id="tbl_certifications">
-    	<tr>
-    		<td>
-        		<ul>
-            		<li>                		
-						Google Prepare Data for Data Exploration (Dec 2023)
-            		</li>
-            		<li>
-						Visual Studio Essential Training: Unit Tests (Feb 2022)
-            		</li>
-			</td>               
-			<td>
-                <li>
-					Google AI Essentials (June 2024)
-                </li>
-            </td>
-        		</ul>		
-    	</tr>
-	</table>
+	<h1>Certifications</h1>
+		<table id="tbl_certifications">
+    		<tr class = 'row' id = 'row1'>
+    			<td class = 'tblCertLeft'>
+					Google Data Exploration (Dec 2023)            		
+				</td>
+				<td class = 'tblCertRight'>
+					Visual Studio Essential Training: Unit Tests (Feb 2022)			
+				</td>
+			</tr>
+			<tr class = 'row' id = 'row2'>
+				<td class = 'tblCertLeft'>
+					<a href="https://coursera.org/share/e1fd97e25519a7924b7e4ef375b10db1"> AI Essentials (June 2024)</a>
+				</td>
+				<td class = 'tblCertRight'>
+					<a href="https://coursera.org/share/b77a6ca95ec80054380c6e58dc0c0358"> Cloud Cybersecurity (March 2025)</a>
+    	        </td>
+    		</tr>
+			<tr class = 'row' id = 'row3'>
+				<td class = 'tblCertLeft'>
+					<a href="https://coursera.org/share/d07aa6aa4914db893560017c41dfb1bc"> Traffic with TCPDump (Oct 2024)</a>
+				</td>
+				<td class = 'tblCertRight'>
+    	        </td>
+    		</tr>
+
+		</table>
 	</div>
 	</body>
 </html>

@@ -276,6 +276,9 @@
         transform:scale(0.95);
         transform-origin: center;*/
     }
+    .tblCertRight {
+        float:right;
+    }
     #iframeBack{
         background-color: #fff;
     }
