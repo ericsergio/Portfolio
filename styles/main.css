@@ -536,7 +536,7 @@
         height:100%;
         width:100%;
         padding:6%;
-        background-color: #298ee6;
+        background-color: #092034;
     }
 
     .certExit {
@@ -548,7 +548,7 @@
         padding:1%;
         border-radius: 40%;
         font-size:1.8em;
-        box-shadow: 0px 0px 30px;
+        box-shadow: 0px 0px 12px;
         z-index: 7;
     }
 

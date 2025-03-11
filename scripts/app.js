@@ -391,10 +391,10 @@ $(document).ready(function() {
     
     let creds = [
         "basDegree.png",
-        "ataDegree.png",
-        "GoogleCloudCyberSecurity",
+        "ataDegree.png",        
         "CourseraAIEssentials.png",        
-        "GoogleDataAnalytics3.png", 
+        "GoogleDataAnalytics3.png",
+        "GoogleCloudCyberSecurityCert.png",
         "TCPDumpAnalyzeNetworkTrafficLoggingTool.png"
     ];
 
@@ -403,10 +403,10 @@ $(document).ready(function() {
     
     let credNames = [
         "Software Development Bachelors Degree",
-        "Web and Cloud Developer Associates Degree",
-        "Google Cloud Cyber Security",
+        "Web and Cloud Developer Associates Degree",        
         "Coursera AI Essentials",
-        "Google Data Analytics Course 3", 
+        "Google Data Analytics Course 3",
+        "Google Cloud Cyber Security",
         "TCP Dump Analyze Network Traffic Logging"
     ];
 
@@ -416,35 +416,53 @@ $(document).ready(function() {
     
         for(let i = 0;i < creds.length;i++) {
             $('#credItems').append(`<li>${credNames[i]}</li>`);
-        };
+        };        
 
-        
-
-        $('#credItems li').on('click', function() {            
-            if(($(this).index() === 2) && ($('#cyberCredCourses').length < 1)) {
-                $('#credItems li:eq(2)').append(`<ul id = 'cyberCredCourses'></ul>`);
+        $('#credItems li:eq(4)').on('mouseover', function(event) {           
+            if($('#cyberCredCourses').length < 1) {
+                $('#credItems li:eq(4)').append(`<ul id = 'cyberCredCourses'></ul>`);
                 for(let i in cyberCredNames) {
-                    $('#cyberCredCourses').append(`<li>${cyberCredNames[i]}</li>`)
-                }                
-            }
-            else if(($(this).index() === 2) && ($('#cyberCredCourses').length > 0)) {
-                $('#cyberCredCourses').remove();                
-            }
-            else {
-                $('#credItems').hide();
-                if($('.displayCred').length > 1) {
-                    $('.displayCred').remove();                    
+                    $('#cyberCredCourses').append(`<li>${cyberCredNames[i]}</li>`)                    
                 }
-                $('#credItems').before(
+                $('#cyberCredCourses li').on('click', function(){
+                    $('.displayCred').remove();
                     `<div class = 'credBackdrop'><p class = 'certExit'>X</p>
-                        <img class = 'displayCred' id=${creds[$(this).index()].trimEnd(".png")} src='assets/certs/${creds[$(this).index()]}' />
-                    </div>`);
-            };
+                    <img class = 'displayCred' id=${cyberCreds[ $(this).index()].trimEnd(".png")} src='assets/certs/${cyberCreds[$(this).index()]}' />
+                    </div>`
+                    console.log($(this).index());
+                    //$('')
+                })
+                $(this).on('mouseout', function() { 
+                    // Check if mouse is over the sub-list before removing
+                    if (!$('#cyberCredCourses').is(':hover')) {
+                      $('#cyberCredCourses').remove();
+                    }
+                  });
+              
+                  // *** Attach mouseout to the sub-list itself ***
+                  $('#cyberCredCourses').on('mouseout', function() {
+                    // Check if mouse is over the parent li before removing
+                    if (!$('#credItems li:eq(4)').is(':hover')) {
+                      $('#cyberCredCourses').remove();
+                    }
+                  });
+            }
+        });
+
+        $('#credItems li').on('click', function() {
+            $('#credItems').hide();
+            if($('.displayCred').length > 1) {
+                $('.displayCred').remove();    
+            }
+            $('#credItems').before(
+                `<div class = 'credBackdrop'><p class = 'certExit'>X</p>
+                <img class = 'displayCred' id=${creds[$(this).index()].trimEnd(".png")} src='assets/certs/${creds[$(this).index()]}' />
+                </div>`
+            );
+            
             $('.certExit').on('click', function() {
                 $(this).parent().remove();
                 $('#credItems').show();
-                //console.log('x clicked')
-                //$('.credBackDrop').remove();
             })
         });
     });
