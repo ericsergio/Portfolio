@@ -439,8 +439,14 @@ $(document).ready(function() {
                     `<div class = 'credBackdrop'><p class = 'certExit'>X</p>
                         <img class = 'displayCred' id=${creds[$(this).index()].trimEnd(".png")} src='assets/certs/${creds[$(this).index()]}' />
                     </div>`);
-            }            
-        })
+            };
+            $('.certExit').on('click', function() {
+                $(this).parent().remove();
+                $('#credItems').show();
+                //console.log('x clicked')
+                //$('.credBackDrop').remove();
+            })
+        });
     });
 
             /*.children(
