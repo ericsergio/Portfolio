@@ -23,7 +23,7 @@ class Navigation {
     }
 };
 
-const pages = ['about', 'resume', 'examples', 'projects', 'certifications'];
+const pages = ['about', 'resume', 'examples', 'projects', 'credentials'];
 
 
 const getOrientation = () => {
@@ -389,19 +389,69 @@ $(document).ready(function() {
 
     //GoogleCloudCyberSecurityCert.png
     
-    let creds = ["CourseraAIEssentials.png", "GoogleCloudCyber1.png", "GoogleCloudCyber2.png", "GoogleCloudCyber3.png", "GoogleCloudCyber4.png",
-         "GoogleCloudCyber5.png", "GoogleDataAnalytics3.png", "TCPDumpAnalyzeNetworkTrafficLoggingTool.png", "ataDegree.png", "basDegree.png"];
+    let creds = [
+        "basDegree.png",
+        "ataDegree.png",
+        "GoogleCloudCyberSecurity",
+        "CourseraAIEssentials.png",        
+        "GoogleDataAnalytics3.png", 
+        "TCPDumpAnalyzeNetworkTrafficLoggingTool.png"
+    ];
+
+    let cyberCreds = ["GoogleCloudCyber1.png", "GoogleCloudCyber2.png", "GoogleCloudCyber3.png", "GoogleCloudCyber4.png","GoogleCloudCyber5.png"]
     
-    let credNames = ["Coursera AI Essentials", "Google Cloud CyberSecurity Course 1", "Google Cloud CyberSecurity Course 2", 
-        "Google Cloud CyberSecurity Course 3", "Google Cloud CyberSecurity Course 4", "Google Cloud CyberSecurity Course 5", "Google Data Analytics Course 3", 
-        "TCP Dump Analyze Network Traffic Logging", "Web and Cloud Developer Associates Degree.png", "Software Development Bachelors Degree.png"];
+    
+    let credNames = [
+        "Software Development Bachelors Degree",
+        "Web and Cloud Developer Associates Degree",
+        "Google Cloud Cyber Security",
+        "Coursera AI Essentials",
+        "Google Data Analytics Course 3", 
+        "TCP Dump Analyze Network Traffic Logging"
+    ];
+
+    let cyberCredNames = ["Introduction to Security Principles in Cloud Computing", "Strategies for Cloud Security Risk Management", 
+        "Cloud Security Risks: Identify and protect against threats", "Detect, Respond, and Recover from Cloud CyberSecurity Attacks", 
+        "Put it All Together: Prepare for a Cloud Security Job"]
     
         for(let i = 0;i < creds.length;i++) {
-            $('#credItems').append(`<li>${credNames[i]}</li>`).children($(this)[i]).on('click', function() {            
-            $('#credItems').after(`<div><img id=${creds[i].trimEnd(".png")} src='assets/certs/${creds[i]}' /> </div>`)
-        });
-    };
-});
+            $('#credItems').append(`<li>${credNames[i]}</li>`);
+        };
+
+        
+
+        $('#credItems li').on('click', function() {            
+            if(($(this).index() === 2) && ($('#cyberCredCourses').length < 1)) {
+                $('#credItems li:eq(2)').append(`<ul id = 'cyberCredCourses'></ul>`);
+                for(let i in cyberCredNames) {
+                    $('#cyberCredCourses').append(`<li>${cyberCredNames[i]}</li>`)
+                }                
+            }
+            else if(($(this).index() === 2) && ($('#cyberCredCourses').length > 0)) {
+                $('#cyberCredCourses').remove();                
+            }
+            else {
+                $('#credItems').hide();
+                if($('.displayCred').length > 1) {
+                    $('.displayCred').remove();                    
+                }
+                $('#credItems').before(
+                    `<div class = 'credBackdrop'><p class = 'certExit'>X</p>
+                        <img class = 'displayCred' id=${creds[$(this).index()].trimEnd(".png")} src='assets/certs/${creds[$(this).index()]}' />
+                    </div>`);
+            }            
+        })
+    });
+
+            /*.children(
+                $(this)[i]).on('click', function() {
+                    console.log(i);
+                    $('#credItems').after(
+                        `<div>
+                            <img id=${creds[i].trimEnd(".png")} src='assets/certs/${creds[i]}' /> 
+                        </div>`)
+        });*/
+
 
 
 //possibly incorporate the following url which was the initial design pitch that evolved into the game UI

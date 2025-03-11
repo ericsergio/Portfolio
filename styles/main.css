@@ -504,20 +504,80 @@
 
 
 
-/*-------Certifications-----------------------DEFAULT------------------------Certifications page styling*/
+/*-------Credentials-----------------------DEFAULT------------------------Credentials page styling*/
 @media(min-width:1px) {
     #credItems {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap:calc(100vh / 15);
+        column-gap: 5%;
+        list-style-type: none;
+        margin:7vh 3vw 0 7vw;
         color:#fff;
+        width:80%;
     }
 
+    #credItems li {
+        font-size:1.4em;
+    }
 
+    #cyberCredCourses{
+        margin-left:2vw;
+        font-size:.6em;
+        list-style-type: none;
+    }
+    .displayCred {
+        position:absolute;
+        z-index: 6;
+    }
+
+    .credBackdrop {
+        position:absolute;
+        height:100%;
+        width:100%;
+        padding:6%;
+        background-color: #298ee6;
+    }
+
+    .certExit {
+        position: absolute;
+        left:65%;
+        top:10%;
+        background-color: #053d60;
+        color: #ffffff;
+        padding:1%;
+        border-radius: 40%;
+        font-size:1.8em;
+        box-shadow: 0px 0px 30px;
+        z-index: 7;
+    }
+
+    .displayCred {
+        height:75%;
+        width:55%;
+    }
+
+    .certExit:hover {
+        cursor:pointer;
+        color:#c7f60c;
+    }
 
 }
-/*-------CONTACT----------------------------MOBILE------------------Contact page styling*/
+/*-------Credentials----------------------------MOBILE------------------Credentials page styling*/
 @media only screen and (orientation: portrait) {
+    .certExit {
+        top:3%;
+        left:85%;
+    }
+
+    .displayCred {
+        top:15%;
+        height:55%;
+        width:90%;
+    }
 
 }
-/*xxxxxxxxxxxxx------------------------------------------------------End Contact page styling*/
+/*xxxxxxxxxxxxx------------------------------------------------------End Credentials page styling*/
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 
