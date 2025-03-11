@@ -385,18 +385,22 @@ $(document).ready(function() {
         })
     };
     
-    $('#pg5Div').append(`<ul id = 'credItems'></ul>`);    
-    let creds = ["CourseraAIEssentials.png", "GoogleCloudCyber1.png", "GoogleCloudCyber2.png", "GoogleCloudCyber3.png", "GoogleCloudCyber4.png", 
-        "GoogleDataAnalytics3.png", "TCPDumpAnalyzeNetworkTrafficLoggingTool.png", "ataDegree.png", "basDegree.png"];
+    $('#pg5Div').append(`<ul id = 'credItems'></ul>`);
+
+    //GoogleCloudCyberSecurityCert.png
+    
+    let creds = ["CourseraAIEssentials.png", "GoogleCloudCyber1.png", "GoogleCloudCyber2.png", "GoogleCloudCyber3.png", "GoogleCloudCyber4.png",
+         "GoogleCloudCyber5.png", "GoogleDataAnalytics3.png", "TCPDumpAnalyzeNetworkTrafficLoggingTool.png", "ataDegree.png", "basDegree.png"];
+    
     let credNames = ["Coursera AI Essentials", "Google Cloud CyberSecurity Course 1", "Google Cloud CyberSecurity Course 2", 
-        "Google Cloud CyberSecurity Course 3", "Google Cloud CyberSecurity Course 4", "Google Data Analytics Course 3", 
+        "Google Cloud CyberSecurity Course 3", "Google Cloud CyberSecurity Course 4", "Google Cloud CyberSecurity Course 5", "Google Data Analytics Course 3", 
         "TCP Dump Analyze Network Traffic Logging", "Web and Cloud Developer Associates Degree.png", "Software Development Bachelors Degree.png"];
-    for(let i = 0;i < creds.length;i++) {
-        $('#credItems').append(`<li>${credNames[i]}</li>`).children($(this)[i]).on('click', function() {
-            
+    
+        for(let i = 0;i < creds.length;i++) {
+            $('#credItems').append(`<li>${credNames[i]}</li>`).children($(this)[i]).on('click', function() {            
             $('#credItems').after(`<div><img id=${creds[i].trimEnd(".png")} src='assets/certs/${creds[i]}' /> </div>`)
-        })
-    }
+        });
+    };
 });
 
 

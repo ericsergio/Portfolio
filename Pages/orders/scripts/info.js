@@ -85,22 +85,17 @@ $(document).ready(function() {
         </li></div>
     `);
     
-    
     var infoLeftVals = [];
     
     $('.typeList li').each(function(){
         infoLeftVals.push($(this).offset().left);                                        
     });
 
-
-   
-
     for(let i = 0;i < infoCases.length;i++) {
         $(infoCases[i]).css({
             'left': `${infoLeftVals[i]}px`            
         });
     }
-
 
     for (let i = 0; i < showInfoCases.length; i++) {
         $(showInfoCases[i]).parent().on("mouseover", function () {
@@ -113,8 +108,6 @@ $(document).ready(function() {
             //    $('#toggleInfo').text("TURN HELP ON");
             //}
         });
-
-
 
     $(showInfoCases[i]).parent().on("mouseout", function () {
     $(infoCases[i]).hide();
