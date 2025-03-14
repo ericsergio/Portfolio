@@ -371,7 +371,8 @@ class Booz
 					if($result -> Date_Start && ($timestamp = strtotime($result->Date_Start)) !== false) {
 						$sql_field_datestart = date('Y-m-d', $timestamp);
 					} else {
-						$sql_field_datestart = "Invalid Date";
+						//$sql_field_datestart = "Invalid Date";
+						$sql_field_datestart = date_format(strtotime($result->Date_Start), 'Y-m-d');
 					}
 					//$sql_field_datestart = date('Y-m-d', strtotime($result->Date_Start));
 					$sql_field_dateend = date_format(date_create($result->Date_End), 'Y-m-d');
