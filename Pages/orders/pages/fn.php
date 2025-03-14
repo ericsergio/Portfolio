@@ -8,8 +8,7 @@ $statsArray = $_POST['data'] ?? '';
 //////////////////////////////////////////
 class Booz
 {
-	protected function do_config($num)
-	{
+	protected function do_config($num) {
 		$config = file_get_contents('config');
 		$config_values = [];
 		$arr = explode(',', $config);
@@ -28,8 +27,7 @@ class Booz
 		}
 		return $dsn_parts[$num];
 	}
-	public function __construct()
-	{
+	public function __construct() {
 		//the :: operator allows you to access per class constants
 		//the special keywords self, static, and parent are used to access properties or methods from inside the class definition.
 		$host = $this->do_config(0);
@@ -48,8 +46,7 @@ class Booz
 
 	}
 	private $pdo = null;
-	public function do_booz_by_type($idx)
-	{
+	public function do_booz_by_type($idx) {
 		try {
 			$this->pdo->beginTransaction();
 			$sql = "SELECT i_name, i_dist FROM items WHERE i_type = $idx";
@@ -72,8 +69,7 @@ class Booz
 			die($e->getMessage());
 		}
 	}
-	public function process_count($namecount)
-	{
+	public function process_count($namecount) {
 		$namecount_str = $namecount;
 		$item_names = [];
 		$item_counts = [];
@@ -103,8 +99,7 @@ class Booz
 			die($e->getMessage());
 		}
 	}
-	public function get_order_by_dist($idx)
-	{
+	public function get_order_by_dist($idx) {
 		try {
 			$idx = $idx - 1;
 			$sql_order_views = ["SELECT * from so_order", "SELECT * from co_order", "SELECT * from cr_order", "SELECT * from yo_order"];
@@ -137,8 +132,7 @@ class Booz
 			die($e->getMessage());
 		}
 	}
-	public function displayTableForEdit($idx)
-	{
+	public function displayTableForEdit($idx) {
 		try {
 			$idx = $idx - 1;
 			$sql_manageable_tables = ["SELECT * from i_details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
@@ -284,8 +278,7 @@ class Booz
 			die($e->getMessage());
 		}
 	}
-	public function updateItem($idx, $originalname, $changeArr)
-	{
+	public function updateItem($idx, $originalname, $changeArr) {
 		$tbls = ["items", "dists", "order_units", "ordered", "unit_quantity"];
 		$index = $idx - 1;
 		$table = $tbls[$index];
@@ -318,8 +311,7 @@ class Booz
 			echo $e->getMessage();
 		}
 	}
-	public function do_info($idx)
-	{
+	public function do_info($idx) {
 		try {
 			$this->pdo->beginTransaction();
 			$sql = "SELECT i_name FROM items WHERE i_type = $idx";
@@ -341,8 +333,7 @@ class Booz
 			die($e->getMessage());
 		}
 	}
-	public function do_item_info_stats($statsArray)
-	{
+	public function do_item_info_stats($statsArray) {
 		try {
 			//begin SQL Transaction
 			$this->pdo->beginTransaction();
@@ -376,7 +367,13 @@ class Booz
 					$sql_field_bottle_quantity = $result->Bottle_Quantity;
 					$sql_field_case_quantity = $result->Case_Quantity;
 					$sql_field_total_quantity = $result->Total;
-					$sql_field_datestart = date_format(date_create($result->Date_Start), 'Y-m-d');
+					//$sql_field_datestart = date_format(date_create($result->Date_Start), 'Y-m-d');
+					if($result -> Date_Start && ($timestamp = strtotime($result->Date_Start)) !== false) {
+						$sql_field_datestart = date('Y-m-d', $timestamp);
+					} else {
+						$sql_field_datestart = "Invalid Date";
+					}
+					//$sql_field_datestart = date('Y-m-d', strtotime($result->Date_Start));
 					$sql_field_dateend = date_format(date_create($result->Date_End), 'Y-m-d');
 					$sql_field_days_first_order = $result->Days_Since_First_Order;
 					$sql_field_per_day = $result->Per_Day_Rate;
