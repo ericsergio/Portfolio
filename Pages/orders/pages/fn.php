@@ -366,22 +366,24 @@ class Booz
 					$sql_field_name = $result->Item_Name;
 					$sql_field_bottle_quantity = $result->Bottle_Quantity;
 					$sql_field_case_quantity = $result->Case_Quantity;
-					$sql_field_total_quantity = $result->Total;
-					//$sql_field_datestart = date_format(date_create($result->Date_Start), 'Y-m-d');
+					$sql_field_total_quantity = $result->Total;					
 					if($result -> Date_Start && ($timestamp = strtotime($result->Date_Start)) !== false) {
 						$sql_field_datestart = date('Y-m-d', $timestamp);
 					} else {
-						//$sql_field_datestart = "Invalid Date";
-						$sql_field_datestart = date_format(strtotime($result->Date_Start), 'Y-m-d');
+						$sql_field_datestart = "Invalid Date";												
 					}
-					//$sql_field_datestart = date('Y-m-d', strtotime($result->Date_Start));
-					$sql_field_dateend = date_format(date_create($result->Date_End), 'Y-m-d');
+					if($result -> Date_End && ($timestamp = strtotime($result->Date_End)) !== false) {
+						$sql_field_dateend = date('Y-m-d', $timestamp);
+					} else {
+						$sql_field_dateend = "Invalid Date";												
+					}
 					$sql_field_days_first_order = $result->Days_Since_First_Order;
 					$sql_field_per_day = $result->Per_Day_Rate;
 					$sql_field_per_unit = $result->Per_Unit_Rate;
 					$sql_field_par = $result->Item_Par;
 					$sql_field_type = $result->Item_Type;
 					$sql_field_on_hand = $result->On_Hand;
+					$sql_field_suggested_order = $result->Suggested_Order_2_weeks;
 					echo "
 						<tr class='itemRow'>
 							<td class='col1'>$sql_field_name</td>
@@ -394,9 +396,9 @@ class Booz
 							<td>$sql_field_per_day</td>
 							<td>$sql_field_per_unit</td>
 							<td>$sql_field_par</td>
-						<td>$sql_field_type</td>
-						<td>$sql_field_on_hand</td>
-					</tr>";
+							<td>$sql_field_type</td>
+							<td>$sql_field_on_hand</td>							
+						</tr>";
 				}
 			}
 			$stmt->closeCursor();

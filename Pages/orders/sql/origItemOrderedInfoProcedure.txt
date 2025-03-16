@@ -1,6 +1,6 @@
 DROP PROCEDURE itemOrderedInfo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
+CREATE DEFINER=`ericsergio`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
 begin
 declare bottle_order_quantity int;
 declare case_order_quantity int;
@@ -91,7 +91,7 @@ ___________________________
 
 DROP PROCEDURE itemOrderedInfo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
+CREATE DEFINER=`ericsergio`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
 BEGIN
 DECLARE bottle_order_quantity INT;
 DECLARE case_order_quantity INT;
@@ -165,3 +165,7 @@ SELECT o_name_param AS 'Item_Name',
     item_on_hand AS 'On_Hand';
 end$$
 DELIMITER ;
+
+
+call itemOrderedInfo('Absolute_Vodka');
+call itemOrderedInfo('Titos_Vodka');

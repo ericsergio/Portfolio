@@ -1,0 +1,83 @@
+DROP PROCEDURE itemOrderedInfo;
+DELIMITER $$
+CREATE DEFINER=`ericsergio`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
+BEGIN
+DECLARE bottle_order_quantity INT;
+DECLARE case_order_quantity INT;
+DECLARE total INT;
+DECLARE min_order_date BIGINT;
+DECLARE max_order_date BIGINT;
+DECLARE min_order_date_standard DATE;
+DECLARE max_order_date_standard DATE;
+DECLARE case_quantity INT;
+DECLARE days_since_1st_order INT;
+DECLARE per_day_rate DECIMAL(4,2);
+DECLARE per_unit_rate DECIMAL(4,2);
+DECLARE item_par INT;
+DECLARE item_type INT;
+DECLARE item_on_hand INT;
+
+SELECT SUM(o_quantity) INTO bottle_order_quantity
+FROM ordered
+WHERE o_name = o_name_param AND o_unit = 'Bottle';
+
+SELECT SUM(o_quantity) INTO case_order_quantity
+FROM ordered
+WHERE o_name = o_name_param AND o_unit = 'Case';
+
+SELECT unix_timestamp(min(o_date)) INTO min_order_date FROM ordered WHERE o_name = o_name_param;
+SELECT unix_timestamp(max(o_date)) INTO max_order_date FROM ordered WHERE o_name = o_name_param;
+
+SELECT MIN(o_date) INTO min_order_date_standard FROM ordered WHERE o_name = o_name_param;
+SELECT MAX(o_date) INTO max_order_date_standard FROM ordered WHERE o_name = o_name_param;
+
+IF case_order_quantity IS NULL THEN
+    SET case_order_quantity = 0;
+END IF;
+
+IF bottle_order_quantity IS NULL THEN
+    SET bottle_order_quantity = 0;
+END IF;
+
+SELECT items.i_par, items.i_type, items.on_hand INTO item_par, item_type, item_on_hand
+FROM items
+WHERE o_name_param = items.i_name;
+
+IF item_type <= 2 THEN
+    SET case_quantity = 12;
+    SET total = (case_order_quantity * case_quantity) + bottle_order_quantity;
+ELSEIF item_type > 2 then
+    SET case_quantity = 24;
+    SET total = case_quantity * case_order_quantity;
+END IF;
+
+IF (max_order_date - min_order_date) > 0 THEN
+    SET days_since_1st_order = (max_order_date - min_order_date) / 60 / 60 / 24;
+ELSE 
+    SET days_since_1st_order = -1;
+END IF;
+
+IF (days_since_1st_order > 0) THEN
+    SET per_day_rate = total / days_since_1st_order;
+    SET per_unit_rate = 1 / per_day_rate;
+ELSE
+    SET per_day_rate = -1;
+    SET per_unit_rate = -1;
+END IF;
+
+SELECT o_name_param AS 'Item_Name',
+bottle_order_quantity AS 'Bottle_Quantity',
+case_order_quantity AS 'Case_Quantity',
+total AS 'Total',
+min_order_date AS 'Date_Start_Unix',
+max_order_date AS 'Date_End_Unix',
+min_order_date_standard AS 'Date_Start',
+max_order_date_standard AS 'Date_End',
+days_since_1st_order AS 'Days_Since_First_Order',
+per_day_rate AS 'Per_Day_Rate',
+per_unit_rate AS 'Per_Unit_Rate',
+item_par AS 'Item_Par',
+item_type AS 'Item_Type',
+item_on_hand AS 'On_Hand';
+END$$
+DELIMITER ;
