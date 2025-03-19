@@ -1,0 +1,18 @@
+
+
+ordered
+-------------------------------------
+CREATE TABLE `ordered` (
+  `o_id` int NOT NULL AUTO_INCREMENT,
+  `o_name` varchar(50) NOT NULL,
+  `o_quantity` int DEFAULT NULL,
+  `o_unit` varchar(6) DEFAULT NULL,
+  `o_unit_quantity` varchar(10) DEFAULT NULL,
+  `o_date` date DEFAULT NULL,
+  PRIMARY KEY (`o_id`),
+  UNIQUE KEY `o_id` (`o_id`),
+  KEY `o_name` (`o_name`),
+  CONSTRAINT `ordered_ibfk_1` FOREIGN KEY (`o_name`) REFERENCES `items` (`i_name`)
+)
+__________________________________________________________________________________
+

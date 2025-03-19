@@ -520,6 +520,10 @@
     #credItems li {
         font-size:1.4em;
     }
+    #credItems li:hover {
+        cursor:pointer;
+        color:rgb(211, 209, 209);
+    }
 
     #cyberCredCourses{
         margin-left:2vw;
