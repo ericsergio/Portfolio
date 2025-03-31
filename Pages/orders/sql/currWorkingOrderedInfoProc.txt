@@ -4,6 +4,7 @@ CREATE DEFINER=`ericsergio`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param
 BEGIN
 DECLARE bottle_order_quantity INT;
 DECLARE case_order_quantity INT;
+DECLARE keg_order_quantity INT;
 DECLARE total INT;
 DECLARE min_order_date BIGINT;
 DECLARE max_order_date BIGINT;
@@ -24,6 +25,10 @@ WHERE o_name = o_name_param AND o_unit = 'Bottle';
 SELECT SUM(o_quantity) INTO case_order_quantity
 FROM ordered
 WHERE o_name = o_name_param AND o_unit = 'Case';
+
+SELECT SUM(o_quantity) INTO keg_order_quantity
+from ordered
+WHERE o_name = o_name_param and o_unit = 'Keg';
 
 SELECT unix_timestamp(min(o_date)) INTO min_order_date FROM ordered WHERE o_name = o_name_param;
 SELECT unix_timestamp(max(o_date)) INTO max_order_date FROM ordered WHERE o_name = o_name_param;
@@ -46,9 +51,12 @@ WHERE o_name_param = items.i_name;
 IF item_type <= 2 THEN
     SET case_quantity = 12;
     SET total = (case_order_quantity * case_quantity) + bottle_order_quantity;
-ELSEIF item_type > 2 then
+ELSEIF item_type = 3 then
     SET case_quantity = 24;
     SET total = case_quantity * case_order_quantity;
+ELSE 
+    SET case_quantity = -1;
+    SET total = keg_order_quantity;
 END IF;
 
 IF (max_order_date - min_order_date) > 0 THEN

@@ -43,11 +43,11 @@
 }
 
 .infoTypeInfoList div {
-  width:12vw;
+  width: 12vw;
   display: none;
   position: absolute;
   background-color: #005c99;
-  color:#ffffff;
+  color: #ffffff;
   padding: 30%;
   border-radius: 5%;
   list-style-type: none;
@@ -55,14 +55,13 @@
 
 #submitItemInfo {
   position: absolute;
-  left:70vw;
+  left: 70vw;
   background: linear-gradient(to top, #000000 0%, #003399 70%);
   color: #ffffff;
   font-family: Helvetica;
   font-variant: small-caps;
   font-size: 14px;
   border-radius: 5px;
-  padding: 0.45em 2.85em 0.25em 2.85em;  
-  text-align: center;  
+  padding: 0.45em 2.85em 0.25em 2.85em;
+  text-align: center;
 }
-

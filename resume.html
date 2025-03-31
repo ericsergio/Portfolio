@@ -1,370 +1,433 @@
 <html !DOCTYPE>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<head>
-	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-	
-<style>
-*{
-	box-sizing: border-box;
-	font-size: clamp(.6rem, 2vw, 2rem);
-}
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: clamp(0.6rem, 2vw, 2rem);
+      }
 
-#div_contact {
-	width:calc(100%);
-}
-#div_summary {
-	width:calc(100%);
-}
-#div_education {
-	width:calc(100%);
-}
-#div_experience {
-	width:calc(100%);
-}
-#div_technical-skills {
-	width:calc(100%);
-}
-#div_certifications {
-	width:calc(100%);
-}
+      h1 {
+        font-size: 1.2em;
+      }
 
-.tblCertRight, .tblCertLeft {
-	width:50%;
-}
+      #div_contact {
+        width: calc(100%);
+      }
+      #div_summary {
+        width: calc(100%);
+      }
+      #div_education {
+        width: calc(100%);
+      }
+      #div_experience {
+        width: calc(100%);
+      }
+      #div_technical-skills {
+        width: calc(100%);
+      }
+      #div_certifications {
+        width: calc(100%);
+      }
 
+      .tblCertRight,
+      .tblCertLeft {
+        width: 50%;
+      }
 
+      /*Contact Heading***************************** 0 */
+      #tbl_contact-heading {
+        border-collapse: collapse;
+        border: none;
+        width: calc(100%);
+      }
 
-/*Contact Heading***************************** 0 */
-#tbl_contact-heading {	
-	border-collapse:collapse;
-	border:none;	
-	width:calc(100%);
-}
+      #tbl_contact-heading > tbody > tr > td {
+        position: relative;
+        top: 5vh;
+        border: none;
+        /*padding:0pt 5.4pt 0pt 5.4pt;*/
+        height: 61.55pt;
+        width: calc(100% - 0.67vw);
+        text-align: center;
+        font-family: "Calibri", sans-serif;
+      }
 
-#tbl_contact-heading > tbody > tr > td {	
-	border:none;
-	padding:0in 5.4pt 0in 5.4pt;
-	height:61.55pt;
-	width:calc(100% - .67vw);
-	vertical-align:text-top;
-	font-family:"Calibri",sans-serif;
-}
+      #tbl_contact-heading > tbody > tr > td:nth-child(2) > ul {
+        list-style-type: none;
+      }
 
-#tbl_contact-heading > tbody > tr > td:nth-child(2) > ul {
-	list-style-type: none;	
-}
+      #tbl_contact-heading > tbody > tr > td:nth-child(1),
+      #tbl_contact-heading > tbody > tr > td:nth-child(3) {
+        vertical-align: top;
+      }
 
-#tbl_contact-heading > tbody > tr > td:nth-child(2) > ul > li:nth-child(1) {
-	font-size:1.6em;
-}
+      #tbl_contact-heading > tbody > tr > td:nth-child(3) {
+        text-align: right;
+      }
 
+      #tbl_contact-heading > tbody > tr > td:nth-child(1) {
+        text-align: left;
+      }
 
-/****************************** End Contact Heading **** 0 */
+      #tbl_contact-heading
+        > tbody
+        > tr
+        > td:nth-child(2)
+        > ul
+        > li:nth-child(1) {
+        font-size: 1.6em;
+      }
 
-h1 {	
-	border-bottom:solid windowtext 1.5pt;
-	height:calc(1.5em);
-	padding:0in 0in 1.0pt 0in;
-}
+      #tbl_contact-heading > tbody > tr > td > sup {
+        font-size: 0.7em;
+      }
 
-/**********************SKILLS*****************************************/
-#tbl_skills {
-	width:calc(100%);
-	margin-left:22.5pt;
-	border-collapse:collapse;
-	border:none;
-}
+      #tbl_contact-heading > tbody > tr > td:nth-child(2) > ul > li > a {
+        font-size: 0.7em;
+      }
 
+      /****************************** End Contact Heading **** 0 */
 
+      /**********************EDUCATION*****************************************/
 
-[class*="col-"] {
-  float: left;
-  width:16.66%;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+      .smaller-right,
+      .smaller-right b {
+        font-size: 0.85em;
+        text-align: center;
+      }
 
+      .smaller-left,
+      .smaller-left b {
+        font-size: 0.85em;
+        text-align: left;
+      }
 
-	
-</style>
+      .half-line-spacing {
+        margin-top: 0.5vh;
+      }
 
-</head>
-    <body>
-    	<div id ="div_contact">
-		<table id="tbl_contact-heading">
-            <tr>
-                <td>                        
-                        8209 42<sup>nd</sup>
-                        PL NE Marysville, WA 98270                        
-                </td>
-                <td>
-					<ul>
-						<li>Eric D. Sergio</li>							
-						<li><b>LinkedIn:</b> <a href = "https://linkedin.com/in/ericsergio">https://linkedin.com/in/ericsergio</a></li>
-						<li><b>Github:</b> <a href = "https://github.com/ericsergio">https://github.com/ericsergio</a></li>
-						<li><b>Portfolio:</b> <a href = "https://ericdsergio.webhop.me/">https://ericdsergio.webhop.me/</a></li>
-					</ul>
-                </td>
-                <td>
-					<p>
-                    (425) 236-9680
-                    </p>
-					<p>
-					ericdsergio87@icloud.com
-					</p>
-                </td>
-            </tr>
-        </table>
-	</div>
-        <!--**********************************************SUMMARY START**********************************************-->
-        <div id = "div_summary">
-			<h1>Career Transition</h1>
-        
-			<p>As a career transitioning millennial with an extensive background in customer service, recent BAS in software development, 
-			many years of informal learning as a hobby, and what I have learned as a parent, I believe that I possess a unique skillset that includes 
-			strong customer facing attributes and the technical know-how to be a versatile asset with a proven ability to adapt, learn, and problem-solve 
-			under pressure.</p>
-		</div>
-		<!--**********************************************SUMMARY END**********************************************-->     
-        <!--**********************************************EDUCATION**********************************************-->
-        <div id="div_education">
-			<h1>Education</h1>
-        	<table id="tbl_education1">
-            	<tr>
-                	<td>
-                	    <b>BAS Software Development</b>						
-					</td>
-					<td>
-    					<b>Bellevue College, Bellevue, WA</b>
-					</td>
-					<td>
-    					<b>April 2021 — June 2023</b>
-					</td>
-				</tr>
-				<tr>
-    				<td>
-        				<b>Honors: </b>Magna Cum Laude
-					</td>
-					<td></td>
-					<td>
-    					<b>Cumulative GPA:</b>3.9
-					</td>
-				</tr>
-				<tr>
-    				<td colspan=3>
-    					<ul>
-        					<li>                				
-                				<b>Notable coursework:</b>
-                				Mobile Application Development, Web Development, Application Architecture, Unit Testing, Data Structures and Algorithms, 
-								Object Oriented Programming, Database Architecture and Manipulation, Agile Framework, Advanced Data Access, Project Management, 
-								Logic/Philosophy, and Ethics in Technology.                				
-        					</li>
-    					</ul>
-    				</td>
-				</tr>
-			</table>
-	
-		<table id="tbl_education2">
-    		<tr>
-    			<td>
-        			<b>AA Web &amp;Cloud Development</b>
-				</td>
-				<td>
-    				<b>Edmonds College, Lynnwood, WA</b>
-				</td>
-				<td>
-    				<b>April 2018 — March 2021</b>    				
-				</td>
-			</tr>
-			<tr>
-    			<td>
-    				<b>Honors: </b>Phi Theta Kappa
-				</td>
-				<td>    				
-				</td>
-				<td>
-    				<b>Cumulative GPA: </b>3.8
-				</td>
-			</tr>
-			<tr>
-    			<td colspan=3>
-    				<ul>
-        				<li>
-            				<b>Notable coursework:</b>Full Stack Web Development,JavaScript Frameworks (jQuery), Database Implementation, 
-							Systems Analysis, Project Management, PHP, Joomla, SEO, Adobe Creative Suite
-        				</li>
-    				</ul>
-				</td>
-			</tr>
-		</table>
-	</div>
-<!--*********************************************EXPERIENCE**********************************************-->
-	<div id = "div_experience">
-		<h1>Professional Experience</h1>
-	
-	<table id="tbl_experience1">
-    	<tr>
-    		<td>
-        		<b>Software Engineer Unity Game Development – Scrum Master</b>				
-			</td>
-			<td>
-    			<b>University of Minnesota</b>
-			</td>
-			<td>
-    			<b>January 2023 — June 2023</b>    		
-			</td>
-		</tr>
-		<tr>
-			<td colspan=3>
-<!--*********************************************EXPERIENCE START LIST RECLAIM**********************************************-->
-				<ul>
-    				<li>
-						<b>Led UI modernization: </b>Transitioned game's UI from legacy prefabs to Unity's UI Toolkit, 
-						improving user experience and development efficiency.
-    				</li>
-    				<li>
-						<b>Pioneered UI Toolkit adoption: </b>Spearheaded, researched, and implemented UI Toolkit, 
-						showcasing initiative, technical expertise, and a strong willingness to learn a new technology (UI Toolkit in Unity).
-					</li>
-					<li>
-						<b>Designed intuitive user interface: </b>Crafted visually appealing and user-friendly UI using 
-						Adobe Creative Suite, including custom assets to match existing game aesthetics using Adobe InDesign, 
-						Photoshop, and Illustrator. My approved proposal provided me with the opportunity to own its integration 
-						which I eagerly accepted, learned the new technology, and implemented its functionality for which the 
-						entire game continues to be based on.
-					</li>
-					<li>
-						<b>Developed core UI framework: </b>Built the initial UI codebase (C#, UXML, USS), integrating 
-						it with existing game logic. I built the framework to match the approved visual design by building 
-						custom UXML objects to represent each asset and the object hierarchy using object-oriented 
-						programming in C#	
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</table>
-<!--*********************************************EXPERIENCE START LIST OUTBACK TITLE**********************************************-->
-	<table class="tbl_experience2">
-    	<tr>
-    		<td>            
-            	<b>Lead Bartender and Inventory management developer</b>
-			</td>
-			<td>
-        		<b>Outback Steakhouse</b>    			
-			</td>
-			<td>    			
-        		<b>August 2005 — June 2023</b>    			
-			</td>
-		</tr>
-	<tr>
-		<td colspan=3>
-	<ul>
-		<li>
-			<b>Advanced from Busser to Lead Bartender: </b>Demonstrated dedication and growth within the company.					
-		</li>
-		<li>
-			<b>Handled Managerial Duties: </b>Trusted to oversee operations and make decisions in the absence of management including 
-			customer conflict resolution, the bar’s liquor, beer, and wineordering, calculating and paying co-workers participating in 
-			tip pools among several other tasks carried out by management.					
-		</li>
-		<li>
-			<b>Developed Inventory Management System: </b>for my AA required internship, I built a custom application(JavaScript, 
-			jQuery, PHP, MySQL) that reduced inventory labor by 50% and eliminated unit quantity errors as well as incorrect product errors.
-		</li>
-		<li>
-			<b>Thrived in Fast-Paced Environment: </b>Excelled under pressure while maintaining a positive and professional demeanor, 
-			consistent leading seller and prioritized to work difficult shifts.
-		</li>
-	</ul>
-	</td>
-</tr>
-</table>
-</div>
-<!--*********************************************TECHNICAL SKILLS**********************************************-->
-	<div id="div_technical-skills">
-    	<h1>Technical Skills</h1>
-	
-	<table id="tbl_skills">
-		<div class="row">
-			
-    	<tr>
-    		<td class="col-">
-        		JS/jQuery
-    		</td>
-    		<td class="col-">
-        		Git
-    		</td>
-    		<td class="col-">
-        		Bash/AWK/SED
-    		</td>
-    		<td class="col-">
-        		XML/UXML
-    		</td>
-    		<td class="col-">
-        		C#/Python/PHP
-    		</td>
-    		<td class="col-">
-        		JS Frameworks
-    		</td>
-    	</tr>
-		
-	</div>
-	<div class="row">
-    	<tr>
-    		<td class="col-">
-        		SQL/NoSQL
-    		</td>
-    		<td class="col-">
-        		Unity
-    		</td>
-    		<td class="col-">
-        		Agile/Project Management
-    		</td>
-    		<td class="col-">
-        		GCP/Azure/AWS
-    		</td>
-    		<td class="col-">
-        		Docker
-    		</td>
-    		<td class="col-">
-        		Hadoop/Pig
-    		</td>
-    	</tr>
-		</div>
-	</table>
-</div>
-<!--*********************************************CERTIFICATIONS START**********************************************-->
-	<div id="div_certifications">
-	<h1>Certifications</h1>
-		<table id="tbl_certifications">
-    		<tr class = 'row' id = 'row1'>
-    			<td class = 'tblCertLeft'>
-					Google Data Exploration (Dec 2023)            		
-				</td>
-				<td class = 'tblCertRight'>
-					Visual Studio Essential Training: Unit Tests (Feb 2022)			
-				</td>
-			</tr>
-			<tr class = 'row' id = 'row2'>
-				<td class = 'tblCertLeft'>
-					 AI Essentials (June 2024)
-				</td>
-				<td class = 'tblCertRight'>
-					 Cloud Cybersecurity (March 2025)
-    	        </td>
-    		</tr>
-			<tr class = 'row' id = 'row3'>
-				<td class = 'tblCertLeft'>
-					 Traffic with TCPDump (Oct 2024)
-				</td>
-				<td class = 'tblCertRight'>
-    	        </td>
-    		</tr>
+      /********************END**EDUCATION*****************************************/
 
-		</table>
-	</div>
-	</body>
+      #cert-sub-list {
+        border: solid 1px blue;
+      }
+
+      h1 {
+        border-bottom: solid windowtext 1.5pt;
+        height: calc(1.5em);
+        padding: 0in 0in 1pt 0in;
+      }
+
+      /**********************EXPERIENCE*****************************************/
+
+      #tbl_experience1 > tbody > tr > td > ul > li,
+      #tbl_experience2 > tbody > tr > td > ul > li {
+        margin-top: 1vh;
+      }
+      /*******************END**EXPERIENCE*****************************************/
+      /**********************SKILLS*****************************************/
+      #tbl_skills {
+        width: calc(100%);
+        margin-left: 22.5pt;
+        border-collapse: collapse;
+        border: none;
+      }
+
+      [class*="col-"] {
+        float: left;
+        width: 20%;
+      }
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div_contact">
+      <table id="tbl_contact-heading">
+        <tr>
+          <td>
+            8209 42<sup>nd</sup> PL NE<br />
+            Marysville, WA 98270
+          </td>
+          <td>
+            <ul>
+              <li>Eric D. Sergio</li>
+              <li>
+                <b>LinkedIn:</b>
+                <a href="https://linkedin.com/in/ericsergio"
+                  >https://linkedin.com/in/ericsergio</a
+                >
+              </li>
+              <li>
+                <b>Github:</b>
+                <a href="https://github.com/ericsergio"
+                  >https://github.com/ericsergio</a
+                >
+              </li>
+              <li>
+                <b>Portfolio:</b>
+                <a href="https://ericdsergio.webhop.me/"
+                  >https://ericdsergio.webhop.me/</a
+                >
+              </li>
+            </ul>
+          </td>
+          <td>
+            <p>
+              (425) 236-9680<br />
+              ericdsergio87@icloud.com
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--**********************************************SUMMARY START**********************************************-->
+    <div id="div_summary">
+      <h1>Professional Profile</h1>
+
+      <p>
+        Highly motivated and eager recent graduate with a bachelor’s degree in
+        software development and a strong foundation in front and back-end
+        technologies, cybersecurity training, agile experience, and years of
+        prior customer service experience.
+      </p>
+    </div>
+    <!--**********************************************SUMMARY END**********************************************-->
+    <!--**********************************************EDUCATION**********************************************-->
+    <div id="div_education">
+      <h1>Education</h1>
+      <table id="tbl_education1">
+        <tr>
+          <td>
+            <b>BAS Software Development</b>
+          </td>
+          <td>
+            <b>Bellevue College, Bellevue, WA</b>
+          </td>
+          <td>
+            <b>April 2021 — June 2023</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="smaller-left"><b>Honors: </b>Magna Cum Laude</td>
+          <td></td>
+          <td class="smaller-right"><b>Cumulative GPA: </b>3.9</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <ul>
+              <li class="half-line-spacing">
+                <b>Notable coursework:</b>
+                Mobile Application Development, Web Development, Unit Testing,
+                Data Structures and Algorithms, Object Oriented Programming,
+                Database Architecture
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <table id="tbl_education2">
+        <tr>
+          <td>
+            <b>AA Web &amp;Cloud Development</b>
+          </td>
+          <td>
+            <b>Edmonds College, Lynnwood, WA</b>
+          </td>
+          <td>
+            <b>April 2018 — March 2021</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="smaller-left"><b>Honors: </b>Phi Theta Kappa</td>
+          <td></td>
+          <td class="smaller-right"><b>Cumulative GPA: </b>3.8</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <ul>
+              <li class="half-line-spacing">
+                <b>Notable coursework:</b>Full Stack Web Development,JavaScript
+                Frameworks (jQuery), Database Implementation, Systems Analysis,
+                Project Management, PHP, Joomla, SEO, Adobe Creative Suite
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--*********************************************CERTIFICATIONS START**********************************************-->
+    <div id="div_certifications">
+      <h1>Certifications</h1>
+      <table id="tbl_certifications">
+        <tr class="row" id="row1">
+          <td class="tblCertLeft"><b>Google Data Exploration</b> (Dec 2023)</td>
+          <td class="tblCertRight">
+            <b>Visual Studio Essential Training: Unit Tests</b> (Feb 2022)
+          </td>
+        </tr>
+        <tr class="row" id="row2">
+          <td class="tblCertLeft"><b>AI Essentials</b> (June 2024)</td>
+          <td class="tblCertRight">
+            <b>Google Cloud Platform Cybersecurity</b> (March 2025)
+            <!--<ul id = 'cert-sub-list'>
+							<li>Intro into Security Principles in Cloud Computing</li>
+							<li>Strategies for Cloud Risk Management></li>
+							<li>Cloud Security Risks: Identify and protect against threats</li>
+							<li>Detect, Respond, Recover from Cloud Cybersecurity Attacks</li>
+							<li>Put It All Together: Prepare for a Cloud Security Analyst Job</li>
+						</ul>-->
+          </td>
+        </tr>
+        <tr class="row" id="row3">
+          <td class="tblCertLeft"><b>Traffic with TCPDump</b> (Oct 2024)</td>
+          <td class="tblCertRight"></td>
+        </tr>
+      </table>
+    </div>
+    <!--*********************************************EXPERIENCE**********************************************-->
+    <div id="div_experience">
+      <h1>Professional Experience</h1>
+
+      <table id="tbl_experience1">
+        <tr>
+          <td>
+            <b>Software Engineer Unity Game Development – Scrum Master</b>
+          </td>
+          <td>
+            <b>University of Minnesota</b>
+          </td>
+          <td>
+            <b>January 2023 — June 2023</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <!--*********************************************EXPERIENCE START LIST RECLAIM**********************************************-->
+            <ul>
+              <li>
+                <b>Led UI modernization: </b>Transitioned game's UI from legacy
+                prefabs to Unity's UI Toolkit, improving user experience and
+                development efficiency.
+              </li>
+              <li>
+                <b>Pioneered UI Toolkit adoption: </b>Spearheaded, researched,
+                and implemented UI Toolkit, showcasing initiative, technical
+                expertise, and a strong willingness to learn a new technology
+                (UI Toolkit in Unity).
+              </li>
+              <li>
+                <b>Designed intuitive user interface: </b>Crafted visually
+                appealing and user-friendly UI using Adobe Creative Suite,
+                including custom assets to match existing game aesthetics using
+                Adobe InDesign, Photoshop, and Illustrator. My approved proposal
+                provided me with the opportunity to own its integration which I
+                eagerly accepted, learned the new technology, and implemented
+                its functionality for which the entire game continues to be
+                based on.
+              </li>
+              <li>
+                <b>Developed core UI framework: </b>Built the initial UI
+                codebase (C#, UXML, USS), integrating it with existing game
+                logic. I built the framework to match the approved visual design
+                by building custom UXML objects to represent each asset and the
+                object hierarchy using object-oriented programming in C#
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <!--*********************************************EXPERIENCE START LIST OUTBACK TITLE**********************************************-->
+      <table id="tbl_experience2">
+        <tr>
+          <td>
+            <b>Lead Bartender and Inventory management developer</b>
+          </td>
+          <td>
+            <b>Outback Steakhouse</b>
+          </td>
+          <td>
+            <b>August 2005 — June 2023</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <ul>
+              <li>
+                <b>Advanced from Busser to Lead Bartender: </b>Demonstrated
+                dedication and growth within the company.
+              </li>
+              <li>
+                <b>Handled Managerial Duties: </b>Trusted to oversee operations
+                and make decisions in the absence of management including
+                customer conflict resolution, the bar’s liquor, beer, and
+                wineordering, calculating and paying co-workers participating in
+                tip pools among several other tasks carried out by management.
+              </li>
+              <li>
+                <b>Developed Inventory Management System: </b>for my AA required
+                internship, I built a custom application(JavaScript, jQuery,
+                PHP, MySQL) that reduced inventory labor by 50% and eliminated
+                unit quantity errors as well as incorrect product errors.
+              </li>
+              <li>
+                <b>Thrived in Fast-Paced Environment: </b>Excelled under
+                pressure while maintaining a positive and professional demeanor,
+                consistent leading seller and prioritized to work difficult
+                shifts.
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--*********************************************TECHNICAL SKILLS**********************************************-->
+    <div id="div_technical-skills">
+      <h1>Technical Skills</h1>
+      <table id="tbl_skills">
+        <div class="row">
+          <tr>
+            <td class="col-">Web Development</td>
+            <td class="col-">System Administration</td>
+            <td class="col-">Agile/Scrum</td>
+            <td class="col-">Game Development</td>
+            <td class="col-">Customer Service</td>
+          </tr>
+        </div>
+        <div class="row">
+          <tr>
+            <td class="col-">Cybersecurity</td>
+            <td class="col-">Databases</td>
+            <td class="col-">Project Management</td>
+            <td class="col-">UNIX/Linux</td>
+            <td class="col-">GCP/AWS/Azure</td>
+          </tr>
+        </div>
+        <div class="row">
+          <tr>
+            <td class="col-">JavaScript</td>
+            <td class="col-">SQL</td>
+            <td class="col-">C#</td>
+            <td class="col-">PHP</td>
+            <td class="col-">Bash</td>
+          </tr>
+        </div>
+        <div class="row">
+          <tr>
+            <td class="col-">Python</td>
+            <td class="col-">React</td>
+            <td class="col-">NodeJS</td>
+            <td class="col-">Docker</td>
+            <td class="col-">Selenium</td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </body>
 </html>
