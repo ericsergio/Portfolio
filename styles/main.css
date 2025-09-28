@@ -489,21 +489,6 @@
     font-size: 1.3em;
     color: red;
   }
-
-  #generalProjInfoBox {
-    position:absolute;
-    bottom:1vh;
-    right:5vw;
-    width:50vw;
-    /*font-size: clamp(0.8rem, 2vh, 1rem);*/
-    font-size:1.2em;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#ea0202;
-    padding:3%;
-    border-radius: 15px;
-    /*box-shadow: 0 2px 12px rgba(251, 255, 253, 0.7);
-    background-color: #3b3b32;*/
-  }
 }
 /*-------PROJECT----------------------------MOBILE------------------Project page styling*/
 @media only screen and (orientation: portrait) {

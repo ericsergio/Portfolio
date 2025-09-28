@@ -299,13 +299,7 @@ $(document).ready(function() {
         });
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'slotMachine', 'reclaim'];
-    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];        
-    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
-    $('#projGrid').after(`<p id = 'generalProjInfoBox'>Welcome to my projects page! One minor disclaimer to note: 
-        I wrote the Orders project half way through my degree and although I am proud of it, 
-        it does need to be refactored. I use this application for inventory management at my current bartending job.
-        The other projects on this page--in terms of the use of classes/objects and coding conventions--are 
-        more accurate representations of my coding abilities. Thank you!</p>`);
+    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];
     let idx = 0;
     for(let i in projects) {
         idx += 1;
