@@ -214,7 +214,7 @@ $(document).ready(function() {
         <div id = 'pg1Content'>
             <div id = "aboutBackUpper" class = "aboutContent">
                 <p class = 'aboutTxt'>
-                    <span class = 'intro0'>My name is Eric Sergio and live in the Greater Seattle area. Thank you for taking the time to visit my website! </span>
+                    <span class = 'intro0'>Hello, my name is Eric Sergio and live in the Greater Seattle area. Thank you for taking the time to visit my website! </span>
                 </p>
             </div>
 
