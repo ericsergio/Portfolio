@@ -299,7 +299,8 @@ $(document).ready(function() {
         });
     //*********************************************************************************************** projects page content
     let projects = ['orders', 'tictactoe', 'slotMachine', 'reclaim'];
-    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];
+    let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];        
+    $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
     let idx = 0;
     for(let i in projects) {
         idx += 1;
