@@ -58,7 +58,7 @@ class Booz
 				$sql_name = $result->i_name;
 				$sql_dist = $result->i_dist;
 				echo "<li dVal = $sql_dist>$sql_name</li>";
-				echo "<input type = 'text' id = '$sql_name'></input>";
+				echo "<input type = 'text' id = '$sql_name' inputmode='numeric' pattern='[0-9]*'></input>";
 			}
 			echo "</ul>";
 			$stmt->closeCursor();

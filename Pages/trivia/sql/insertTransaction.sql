@@ -51,7 +51,7 @@ insert into sub_genres(sub_genre_name, genre_id) values ('Hacks', 7);
 insert into sub_genres(sub_genre_name, genre_id) values ('Classic_Rock', 8);
 insert into sub_genres(sub_genre_name, genre_id) values ('Hip_Hop', 8);
 insert into sub_genres(sub_genre_name, genre_id) values ('Grunge', 8);
-insert into sub_genres(sub_genre_name, genre_id) values ('80\'s', 8);
+insert into sub_genres(sub_genre_name, genre_id) values ('80s', 8);
 insert into sub_genres(sub_genre_name, genre_id) values ('Pop', 8);
 insert into sub_genres(sub_genre_name, genre_id) values ('Classical', 8);
 insert into sub_genres(sub_genre_name, genre_id) values ('Action', 9);

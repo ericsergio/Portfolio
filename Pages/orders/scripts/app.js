@@ -86,7 +86,7 @@ function checkDisplay() {
 window.onload = checkDisplay();
 function ProcessItems(name, count) {
   this.name = name;
-  this.count = count || 0;
+  this.count = count || 0;  
 }
 
 function doItems() {
@@ -686,8 +686,7 @@ Works well unless display switches from landscape to portrail or vice versa with
 otherwise gets all fuckered up.
 */
 function mobileDisplayDists() {
-  ToggleMenu.init.evenOdd += 1;
-  console.log(ToggleMenu.init.evenOdd);
+  ToggleMenu.init.evenOdd += 1;  
   if (ToggleMenu.init.evenOdd % 2 === 1) {
     $(".distWrapper").css({
       visibility: "visible",

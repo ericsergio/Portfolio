@@ -301,7 +301,12 @@ $(document).ready(function() {
     let projects = ['orders', 'tictactoe', 'slotMachine', 'reclaim'];
     let projectTitles = ['Orders', 'TicTacToe', 'Slot Machine', 'Reclaim'];        
     $('#pg4Div').append(`<ul id = 'projGrid'></ul>`);
-    let idx = 0;    
+    $('#projGrid').after(`<p id = 'generalProjInfoBox'>Welcome to my projects page! One minor disclaimer to note: 
+        I wrote the Orders project half way through my degree and although I am proud of it, 
+        it does need to be refactored. I use this application for inventory management at my current bartending job.
+        The other projects on this page--in terms of the use of classes/objects and coding conventions--are 
+        more accurate representations of my coding abilities. Thank you!</p>`);
+    let idx = 0;
     for(let i in projects) {
         idx += 1;
         $('#projGrid').append(`
@@ -324,14 +329,13 @@ $(document).ready(function() {
         'I wrote this Tic Tac Toe game to provide content to my portfolio and built the game specifically to showcase my ability to write OO JavaScript \
         and algoithms. ',
         
-        'I created this slot machine game to add content for my portfolio and to showcase my ability to write OO JavaScript, js promises, async/await, and \
+        'I created this slot machine game to showcase my ability to write OO JavaScript, js promises, async/await, and \
         it just seemed like a fun project. ', 
         
         'Reclaim is a game being built by the University of Minnesota that teaches users the Native American language Ojibwe. \
         In completing my capstone project, I was the team scrum master and software engineer. I designed and implemented the initial game UI. \
         The game isnt set to launch until 2025 so I am providing my exit documentation showing the initial UI framework that I designed & built. \
         '
-        
     ];
 
     $(`.projTiles h5`).on('mouseover', (event) => {
@@ -382,8 +386,9 @@ $(document).ready(function() {
                 $('#reclaimFrame').remove();
                 $('#reclaimFrameExit').remove();
             });
-        })
+        });
     };
+
     
     $('#pg5Div').append(`<ul id = 'credItems'></ul>`);
 

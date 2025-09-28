@@ -1,7 +1,14 @@
-#newGameDiv{
-	width:100%;
-	height:500px;
+.cContent{
+	position:absolute;
+	top:5vh;
+	left:3vw;
+	width:90vw;
+	height:80vh;
+	border: ridge 25px rgb(22, 88, 151);
+	background-color:rgb(17, 17, 27);
 }
+
+
 #start{
 	position: relative;
 	top:82%;
@@ -17,12 +24,13 @@
 	text-align: center;
 	padding-top: 7px;
 }
-#levelQ{
+#start:hover {
+	cursor:pointer;
+}
+/*#levelQ{
 	position: absolute;
 	top:18%;
 	width:70%;
-	/*background-color: orange;/*
-	/*left: 33%;*/
 	list-style-type: none;
 }
 #levelQ li{
@@ -33,12 +41,33 @@
 	color:white;
 	padding:7px;
 	border-radius: 12%;
+}*/
+#levelQ {
+	display:grid;
+	margin:5% 0 0 6%;
+	grid-template-columns:repeat(auto-fit, minmax(10%, 1fr));
+	grid-template-rows:2.9em;
+	list-style-type: none;
+	width:94%;
 }
-#playerQ{
-	position: relative;
-	/*left: 18%;*/
-	width:70%;
-	/*background-color: yellow;*/
+
+#levelQ li{
+	color:white;
+	background-color: #347b98;
+	box-shadow: 0px 0px 35px 2px #000000;
+	width:calc(94% / 3);
+	text-align: center;
+	padding:5%;
+	border-radius:20px;
+}
+
+#levelQ li:hover{
+	cursor: pointer;
+}
+
+/*#playerQ{
+	position: relative;	
+	width:70%;	
 	margin-top: 15%;
 	list-style-type: none;
 }
@@ -48,9 +77,29 @@
 	border:solid black 2px;
 	color:white;
 	border-radius: 12%;
+}*/
+
+#playerQ{
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(10%, 1fr));
+	width:70%;
+	margin: 15% 0 0 10%;
+	list-style-type: none;
 }
+#playerQ li{	
+	margin: 4% 0 0 15%;
+	border:solid black 2px;
+	color:white;
+	border-radius: 12%;
+	width:calc(94% / 3);
+}
+
 #confirmPlayers{
-	background-color: blue;
+	background-color: #347b98;
+	box-shadow: 0px 0px 35px 2px #000000;
+	text-align: center;
+	padding:5%;
+	
 }
 #player1Display{
 	position: absolute;

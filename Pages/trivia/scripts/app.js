@@ -1,22 +1,47 @@
-function CurrentGame(stage, level, player1, player2, goes_first) {
-	this.stage = stage || 1;
-	this.level = level || 'needed';
-	this.player1 = player1 || 'p1';
-	this.player2 = player2 || 'p2';
-	this.goes_first = goes_first || null;	
+class CurrentGame {
+	constructor(stage, level, player1, player2, goes_first) {
+		this.stage = stage || 1;
+		this.level = level || 'needed';
+		this.player1 = player1 || 'p1';
+		this.player2 = player2 || 'p2';
+		this.goes_first = goes_first || null;
+	}
 }
 
-function CurrentTurn(stage, idx, player_turn) {
-	this.stage = stage || 3;
-	this.idx = idx || 0;
-	this.player_turn = player_turn || null;
+class CurrentTurn {
+	constructor(stage, idx, player_turn) {
+		this.stage = stage || 3;
+		this.idx = idx || 0;
+		this.player_turn = player_turn || null;
+	}
 }
 
-function Players(id, name, score) {
-	this.id = id;
-	this.name = name;
-	this.score = score;
-	this.currentTurn = false;
+class Players {
+	constructor(id, name, score) {
+		this.id = id;
+		this.name = name;
+		this.score = score;
+		this.currentTurn = false;
+	}
+	addPoints() {
+		var activePlayer = getActivePlayer();
+		var consecutiveCorrect = CurrentTurn.turnInit.idx;
+
+		if (consecutiveCorrect <= 3) {
+			activePlayer.score += 10;
+		} else {
+			activePlayer.score += (10 * 1.25);
+		}
+		//	activePlayer.score += 10;
+		var eligibleElems = [$('#player1Display'), $('#player2Display')];
+		var matchScoreElems = [$('#p1Score'), $('#p2Score')];
+		for (var p in eligibleElems) {
+			if (activePlayer.name === eligibleElems[p].html()) {
+				var activeIdx = eligibleElems.indexOf(eligibleElems[p]);
+			}
+		}
+		matchScoreElems[activeIdx].html(activePlayer.score);
+	}
 }
 
 const getActivePlayer = () => {
@@ -64,27 +89,6 @@ const switchTurn = (prev, next) => {
 	CurrentTurn.turnInit.player_turn = next.name;
 }
 
-
-Players.prototype.addPoints = () => {
-	var activePlayer = getActivePlayer();
-	var consecutiveCorrect = CurrentTurn.turnInit.idx;
-	
-	if(consecutiveCorrect <= 3) {
-		activePlayer.score += 10;
-	} else {
-		activePlayer.score += (10 * 1.25);
-	}
-//	activePlayer.score += 10;
-	var eligibleElems = [$('#player1Display'), $('#player2Display')];
-	var matchScoreElems = [$('#p1Score'), $('#p2Score')];
-	for(var p in eligibleElems) {
-		if(activePlayer.name === eligibleElems[p].html()) {
-			var activeIdx = eligibleElems.indexOf(eligibleElems[p]);
-		}
-	}
-	matchScoreElems[activeIdx].html(activePlayer.score);
-}
-
 CurrentGame.gameInit = new CurrentGame();
 
 $(document).ready(function () {
@@ -128,7 +132,6 @@ $(document).ready(function () {
 	});	
 });
 
-
 const doPlayers = () => {
 	$('#levelQ').remove();
 	if($('#p1').val().length > 0) {
@@ -167,11 +170,15 @@ const insertNewPlayers = (obj) => {
 	for(var p in obj) {
 		props.push(obj[p]);	
 	}
-	$.post("pages/fn.php", { stage: props[0], level: props[1], player1: props[2], player2: props[3], goes_first: props[4], current_turn: props[5], get_question: props[6] })
+	$.post("pages/fn.php", {
+		stage: props[0], level: props[1], player1: props[2], player2: props[3], goes_first: props[4], 
+		current_turn: props[5], get_question: props[6] 
+	})
 	.done(function(data) {
 		console.log("ajax response : " + data.CurrentGame);
 	});
 };
+
 const updateGoesFirst = (obj) => {
 	CurrentGame.gameInit.stage = 2;
 	/////////////set players current
@@ -179,7 +186,10 @@ const updateGoesFirst = (obj) => {
 	for(var p in obj) {
 		props.push(obj[p]);	
 	}
-	$.post("pages/fn.php", {stage: props[0], level: props[1], player1: props[2], player2: props[3], goes_first: props[4], current_turn: props[5], get_question: props[6] })
+	$.post("pages/fn.php", {
+		stage: props[0], level: props[1], player1: props[2], player2: props[3], 
+		goes_first: props[4], current_turn: props[5], get_question: props[6] 
+	})
 	.done(function(data) {
 		//console.log("updateFunction: " + data);
 	});
@@ -275,7 +285,6 @@ const startGame = () => {
 					'left':'4%'
 				});
 			}
-//			$('#selectedFirst').html(countStart);
 			$('#selectedFirst').css({
 				'fontSize' : "3.7em"
 			})
@@ -320,15 +329,16 @@ const doCorrect = () => {
 const doWrong = () => {
 	setTimeout(() => {
 		$('#showTurn').remove();
-		switchTurn();
-		$('#player1Display').after('<p id = "showTurn">' + CurrentTurn.turnInit.player_turn + '</p>');
+		switchTurn();		
+		//$('#player1Display').after('<p id = "showTurn">' + CurrentTurn.turnInit.player_turn + '</p>');
+		$('#player1Display').after(`<p id = "showTurn">' ${CurrentTurn.turnInit.player_turn} '</p>`);
 		$('#questionDiv').children().remove();
 		CurrentTurn.turnInit.idx = 0;
 		getCurrentQuestion(CurrentTurn.turnInit);
 	}, 400);
 }
 
-function clicked(idx) {
+const clicked = (idx) => {
 	$('#answerOptions').children(':eq(' + idx + ')').css('box-shadow', '0px 2px 5px 2px #000000');
 }
 
